@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-cache-decorator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-car-wash-station" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-cinema-visit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-count-occurrences" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-distance-class" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-knights-fighting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-linter-formatter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-mutable-immutable" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-online-course" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-person-class" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-vector-class" vcs="Git" />
+  </component>
+</project>
