@@ -67,7 +67,7 @@
 
 
 # INHERITANCE animal -> cat dog
-# ENCAPSULTAION
+# ENCAPSULATION
 # POLYMORPHISM
 # ABSTRACTION
 # class Employee:
@@ -216,15 +216,50 @@
 # print(dir(object))
 #
 #
+#
+# class Car:
+#     def __init__(self, model):
+#         self.model = model
+#
+#     @staticmethod
+#     def create_car(name):
+#         return Car(name)
+#
+#
+# for k, v in Car.create_car("Porshe").__dict__.items():
+#     print(k, v)
+#
+#___________________________________________________________________________
+class Employee:
+    def __init__(self, name: str, surname: str):
+        self.name = name
+        self.surname = surname
 
-class Car:
-    def __init__(self, model):
-        self.model = model
 
-    @staticmethod
-    def create_car(name):
-        return Car(name)
+class Freelance(Employee):
+    def __init__(self, name: str, surname: str, email: str):
+        super().__init__(name, surname)                      #!!!!!!!!!!!!!
+        self.email = email
 
 
-for k, v in Car.create_car("Porshe").__dict__.items():
-    print(k, v)
+freelance_employee = Freelance("Joseph", "Green", "josephgreen@gmail.com")
+
+print(freelance_employee.name)  # Joseph
+print(freelance_employee.surname)  # Green
+print(freelance_employee.email)  # josephgreen@gmail.com
+
+class Employee:
+    def print_info(self):
+        print("Hello, I'm Employee")
+
+
+class Freelance(Employee):
+    def print_info(self):
+        super().print_info()
+        print("Hello, I'm Freelance Employee")
+
+
+freelance_employee = Freelance()
+freelance_employee.print_info() # Hello, I'm an Employee
+                                # Hello, I'm a Freelance Employee
+
