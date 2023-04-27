@@ -899,3 +899,52 @@
 # listt = ListStatistics([80, 15, 66, 2, 8])
 #
 # print(listt.calculate_statistics())
+
+from abc import ABC, abstractmethod
+
+
+class Machine(ABC):
+    @abstractmethod
+    def do_work(self, *args, **kwargs) -> None:
+        pass
+
+    @abstractmethod
+    def stop_work(self, *args, **kwargs) -> None:
+        pass
+
+
+class Truck(Machine):
+    def do_work(self, *args, **kwargs) -> None:
+        print("Truck starts working")
+
+    def stop_work(self, *args, **kwargs) -> None:
+        print("Truck stopped working")
+
+
+class Bulldozer(Machine):
+
+    def do_work(self, *args, **kwargs) -> None:
+        print("Bulldozer starts working")
+
+    def stop_work(self, *args, **kwargs) -> None:
+        print("Bulldozer stopped working")
+
+
+class Excavator(Machine):
+
+    def do_work(self, *args, **kwargs) -> None:
+        print("Excavator starts working")
+
+    def stop_work(self, *args, **kwargs) -> None:
+        print("Excavator stopped working")
+
+
+def build() -> None:
+    machines = [Truck(), Bulldozer(), Excavator]
+    flag = False
+    for i in machines:
+        i.do_work(None)
+        flag = not flag
+    if flag is True:
+        for i in machines:
+            i.stop_work(None)
