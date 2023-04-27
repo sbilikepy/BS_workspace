@@ -703,11 +703,11 @@
 # print(b.age)
 # print(b.__dict__)
 
-# ENCAPSULATION         № PPP public. protected. private
-# ENCAPSULATION         № PPP public. protected. private
-# ENCAPSULATION         № PPP public. protected. private
+# ENCAPSULATION         № PPP public. _protected. __private
+# ENCAPSULATION         № PPP public. _protected. __private
+# ENCAPSULATION         № PPP public. _protected. __private
 
-# self.__? = PROTECTED
+# self.__? = private
 
 #
 # class Product:
@@ -736,13 +736,16 @@
 # class Base:
 #     def __init__(self, name):
 #         self.name = name
+
 #         self.public = "public"
 #         # 1. Inside class
 #         # 2. Inside child class
 #         # 3. Outside class
+
 #         self._protected = "protected"
 #         # 1. Inside class
 #         # 2. Inside child class
+
 #         self.__private = "private"
 #         # 1. Inside class
 #
@@ -767,3 +770,132 @@
 #
 #         # bad practice because NOT Inside class
 #         self.__private()
+
+
+# POLYMORPHISM 1 interface, diff realisation
+#
+# print(len("hello"))
+# print(len([1, 2, 3]))
+
+# ABSTRACTION view from abstracted point?
+# ABC, @abstractmethod
+# ABC = Abstract Base Class         # everywhere except base class
+
+
+# By default, Python does not provide abstract classes. Python comes with a
+# module that provides the base for defining Abstract Base classes(ABC) and that
+# module name is ABC. ABC works by decorating methods of the base class as
+# abstract and then registering concrete classes as implementations of the
+# abstract base. A method becomes abstract when decorated with the keyword
+# @abstractmethod. For Example:
+# Python program showing
+# abstract base class work
+
+# from abc import ABC, abstractmethod
+#
+#
+# class Polygon(ABC):
+#
+#     @abstractmethod
+#     def noofsides(self):
+#         pass
+#
+#
+# class Triangle(Polygon):
+#
+#     # overriding abstract method
+#     def noofsides(self):
+#         print("I have 3 sides")
+#
+#
+# class Pentagon(Polygon):
+#
+#     # overriding abstract method
+#     def noofsides(self):
+#         print("I have 5 sides")
+#
+#
+# class Hexagon(Polygon):
+#
+#     # overriding abstract method
+#     def noofsides(self):
+#         print("I have 6 sides")
+#
+#
+# class Quadrilateral(Polygon):
+#
+#     # overriding abstract method
+#     def noofsides(self):
+#         print("I have 4 sides")
+#
+#
+# # Driver code
+# R = Triangle()
+# R.noofsides()
+#
+# K = Quadrilateral()
+# K.noofsides()
+#
+# R = Pentagon()
+# R.noofsides()
+#
+# K = Hexagon()
+# K.noofsides()
+
+
+# Python program showing
+# implementation of abstract
+# class through subclassing
+
+
+# class parent():
+#     def geeks(self):
+#         pass
+#
+#
+# class child(parent):
+#     def geeks(self):
+#         print("child class")
+#
+#
+# # Driver code
+# print(issubclass(child, parent))
+# print(isinstance(child(), parent))
+
+
+# class ListStatistics:
+#     def __init__(self, numbers: list) -> None:
+#         if len(numbers):
+#             self.__numbers = numbers
+#         else:
+#             self.__numbers = []
+#
+#     def __get_min_value(self) -> int:
+#         return min(self.__numbers)
+#
+#     def __get_max_value(self) -> int:
+#         return max(self.__numbers)
+#
+#     def __get_average(self) -> int:
+#         return sum(self.__numbers) / len(self.__numbers)
+#
+#     def __get_median(self) -> int:
+#         len_l = len(self.__numbers)
+#         numo = sorted(self.__numbers)
+#         if len_l % 2 == 0:
+#             return (numo[:int(len_l / 2) + 1:]
+#                     [-1] + numo[:int(len_l / 2):][-1]) / 2
+#         return numo[:int(len_l / 2) + 1:][-1]
+#
+#     def calculate_statistics(self) -> dict:
+#         return {
+#             "min_value": ListStatistics.__get_min_value(self),
+#             "max_value": ListStatistics.__get_max_value(self),
+#             "average": ListStatistics.__get_average(self),
+#             "median": ListStatistics.__get_median(self),
+#         }
+#
+#
+# listt = ListStatistics([80, 15, 66, 2, 8])
+#
+# print(listt.calculate_statistics())

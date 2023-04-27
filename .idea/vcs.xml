@@ -9,6 +9,7 @@
     <mapping directory="$PROJECT_DIR$/py-count-occurrences" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-delivery-drone" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-distance-class" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-elves-and-dwarves" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-feed-animals" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-herbivores-and-carnivores" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-knights-fighting" vcs="Git" />
