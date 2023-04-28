@@ -7345,4 +7345,139 @@
 # t_range = time_range(time_start=(23, 59, 58),
 #                      time_end=(0, 0, 3))
 # print(next(t_range))
-#test
+# test
+
+
+# GETTER SETTER
+# PROPERTY(GET, SET) sould have same name
+
+# class GlassOfWater:
+#     def __init__(self, temperature: int):
+#         self.temperature = temperature
+#
+#     # temperature = property(temperature)
+#     @property  # getter
+#     def temperature(self):
+#         print("get temp")
+#         return self._temperature
+#
+#     @temperature.setter
+#     def temperature(self, temperature: int):
+#         print("set temp")
+#         if not (0 <= temperature <= 100):
+#             raise Exception("Error: not in range 0 - 100")
+#         self._temperature = temperature
+#
+#
+#
+#     # temperature = property(get_temperature,set_temperature)
+#
+#
+# glass = GlassOfWater(temperature=1000)
+#
+# glass.temperature = 15
+# glass.temperature = 25
+# glass.temperature = 22
+# glass.temperature = 21
+# print(glass.temperature)
+#
+# print(glass.__dict__)
+
+
+
+
+# Read-only attribute
+
+
+
+# class Company:
+#     def __init__(self,name):
+#         self._name = name
+#
+#     @property
+#     def name(self):
+#         return f"This name is read_only: {self._name}"
+# company = Company("Mate Academy")
+#
+#
+#
+#
+# print(company.name)
+# #company.name = "qwe" # AttributeError: property 'name' of 'Company' object has no setter
+#
+# print(company.__dict__)
+
+
+
+# Descriptor = class if __get__ / __set__ / __delete__ overloaded
+#
+# class Two:
+#     def __get__(self, instance, owner):
+#         print("Get called")
+#         return 2
+#
+# class Example:
+#     x = 5
+#     y = Two()
+#
+#
+# example = Example()
+# print(example.x)
+# print(example.y)
+#
+
+
+
+# PROPERTY > descriptors if its possible to use
+
+
+
+# class ArraySize:
+#     def __get__(self, instance, owner):
+#         return len(instance.arr)
+#
+#
+# class Array:
+#     size = ArraySize()
+#
+#     def __init__(self,arr):
+#         self.arr = arr
+#
+#
+# array_obj = Array([1,2,3])
+#
+# print(array_obj.size)
+# array_obj.arr.append(5)
+# print(array_obj.size)
+
+
+# class Temperature:
+#     def __get__(self, instance, owner):
+#         print("get temp")
+#         return instance._temperature
+#
+#     def __set__(self,instance,value):
+#         print("set temp")
+#         if not (0 <= value <= 100):
+#             print("temp not in range")
+#             return None
+#         instance._temperature = value
+#
+#
+# class GlassofWater:
+#     temperature = Temperature()
+#
+#     def __init__(self, temperature):
+#         self.temperature = temperature
+#
+#     def heat(self):
+#         self.temperature += 1 # self.temp = self.temp + 1
+#
+# glass = GlassofWater(98)
+#
+# print(glass.__dict__)
+# glass.heat()
+# glass.heat()
+# glass.heat()
+#
+# print(glass.temperature)
