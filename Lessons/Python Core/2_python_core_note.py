@@ -1098,3 +1098,71 @@
 #     @message.setter
 #     def message(self, message: str) -> None:
 #         self._message = message
+
+
+# class Transaction:
+#     def __init__(
+#         self,
+#         amount: int,
+#         date: str,
+#         currency: str = "USD",
+#         usd_conversion_rate: float = 1.0,
+#         description: str = None,
+#     ) -> None:
+#         self._amount: int = amount
+#         self._date: str = date
+#         self._currency: str = currency
+#         self._usd_conversion_rate: float = usd_conversion_rate
+#         self._description: str = description
+#         self._usd: float = amount * usd_conversion_rate
+#
+#     @property
+#     def amount(self) -> int:
+#         return self._amount
+#
+#     @property
+#     def date(self) -> str:
+#         return self._date
+#
+#     @property
+#     def currency(self) -> str:
+#         return self._currency
+#
+#     @property
+#     def usd_conversion_rate(self) -> float:
+#         return self._usd_conversion_rate
+#
+#     @property
+#     def description(self) -> str:
+#         if self._description is None:
+#             return "No description provided"
+#         return self._description
+#
+#     @property
+#     def usd(self) -> float:
+#         return self._usd
+#
+#
+# transaction_test = Transaction(100, "13.20.2022", "$", 1.32, )
+# print(transaction_test.__dict__)
+# print(transaction_test.description)
+# print(transaction_test.usd)
+
+# class Volume:
+#     def __get__(self, instance, owner):
+#         return instance.length * instance.width * instance.height
+#
+#
+# class Box:
+#     def __init__(self,
+#                  length,
+#                  width,
+#                  height):
+#         self.length = length
+#         self.width = width
+#         self.height = height
+#     volume = Volume() # !
+#
+#
+# big_box = Box(10, 20, 15)
+# print(big_box.volume)
