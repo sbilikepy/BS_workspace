@@ -986,10 +986,7 @@
 # print(glass.__dict__)
 
 
-
-
 # Read-only attribute
-
 
 
 # class Company:
@@ -1010,7 +1007,6 @@
 # print(company.__dict__)
 
 
-
 # Descriptor = class if __get__ / __set__ / __delete__ overloaded
 #
 # class Two:
@@ -1029,9 +1025,7 @@
 #
 
 
-
 # PROPERTY > descriptors if its possible to use
-
 
 
 # class ArraySize:
@@ -1085,3 +1079,22 @@
 # print(glass.temperature)
 
 # Descriptor run when we access the property!
+
+
+# refactor this code
+
+
+# refactor this code
+
+#
+# class CorrectMessage:
+#     def __init__(self, message: int) -> None:
+#         self._message = message.capitalize()
+#
+#     @property
+#     def message(self) -> str:
+#         return self._message
+#
+#     @message.setter
+#     def message(self, message: str) -> None:
+#         self._message = message
