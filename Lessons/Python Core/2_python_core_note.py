@@ -951,19 +951,19 @@
 
 
 # GETTER SETTER
-# PROPERTY(GET, SET) sould have same name
+# PROPERTY(GET, SET) should have same name
 
 # class GlassOfWater:
 #     def __init__(self, temperature: int):
 #         self.temperature = temperature
 #
 #     # temperature = property(temperature)
-#     @property  # getter
+#     @property  # getter                                           #!!!!!!
 #     def temperature(self):
 #         print("get temp")
 #         return self._temperature
 #
-#     @temperature.setter
+#     @temperature.setter                #!!!!!! <getter_property_name>.setter
 #     def temperature(self, temperature: int):
 #         print("set temp")
 #         if not (0 <= temperature <= 100):
@@ -1083,3 +1083,5 @@
 # glass.heat()
 #
 # print(glass.temperature)
+
+# Descriptor run when we access the property!
