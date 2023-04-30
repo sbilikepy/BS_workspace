@@ -1166,3 +1166,40 @@
 #
 # big_box = Box(10, 20, 15)
 # print(big_box.volume)
+
+
+
+
+class Grade:
+    def __init__(self, minvalue=2, maxvalue=12):
+        self.minvalue = 2
+        self.maxvalue = 12
+        self.protected_name = None
+
+    def __set_name__(self, owner, name):
+        self.protected_name = self.__set_name__("_" + name)
+        return self._protected_name
+
+    def __get__(self, instance, owner):
+        return round(instance)
+
+    def __set__(self, instance, value):
+        if isinstance(instance, int) or instance(instance, float):
+            if self.minvalue < instance < self.maxvalue:
+                return instance
+            else:
+                ValueError(f"Grade should not be less than {self.minvalue} "
+                           f"and greater than {self.maxvalue}")
+        else:
+            TypeError("Grade should be integer")
+
+
+class SchoolDiary:
+    def __init__(self, math, history, literature):
+        self.math = Grade(math)
+        self.history = Grade(history)
+        self.literature = Grade(literature)
+
+alex = SchoolDiary(math="10", history="12", literature="9")
+print(alex.__dict__)
+
