@@ -1167,39 +1167,108 @@
 # big_box = Box(10, 20, 15)
 # print(big_box.volume)
 
+#
+# class Grade:
+#     def __init__(self, minvalue: int = 2, maxvalue: int = 12) -> None:
+#         self.minvalue = 2
+#         self.maxvalue = 12
+#
+#     def __set_name__(self, owner, name) -> None:
+#         self.protected_name = "_" + name
+#
+#     def __get__(self, instance, owner) -> None:
+#         return getattr(instance, self.protected_name)
+#
+#     def __set__(self, instance, value):
+#         if not isinstance(value, int):
+#             raise TypeError("Grade should be integer")
+#         elif value < self.minvalue or value > self.maxvalue:
+#             raise ValueError(f"Grade should not be less than {self.minvalue}"
+#                              f" and greater than {self.maxvalue}")
+#         setattr(instance, self.protected_name, value)
+#
+#
+# class SchoolDiary:
+#     math = Grade()
+#     history = Grade()
+#     literature = Grade()
+#
+#     def __init__(self, math:int, history:int, literature:int)->None:
+#         self.math = math
+#         self.history = history
+#         self.literature = literature
 
 
-
-class Grade:
-    def __init__(self, minvalue=2, maxvalue=12):
-        self.minvalue = 2
-        self.maxvalue = 12
-        self.protected_name = None
-
-    def __set_name__(self, owner, name):
-        self.protected_name = self.__set_name__("_" + name)
-        return self._protected_name
-
-    def __get__(self, instance, owner):
-        return round(instance)
-
-    def __set__(self, instance, value):
-        if isinstance(instance, int) or instance(instance, float):
-            if self.minvalue < instance < self.maxvalue:
-                return instance
-            else:
-                ValueError(f"Grade should not be less than {self.minvalue} "
-                           f"and greater than {self.maxvalue}")
-        else:
-            TypeError("Grade should be integer")
-
-
-class SchoolDiary:
-    def __init__(self, math, history, literature):
-        self.math = Grade(math)
-        self.history = Grade(history)
-        self.literature = Grade(literature)
-
-alex = SchoolDiary(math="10", history="12", literature="9")
-print(alex.__dict__)
-
+# class NumberInfo:
+#     def __init__(self, number: [int, float]) -> None:
+#         self._number = number
+#
+#     @property
+#     def number(self) -> None:
+#         return self._number
+#
+#     @number.setter
+#     def number(self) -> None:
+#         return self._number
+#
+#     @property
+#     def len_digits(self) -> int:
+#         if len(str(self._number)) == 0:
+#             return 0
+#         if len(str(self._number)) == 1:
+#             return 1
+#         return len(str(self._number).split(".")[0])
+#
+#     @property
+#     def is_integer(self) -> bool:
+#         return isinstance(self._number, int)
+#
+#     @property
+#     def is_float(self) -> bool:
+#         return isinstance(self._number, float)
+#
+#     @property
+#     def decimal(self) -> int:
+#         if isinstance(self._number, int):
+#             return 0
+#         if len(str(self._number)) == 0:
+#             return 0
+#         if len(str(self._number)) == 1:
+#             return 1
+#         return len(str(self._number).split(".")[1])
+#
+#     @property
+#     def is_positive(self) -> bool:
+#         return True if self._number > 0 else False
+#
+#     @property
+#     def is_natural(self) -> bool:
+#         return isinstance(self._number, int) and self._number > 0
+#
+#     @property
+#     def is_prime(self) -> bool:
+#         if isinstance(self._number, int):
+#             if self._number > 1:
+#                 flags = 0
+#                 for i in range(2, self._number + 1):
+#                     if self._number % i == 0:
+#                         flags += 1
+#                 if flags == 1:
+#                     return True
+#         return False
+#
+#     @property
+#     def __dir__(self) -> None:
+#         return ["_number"]
+#
+#
+# number_int = NumberInfo(997)
+#
+# print(number_int.number)
+# print(number_int.len_digits)
+# print(number_int.is_integer)
+# print(number_int.is_float)
+# print(number_int.decimal)
+# print(number_int.is_positive)
+# print(number_int.is_natural)
+# print(number_int.is_prime)
