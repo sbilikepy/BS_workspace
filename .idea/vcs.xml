@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-aquapark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-burger-recipe" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-cache-decorator" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-car-wash-station" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-cinema-visit" vcs="Git" />

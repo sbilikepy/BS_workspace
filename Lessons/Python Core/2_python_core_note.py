@@ -1272,3 +1272,160 @@
 # print(number_int.is_positive)
 # print(number_int.is_natural)
 # print(number_int.is_prime)
+
+
+# SYNTAX ERROR VS LOGICAL ERRORS
+# SytnaxError = wrong construction / : / wrong symb (example)
+# arr = [1,2,3] arr[4] == Logical Error
+
+# try: # try to find LOGICAL error
+#     arr = [1,2,3]
+#     print(arr[5])
+# except: # error message
+#     print("Error occured")
+
+
+# print(5//0) # ZerodivisionError
+# try:
+#     5//0
+# except:
+#     print("There was an error")
+#
+#
+#
+# try:
+#     5 // 0
+# except ZeroDivisionError:
+#     print("0 div error here")
+#
+#
+# try:
+#     5 // 0
+# except ValueError: # anyway ZeroDivisionError
+#     print("0 div error here")
+
+
+# print(int("10.3")) # ValueError int(str(float))
+# print(5+"5") # TypeError
+
+# Traceback = error row
+# Snippet 1
+
+# try:
+#     #some code that may throw an exception
+# except:
+#     #exception handling code
+# #Snippet 2
+# In the second you can access the attributes of the exception object
+# try:
+#     #some code that may throw an exception
+# except Exception as e:
+#     #exception handling code
+
+# condition = False
+# try:
+#     if condition:
+#         int("10.3")
+#     else:
+#         5 + "5"
+# except Exception as e:         #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#     print("There was an error!")
+#     print(e)
+
+
+# condition = True
+# try:
+#     if condition:
+#         int(("10.3"))
+#     else:
+#         5 + "5"
+# except ValueError as e:  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#     print("ValueError!", e)
+# except TypeError:
+#     print("TypeError")
+# finally:
+#     print("Clear up")
+###################################################################
+# try:
+#     #CONDITION
+# except # ERROR
+# except # ERROR
+# except  # ERROR
+# except  # ERROR
+# else: IF NO ERRORS
+#     print("NO EXCEPTIONS")
+# finally: ANYWAY
+#     print("clear up")
+###################################################################
+
+
+# TRY EXCEPT EXAMPLE
+
+# def give_cookies(count, kids):
+#     return count // kids
+#
+# try:
+#     give_cookies(10,0)
+# except Exception as e:
+#     print(e)
+# num_str = "1s0.5"
+#
+#
+#
+# try:
+#     num = float(num_str)
+#     print(num)
+# except Exception as e:
+#     print(e.__dict__)
+#     print("Nan", e)
+#     print(type(e))
+#
+#
+#
+# def divide(a, b):
+#     return a // b
+#
+#
+# def get_element_by_index(arr, index):
+#     return arr[index]
+#
+#
+# def perform_calcucaltions():
+#     a = 18
+#     b = 6
+#     try:
+#         index = divide(a, b)
+#     except ZeroDivisionError:
+#         print("There was an Zero error! Returning - 1")
+#         return -1
+#
+#     arr = [1, 7, 2, 5, 4]
+#
+#     try:
+#         return get_element_by_index(arr, index)
+#     except IndexError:
+#         print("There was an Index error! Returning - 1")
+#         return -1
+#
+#
+# print("Result:", perform_calcucaltions())
+
+
+# def generate_color_rgb() -> str:
+#     hex_chars = "0123456789abcdef"
+#     color = "#"
+#     for i in range(6):
+#         color += random.choice(hex_chars)
+#     return color
+#
+#
+# def count_nines(number: int) -> int:
+#     counter = 0
+#     for i in range(1, number + 1):
+#         if "9" in str(i):
+#             for i_ in str(i):
+#                 if "9" in i_:
+#                     counter += 1
+#     return counter
+
+

@@ -7384,10 +7384,7 @@
 # print(glass.__dict__)
 
 
-
-
 # Read-only attribute
-
 
 
 # class Company:
@@ -7408,7 +7405,6 @@
 # print(company.__dict__)
 
 
-
 # Descriptor = class if __get__ / __set__ / __delete__ overloaded
 #
 # class Two:
@@ -7427,9 +7423,7 @@
 #
 
 
-
 # PROPERTY > descriptors if its possible to use
-
 
 
 # class ArraySize:
@@ -7481,3 +7475,14 @@
 # glass.heat()
 #
 # print(glass.temperature)
+
+# arr = [5,1,4,2,8]
+# iteration = 0
+# while True:
+#
+#     for index in range(1, len(arr)):
+#         if arr[index - 1] > arr[index]:
+#             arr[index - 1], arr[index] = arr[index], arr[index - 1]
+#             print(arr)
+#             iteration += 1
+#             print(iteration)
