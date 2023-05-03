@@ -1429,3 +1429,149 @@
 #     return counter
 
 
+# def get_driver_license(person: dict):
+#     assert person["age"] >= 16, "ERRORTEXT"  # statement -> AssertionError if not
+#
+#
+# # try:
+# get_driver_license(
+#     {"name": "Jo",
+#      "age": 15
+#      })
+# # except Exception as e:
+# #     print(e)
+
+# OtherERROR(CustomError(Exception))
+# class CustomError(Exception):
+#     """Our CustomError exception"""
+#
+#
+# x = CustomError
+# raise CustomError("Hello from CustomError")
+
+
+# https://mate.academy/learn/python-core/python-core-exception-handling?section=theory&videoId=2130
+
+
+# for i in range(2**8,2**9):
+#     for i_ in range(i):
+#         for i__ in range(i_):
+#             print(i__ ** i__)
+
+
+# def get_order(order: str) -> str:
+#     menu = ["Burger", "Fries", "Chicken", "Pizza", "Sandwich", "Onionrings", "Milkshake", "Coke"]
+#     result = []
+#     for i in menu:
+#         if i.lower() in order.lower():
+#             counter = order.lower().count(i.lower())
+#             print(counter)
+#             if counter != 0:
+#                 for i_ in range(counter):
+#                     result.append(i)
+#             if counter == 0:
+#                 result.append(i)
+#
+#     result_text = ""
+#     for i in result:
+#         result_text += i
+#         result_text += " "
+#     return result_text[:-1]
+#
+#
+
+
+# def exc_here(a,b):
+#     try:
+#         a/b
+#     except ZeroDivisionError:
+#         print("Non on on on o, B can't be ZERO")
+#     else:
+#         return a/b
+#
+# print(exc_here(4, 0))
+
+#
+# def divide(a: int, b: int) -> int:
+#     try:
+#         return a // b
+#     except ZeroDivisionError:
+#         print("Unable to divide")
+#
+#
+#     finally:
+#         print(f"Two numbers were taken into a function — {a} and {b}")
+#
+# print(divide(10, 2))  # Two numbers were taken into a function — 10 and 2 5
+# print(divide(10, 0))  # Unable to divide Two numbers were taken into a function — 10 and 0
+
+# def division(first, second):
+#     try:
+#         return first / second
+#     except ZeroDivisionError as e:
+#         print("Logging exception: ", e)
+#
+# division(10,0)
+
+# class CanRideExtremeException(Exception):
+#     min_age = 18
+#
+#
+#     max_age = 45
+#
+#
+# def __init__(self, age, *args):
+#     super().__init__(args)
+#     self.age = age
+#
+#
+# def __str__(self):
+#     return f"The age {self.age} is not in a valid range {self.min_age} - {self.max_age}."
+#
+#
+# def can_ride(age: int) -> bool:
+#
+#
+#     if (age <= CanRideExtremeException.min_age) or (age >= CanRideExtremeException.max_age):
+#         raise CanRideExtremeException(age)
+#         return True
+#
+# print(can_ride(27))  # True
+# print(can_ride(12))
+# # __main__.CanRideExtremeException: The age 12 is not in a valid range 18 - 45.
+#
+# class B(Exception):
+#     pass
+#
+# class C(B):
+#     pass
+#
+# class D(C):
+#     pass
+#
+# for cls in [B, C, D]:
+#     try:
+#         raise cls()
+#     except D:
+#         print("D")
+#     except C:
+#         print("C")
+#     except B:
+#         print("B")
+
+
+#import sys
+#
+# try:
+#     f = open('myfile.txt')
+#     s = f.readline()
+#     i = int(s.strip())
+# except OSError as err:
+#     print("OS error: {0}".format(err))
+# except ValueError:
+#     print("Could not convert data to an integer.")
+# except:
+#     print("Unexpected error:", sys.exc_info()[0])
+#     raise
+
+
