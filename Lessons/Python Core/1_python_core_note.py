@@ -7486,3 +7486,72 @@
 #             print(arr)
 #             iteration += 1
 #             print(iteration)
+
+
+# import time
+#
+#
+# def time_deco(func):
+#     def wrapper(*args, **kwargs):
+#         start_time = time.time()
+#         result = func(*args, **kwargs)
+#         end_time = time.time()
+#
+#         print(f"{func.__name__} run takes {end_time - start_time} seconds.")
+#         print(result)
+#         return result
+#
+#     return wrapper
+#
+#
+# @time_deco
+# def sum_func_test(a, b):
+#     return a + b
+#
+#
+# sum_func_test(23, 32)
+
+
+# def amount_biggest_keys_by_value(m_dict, amount):
+#     result = []
+#     key_list = list(m_dict.keys())
+#     value_list = list(m_dict.values())
+#
+#     while amount > 0:
+#         position = value_list.index(max(value_list))
+#         biggest = key_list[position]
+#
+#         result.append(biggest)
+#
+#         key_list.remove(biggest)
+#         value_list.remove(max(value_list))
+#
+#         amount -= 1
+#
+#     return result
+#
+#
+# dict_ = {
+#     "a": 10,
+#     "b": 89,
+#     "c": 192,
+#     "d": 1
+# }
+#
+# print(amount_biggest_keys_by_value(dict_, amount=2))
+
+
+# dict_ = {
+#     "a": 10,
+#     "b": 89,
+#     "c": 192,
+#     "d": 1
+# }
+#
+# k = dict_.keys()
+# v = dict_.values()
+# print(type(k))
+# print(type(v))
+#
+# list = [10,20,3,4,5]
+# print(list.index(10))

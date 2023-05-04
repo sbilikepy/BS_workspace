@@ -1560,7 +1560,7 @@
 #         print("B")
 
 
-#import sys
+# import sys
 #
 # try:
 #     f = open('myfile.txt')
@@ -1575,3 +1575,82 @@
 #     raise
 
 
+# handling practice
+
+
+# def create_dict(keys_tuple: tuple) -> dict:
+#     result = {}
+#     iter_counter = -1
+#     for i in keys_tuple:
+#         iter_counter += 1
+#         try:
+#             result[i] = iter_counter
+#
+#         except TypeError:
+#             print(f"Cannot add {i} to the dict!")
+#     return result
+#
+#
+#
+# dictionary = create_dict((3, (1, [2, 3]), [], int))
+# print(dictionary)  # {7: 0, 1: 1, 3: 2}
+
+
+# from typing import Any
+#
+#
+# def find_mode(ls: list[Any]) -> Any:
+#     if not isinstance(ls, list):
+#         raise TypeError("ls must be a list")
+#     if len(ls) == 0:
+#         raise ValueError("ls must be non-empty")
+#
+#     mode = {key: 0 for key in ls}
+#     for elem in ls:
+#         mode[elem] += 1
+#
+#     return list(mode.keys())[
+#         list(mode.values()).index(max(list(mode.values())))
+#     ]
+#
+#
+# pull = [
+#
+#     find_mode([1, 1, 1]),  # 1
+#     find_mode([2, 2, 2]),  # 1
+#     find_mode([4, 4, "a", "a", "a"]),  # "a"
+# ]
+# for i in pull:
+#     print(i)
+class UnauthenticatedError(Exception):
+    """Authentication credentials were not provided!"""
+
+
+class PermissionDeniedError(Exception):
+    """User must be admin!"""
+
+
+def login_required(func: "access_admin_page") -> None:
+    def wrapper(request_dict: dict) -> None:
+        if "user" not in request_dict:
+            raise UnauthenticatedError("Authentication credentials "
+                                       "were not provided!")
+        return func(request_dict)
+
+    return wrapper
+
+
+def admin_required(func: "access_admin_page") -> None:
+    @login_required
+    def wrapper(request_dict: dict) -> None:
+        if request_dict["user"].get("is_admin"):
+            return func(request_dict)
+
+        raise PermissionDeniedError("User must be admin!")
+
+    return wrapper
+
+
+@admin_required
+def access_admin_page(request: dict) -> None:
+    print(f"Welcome to the admin page, {request['user']['full_name']}")
