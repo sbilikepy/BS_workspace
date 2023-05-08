@@ -1814,7 +1814,6 @@
 # Block except Block finally Traceback ZeroDivisionError: division by zero
 
 
-
 # class FirstError(Exception):
 #     pass
 #
@@ -1872,7 +1871,7 @@
 # finally:
 #     print("The end!")
 
-#ZeroDivisionError Some important process Some exception Finally The end! Traceback - ZeroDivisionError: division by zero
+# ZeroDivisionError Some important process Some exception Finally The end! Traceback - ZeroDivisionError: division by zero
 
 
 # my_dict = {True: "True", False: "False"}
@@ -1890,3 +1889,58 @@
 #
 #
 # #True ValueError
+
+
+from typing import Any
+
+
+class BoolConversionError(Exception):
+    """BoolConversionError"""
+
+
+def from_int(value: Any):
+    if not isinstance(value, int):
+        raise TypeError
+    if value == 1:
+        return True
+    if value == 0:
+        return False
+    raise ValueError
+
+
+def from_str(value: Any) -> bool:
+    if value == "True":
+        return True
+    if value == "False":
+        return False
+    if not isinstance(value, str):
+        raise TypeError("Value must be a string")
+
+    if value.lower() in ["true", "t", "1"]:
+        return True
+
+    if value.lower() in ["false", "f", "0"]:
+        return False
+
+    raise ValueError(f"Cannot convert '{value}' to a boolean value")
+
+
+def make_bool(value: Any):
+    try:
+        return from_int(value)
+    except TypeError:
+        pass
+
+    try:
+        return from_str(value)
+
+    except Exception as e:
+        if isinstance(e, TypeError):
+            raise BoolConversionError(f"Cannot convert to "
+                                      f"the bool {type(value)} type")
+        raise BoolConversionError(f"Cannot convert to "
+                                  f"the bool {value} value")
+
+
+bool_value = make_bool(2)
+print(bool_value)
