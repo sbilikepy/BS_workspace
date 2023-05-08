@@ -3,6 +3,11 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/faceswap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ghost" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ghost/AdaptiveWingLoss" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ghost/sber-swap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ghost/sber-swap/AdaptiveWingLoss" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-aquapark" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-burger-recipe" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-cache-decorator" vcs="Git" />
@@ -22,5 +27,6 @@
     <mapping directory="$PROJECT_DIR$/py-software-engineers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-vector-class" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shap-e" vcs="Git" />
   </component>
 </project>

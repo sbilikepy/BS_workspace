@@ -1622,35 +1622,271 @@
 # ]
 # for i in pull:
 #     print(i)
-class UnauthenticatedError(Exception):
-    """Authentication credentials were not provided!"""
+# class UnauthenticatedError(Exception):
+#     """Authentication credentials were not provided!"""
+#
+#
+# class PermissionDeniedError(Exception):
+#     """User must be admin!"""
+#
+#
+# def login_required(func: "access_admin_page") -> None:
+#     def wrapper(request_dict: dict) -> None:
+#         if "user" not in request_dict:
+#             raise UnauthenticatedError("Authentication credentials "
+#                                        "were not provided!")
+#         return func(request_dict)
+#
+#     return wrapper
+#
+#
+# def admin_required(func: "access_admin_page") -> None:
+#     @login_required
+#     def wrapper(request_dict: dict) -> None:
+#         if request_dict["user"].get("is_admin"):
+#             return func(request_dict)
+#
+#         raise PermissionDeniedError("User must be admin!")
+#
+#     return wrapper
+#
+#
+# @admin_required
+# def access_admin_page(request: dict) -> None:
+#     print(f"Welcome to the admin page, {request['user']['full_name']}")
+#
 
 
-class PermissionDeniedError(Exception):
-    """User must be admin!"""
+# list_ = [1,2,3]
+# set_ = set(list_)
+# print(set_)
+# set_.add(4)
+# print(set_)
+# froz_ = frozenset(set_)
+# print(froz_)
+# print(type(froz_))
+# froz_.add(7)
+
+#
+# class IncorrectDataError(ValueError):
+#     """Val"""
+#
+#
+# class EmptyNameError(IncorrectDataError):
+#     """Name"""
+#
+#
+# class NegativeAgeError(IncorrectDataError):
+#     """If age < 0"""
+#
+#
+# class NicknameNotProveidedError(IncorrectDataError):
+#     """Nickname not provided"""
+#
+#
+# def user_info(user: dict):
+#     if len(user["name"]) == 0:
+#         raise EmptyNameError("Name cannot be empty")
+#     if user["age"] < 0:
+#         raise NegativeAgeError("Age must be >= 0")
+#     if "nickname" not in user:
+#         raise NicknameNotProveidedError("Key 'nickname' "
+#                                         "must be provided")
+#     return f"{user['nickname']} - {user['name']} (age: {user['age']})"
+#
+#
+# try:
+#     print(user_info({"name": "Sanya",
+#                      "age": -5,
+#                      "nickname": "Sanya_powerful",
+#                      }))
+# except NegativeAgeError:
+#     print("AGE is negative")
+#
+# except NicknameNotProveidedError:
+#     print("select nick first")
+# except IncorrectDataError as e:
+#     print(f"please, fix your data! Error: {e}")
+#
+# except Exception as e:
+#     print(f"{e} - all other errors")
 
 
-def login_required(func: "access_admin_page") -> None:
-    def wrapper(request_dict: dict) -> None:
-        if "user" not in request_dict:
-            raise UnauthenticatedError("Authentication credentials "
-                                       "were not provided!")
-        return func(request_dict)
+# numbers_to_divide = [
+#     (15, 5),
+#     (16, 8),
+#     (10, 0),
+#     (5, 5)
+# ]
+#
+#
+# def divide(a, b):
+#     try:
+#         return a // b
+#     except ZeroDivisionError:
+#         print(f"Ooops, unable to divide {a} // {b} ;( ")
+#         raise
+#
+#
+# result = []
+# for numbertor, denominator in numbers_to_divide:
+#     try:
+#         result.append(divide(numbertor, denominator))
+#     except ZeroDivisionError:
+#         result.append(0)
+#         # raise  -> Error + Traceback
+#
+# print(result)
 
-    return wrapper
+
+# def inf_div(a, b):
+#     result = None
+#     while result != 0:
+#         result = a / b
+#         print(result)
+#         a = result
+#     raise ZeroDivisionError("b == 0")
+#
+# inf_div(10, 3.33)
+
+# def divide(a: int, b: int) -> int:
+#     try:
+#         return a // b
+#     except ZeroDivisionError:
+#         print("Unable to divide")
+#         raise
+#
+#
+# input = [(2, 1), (10, 5), (3, 0)]
+# result = []
+# for numerator, denominator in input:
+#     try:
+#         result.append(divide(numerator, denominator))
+#     except ZeroDivisionError as error:
+#         result.append(0)
+#         print(f"Error: {error} for denominator {denominator}")
+
+#
+# my_dict = {}
+#
+# for _ in range(1000):
+# 	try:
+# 		print(my_dict["a"])
+# 	except KeyError:
+# 		pass
+#
+# # 0.000128 seconds
+#
+#
+# for _ in range(1000):
+# 	if "a" in my_dict:
+# 		print(my_dict["a"])
+#
+# # 0.0000498 seconds
+# my_dict = {True: "True", False: "False"}
+# my_list = [1, 2, 3, 4]
+#
+# try:
+#     print(my_dict[1])
+#     print(my_list[-7])
+# except Exception:
+#     print("Exception")
+# except IndexError:
+#     print("ValueError")
+# except KeyError:
+#     print("KeyError")
+# True ValueError
+#
+#
+#
+#
+# try:
+#     print(0 / 0)
+#     print("Block try")
+# except Exception:
+#     print("Block except")
+#     raise
+# else:
+#     print("Block else")
+# finally:
+#     print("Block finally")
+# #
+# Block except Block finally Traceback ZeroDivisionError: division by zero
 
 
-def admin_required(func: "access_admin_page") -> None:
-    @login_required
-    def wrapper(request_dict: dict) -> None:
-        if request_dict["user"].get("is_admin"):
-            return func(request_dict)
 
-        raise PermissionDeniedError("User must be admin!")
+# class FirstError(Exception):
+#     pass
+#
+#
+# class SecondError(FirstError):
+#     pass
+#
+#
+# class ThirdError(SecondError):
+#     pass
+#
+#
+# def first():
+#     raise FirstError("Error in first!")
+#
+#
+# def second():
+#     try:
+#         first()
+#     except FirstError:
+#         print("Error in first!")
+#
+#     raise SecondError("Error in second!")
+#
+#
+# def third():
+#     try:
+#         second()
+#     except SecondError as error:
+#         print(error)
+#     else:
+#         try:
+#             raise ThirdError("Error in third!")
+#         except ThirdError as error:
+#             print(error)
+#     finally:
+#         print("The end!")
+#
+#
+# third()
+# #Error in first! Error in second! The end!
 
-    return wrapper
+# try:
+#     print(1 / 0)
+# except ZeroDivisionError:
+#     print("ZeroDivisionError")
+#     try:
+#         print("Some important process")
+#         raise
+#     except Exception:
+#         print("Some exception")
+#         raise
+#     finally:
+#         print("Finally")
+# finally:
+#     print("The end!")
+
+#ZeroDivisionError Some important process Some exception Finally The end! Traceback - ZeroDivisionError: division by zero
 
 
-@admin_required
-def access_admin_page(request: dict) -> None:
-    print(f"Welcome to the admin page, {request['user']['full_name']}")
+# my_dict = {True: "True", False: "False"}
+# my_list = [1, 2, 3, 4]
+#
+# try:
+#     print(my_dict[1])
+#     print(my_list[-7])
+# except KeyError:
+#     print("KeyError")
+# except IndexError:
+#     print("ValueError")
+# except Exception:
+#     print("Exception")
+#
+#
+# #True ValueError
