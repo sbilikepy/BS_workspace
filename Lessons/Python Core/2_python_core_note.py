@@ -2199,29 +2199,80 @@
 # # . Needs to be repaired!
 # # . We have a serious troubles!
 
-
-def buy_and_sell_stock(prices: list) -> int:
-    fall_counter = 0
-    best_deal = {
-        "buy": 0,
-        "sell": 0,
-        "profit": 0
-    }
-    for lf_min in range(1, len(prices)):
-        if prices[lf_min - 1] > prices[lf_min]:
-            fall_counter += 1
-        for lf_profit in range(1, len(prices)):
-            if prices[lf_profit] - prices[lf_min - 1] > best_deal["profit"]:
-                best_deal["profit"] = prices[lf_profit] - prices[lf_min - 1]
-                best_deal["buy"] = prices[lf_min - 1]
-                best_deal["sell"] = prices[lf_profit]
-                print(best_deal["profit"])
-    if fall_counter == len(prices) - 1:
-        return 0
-    return best_deal["profit"]
-
-
-buy_and_sell_stock([9, 8, 7, 6, 5, 4, 3, 2, 1])
 #
-# print(buy_and_sell_stock([7, 6, 4, 3, 1])) # 0
+# def buy_and_sell_stock(prices: list) -> int:
+#     fall_counter = 0
+#     best_deal = {
+#         "buy": 0,
+#         "sell": 0,
+#         "profit": 0
+#     }
+#     for lf_min in range(1, len(prices)):
+#         if prices[lf_min - 1] > prices[lf_min]:
+#             fall_counter += 1
+#         for lf_profit in range(1, len(prices)):
+#             if prices[lf_profit] - prices[lf_min - 1] > best_deal["profit"]:
+#                 best_deal["profit"] = prices[lf_profit] - prices[lf_min - 1]
+#                 best_deal["buy"] = prices[lf_min - 1]
+#                 best_deal["sell"] = prices[lf_profit]
+#                 print(best_deal["profit"])
+#     if fall_counter == len(prices) - 1:
+#         return 0
+#     return best_deal["profit"]
+#
+#
+# buy_and_sell_stock([9, 8, 7, 6, 5, 4, 3, 2, 1])
+# #
+# # print(buy_and_sell_stock([7, 6, 4, 3, 1])) # 0
 
+
+# name = input()
+# surname = input()
+# age = input()
+#
+# print(f"Here's your info: {name, surname, age}")
+
+
+
+# f = open("users.txt")
+# print(type(f))
+# print(f)
+
+# for i in open("users.txt"):
+#     # i = line
+#     print(i, end="") #end=""  = ignore \n
+# print(type(open("users.txt")))
+# open("users.txt").close
+
+# f = open("users.txt")
+# x = (f.readlines())
+# print(x)
+# f.close()
+
+# f = open("users.txt")
+# x = f.read()
+# print(x)
+# print(type(x))
+# f.close()
+
+# f = open("users.txt", "r")
+# #     'r'       open for reading (default)
+# #     'w'       open for writing, truncating the file first
+# #     'x'       create a new file and open it for writing
+# #     'a'       open for writing, appending to the end of the file if it exists
+# #     'b'       binary mode
+# #     't'       text mode (default)
+# #     '+'       open a disk file for updating (reading and writing)
+# print(f.read(8)) # seecer after 8-th
+# print(f.read(5)) # \n = 1 symbol
+# print(f.read(10)) # to the end
+# print(f.read(999))  # no content
+# f.seek(0) # seecer at start
+# print(f.read(1))
+# f.close()
+
+# with open("users.txt", "r") as f: # CONTEXT MANAGER
+#     print(f.read())
+#
+#     print(f.closed) # open or closed bool
+# print(f.closed)
