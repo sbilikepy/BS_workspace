@@ -1891,56 +1891,337 @@
 # #True ValueError
 
 
-from typing import Any
+# from typing import Any
+#
+#
+# class BoolConversionError(Exception):
+#     """BoolConversionError"""
+#
+#
+# def from_int(value: Any):
+#     if not isinstance(value, int):
+#         raise TypeError
+#     if value == 1:
+#         return True
+#     if value == 0:
+#         return False
+#     raise ValueError
+#
+#
+# def from_str(value: Any) -> bool:
+#     if value == "True":
+#         return True
+#     if value == "False":
+#         return False
+#     if not isinstance(value, str):
+#         raise TypeError("Value must be a string")
+#
+#     if value.lower() in ["true", "t", "1"]:
+#         return True
+#
+#     if value.lower() in ["false", "f", "0"]:
+#         return False
+#
+#     raise ValueError(f"Cannot convert '{value}' to a boolean value")
+#
+#
+# def make_bool(value: Any):
+#     try:
+#         return from_int(value)
+#     except TypeError:
+#         pass
+#
+#     try:
+#         return from_str(value)
+#
+#     except Exception as e:
+#         if isinstance(e, TypeError):
+#             raise BoolConversionError(f"Cannot convert to "
+#                                       f"the bool {type(value)} type")
+#         raise BoolConversionError(f"Cannot convert to "
+#                                   f"the bool {value} value")
 
 
-class BoolConversionError(Exception):
-    """BoolConversionError"""
+# class BoolConversionError(Exception):
+#     """custom error"""
+#
+#
+# def from_int(value):
+#     if isinstance(value, bool):
+#         return value
+#     if not isinstance(value, int):
+#         raise TypeError(f"{value} is not int, soz")
+#     if value == 0:
+#         return False
+#     if value == 1:
+#         return True
+#     raise ValueError(f"Looks like {value} != 0 (False) or 1 (True)"
+#                      f" but int still")
+#
+#
+# def from_str(value):
+#     if isinstance(value, bool):
+#         return value
+#     if not isinstance(value, str):
+#         raise TypeError("We need string here buddy")
+#
+#     true_cases = ["true", "t", "1"]
+#     false_cases = ["false", "f", "0"]
+#     if value.lower() in true_cases:
+#         return True
+#     if value.lower() in false_cases:
+#         return False
+#     raise ValueError("Something went wrong with your string contain")
+#
+#
+# def make_bool(value):
+#     try:
+#         return from_int(value)
+#     except TypeError:
+#         try:
+#             return from_str(value)
+#         except TypeError:
+#             return BoolConversionError(f"Cannot convert to the "
+#                                        f"bool {type(value)} type")
+#     except ValueError:
+#         raise BoolConversionError(f"Cannot convert to the bool {value} value")
+#
+#
+# val_to_test = -1
+# print(f"return test: {val_to_test} to {make_bool(val_to_test)}")
+# print(type(make_bool(val_to_test)))
 
 
-def from_int(value: Any):
-    if not isinstance(value, int):
-        raise TypeError
-    if value == 1:
-        return True
-    if value == 0:
-        return False
-    raise ValueError
+# shame
+# from typing import Any
+#
+#
+# class BoolConversionError(Exception):
+#     pass
+#
+#
+# def from_int(value: Any) -> bool:
+#     if not isinstance(value, int):
+#         raise TypeError
+#
+#     elif value == 1:
+#         return True
+#     elif value == 0:
+#         return False
+#     else:
+#         raise ValueError
+#
+#
+# def from_str(value: Any) -> bool:
+#     if not isinstance(value, str):
+#         raise TypeError
+#     elif value in ["True", "T", "1"]:
+#         return True
+#     elif value in ["False", "F", "0"]:
+#         return False
+#     else:
+#         raise ValueError
+#
+#
+# def make_bool(value: Any) -> bool:
+#     if isinstance(value, int) and value not in [0, 1]:
+#         raise BoolConversionError(f"Cannot convert to the bool {value} value")
+#     try:
+#         return from_int(value)
+#     except TypeError:
+#         pass
+#
+#     try:
+#         return from_str(value)
+#     except (TypeError, ValueError) as e:
+#         raise BoolConversionError(
+#             f"Cannot convert to the bool {type(value)} type" if isinstance(e, TypeError) else f"Cannot convert to the bool {value} value") from None
 
 
-def from_str(value: Any) -> bool:
-    if value == "True":
-        return True
-    if value == "False":
-        return False
-    if not isinstance(value, str):
-        raise TypeError("Value must be a string")
+# mentor
+# from typing import Any
+#
+#
+# class BoolConversionError(Exception):
+#     pass
+#
+#
+# def from_int(value: int) -> bool:
+#     if not isinstance(value, int):
+#         raise TypeError("Value not an integer!")
+#     if value == 0:
+#         return False
+#     if value == 1:
+#         return True
+#     raise ValueError("Incorrect value!")
+#
+#
+# def from_str(value: str) -> bool:
+#     if not isinstance(value, str):
+#         raise TypeError("Value not an str!")
+#     if value in ("False", "F", "0"):
+#         return False
+#     if value in ("True", "T", "1"):
+#         return True
+#     raise ValueError("Incorrect value!")
+#
+#
+# def make_bool(value: Any) -> bool:
+#     try:
+#         try:
+#             b = from_int(value)
+#         except TypeError:
+#             try:
+#                 b = from_str(value)
+#             except TypeError:
+#                 raise BoolConversionError(
+#                     f"Cannot convert to the bool {type(value)} type"
+#                 )
+#     except ValueError:
+#         raise BoolConversionError(f"Cannot convert to the bool {value} value")
+#     else:
+#         return b
 
-    if value.lower() in ["true", "t", "1"]:
-        return True
+# class DBUserCreationError(Exception):  # except (FirstError, SecondError, ...):
+#     """DBUserCreationError"""
+#
+#
+# class InvalidUsername(Exception):
+#     """InvalidUsername"""
+#
+#
+# class PasswordMissmatch(Exception):
+#     """PasswordMissmatch"""
+#
+#
+# class ValidationError(Exception):
+#     """ValidationError"""
+#
+#
+# def username_validation(username: str) -> None:
+#     if len(username) < 4 or len(username) > 15:
+#         raise InvalidUsername("wrong username len")
+#
+#
+# def password_validation(password1: str, password2: str) -> None:
+#     if password1 is not password2:
+#         raise PasswordMissmatch("password1 != password2")
+#
+#
+# def user_validation(user: dict) -> None:
+#     try:
+#         username_validation(user["username"])
+#     except Exception:
+#         raise ValidationError("username error")
+#
+#     try:
+#         password_validation(user["password1"], user["password2"])
+#     except Exception:
+#         raise ValidationError("password error")
+#
+#
+# def db_user_creation(user: dict) -> None:
+#     try:
+#         user_validation(user)
+#     except Exception:
+#         raise DBUserCreationError("HODOR")
+#     print(f"{user['username']} is created in the database.")
 
-    if value.lower() in ["false", "f", "0"]:
-        return False
+#
+# class SlowResponse(Exception):
+#     """51 - 75 ms"""
+#
+#     def __init__(self,
+#                  name: str,
+#                  response: int) -> None:
+#         self.name = name
+#         self.response = response
+#
+#     def __str__(self) -> str:
+#         return (f"Warning! {self.name} has a slow response "
+#                 f"of {self.response} ms.")
+#
+#
+# class ExtraSlowResponse(SlowResponse):
+#     """76 - 100 ms"""
+#
+#     def __str__(self) -> str:
+#         return (f"Alarm! {self.name} has a very slow response "
+#                 f"of {self.response} ms.")
+#
+#
+# class DangerouslySlowResponse(ExtraSlowResponse):
+#     """ > 100 ms"""
+#
+#     def __str__(self) -> str:
+#         return (f"Nuclear power station is under the danger! "
+#                 f"{self.name} has a dangerously slow response "
+#                 f"of {self.response} ms.")
+#
+#
+# def check_device_response(device: dict) -> None:
+#     if device["response"] > 100:
+#         raise DangerouslySlowResponse(device["name"], device["response"])
+#
+#     if device["response"] > 75:
+#         raise ExtraSlowResponse(device["name"], device["response"])
+#
+#     if device["response"] > 50:
+#         raise SlowResponse(device["name"], device["response"])
+#
+#
+# def check_station_devices(devices: list[dict]) -> None:
+#     counter = 0
+#     for device in devices:
+#         try:
+#             check_device_response(device)
+#         except DangerouslySlowResponse as e:
+#             counter += 1
+#             print((str(e)) + " We have a serious troubles!")
+#         except ExtraSlowResponse as e:
+#             counter += 1
+#             print((str(e)) + " Needs to be repaired!")
+#         except SlowResponse as e:
+#             counter += 1
+#             print((str(e)) + " Take attention!")
+#     if counter == 0:
+#         print("Responses of all devices does not exceed the norm.")
+#
+#
+# check_station_devices([
+#     {"name": "Polar crane", "response": 52},
+#     {"name": "Reactor shaft", "response": 81},
+#     {"name": "Pressure compensator", "response": 149},
+#     {"name": "Steam generator", "response": 40},
+# ])
+#
+# # . Take attention!
+# # . Needs to be repaired!
+# # . We have a serious troubles!
 
-    raise ValueError(f"Cannot convert '{value}' to a boolean value")
+
+def buy_and_sell_stock(prices: list) -> int:
+    fall_counter = 0
+    best_deal = {
+        "buy": 0,
+        "sell": 0,
+        "profit": 0
+    }
+    for lf_min in range(1, len(prices)):
+        if prices[lf_min - 1] > prices[lf_min]:
+            fall_counter += 1
+        for lf_profit in range(1, len(prices)):
+            if prices[lf_profit] - prices[lf_min - 1] > best_deal["profit"]:
+                best_deal["profit"] = prices[lf_profit] - prices[lf_min - 1]
+                best_deal["buy"] = prices[lf_min - 1]
+                best_deal["sell"] = prices[lf_profit]
+                print(best_deal["profit"])
+    if fall_counter == len(prices) - 1:
+        return 0
+    return best_deal["profit"]
 
 
-def make_bool(value: Any):
-    try:
-        return from_int(value)
-    except TypeError:
-        pass
+buy_and_sell_stock([9, 8, 7, 6, 5, 4, 3, 2, 1])
+#
+# print(buy_and_sell_stock([7, 6, 4, 3, 1])) # 0
 
-    try:
-        return from_str(value)
-
-    except Exception as e:
-        if isinstance(e, TypeError):
-            raise BoolConversionError(f"Cannot convert to "
-                                      f"the bool {type(value)} type")
-        raise BoolConversionError(f"Cannot convert to "
-                                  f"the bool {value} value")
-
-
-bool_value = make_bool(2)
-print(bool_value)
