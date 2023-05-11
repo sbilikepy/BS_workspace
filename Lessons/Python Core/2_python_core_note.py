@@ -2233,7 +2233,6 @@
 # print(f"Here's your info: {name, surname, age}")
 
 
-
 # f = open("users.txt")
 # print(type(f))
 # print(f)
@@ -2276,3 +2275,78 @@
 #
 #     print(f.closed) # open or closed bool
 # print(f.closed)
+
+#
+# name = input()
+# surname = input()
+# age = input()
+#
+# with open("users.txt", "w") as f:        # W = create, delete, append
+#     f.write(f"{name} {surname} {age}")
+#
+#
+#
+# name = input()
+# surname = input()
+# age = input()
+#
+# with open("users.txt", "a") as f:        # a = create if not exist, append
+#     f.write(f"\n{name} {surname} {age}")
+
+#
+# class Contextmanager:
+#     def __init__(self):
+#         print("init called")
+#
+#     def __enter__(self):
+#         print("enter called")
+#
+#     def __exit__(self, exc_type, exc_val, exc_tb):
+#         print("exit method called")
+#
+#
+# with Contextmanager() as manager:
+#     print("with statement block")
+
+# class Filemanager:
+#     def __init__(self,
+#                  filename: str,
+#                  mode: str):
+#         self.filename = filename
+#         self.mode = mode
+#         self.file = None
+#
+#     def __enter__(self):
+#         self.file = open(self.filename, self.mode)
+#         return self.file
+#
+#     def __exit__(self, exc_type, exc_val, exc_tb):
+#         self.file.close()
+#
+#
+# with Filemanager("test.txt", "w") as f:
+#     f.write("Test")
+# print(f.closed) # check if file already closed
+#
+#
+# from contextlib import contextmanager
+#
+# @contextmanager
+# def open_file(name, mode):
+#     f = open(name, mode)
+#     try:
+#          yield f
+#     finally:
+#         f.close()
+#
+#
+# with open_file("test.txt", "r") as f:
+#     print(f"content:", f.read())
+#
+#
+# print(f.closed)
+# counter = 0
+# while counter < 100_000:
+#     with open("test.txt", "w") as f:
+#         f.write(f"Test № {counter} \n")
+#         counter += 1
