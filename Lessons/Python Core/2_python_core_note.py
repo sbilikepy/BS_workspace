@@ -2350,3 +2350,110 @@
 #     with open("test.txt", "w") as f:
 #         f.write(f"Test № {counter} \n")
 #         counter += 1
+
+# def read_from_file(file_name: str) -> list[str]:
+#     result = []
+#     with open(file_name, "r") as test_file:
+#         for line in test_file:
+#             for index_line in line.split(" "):
+#                 if "w" in index_line[0].lower():
+#                     result.append(index_line.replace("\n", "").lower())
+#     return sorted(result)
+#
+#
+# print(read_from_file("test.txt"))
+
+# for i in open("users.txt"):
+#     # i = line
+#     print(i, end="") #end=""  = ignore \n
+# print(type(open("users.txt")))
+# open("users.txt").close
+# import copy
+#
+#
+# class Point:
+#     def __init__(self, x: int, y: int) -> None:
+#         self.x = x
+#         self.y = y
+#
+#     def __str__(self) -> str:
+#         return f"Point({self.x}, {self.y})"
+#
+#
+# class Triangle:
+#     def __init__(self, first_point: Point, second_point: Point, third_point: Point) -> None:
+#         self.first_point = first_point
+#         self.second_point = second_point
+#         self.third_point = third_point
+#
+#     def __str__(self) -> str:
+#         return f"Triangle out of ({self.first_point.x}, {self.first_point.y}), " \
+#                f"({self.second_point.x}, {self.second_point.y}), " \
+#                f"({self.third_point.x}, {self.third_point.y})"
+#
+#
+# def copy_point(point: Point) -> Point:
+#     new_point = Point(point.x, point.y)
+#     return new_point
+#     # return copy.copy(point)
+#
+#
+# def copy_triangle(triangle: Triangle) -> Triangle:
+#     new_triangle = Triangle(first_point=copy_point(triangle.first_point),
+#                             second_point=copy_point(triangle.second_point),
+#                             third_point=copy_point(triangle.third_point))
+#     return new_triangle
+#     # return copy.deepcopy(triangle)
+#
+#
+# triangle = Triangle(
+#     first_point=Point(x=0, y=0),
+#     second_point=Point(x=1, y=3),
+#     third_point=Point(x=5, y=5)
+# )
+# print(id(triangle))
+# print(id(copy_triangle(triangle)))
+# import sys
+#
+# print(sys.getrefcount(triangle))
+#
+# box_1 = [0, 1]
+# box_2 = box_1
+# box_1[0] = 'n'
+# print(box_2)
+#
+# # shallow copy
+# box_1 = [0, 1]
+# box_2 = box_1.copy()
+# box_1[0] = 'n'
+# print(box_2)
+
+# import copy
+#
+# box_1 = [0, 1]
+# box_2 = copy.deepcopy(box_1)
+# box_1[0] = 'n'
+# print(box_2)
+
+
+
+
+# var = ("abc", 45)
+# ls = []
+# ls.append(var)
+# ls.append(var)
+# dictionary = {}
+# dictionary[var] = ls
+#
+#
+# print(sys.getrefcount(var))
+#What is the reference count of ls1 and ls2? 1 1
+
+#import sys
+#What is the reference count of var? 3
+#What is the reference count of ls1 and ls2? 2 2
+# ls1 = [1, 2]
+# ls2 = ls1
+#
+#
+# print(sys.getrefcount(ls1))

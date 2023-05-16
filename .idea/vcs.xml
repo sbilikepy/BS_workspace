@@ -13,7 +13,11 @@
     <mapping directory="$PROJECT_DIR$/py-cache-decorator" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-car-wash-station" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-cinema-visit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-clean-up-file" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-copy-file" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-count-occurrences" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-create-file-every-second" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-create-file-from-input" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-delivery-drone" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-distance-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-elves-and-dwarves" vcs="Git" />
@@ -21,12 +25,15 @@
     <mapping directory="$PROJECT_DIR$/py-herbivores-and-carnivores" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-knights-fighting" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-linter-formatter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-lockdown-cafe" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-move-file" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-mutable-immutable" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-online-course" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-person-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-software-engineers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-vector-class" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-work-with-file" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/shap-e" vcs="Git" />
   </component>
 </project>
