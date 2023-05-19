@@ -2436,8 +2436,6 @@
 # print(box_2)
 
 
-
-
 # var = ("abc", 45)
 # ls = []
 # ls.append(var)
@@ -2447,13 +2445,27 @@
 #
 #
 # print(sys.getrefcount(var))
-#What is the reference count of ls1 and ls2? 1 1
+# What is the reference count of ls1 and ls2? 1 1
 
-#import sys
-#What is the reference count of var? 3
-#What is the reference count of ls1 and ls2? 2 2
+# import sys
+# What is the reference count of var? 3
+# What is the reference count of ls1 and ls2? 2 2
 # ls1 = [1, 2]
 # ls2 = ls1
 #
 #
 # print(sys.getrefcount(ls1))
+
+
+# testing
+import traceback
+
+
+def add(a, b):
+    return a + b + 1
+
+
+def subtract(a, b):
+    return a - b + 1
+
+
