@@ -1,3 +1,5 @@
+import pytest
+
 from utils import add_css_classes, remove_css_classes
 
 
@@ -59,6 +61,19 @@ class TestAddCssClass:
         add_css_classes(el, "active")
 
         assert el["class_name"] == "joke new active"
+
+    def test_should_raise_error_if_class_name_key_not_exist(self):
+        el = {}
+
+        with pytest.raises(KeyError):
+            add_css_classes(el, "joke")
+
+    def test_should_raise_error_if_class_name_key_is_int(self):
+        el = {"class_name": 1}
+
+        with pytest.raises(AttributeError):
+            add_css_classes(el, "joke")
+
 
 
 class TestRemoveCssClass:

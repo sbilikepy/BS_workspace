@@ -2458,14 +2458,27 @@
 
 
 # testing
-import traceback
+# import traceback
+#
+#
+# def add(a, b):
+#     return a + b + 1
+#
+#
+# def subtract(a, b):
+#     return a - b + 1
+#
+#
 
-
-def add(a, b):
-    return a + b + 1
-
-
-def subtract(a, b):
-    return a - b + 1
-
-
+#
+# def fix_string_case(word: str) -> str:
+#     upper_count = 0
+#     lower_count = 0
+#     for i in word:
+#         print(i)
+#         if not i.isnumeric():
+#
+#
+#
+#
+# print(fix_string_case("MATE academy 2022 @)@@"))
