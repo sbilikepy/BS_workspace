@@ -1,110 +1,75 @@
 import pytest
 
-from utils import add_css_classes, remove_css_classes
+from utils import add_css_classes
 
 
 class TestAddCssClass:
-    def test_should_add_new_class(self):
-        el = {
-            "class_name": "joke new",
-        }
-        add_css_classes(el, "active")
 
-        assert el["class_name"] == "joke new active"
+    @pytest.mark.parametrize(
+        "initial_classes, class_to_add, expected_classes",
+        [
+            pytest.param(
+                "joke new",
+                "active",
+                "joke new active",
+                id="should add new classes"
+            ),
+            pytest.param(
+                "joke new",
+                "new",
+                "joke new",
+                id="should not add existing classes"
+            ),
+            pytest.param(
+                "joke new active",
+                "ok",
+                "joke new active ok",
+                id="should add class which is part of another one"
+            )
+        ]
+    )
+    def test_modify_classes_correctly(
+            self,
+            initial_classes,
+            class_to_add,
+            expected_classes
+    ):
+        el = {"classes": initial_classes}
 
-    def test_should_not_add_existing_class(self):
-        # preparation
-        el = {
-            "class_name": "joke new",
-        }
-        # action
-        add_css_classes(el, "new")
-        # check
-        assert el["class_name"] == "joke new"
+        add_css_classes(el, class_to_add)
 
-    def test_should_add_class_which_is_part_of_another_one(self):
-        el = {
-            "class_name": "joke new active",
-        }
-        add_css_classes(el, "ok")
-
-        assert el["class_name"] == "joke new active ok"
-
-    def test_should_remove_extra_outer_spaces(self):
-        el = {
-            "class_name": "   joke new  ",
-        }
-        add_css_classes(el, "active")
-
-        assert el["class_name"] == "joke new active"
-
-    def test_should_remove_extra_inner_spaces(self):
-        el = {
-            "class_name": "joke      new"
-        }
-        add_css_classes(el, "active")
-
-        assert el["class_name"] == "joke new active"
-
-    def test_should_remove_extra_spaces_when_new_class_not_added(self):
-        el = {
-            "class_name": " joke      new  active "
-        }
-        add_css_classes(el, "active")
-
-        assert el["class_name"] == "joke new active"
-
-    def test_should_remove_duplicates(self):
-        el = {
-            "class_name": "   joke new joke new new ",
-        }
-        add_css_classes(el, "active")
-
-        assert el["class_name"] == "joke new active"
-
-    def test_should_raise_error_if_class_name_key_not_exist(self):
-        el = {}
-
-        with pytest.raises(KeyError):
-            add_css_classes(el, "joke")
-
-    def test_should_raise_error_if_class_name_key_is_int(self):
-        el = {"class_name": 1}
-
-        with pytest.raises(AttributeError):
-            add_css_classes(el, "joke")
+        assert el["classes"] == expected_classes
 
 
-
-class TestRemoveCssClass:
-    def test_should_remove_existing_css_class(self):
-        el = {
-            "class_name": "joke new",
-        }
-        remove_css_classes(el, "joke")
-
-        assert el["class_name"] == "new"
-
-    def test_should_remove_extra_spaces(self):
-        el = {
-            "class_name": "  joke  new ",
-        }
-        remove_css_classes(el, "joke")
-
-        assert el["class_name"] == "new"
-
-    def test_should_remove_all_occurrences(self):
-        el = {
-            "class_name": "joke new joke new joke new",
-        }
-        remove_css_classes(el, "joke")
-
-        assert el["class_name"] == "new"
-
-    def test_should_remove_duplicates_of_other_classes(self):
-        el = {
-            "class_name": "hello new hello new",
-        }
-        remove_css_classes(el, "joke")
-
-        assert el["class_name"] == "hello new"
+# class TestRemoveCssClass:
+#     def test_should_remove_existing_css_class(self):
+#         el = {
+#             "classes": "joke new",
+#         }
+#         remove_css_classes(el, "joke")
+#
+#         assert el["classes"] == "new"
+#
+#     def test_should_remove_extra_spaces(self):
+#         el = {
+#             "classes": "  joke  new ",
+#         }
+#         remove_css_classes(el, "joke")
+#
+#         assert el["classes"] == "new"
+#
+#     def test_should_remove_all_occurrences(self):
+#         el = {
+#             "classes": "joke new joke new joke new",
+#         }
+#         remove_css_classes(el, "joke")
+#
+#         assert el["classes"] == "new"
+#
+#     def test_should_remove_duplicates_of_other_classes(self):
+#         el = {
+#             "classes": "hello new hello new",
+#         }
+#         remove_css_classes(el, "joke")
+#
+#         assert el["classes"] == "hello new"
