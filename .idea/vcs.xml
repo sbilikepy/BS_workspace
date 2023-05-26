@@ -22,7 +22,9 @@
     <mapping directory="$PROJECT_DIR$/py-distance-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-elves-and-dwarves" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-feed-animals" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-get-coin-combination" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-herbivores-and-carnivores" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-is-isogram" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-knights-fighting" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-linter-formatter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-lockdown-cafe" vcs="Git" />

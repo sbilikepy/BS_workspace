@@ -1,6 +1,15 @@
-import pytest
 from get_plan import get_plan
 
+
+# @pytest.fixture(scope="module")           # launch once vefore and
+#                                           #once after for this modul
+# def something_stable():                   #launch every time
+#     return StableClass(name = "Name")     # you can change return for yield
+                                            # for launching fixture after test
+
+#
+# def test_test(something_stable)
+#     assert StableClass.name == "Name" #TRUE
 
 def test_should_return_list():
     goals = get_plan(500, 3, 50)
