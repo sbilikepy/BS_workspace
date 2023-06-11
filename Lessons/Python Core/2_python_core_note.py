@@ -64,6 +64,7 @@
 #
 #
 # print(data_compression("AAABBBAAABA")) #-> 2A2B2A1b1A1b1a
+import copy
 
 
 # INHERITANCE animal -> cat dog
@@ -2482,3 +2483,62 @@
 #
 #
 # print(fix_string_case("MATE academy 2022 @)@@"))
+
+
+# import time
+# def timer_decorator(func):
+#     def wrap(*args, **kwargs):
+#         start_time = time.time()
+#         func()
+#         print(f"func compilation takes : {time.time() - start_time} s")
+#
+#     return wrap
+
+#
+# @timer_decorator
+# def our_func(*args, **kwargs):
+#     print(*args, **kwargs)
+#     time.sleep(1)
+#     print("Process finished with exit code 0")
+#
+#
+# our_func("Hello world")
+
+#
+# from typing import List
+#
+#
+# def getConcatenation(nums: List[int]) -> List[int]:
+#     result = nums.extend(nums)
+#     return result
+#
+#
+# print(getConcatenation([1, 2, 3]))
+#
+# asd = {"a":1,"b":2}
+# print(asd.items())
+
+
+# listt = [1,2]
+# x = copy.deepcopy(listt)
+# listt.append(3)
+# print(x)
+
+
+# def two_sum(arr: list, target: int | float) -> list:
+#     try:
+#         if len(arr) == 2 and sum(arr) == target:
+#             return [0,1]
+#         for first_num in arr:
+#             looking_for = target - first_num
+#             if looking_for in range(len(arr)):
+#                 return [arr.index(first_num), arr.index(looking_for)]
+#     except Exception as e:
+#         print(f"{e}")
+#
+#
+# print(two_sum([2, 7, 11, 15], 9))
+# print(two_sum([3, 2, 4], 6))
+# print(two_sum([3, 3], 6))
+
+
