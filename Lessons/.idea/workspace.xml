@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Python Core/Dict advanced/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python Core/Dict advanced/getitem_setitem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python Core/Dict advanced/img_2nd_example.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python Core/Dict advanced/hash foo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python Core/Dict advanced/hash foo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python Core/Dict advanced/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/Python Core/Dict advanced/img_1st_example.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,14 +37,19 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/BS_HOME/PycharmProjects/Lessons&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons/Python Core/Dict advanced",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\BS_HOME\PycharmProjects\Lessons\Python Core\Dict advanced" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.hash foo">
     <configuration name="2_python_core_note" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
@@ -128,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_main.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in C:/Users/BS_HOME/PycharmProjects/Lessons/Python Core/Python core testing/test_main.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,7 +155,7 @@
         <item itemvalue="Python.Algo complexity" />
         <item itemvalue="Python.JSON" />
         <item itemvalue="Python.2_python_core_note" />
-        <item itemvalue="Python tests.Python tests in test_main.py" />
+        <item itemvalue="Python tests.Python tests in C:/Users/BS_HOME/PycharmProjects/Lessons/Python Core/Python core testing/test_main.py" />
       </list>
     </recent_temporary>
   </component>
