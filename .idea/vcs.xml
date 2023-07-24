@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="" />
     <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-aquapark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-battleship" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-burger-recipe" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-cache-decorator" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-can-access-google-page" vcs="Git" />
@@ -20,6 +21,7 @@
     <mapping directory="$PROJECT_DIR$/py-create-management-system" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-cryptocurrency" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-delivery-drone" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-dictionary" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-distance-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-elves-and-dwarves" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-feed-animals" vcs="Git" />
@@ -37,6 +39,7 @@
     <mapping directory="$PROJECT_DIR$/py-person-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-products-out-of-date" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-restore-names" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-shop-trip" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-software-engineers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-split-integer" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />

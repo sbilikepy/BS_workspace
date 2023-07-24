@@ -3857,6 +3857,7 @@
 # def get_product_id(url: str) -> str:
 #     result = ""
 #     list_chars = list(url)[:-14:]
+#     print(list_chars)
 #     list_chars = list_chars[::-1]
 #     for i in list_chars:
 #         if i == "-":
@@ -3864,6 +3865,9 @@
 #         else:
 #             result += i
 #
+#
+# print(get_product_id("shop.com/some-name-here-p-777-12345678.html"))
+
 #
 # def get_leaders(numbers: list) -> list:
 #     result = []
@@ -7555,3 +7559,27 @@
 #
 # list = [10,20,3,4,5]
 # print(list.index(10))
+
+
+def debuff(target, hp, ticks=20):
+    print(f"Target: {target} | HP: {hp}")
+    counter = 0
+    leeched = 0
+    while ticks > 0:
+        hp_old = hp
+        hp = hp - (hp / 100 * 30)
+        if (hp_old - hp) > 250:
+            dmg = hp_old - hp
+        else:
+            dmg = 250
+        leeched += dmg
+        if hp_old < 250:
+            print("F")
+            print(f"DEAD in {counter} seconds. Anub leeched: {int(leeched)}")
+            break
+        ticks -= 1
+        counter += 1
+        print(f"Tick №{counter}, HP after tick: {int(hp)} , DMG -> {int(dmg)}")
+
+
+debuff("Avg caster dummy", 25_000, ticks=1000)
