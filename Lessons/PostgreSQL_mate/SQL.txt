@@ -7,10 +7,11 @@ delete
 
 
 
-SELECT ... # column name
-FROM table # column
-WHERE condition; #condition
-
+SELECT (+DISTINCT if you need unique)column name
+FROM table
+WHERE condition
+ORDER BY column ASC/DESC
+LIMIT amount
 
 
 SELECT - extracts data from a database
@@ -53,3 +54,10 @@ LIKE	TRUE if the operand matches a pattern
 NOT	Displays a record if the condition(s) is NOT TRUE
 OR	TRUE if any of the conditions separated by OR is TRUE
 SOME	TRUE if any of the subquery values meet the condition
+
+SELECT *
+FROM
+WHERE
+ORDER BY
+
+
