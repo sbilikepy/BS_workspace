@@ -7,7 +7,7 @@ delete
 
 
 
-SELECT (+DISTINCT if you need unique)column name
+SELECT (+DISTINCT if you need unique)column name (AS "a l i a s")
 FROM table
 WHERE condition
 ORDER BY column ASC/DESC
