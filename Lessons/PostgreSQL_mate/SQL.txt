@@ -7,9 +7,13 @@ delete
 
 
 
-SELECT (+DISTINCT if you need unique)column name (AS "a l i a s")
+SELECT (+DISTINCT if you need unique / FUNC(column)) column name (AS "a l i a s")
 FROM table
+[INNER/LEFT/RIGHT/FULL OUTER/...] JOIN table_2
+ON table.column = table_2.column
 WHERE condition
+GROUP BY column,...,...
+HAVING condition # only with group by
 ORDER BY column ASC/DESC
 LIMIT amount
 
@@ -60,4 +64,4 @@ FROM
 WHERE
 ORDER BY
 
-
+https://www.postgresql.org/docs/9.1/functions.html
