@@ -46,6 +46,5 @@
     <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-vector-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-work-with-file" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/shap-e" vcs="Git" />
   </component>
 </project>
