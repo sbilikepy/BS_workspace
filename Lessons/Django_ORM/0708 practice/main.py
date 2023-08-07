@@ -3,10 +3,10 @@ from db.models import Company
 
 
 def main():
-    frist_company = Company.objects.create(
-        company_name = "Microsoft",
-        description="Bill Gates lose to Magnus Carlsen"
-    )
+    other_company = Company(description="descr", company_name = "Some_name")
+    other_company.save() #SAVE TO DB
+    other_company.description = "new_descr"
+    other_company.save()
     print("result: ",Company.objects.all)
 
 if __name__ == '__main__':
