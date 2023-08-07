@@ -2,7 +2,11 @@ from django.db import models
 
 
 class LiteraryFormat(models.Model):
-    format = models.CharField(max_length=63)  # descriptor
+    format = (models.CharField
+        (
+        max_length=63,
+    )
+    )  # descriptor
 
     # self = row from table?
     def __repr__(self):
@@ -14,9 +18,14 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     format = models.ForeignKey(
         LiteraryFormat,
-        on_delete=models.CASCADE,related_name = "books"
+        on_delete=models.CASCADE, related_name="books"
+        # on_delete MANDATORY for ForeignKey
+        # CASCADE will delete all related rows
+        # PROTECT / DO_NOTHING
+        # BE CAREFUL, sometimes SET_NULL bette ->(null=True)
     )
-     # ForeignKey MANY to ONE
+
+    # ForeignKey MANY to ONE
 
     def __repr__(self):
         return (f"{self.title} {self.price} "
