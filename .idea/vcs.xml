@@ -2,7 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="" />
+    <mapping directory="$PROJECT_DIR$/IdealistaScraping" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Scrapy-Idealista" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dedomeno" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-actor-manager" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-aquapark" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-battleship" vcs="Git" />
@@ -27,6 +30,7 @@
     <mapping directory="$PROJECT_DIR$/py-elves-and-dwarves" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-feed-animals" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-flip-coin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-genres-and-actors" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-get-coin-combination" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-herbivores-and-carnivores" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-is-isogram" vcs="Git" />
@@ -47,5 +51,6 @@
     <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-vector-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-work-with-file" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/python-datascraping-fotocasa-idealista" vcs="Git" />
   </component>
 </project>

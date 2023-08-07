@@ -15,14 +15,15 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q-!l(90fph6c%*se30*yz5cpne5i250h8n*j%s70hf#l(2ki_d'
 
-# Application definition
+SECRET_KEY = 'django-insecure-!+d#g!sj_xboxtnwk-$#7!ybvqpp5#d^b0moh-g*zyn*ibkvc0'
+
 
 INSTALLED_APPS = [
-    "db"
+    'db'
 ]
+
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -33,8 +34,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
 
 
 USE_TZ = False
