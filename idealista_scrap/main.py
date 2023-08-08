@@ -42,6 +42,7 @@ def main():
         'country': 'es',
         'operation': 'sale',
         'propertyType': 'homes',
+        'maxItems': 10  # Update this parameter to limit the results to 10
     }
 
     headers = {
