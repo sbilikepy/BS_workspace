@@ -30,6 +30,7 @@
     <mapping directory="$PROJECT_DIR$/py-elves-and-dwarves" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-feed-animals" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-flip-coin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-game-models" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-genres-and-actors" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-get-coin-combination" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-herbivores-and-carnivores" vcs="Git" />
