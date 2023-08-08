@@ -1,0 +1,44 @@
+pip install django
+django-admin --version
+
+django-admin startproject app . #project name
+manage.py = main scrypt, new tables, bd, etc..
+
+in manage: change app.settings to 'settings' if settings in . directory
+in settings: BASE_DIR = Path(__file__).resolve().parent.parent to .parent if dir changed
+
+python manage.py startapp db # db here is app name?
+after this step APPNAME package is added
+#django orm project ready
+
+create table in models.py:
+class TableName(models.Model):
+    column = models.type+Field()
+
+primary_key added by default
+
+python manage.py makemigrations db #db = app name here
+migrations adding models to DB
+empty DB created
+migrations created at this stage + initial details (name + fields)
+
+python manage.py migrate
+DB created with table
+refresh main if needed
+
+if you making changes in table settings, you need to:
+python manage.py makemigrations +
+python manage.py sqlmigrate db 0002# to check sql code +
+python manage.py migrate
+
+
++ itin_django_orm.py
+with
+    import sys
+    import os
+    import django
+
+
+    sys.dont_write_bytecode = True
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+    django.setup()

@@ -1,0 +1,80 @@
+pip install django
+django-admin --version
+
+django-admin startproject app . #project name
+manage.py = main scrypt, new tables, bd, etc..
+
+in manage: change app.settings to 'settings' if settings in . directory
+in settings: BASE_DIR = Path(__file__).resolve().parent.parent to .parent if dir changed
+
+python manage.py startapp db # db here is app name?
+after this step APPNAME package is added
+#django orm project ready
+
+create table in models.py:
+class TableName(models.Model):
+    column = models.type+Field()
+
+primary_key added by default
+
+python manage.py makemigrations db #db = app name here
+migrations adding models to DB
+empty DB created
+migrations created at this stage + initial details (name + fields)
+
+python manage.py migrate
+DB created with table
+refresh main if needed
+
+if you making changes in table settings, you need to:
+python manage.py makemigrations +
+python manage.py sqlmigrate db 0002# to check sql code +
+python manage.py migrate
+
+
++ init_django_orm.py
+with
+    import sys
+    import os
+    import django
+
+
+    sys.dont_write_bytecode = True
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+    django.setup()
+
+_______________________
+1 pip install django
+2 django-admin --version
+3 django-admin startproject name .      # to create in maindir
+4 manage.py -> change app.settings to 'settings' if settings in . directory
+5 settings.py -> BASE_DIR = Path(__file__).resolve().parent.parent to .parent if settings in .
+and MOVE settings to MAIN folder after
+
+structure_min:
+BASE_DIR
+SECRET_KEY
+INSTALLED_APPS = ["startproject name"]
+DATABASES
+USE_TZ = False
+
++ add python manage.py migrate to maindir
+
+init_django_orm.py           <- create in maindir
+import sys
+import os
+import django
+
+
+sys.dont_write_bytecode = True
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+django.setup()
+
+6 python manage.py startapp "name_for_db"
+7 delete all except models and don't move file
+8 create table in models.py:
+class TableName(models.Model):
+    column = models.Type+Field()
+
+9 python manage.py makemigrations
+10 python manage.py migrate
