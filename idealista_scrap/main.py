@@ -1,4 +1,4 @@
-from secret import Apikey, Secret
+from api_access.secret import Apikey, Secret
 
 
 def main():
