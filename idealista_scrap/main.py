@@ -4,61 +4,42 @@ import requests
 import base64
 import json
 
+
 def main():
-    api_key = apikey # /api_access/secret.py
-    api_secret = secret # /api_access/secret.py
+    # Error handling
+    try:
+        apikey = "f8axl8z51v4pjpdarvosdgufrkc2bre7"
+        secret = "JVXEDkENILNo"
+        access_token = get_auth(apikey, secret, creds.OATH_URL)
 
-    # Encode API key and secret in base64
-    credentials = f"{api_key}:{api_secret}"
-    encoded_credentials = base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
+        sess = create_session(access_token['access_token'])
+        loc, op, ptype, country, dist = read_filter_params('filters.json')
 
-    # URL and payload for token request
-    token_url = "https://api.idealista.com/oauth/token"
-    payload = {
-        "grant_type": "client_credentials",
-        "scope": "read"
-    }
+        base_url = "https://api.idealista.com/3.5"  # Base URL for the API
+        endpoint = f"/{country}/search"  # Endpoint for the property search
 
-    headers = {
-        "Authorization": f"Basic {encoded_credentials}",
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-    }
+        # Construct the full URL
+        full_url = f"{base_url}{endpoint}?center={loc}&operation={op}&propertyType={ptype}&country={country}&maxItems=50&distance={dist}"
 
-    # Send POST request to obtain token
-    response = requests.post(token_url, data=payload, headers=headers)
+        resp = sess.post(full_url)
 
-    # Handle response
-    if response.status_code == 200:
-        token_data = response.json()
-        access_token = token_data["access_token"]
-        print("Access Token:", access_token)
-    else:
-        print("Error:", response.status_code, response.text)
-        return
+        print(f"HTTP Status Code: {resp.status_code}")
+        print("Response Body:")
+        print(resp.text)
 
-    search_url = 'https://api.idealista.com/3.5/es/search'
+        search_response = json.loads(resp.text)
 
-    search_params = {
-        'country': 'es',
-        'operation': 'sale',
-        'propertyType': 'homes',
-        'maxItems': 10  # Update this parameter to limit the results to 10
-    }
+        properties = search_response.get("elementList", [])[:5]  # Get the first 5 properties
 
-    headers = {
-        'Authorization': f'Bearer {access_token}'
-    }
+        print("Fetched 5 properties:")
+        for property_data in properties:
+            print(property_data)
 
-    # Send POST request for search
-    response = requests.post(search_url, json=search_params, headers=headers)
+    except requests.exceptions.HTTPError as error:
+        print(f"HTTP error occurred: {error}")
+    except Exception as error:
+        print(f"Other error occurred: {error}")
 
-    # Handle response
-    if response.status_code == 200:
-        data = response.json()
-        element_list = data.get('elementList', [])
-        print(element_list)
-    else:
-        print("Error:", response.status_code, response.text)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

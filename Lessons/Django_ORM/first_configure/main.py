@@ -1,70 +1,54 @@
-import init_django_orm  # noqa: F401
-from db.models import Book, LiteraryFormat
 import datetime
+import random
+import init_django_orm  # noqa: F401
+from db.models import Book, LiteraryFormat, Author
+
+
 def get_time(func):
     def wrapper():
         time_start = datetime.datetime.now()
         func()
-        print(f"it takes: {datetime.datetime.now()-time_start}")
+        print(f"it takes: {datetime.datetime.now() - time_start}")
+
     return wrapper
 
-@get_time
-def init():
-    Book.objects.all().delete()
-    LiteraryFormat.objects.all().delete()
 
-    drama = LiteraryFormat.objects.create(
-        format = "drama"
-    )
-    novels = LiteraryFormat.objects.create(
-        format="novels"
-    )
-    Book.objects.create(
-        title = "Hamlet",
-        price = 10,
-        format = drama
-    )
-    Book.objects.create(
-        title = "Romeo",
-        price = 10,
-        format = drama
-    )
-    Book.objects.create(
-        title = "HP",
-        price = 10,
-        format = novels
-    )
-    counter = 0
-    #sppedtest
-    # for i in range(2_000):
-    #     Book.objects.create(
-    #         title="Story about king Arthur "+str(counter),
-    #         price=counter,
-    #         format=novels
-    #     )
-    #     counter += 1
+def del_all():
+    try:
+        Book.objects.all().delete()
+        LiteraryFormat.objects.all().delete()
+        Author.objects.all().delete()
+    except Exception as e:
+        print(e)
+
+
 def main():
-    # Book.objects.create(
-    #     title = "",
-    #     price = 10,
-    #     format_id = 13
-    # )
+    authors = ["William Shakespeare", "Dante Alighieri", "Oscar Wilde",
+               "Charles Dickens", "James Joyce", "Jane Austen"]
+    for i in authors:
+        Author.objects.get_or_create(
+            first_name=i.split()[0],
+            last_name=i.split()[1]
+        )
+    formats = ["Drama", "Fantasy", "Fiction", "Folclore"]
+    counter = 10
+    for i in formats:
+        LiteraryFormat.objects.get_or_create(
+            format=i
+        )
+    books = ["book_1", "book_2", "book_3", "book_4"]
+    counter = 10
+    for i in books:
+        Book.objects.get_or_create(
+            title=i,
+            price=counter,
+            format=random.choice(LiteraryFormat.objects.all())
+        )
+        counter += 1
 
-    print(Book.objects.get(title="Hamlet"))
-    print(LiteraryFormat.objects.get(
-        format="Drama"
-    ).books.all() # One to many #related_name = "books"
 
-    )
-
-
-    Book.objects.filter(format__format="Drama").all() #format here -> LiterForm -> format.__name__
-    print(str(Book.objects.filter(format__format="Drama").query)) #SCHECK SQL Q
 
 
 if __name__ == '__main__':
-    init()
-    drama_format = LiteraryFormat.objects.get(
-        format = "drama"
-    )
-    drama_format.delete()
+    del_all()
+    main()
