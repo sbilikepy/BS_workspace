@@ -2,14 +2,13 @@ from django.db import models
 
 
 class LiteraryFormat(models.Model):
-    format = (models.CharField
-        (
+    format = models.CharField(
         max_length=63,
     )
-    )  # descriptor
+      # descriptor
 
     # self = row from table?
-    def __repr__(self):
+    def __str__(self):
         return str(self.format)
 
 class Author(models.Model):
@@ -33,8 +32,10 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author,related_name="by_author")
 
 
+    def __str__(self):
+        return (f"{self.title} {self.price} "
+                f"{self.format.format}")
     def __repr__(self):
         return (f"{self.title} {self.price} "
                 f"{self.format.format}")
-
 
