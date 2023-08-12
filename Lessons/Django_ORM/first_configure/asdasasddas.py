@@ -1,10 +1,13 @@
-def shortest_word(sentence: str) -> int:
+def partlist(lst: list) -> list:
+    result = []
+    for i in range(1, len(lst)):
+        p_1 = " ".join(lst[:i:])
+        p_2 = " ".join(lst[i::])
+        result.append(
+            (p_1, p_2)
+        )
 
-    min_len = 99999999999
-    for i in sentence.split():
-        print(i)
-        if len(i) < min_len:
-            min_len = len(i)
+    return result
 
-    print(min_len)
-shortest_word("call 911 asd ertwerfs")
+
+partlist(["1", "2", "3", "4", "5", "6"])
