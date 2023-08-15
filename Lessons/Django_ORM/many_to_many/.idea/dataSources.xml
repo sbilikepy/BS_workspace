@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="library_db" uuid="795b6091-6a97-4aca-a0e3-a3b386433486">
+    <data-source source="LOCAL" name="db" uuid="76bf5aa5-f1fe-4cfe-911f-bb142c042029">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../library_task/library_db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\BS_HOME\PycharmProjects\Lessons\Django_ORM\many_to_many\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/org/xerial/sqlite-jdbc/3.40.1.0/sqlite-jdbc-3.40.1.0.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>

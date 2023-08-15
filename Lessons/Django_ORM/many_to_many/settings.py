@@ -8,7 +8,8 @@ SECRET_KEY = 'django-insecure-(=bl_n5qake0pytas@46&mbsh7btp)co!(#wj*t+c)(8@pyf+n
 
 # Application definition
 INSTALLED_APPS = [
-    "db"
+    "db",
+    "django_extensions"
 ]
 DATABASES = {
     'default': {

@@ -89,6 +89,12 @@ def capitals_first(sentence: str) -> str:
     result += " ".join([i for i in low])
     return result
 
-capitals_first("academy Mate")
 
-
+def jewels_and_stones(jewels: str, stones: str) -> int:
+    result = 0
+    for unique_jewel in list(set(jewels)):
+        print(unique_jewel)
+        result += stones.count(unique_jewel)
+    print(result)
+    return result
+jewels_and_stones("aA", "aAAbbbb")
