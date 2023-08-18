@@ -97,4 +97,13 @@ def jewels_and_stones(jewels: str, stones: str) -> int:
         result += stones.count(unique_jewel)
     print(result)
     return result
-jewels_and_stones("aA", "aAAbbbb")
+
+
+def sum_of_pairs(nums: list, sum_value: int) -> list:
+    for num in nums:
+        if (sum_value - num) in nums[nums.index(num) + 1::]:
+            return [num, (sum_value - num)]
+    return None
+
+
+print(sum_of_pairs([5, 9, 13, -3], 10))
