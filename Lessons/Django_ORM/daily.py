@@ -106,4 +106,10 @@ def sum_of_pairs(nums: list, sum_value: int) -> list:
     return None
 
 
-print(sum_of_pairs([5, 9, 13, -3], 10))
+def shorten_to_date(long_date: str) -> str:
+    return " ".join(long_date.split()[:3:])[:-1]
+
+
+print(shorten_to_date("Wed September 1, 3am"))
+shorten_to_date("Tuesday January 29, 10pm")
+
