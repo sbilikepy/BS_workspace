@@ -1,7 +1,5 @@
 import datetime
 
-from django.db.models import Avg, Max, Min, Sum, Count
-
 import init_django_orm  # noqa: F401
 from db.models import Book, LiteraryFormat, Author
 from services import book as book_service
@@ -192,3 +190,27 @@ if __name__ == '__main__':
     #         first_name__count__gte=1
     #     )
     # )
+    ################ N+1 problem ####################
+    ### SELECT RELATED
+    # print(Book.objects.all()) # -> several req if for example
+    # __str__ contains self.format.name etc.
+    # better use .select_related()
+    # print(Book.objects.all().select_related("format")) # 1 req
+
+    ##### PREFETCH_RELATED
+    # for book in Book.objects.all().prefetch_related(): # 2 request, not 5 :)
+    #     authors = [author.first_name for author in book.authors.all()]
+    #     print("BOOK->", book.title, authors)
+    #
+    # for lit_format in LiteraryFormat.objects.all(): # 3 requests
+    #     books = [book.title for book in lit_format.by_format.all()]
+    #     print("LF->", lit_format.format, books)
+
+    for lit_format in LiteraryFormat.objects.all(
+
+    ).prefetch_related("by_format"):  # 2 req, not n+1
+        books = [book.title for book in lit_format.by_format.all()]
+        print("LF->", lit_format.format, books)
+
+
+
