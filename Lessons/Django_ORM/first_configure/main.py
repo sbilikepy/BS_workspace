@@ -3,6 +3,7 @@ import datetime
 import init_django_orm  # noqa: F401
 from db.models import Book, LiteraryFormat, Author
 from services import book as book_service
+from  django.db.models.query import QuerySet
 
 
 def get_time(func):
@@ -206,11 +207,11 @@ if __name__ == '__main__':
     #     books = [book.title for book in lit_format.by_format.all()]
     #     print("LF->", lit_format.format, books)
 
-    for lit_format in LiteraryFormat.objects.all(
-
-    ).prefetch_related("by_format"):  # 2 req, not n+1
-        books = [book.title for book in lit_format.by_format.all()]
-        print("LF->", lit_format.format, books)
-
-
+    # for lit_format in LiteraryFormat.objects.all(
+    #
+    # ).prefetch_related("by_format"):  # 2 req, not n+1
+    #     books = [book.title for book in lit_format.by_format.all()]
+    #     print("LF->", lit_format.format, books)
+    #
+    print(type(QuerySet))
 
