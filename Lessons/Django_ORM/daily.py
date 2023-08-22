@@ -110,6 +110,12 @@ def shorten_to_date(long_date: str) -> str:
     return " ".join(long_date.split()[:3:])[:-1]
 
 
-print(shorten_to_date("Wed September 1, 3am"))
-shorten_to_date("Tuesday January 29, 10pm")
+def ugly_numbers(num: int) -> bool:
+    for p in 2, 3, 5:
+        while num % p == 0 < num:
+            num /= p
+    return num == 1
+
+
+
 

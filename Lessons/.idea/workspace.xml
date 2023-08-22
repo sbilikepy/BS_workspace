@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Django_ORM/daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/daily.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_ORM/first_configure/asdasasddas.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_ORM/first_configure/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/first_configure/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons/Django_ORM/first_configure",
+    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,7 +54,7 @@
       <recent name="C:\Users\BS_HOME\PycharmProjects\Lessons\Python Core\Dict advanced" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.daily">
     <configuration name="Python Console (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,8 +167,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.daily" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.one more" />
         <item itemvalue="Python.getitem_setitem" />
         <item itemvalue="Python.Python Console (1)" />
@@ -184,6 +186,7 @@
       <workItem from="1691665993377" duration="672000" />
       <workItem from="1691667795957" duration="6000" />
       <workItem from="1692471730279" duration="1722000" />
+      <workItem from="1692722270416" duration="4130000" />
     </task>
     <servers />
   </component>
@@ -202,7 +205,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lessons$main.coverage" NAME="main Coverage Results" MODIFIED="1692478278689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM/first_configure" />
-    <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1692472057932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
+    <SUITE FILE_PATH="coverage/Lessons$main.coverage" NAME="main Coverage Results" MODIFIED="1692722467034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM/first_configure" />
+    <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1692725868749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
   </component>
 </project>
