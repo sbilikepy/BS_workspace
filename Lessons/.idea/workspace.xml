@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/bus_station/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/bus_station/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_ORM/daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/daily.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django_ORM/first_configure/asdasasddas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django_ORM/first_configure/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/first_configure/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scrapy-Idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../Scrapy-Idealista" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dedomeno" beforeDir="false" afterPath="$PROJECT_DIR$/../dedomeno" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-actor-manager" beforeDir="false" afterPath="$PROJECT_DIR$/../py-actor-manager" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-genres-and-actors" beforeDir="false" afterPath="$PROJECT_DIR$/../py-genres-and-actors" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python-datascraping-fotocasa-idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../python-datascraping-fotocasa-idealista" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects",
+    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -187,6 +195,7 @@
       <workItem from="1691667795957" duration="6000" />
       <workItem from="1692471730279" duration="1722000" />
       <workItem from="1692722270416" duration="4130000" />
+      <workItem from="1692869860635" duration="1017000" />
     </task>
     <servers />
   </component>
@@ -206,6 +215,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lessons$main.coverage" NAME="main Coverage Results" MODIFIED="1692722467034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM/first_configure" />
-    <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1692725868749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
+    <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1692870536599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
   </component>
 </project>

@@ -117,6 +117,13 @@ def ugly_numbers(num: int) -> bool:
     return num == 1
 
 
-
-
-
+def maximum_product(num_list: list) -> int:
+    if len(num_list) == 2:
+        return num_list[0] * num_list[1]
+    max_num = 0
+    for num in range(1, len(num_list)):
+        current = num_list[num] * num_list[num - 1]
+        if current > 0:
+            if current > max_num:
+                max_num = current
+    return max_num

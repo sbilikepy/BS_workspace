@@ -1,34 +1,31 @@
-
+from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import UniqueConstraint
 
 from django.db import models
 
+import settings
 
 
 class Bus(models.Model):
     info = models.CharField(max_length=255, null=True)
     num_seats = models.IntegerField()
 
-
     class Meta:
         # db_table = "bus"    # db_table = db/tables/new_name
         verbose_name = "bus"
         verbose_name_plural = "buses"
-
 
     def __str__(self):
         return self.info
 
 
 class Trip(models.Model):
-
     source = models.CharField(max_length=63)  # db_index=True
     destination = models.CharField(max_length=63)
     departure = models.DateTimeField()
     bus = models.ForeignKey("Bus", on_delete=models.CASCADE)
-
 
     class Meta:
         # TREE STRUCTURE |   Find O(logN), Insert O(logN) #with index
@@ -48,7 +45,6 @@ class Ticket(models.Model):
     trip = models.ForeignKey("Trip", on_delete=models.CASCADE)
     order = models.ForeignKey("Order", on_delete=models.CASCADE)
 
-
     class Meta:
         # unique_together = ["trip", "seat"] # combination should be unique
         constraints = [
@@ -62,8 +58,9 @@ class Ticket(models.Model):
                 {"seat": f"seat must be in range "
                          f"[1, {self.trip.bus.num_seats}], not {self.seat}"}
             )
+
     def save(
-        self, force_insert=False, force_update=False, using=None, update_fields=None
+            self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         """
         Call clean_fields(), clean(), validate_unique(), and
@@ -74,7 +71,7 @@ class Ticket(models.Model):
         return super(
             Ticket, self
         ).save(
-            force_insert,force_update,using,update_fields
+            force_insert, force_update, using, update_fields
         )
 
     def __str__(self):
@@ -83,6 +80,7 @@ class Ticket(models.Model):
 
 class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ["-created_at"]
@@ -91,9 +89,11 @@ class Order(models.Model):
         return str(self.created_at)
 
 
-class User(models.Model):
-    username = models.CharField(max_length=63, unique=True)  # constraintq
+# class User(models.Model):
+#     username = models.CharField(max_length=63, unique=True)  # constraintq
+#
+#     def __str__(self):
+#         return str(self.created_at)
 
-    def __str__(self):
-        return str(self.created_at)
-
+class User(AbstractUser):
+    pass
