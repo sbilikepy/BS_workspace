@@ -3,6 +3,7 @@ import datetime
 import init_django_orm  # noqa: F401
 from db.models import Book, LiteraryFormat, Author
 from services import book as book_service
+from  django.db.models.query import QuerySet
 
 
 def get_time(func):
@@ -131,6 +132,86 @@ if __name__ == '__main__':
     print(get_mys_id)
     print(book_service.get_books(
         format_id=get_mys_id,
-        authors_ids= [1255,12312] #911 <QuerySet [RdPd 17.50 mystery]>
+        authors_ids=[1255, 12312]  # 911 <QuerySet [RdPd 17.50 mystery]>
     ))
+    #####19.08#####
+    #### Django ORM / Queries in Details #####
+    drama = LiteraryFormat.objects.get(format="Drama")
+    some_book = Book.objects.create(price="14.23", format=drama)
+    # ANNOTATE (for whole table)
+    # print(Book.objects.all().aggregate(Avg("price")))
+    # for i in Book.objects.aggregate(
+    #         Avg("price"),
+    #         Max("price"),
+    #         Min("price"),
+    #         Sum("price"),
+    #         Count("price")
+    # ).items():
+    #     print(i)
+
+    # ANNOTATE (for every raw)
+    # print(Book.objects.annotate(
+    #     num_authors=Count("authors")
+    # ).values("title", "num_authors"))
+    #
+    # print(Author.objects.annotate(
+    #     num_books=Count("by_author"))
+    #        .values("first_name", "last_name", "num_books"))
+
+    # print(LiteraryFormat.objects.annotate(
+    #     num_books=Count("by_format")
+    # ).values())
+
+    # print(LiteraryFormat.objects.annotate(
+    #     avg_price=Avg("by_format__price")
+    # ).values())
+    # Author.objects.create(
+    #     first_name="Arthur",last_name="Bobo"
+    # )
+    # print(Author.objects.
+    #       filter(
+    #     last_name__contains="o"
+    # ).values(
+    #     "first_name","last_name"
+    # ).
+    #       annotate(
+    #     Count(
+    #         "first_name")))
+    #
+    #
+    # print(
+    #     Author.objects.
+    #     filter(
+    #         last_name__contains="o"
+    #     ).values(
+    #         "first_name", "last_name"
+    #     ).
+    #     annotate(Count(
+    #         "first_name")).filter(
+    #         first_name__count__gte=1
+    #     )
+    # )
+    ################ N+1 problem ####################
+    ### SELECT RELATED
+    # print(Book.objects.all()) # -> several req if for example
+    # __str__ contains self.format.name etc.
+    # better use .select_related()
+    # print(Book.objects.all().select_related("format")) # 1 req
+
+    ##### PREFETCH_RELATED
+    # for book in Book.objects.all().prefetch_related(): # 2 request, not 5 :)
+    #     authors = [author.first_name for author in book.authors.all()]
+    #     print("BOOK->", book.title, authors)
+    #
+    # for lit_format in LiteraryFormat.objects.all(): # 3 requests
+    #     books = [book.title for book in lit_format.by_format.all()]
+    #     print("LF->", lit_format.format, books)
+
+    # for lit_format in LiteraryFormat.objects.all(
+    #
+    # ).prefetch_related("by_format"):  # 2 req, not n+1
+    #     books = [book.title for book in lit_format.by_format.all()]
+    #     print("LF->", lit_format.format, books)
+    #
+    print(type(QuerySet))
 

@@ -7,7 +7,6 @@ class LiteraryFormat(models.Model):
     )
       # descriptor
 
-    # self = row from table?
     def __str__(self):
         return str(self.format)
 
