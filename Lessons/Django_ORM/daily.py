@@ -117,7 +117,6 @@ def ugly_numbers(num: int) -> bool:
     return num == 1
 
 
-def shorten_to_date(long_date: str) -> str:
-    return " ".join(long_date.split()[:3:])[:-1]
+
 
 
