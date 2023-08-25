@@ -127,3 +127,12 @@ def maximum_product(num_list: list) -> int:
             if current > max_num:
                 max_num = current
     return max_num
+
+def sum_of_two_lowest(num_list: list) -> int:
+    result = 0
+    for i in range(2):
+        result += min(num_list)
+        num_list.pop(num_list.index(min(num_list)))
+    return result
+
+
