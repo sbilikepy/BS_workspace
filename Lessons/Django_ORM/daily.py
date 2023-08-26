@@ -135,4 +135,12 @@ def sum_of_two_lowest(num_list: list) -> int:
         num_list.pop(num_list.index(min(num_list)))
     return result
 
+def two_to_one(first_str: str, second_str: str) -> str:
+    result = ""
+    for i in sorted(first_str + second_str):
+        if i not in result:
+            result += i
+    return result
+
+
 
