@@ -128,12 +128,14 @@ def maximum_product(num_list: list) -> int:
                 max_num = current
     return max_num
 
+
 def sum_of_two_lowest(num_list: list) -> int:
     result = 0
     for i in range(2):
         result += min(num_list)
         num_list.pop(num_list.index(min(num_list)))
     return result
+
 
 def two_to_one(first_str: str, second_str: str) -> str:
     result = ""
@@ -143,4 +145,17 @@ def two_to_one(first_str: str, second_str: str) -> str:
     return result
 
 
+import datetime
 
+
+def unlucky_days(year: int) -> int:
+    unlucky = 0
+    date = datetime.date(year, 1, 1)
+    while date.year == year:
+        if date.day == 13 and date.weekday() == 4:
+            unlucky += 1
+        date += datetime.timedelta(days=1)
+    return unlucky
+
+
+unlucky_days(2013)
