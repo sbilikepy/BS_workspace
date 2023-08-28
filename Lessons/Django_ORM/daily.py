@@ -159,3 +159,9 @@ def unlucky_days(year: int) -> int:
 
 
 unlucky_days(2013)
+
+def jaden_casing_strings(sentence: str) -> str:
+    return " ".join([word.lower().capitalize() for word in sentence.split()])
+
+
+jaden_casing_strings("QW qw 1Qw")

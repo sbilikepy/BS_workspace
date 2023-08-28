@@ -198,6 +198,8 @@
       <workItem from="1693079273410" duration="2435000" />
       <workItem from="1693136427305" duration="1528000" />
       <workItem from="1693157102700" duration="1601000" />
+      <workItem from="1693159854354" duration="1200000" />
+      <workItem from="1693254913906" duration="263000" />
     </task>
     <servers />
   </component>
@@ -217,6 +219,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lessons$main.coverage" NAME="main Coverage Results" MODIFIED="1692722467034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM/first_configure" />
-    <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1693159709906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
+    <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1693255186564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
   </component>
 </project>
