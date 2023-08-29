@@ -1,3 +1,8 @@
+import urllib
+
+from cryptography import fernet
+
+
 def tribonacci(signature: list, number: int) -> list:
     if number == 0:
         return []
@@ -160,8 +165,57 @@ def unlucky_days(year: int) -> int:
 
 unlucky_days(2013)
 
+
 def jaden_casing_strings(sentence: str) -> str:
     return " ".join([word.lower().capitalize() for word in sentence.split()])
 
 
 jaden_casing_strings("QW qw 1Qw")
+from cryptography.fernet import Fernet
+
+
+def gpt_test(text):
+    key = Fernet.generate_key()
+    fernet_ = Fernet(key)
+    encrypted_text = fernet_.encrypt(text.encode())
+    print(key)
+    print(encrypted_text)
+
+
+def url_code():
+    import os
+    import urllib.parse
+
+    file_path = r'C:\Users\...'
+    result_path = r'C:\Users\...'
+
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding="utf-8") as file:
+            file_contents = file.read()
+            encoded_text = urllib.parse.quote(file_contents)
+            print(encoded_text)
+        with open(result_path, "w") as file_result:
+            file_result.write(encoded_text)
+        print(f"result len = {len(encoded_text)}")
+        if len(encoded_text) > 4096:
+            print("GPT error")
+
+
+def coin_combination(cents: int) -> list:
+    result = [0, 0, 0, 0]
+    for i in result:
+        if cents // 25 > 0:
+            result[0] = cents // 25
+            cents -= cents // 25 * 25
+        if cents // 10 > 0:
+            result[1] = cents // 10
+            cents -= cents // 10 * 10
+        if cents // 5 > 0:
+            result[2] = cents // 5
+            cents -= cents // 5 * 5
+        if cents // 1 > 0:
+            result[3] = cents // 1
+            cents -= cents // 1 * 1
+
+    return result[::-1]
+
