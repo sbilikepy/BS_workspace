@@ -219,3 +219,15 @@ def coin_combination(cents: int) -> list:
 
     return result[::-1]
 
+
+def counting_duplicates(text: str) -> int:
+    text = text.lower()
+    dicto = {}
+    for i in text:
+        dicto[i] = text.count(i)
+    print(dicto)
+    result = 0
+    for i in dicto.values():
+        if i >= 2:
+            result += 1
+    return result
