@@ -231,3 +231,31 @@ def counting_duplicates(text: str) -> int:
         if i >= 2:
             result += 1
     return result
+
+
+def shortest_step(goal_num: int) -> int:
+    counter = 0
+    point = 1
+
+    for i in range(goal_num):
+        if (point * 2) < goal_num:
+            print("*")
+            counter += 1
+            point *= 2
+        print(counter,point)
+        if point + 1 == goal_num:
+            print("+")
+            return counter + 1
+
+print(shortest_step(12))
+
+
+def majority_element(nums: list) -> int:
+    max_num = 0
+    number = 0
+    for i in nums:
+        if nums.count(i) > max_num:
+            max_num = nums.count(i)
+            number = i
+    return number
+
