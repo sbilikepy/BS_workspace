@@ -1,8 +1,3 @@
-import urllib
-
-from cryptography import fernet
-
-
 def tribonacci(signature: list, number: int) -> list:
     if number == 0:
         return []
@@ -242,12 +237,10 @@ def shortest_step(goal_num: int) -> int:
             print("*")
             counter += 1
             point *= 2
-        print(counter,point)
+        print(counter, point)
         if point + 1 == goal_num:
             print("+")
             return counter + 1
-
-print(shortest_step(12))
 
 
 def majority_element(nums: list) -> int:
@@ -258,4 +251,18 @@ def majority_element(nums: list) -> int:
             max_num = nums.count(i)
             number = i
     return number
+
+
+def sum_of_numbers(first_number: int, second_number: int) -> int:
+    if first_number == second_number:
+        return first_number
+    if first_number < second_number:
+        f_n, s_n = first_number, second_number
+    else:
+        f_n, s_n = second_number, first_number
+    result = 0
+    for i in range(f_n, s_n + 1):
+        result += i
+    return result
+
 
