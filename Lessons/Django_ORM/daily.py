@@ -268,7 +268,7 @@ def sum_of_numbers(first_number: int, second_number: int) -> int:
 
 class MultiBases(type):
     def __new__(cls, clsname, bases, clsdict):
-        print(cls,clsname,bases,clsdict)
+        print(cls, clsname, bases, clsdict)
         if len(bases) > 1:
             print("Inherited from more than one base class")
         return super().__new__(cls, clsname, bases, clsdict)
@@ -276,9 +276,34 @@ class MultiBases(type):
 
 class Base(metaclass=MultiBases):
     pass
+
+
 class A(Base):
     pass
+
+
 class B(Base):
     pass
+
+
 class C(A, B):
     pass  # print /error
+
+
+def find_all_pairs(num_list: list):
+    counter = 0
+    if len(num_list) <= 1:
+        return counter
+
+    all_nums_dict = {}
+
+    for i in num_list:
+        all_nums_dict[i] = num_list.count(i)
+    for value in all_nums_dict.values():
+        counter += value // 2
+
+    return counter
+
+
+find_all_pairs([0, 0, 0, 0])  # == 2
+find_all_pairs([1, 2, 2, 20, 6, 20, 2, 6, 2])  # == 4

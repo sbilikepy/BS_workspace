@@ -68,9 +68,7 @@ class Ticket(models.Model):
         errors that occur.
         """
         self.full_clean()
-        return super(
-            Ticket, self
-        ).save(
+        return super(Ticket, self).save(
             force_insert, force_update, using, update_fields
         )
 
