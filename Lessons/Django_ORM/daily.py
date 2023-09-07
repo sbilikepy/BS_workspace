@@ -304,6 +304,11 @@ def find_all_pairs(num_list: list):
 
     return counter
 
-
-find_all_pairs([0, 0, 0, 0])  # == 2
-find_all_pairs([1, 2, 2, 20, 6, 20, 2, 6, 2])  # == 4
+def odd_ones_out(numbers: list) -> list:
+    result = []
+    for i in numbers:
+        if numbers.count(i)%2 == 0:
+            result.append(i)
+        else:
+            continue
+    return result
