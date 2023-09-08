@@ -304,11 +304,66 @@ def find_all_pairs(num_list: list):
 
     return counter
 
+
 def odd_ones_out(numbers: list) -> list:
     result = []
     for i in numbers:
-        if numbers.count(i)%2 == 0:
+        if numbers.count(i) % 2 == 0:
             result.append(i)
         else:
             continue
     return result
+
+
+def sum_of_odd_numbers(row_number: int) -> int:
+    triangle = []
+    current_len = 1
+    current_num = 1
+    for row in range(current_len, row_number + 1):
+        triangle.append(
+            [
+                None for i in range(row)
+            ]
+        )
+
+    for row in triangle:
+        for num in enumerate(row):
+            row[num[0]] = current_num
+            current_num += 2
+    print(triangle)
+    return sum(
+        triangle[row_number - 1]
+    )
+
+
+def sum_of_odd_numbers(row_number: int) -> int:
+    if row_number == 1:
+        return 1
+    if row_number == 2:
+        return 8
+    start = 1
+    stop = 1
+    mod_start = 2
+    mod_stop = 4
+
+    for i in range(row_number - 1):
+        print(i)
+        start += mod_start
+        stop += mod_stop
+        mod_stop += 2
+        mod_start += 2
+
+    print(start, stop)
+
+    triangle_row = [
+        i for i in [
+            i for i in range(
+                start, stop + 1
+            ) if i % 2 != 0
+        ]
+    ]
+    print(triangle_row)
+    return sum(triangle_row)
+
+
+print(sum_of_odd_numbers(4))
