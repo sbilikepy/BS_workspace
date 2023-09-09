@@ -366,4 +366,22 @@ def sum_of_odd_numbers(row_number: int) -> int:
     return sum(triangle_row)
 
 
-print(sum_of_odd_numbers(4))
+def mumbling(string: str) -> str:
+    counter = 0
+    pieces = []
+    for letter in string:
+        counter += 1
+        current_string = ""
+        current_string += letter.upper()
+        while not len(current_string) == counter:
+            current_string += letter.lower()
+
+        pieces.append(current_string)
+    result = "-".join(pieces)
+    print(result)
+    return result
+
+
+mumbling("abcd")  # -> "A-Bb-Ccc-Dddd"
+# mumbling("RqaEzty")# -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+# mumbling("cwAt") #-> "C-Ww-Aaa-Tttt"
