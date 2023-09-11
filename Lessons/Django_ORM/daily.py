@@ -382,6 +382,11 @@ def mumbling(string: str) -> str:
     return result
 
 
-mumbling("abcd")  # -> "A-Bb-Ccc-Dddd"
-# mumbling("RqaEzty")# -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-# mumbling("cwAt") #-> "C-Ww-Aaa-Tttt"
+def fibonacci_number(num_index: int) -> int:
+    fib_list = [0, 1]
+    for i in range(0, num_index + 1):
+        fib_list.append(fib_list[-1] + fib_list[-2])
+    return fib_list[num_index]
+
+
+print(fibonacci_number(7))
