@@ -390,3 +390,14 @@ def fibonacci_number(num_index: int) -> int:
 
 
 print(fibonacci_number(7))
+
+def get_section_id(scroll: int, sizes: list) -> int:
+    if scroll == 0:
+        return 0
+    total_size = sum(sizes)
+    if scroll >= total_size:
+        return -1
+    for i in range(len(sizes)):
+        scroll -= sizes[i]
+        if scroll < 0:
+            return i
