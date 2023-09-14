@@ -389,8 +389,6 @@ def fibonacci_number(num_index: int) -> int:
     return fib_list[num_index]
 
 
-print(fibonacci_number(7))
-
 def get_section_id(scroll: int, sizes: list) -> int:
     if scroll == 0:
         return 0
@@ -401,3 +399,41 @@ def get_section_id(scroll: int, sizes: list) -> int:
         scroll -= sizes[i]
         if scroll < 0:
             return i
+
+
+def buy_tofu(cost: int, box: str) -> list or str:
+    fail = "leaving the market"
+    mon, monme, coins_amount_min = 0, 0, 0
+    for coin in box:
+        if coin == "mon":
+            mon += 1
+        if coin == "monme":
+            monme += 1
+        else:
+            pass
+
+    if cost > (mon + monme * 60):
+        return fail
+
+    if cost < 60 and mon >= cost:
+        coins_amount_min = cost
+    if cost == 60 and monme >= 1:
+        coins_amount_min = 1
+    else:
+        if cost % 60 < 60 and monme >= 1 and mon >= (cost % 60):
+            coins_amount_min = (cost % 60) + 1
+
+    return [
+        mon, monme, mon + (monme * 60), coins_amount_min
+    ]
+
+    # result = [
+    #     count_of_mon_coins_in_box,
+    #     count_of_monme_coins_in_box,
+    #     sum_of_all_coins_value_in_box,
+    #     minimum_number_of_coins_needed_for_tofu
+    # ]
+
+
+def rotate_list(nums: list, steps: int) -> list:
+    return nums[-steps::] + nums[:len(nums) - steps:] if steps > 0 else nums
