@@ -437,3 +437,33 @@ def buy_tofu(cost: int, box: str) -> list or str:
 
 def rotate_list(nums: list, steps: int) -> list:
     return nums[-steps::] + nums[:len(nums) - steps:] if steps > 0 else nums
+
+
+def isomorphic_strings(first_string: str, second_string: str) -> bool:
+    if len(first_string) != len(second_string):
+        return False
+
+    mapping = {}
+    print(type(mapping))
+
+    for i in range(len(first_string)):
+        char1 = first_string[i]
+        char2 = second_string[i]
+
+        print(mapping)
+        if char1 in mapping:
+            if mapping[char1] != char2:
+                return False
+        else:
+            if char2 in mapping.values():
+                return False
+            mapping[char1] = char2
+
+    return True
+
+
+isomorphic_strings(first_string="egg", second_string="eel")  # is True
+
+# isomorphic_strings(first_string="foo", second_string="bar")  # is False
+#
+# isomorphic_strings(first_string="paper", second_string="title")  # is True
