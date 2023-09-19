@@ -462,8 +462,22 @@ def isomorphic_strings(first_string: str, second_string: str) -> bool:
     return True
 
 
-isomorphic_strings(first_string="egg", second_string="eel")  # is True
+import math
 
-# isomorphic_strings(first_string="foo", second_string="bar")  # is False
-#
-# isomorphic_strings(first_string="paper", second_string="title")  # is True
+
+def shortest_step(goal_num: int) -> int:
+    if goal_num == 1:
+        return 0
+    if goal_num == 0:
+        return float("inf")
+    operations = 0
+    while goal_num > 1:
+        if goal_num % 2 == 0:
+            goal_num /= 2
+        else:
+            goal_num -= 1
+        operations += 1
+    return operations
+
+
+shortest_step(12)
