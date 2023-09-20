@@ -480,4 +480,15 @@ def shortest_step(goal_num: int) -> int:
     return operations
 
 
-shortest_step(12)
+import math
+
+
+def you_are_a_square(number: int) -> bool:
+    if number < 0:
+        return False
+    if number == 0:
+        return True
+    return (int(math.sqrt(number))) == math.sqrt(number)
+
+
+print(you_are_a_square(40))
