@@ -1,3 +1,6 @@
+import copy
+
+
 def tribonacci(signature: list, number: int) -> list:
     if number == 0:
         return []
@@ -503,3 +506,12 @@ def who_likes_it(names: list) -> str:
         return (f"{names[0]}, {names[1]} and {names[2]} like this")
     if len(names) > 3:
         return (f"{names[0]}, {names[1]} and {len(names) - 2} others like this")
+
+
+def descending_order(num_value: int) -> int:
+    return "".join(sorted(str(num_value))[::-1])
+
+
+print(descending_order(1324234))
+
+
