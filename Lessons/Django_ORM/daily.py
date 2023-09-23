@@ -269,28 +269,28 @@ def sum_of_numbers(first_number: int, second_number: int) -> int:
     return result
 
 
-class MultiBases(type):
-    def __new__(cls, clsname, bases, clsdict):
-        print(cls, clsname, bases, clsdict)
-        if len(bases) > 1:
-            print("Inherited from more than one base class")
-        return super().__new__(cls, clsname, bases, clsdict)
+# class MultiBases(type):
+#     def __new__(cls, clsname, bases, clsdict):
+#         print(cls, clsname, bases, clsdict)
+#         if len(bases) > 1:
+#             print("Inherited from more than one base class")
+#         return super().__new__(cls, clsname, bases, clsdict)
 
 
-class Base(metaclass=MultiBases):
-    pass
-
-
-class A(Base):
-    pass
-
-
-class B(Base):
-    pass
-
-
-class C(A, B):
-    pass  # print /error
+# class Base(metaclass=MultiBases):
+#     pass
+#
+#
+# class A(Base):
+#     pass
+#
+#
+# class B(Base):
+#     pass
+#
+#
+# class C(A, B):
+#     pass  # print /error
 
 
 def find_all_pairs(num_list: list):
@@ -512,6 +512,21 @@ def descending_order(num_value: int) -> int:
     return "".join(sorted(str(num_value))[::-1])
 
 
-print(descending_order(1324234))
+def dir_reduction(plan: list) -> list:
+    opposite_dirs = {"NORTH": "SOUTH", "SOUTH": "NORTH", "EAST": "WEST", "WEST": "EAST"}
+    stack = []
+
+    for direction in plan:
+        if stack and stack[-1] == opposite_dirs[direction]:
+            stack.pop()
+        else:
+            stack.append(direction)
+    return stack
 
 
+
+
+dir_reduction(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])  # returns ['WEST']
+dir_reduction(["NORTH", "SOUTH"])  # returns []
+dir_reduction(["NORTH", "NORTH", "SOUTH", "SOUTH"])  # returns []
+dir_reduction(["NORTH", "WEST", "SOUTH", "EAST"])  # returns ["NORTH", "WEST", "SOUTH", "EAST"]
