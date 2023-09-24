@@ -524,9 +524,5 @@ def dir_reduction(plan: list) -> list:
     return stack
 
 
-
-
-dir_reduction(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])  # returns ['WEST']
-dir_reduction(["NORTH", "SOUTH"])  # returns []
-dir_reduction(["NORTH", "NORTH", "SOUTH", "SOUTH"])  # returns []
-dir_reduction(["NORTH", "WEST", "SOUTH", "EAST"])  # returns ["NORTH", "WEST", "SOUTH", "EAST"]
+def list_filtering(mixed_list: list) -> list:
+    return [i for i in mixed_list if isinstance(i, (int, float))]
