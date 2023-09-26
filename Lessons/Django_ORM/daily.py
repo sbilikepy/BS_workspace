@@ -545,6 +545,14 @@ def calendar_week(date_string: str) -> int:
 
 
 def product_of_maximum(num_list: list, number: int) -> int:
-    print(num_list.sort(reverse=True))
+    num_list.sort(reverse=True)
+    result = 1
+    counter = 0
+    print(num_list)
+    for i in range(number):
+        result *= num_list[counter]
+        counter += 1
+        print(result)
+    return result
 
-product_of_maximum([3,1,2,4],3)
+product_of_maximum([3,1,2,4],2)
