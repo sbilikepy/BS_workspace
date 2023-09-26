@@ -1,3 +1,4 @@
+import calendar
 import copy
 
 
@@ -526,3 +527,24 @@ def dir_reduction(plan: list) -> list:
 
 def list_filtering(mixed_list: list) -> list:
     return [i for i in mixed_list if isinstance(i, (int, float))]
+
+
+from datetime import datetime, timedelta
+
+
+def calendar_week(date_string: str) -> int:
+    date_ = datetime.strptime(date_string, "%Y-%m-%d")
+    day_of_week = date_.weekday()
+    monday_delta = datetime.timedelta(days=day_of_week)
+    thursday_date = date_ - datetime.timedelta(days=3) - monday_delta
+    days_difference = (date_ - thursday_date).days
+    week_number = 1 + (days_difference // 7)
+    return week_number
+
+
+
+
+def product_of_maximum(num_list: list, number: int) -> int:
+    print(num_list.sort(reverse=True))
+
+product_of_maximum([3,1,2,4],3)
