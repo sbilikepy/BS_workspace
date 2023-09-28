@@ -542,8 +542,6 @@ def calendar_week(date_string: str) -> int:
     return week_number
 
 
-
-
 def product_of_maximum(num_list: list, number: int) -> int:
     num_list.sort(reverse=True)
     result = 1
@@ -555,4 +553,43 @@ def product_of_maximum(num_list: list, number: int) -> int:
         print(result)
     return result
 
-product_of_maximum([3,1,2,4],2)
+
+def unique_code(words: list) -> int:
+    if len(words) in [0,1]:
+        return len(words)
+    decode = {
+        "a": ".-",
+        "b": "-...",
+        "c": "-.-.",
+        "d": "-..",
+        "e": ".",
+        "f": "..-.",
+        "g": "--.",
+        "h": "....",
+        "i": "..",
+        "j": ".---",
+        "k": "-.-",
+        "l": ".-..",
+        "m": "--",
+        "n": "-.",
+        "o": "---",
+        "p": ".--.",
+        "q": "--.-",
+        "r": ".-.",
+        "s": "...",
+        "t": "-",
+        "u": "..-",
+        "v": "...-",
+        "w": ".--",
+        "x": "-..-",
+        "y": "-.--",
+        "z": "--.."
+
+    }
+    result = []
+    for word in words:
+        decrypted_word = ""
+        for letter in word:
+            decrypted_word += decode[letter]
+        result.append(decrypted_word)
+    return len(set(result))
