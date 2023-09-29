@@ -1,7 +1,3 @@
-import calendar
-import copy
-
-
 def tribonacci(signature: list, number: int) -> list:
     if number == 0:
         return []
@@ -466,9 +462,6 @@ def isomorphic_strings(first_string: str, second_string: str) -> bool:
     return True
 
 
-import math
-
-
 def shortest_step(goal_num: int) -> int:
     if goal_num == 1:
         return 0
@@ -529,7 +522,7 @@ def list_filtering(mixed_list: list) -> list:
     return [i for i in mixed_list if isinstance(i, (int, float))]
 
 
-from datetime import datetime, timedelta
+from datetime import datetime
 
 
 def calendar_week(date_string: str) -> int:
@@ -555,7 +548,7 @@ def product_of_maximum(num_list: list, number: int) -> int:
 
 
 def unique_code(words: list) -> int:
-    if len(words) in [0,1]:
+    if len(words) in [0, 1]:
         return len(words)
     decode = {
         "a": ".-",
@@ -593,3 +586,14 @@ def unique_code(words: list) -> int:
             decrypted_word += decode[letter]
         result.append(decrypted_word)
     return len(set(result))
+
+
+def convert_to_title(num: int) -> str:
+    import string
+    temp = list(string.ascii_uppercase)
+    if num / 26 <= 1:
+        return temp[num - 1]
+    result = ""
+    result += temp[num // 26 - 1]
+    result += temp[num % 26 - 1]
+    return result
