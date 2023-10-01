@@ -597,3 +597,34 @@ def convert_to_title(num: int) -> str:
     result += temp[num // 26 - 1]
     result += temp[num % 26 - 1]
     return result
+
+
+def longest_gap(num_decimal: int) -> int:
+    # bin_ =bin(num_decimal).split("b")
+    # print(bin_)
+    # print(bin(num_decimal))
+    num_decimal = int(bin(num_decimal).split("b")[1])
+    print(type(num_decimal))
+    flag = False
+    counter = 0
+    pairs = []
+    longest_chain = 1
+    for i in range(1, len(range_max)):
+        current = num_decimal[i-1]
+        next = num_decimal[i]
+        print(current,next)
+        if current == 0:
+            if next == 0:
+                print("here")
+                longest_chain += 1
+                flag = True
+            else:
+                pairs.append(longest_chain)
+                longest_chain = 1
+    print(pairs)
+    return
+    print("___")
+
+longest_gap(9)
+# longest_gap(529)
+# longest_gap(15)
