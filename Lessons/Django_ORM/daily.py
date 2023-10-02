@@ -1,3 +1,6 @@
+import string
+
+
 def tribonacci(signature: list, number: int) -> list:
     if number == 0:
         return []
@@ -620,6 +623,14 @@ def longest_gap(num_decimal: int) -> int:
     return 0
 
 
-longest_gap(9)
-longest_gap(529)
-longest_gap(15)
+def printer_errors(printer_label: str) -> str:
+    error = 0
+    for letter in printer_label:
+        if letter.isalpha():
+            if not letter.lower() in string.ascii_lowercase[:13:]:
+                error += 1
+
+    return f"{error}/{len(printer_label)}"
+
+
+print(printer_errors("abcdxyz"))
