@@ -633,4 +633,17 @@ def printer_errors(printer_label: str) -> str:
     return f"{error}/{len(printer_label)}"
 
 
-print(printer_errors("abcdxyz"))
+def simple_fun(num_list: list) -> int:
+    x = None
+    y = None
+    for i in num_list:
+        if num_list.count(i) == 1:
+            x = i
+        if num_list.count(i) == 2:
+            y = i
+
+        if x is not None and y is not None:
+            return x * x * y
+    return 0
+
+print(simple_fun([6, 5, 4, 100, 6, 5, 4, 100, 6, 5, 4, 200])) 4000000
