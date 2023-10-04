@@ -646,4 +646,13 @@ def simple_fun(num_list: list) -> int:
             return x * x * y
     return 0
 
-print(simple_fun([6, 5, 4, 100, 6, 5, 4, 100, 6, 5, 4, 200])) 4000000
+from typing import List, Callable
+
+
+def chained(functions: List[Callable[[float], float]]) -> Callable[[float], float]:
+    def inner(arg: float) -> float:
+        result = arg
+        for func in functions:
+            result = func(result)
+        return result
+    return inner
