@@ -656,3 +656,10 @@ def chained(functions: List[Callable[[float], float]]) -> Callable[[float], floa
             result = func(result)
         return result
     return inner
+
+
+
+def find_it(integers: list) -> int:
+    for num in integers:
+        if integers.count(num) % 2 != 0:
+            return num
