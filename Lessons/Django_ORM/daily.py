@@ -663,3 +663,9 @@ def find_it(integers: list) -> int:
     for num in integers:
         if integers.count(num) % 2 != 0:
             return num
+
+
+
+fs1 = frozenset({1, 2, 3})
+fs2 = frozenset({1,2,3} | {"a"})
+print(fs2)
