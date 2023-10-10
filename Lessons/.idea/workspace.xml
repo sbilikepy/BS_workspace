@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/bus_station/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_ORM/Django ORM advanced/bus_station/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Scrapy-Idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../Scrapy-Idealista" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dedomeno" beforeDir="false" afterPath="$PROJECT_DIR$/../dedomeno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-actor-manager" beforeDir="false" afterPath="$PROJECT_DIR$/../py-actor-manager" afterDir="false" />
@@ -45,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons",
+    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons/HTML + CSS basics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -232,6 +230,7 @@
       <workItem from="1695769767736" duration="549000" />
       <workItem from="1695843900679" duration="186000" />
       <workItem from="1695861207735" duration="1346000" />
+      <workItem from="1696957274923" duration="126000" />
     </task>
     <servers />
   </component>
