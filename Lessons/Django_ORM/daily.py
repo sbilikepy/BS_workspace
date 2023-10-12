@@ -669,3 +669,13 @@ def find_it(integers: list) -> int:
 fs1 = frozenset({1, 2, 3})
 fs2 = frozenset({1,2,3} | {"a"})
 print(fs2)
+
+
+def missing_number(unique_nums: list) -> int:
+
+    unique_set = set(unique_nums)
+
+    for i in range(len(unique_nums) + 1):
+        if i not in unique_set:
+            return i
+
