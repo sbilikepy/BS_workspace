@@ -646,6 +646,7 @@ def simple_fun(num_list: list) -> int:
             return x * x * y
     return 0
 
+
 from typing import List, Callable
 
 
@@ -655,8 +656,8 @@ def chained(functions: List[Callable[[float], float]]) -> Callable[[float], floa
         for func in functions:
             result = func(result)
         return result
-    return inner
 
+    return inner
 
 
 def find_it(integers: list) -> int:
@@ -666,15 +667,16 @@ def find_it(integers: list) -> int:
 
 
 def missing_number(unique_nums: list) -> int:
-
     unique_set = set(unique_nums)
 
     for i in range(len(unique_nums) + 1):
         if i not in unique_set:
             return i
 
+
 def min_max(lst: list) -> list:
     return [min(lst), max(lst)]
+
 
 def find_function(list_with_function: list, list_to_filter: list) -> list:
     filtered_list = list_to_filter
@@ -685,15 +687,21 @@ def find_function(list_with_function: list, list_to_filter: list) -> list:
 
     return filtered_list
 
-#
 
-# def generate_rows(rows: int) -> list:
-#     result = [[1]]
-#     for i in range(rows-1):
-#         new_list = list(range(len(result[-1]) + 1))
-#         result.append(new_list)
-#     print(result)
-#     return result
-#
-#
-# generate_rows(3)
+def generate_rows(rows: int) -> list:
+    if rows < 1 or rows > 10:
+        return []
+
+    result = [[1]]
+    for i in range(1, rows):
+        prev_row = result[-1]
+        new_row = [1]
+        for j in range(1, i):
+            new_row.append(prev_row[j - 1] + prev_row[j])
+        new_row.append(1)
+        result.append(new_row)
+
+    return result
+
+
+print(generate_rows(4))
