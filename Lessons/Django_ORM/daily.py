@@ -685,7 +685,7 @@ def find_function(list_with_function: list, list_to_filter: list) -> list:
 
     return filtered_list
 
-
+#
 
 # def generate_rows(rows: int) -> list:
 #     result = [[1]]
