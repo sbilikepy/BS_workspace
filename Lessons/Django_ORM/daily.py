@@ -665,12 +665,6 @@ def find_it(integers: list) -> int:
             return num
 
 
-
-fs1 = frozenset({1, 2, 3})
-fs2 = frozenset({1,2,3} | {"a"})
-print(fs2)
-
-
 def missing_number(unique_nums: list) -> int:
 
     unique_set = set(unique_nums)
@@ -681,3 +675,25 @@ def missing_number(unique_nums: list) -> int:
 
 def min_max(lst: list) -> list:
     return [min(lst), max(lst)]
+
+def find_function(list_with_function: list, list_to_filter: list) -> list:
+    filtered_list = list_to_filter
+
+    for function in list_with_function:
+        if callable(function):
+            filtered_list = list(filter(function, filtered_list))
+
+    return filtered_list
+
+
+
+# def generate_rows(rows: int) -> list:
+#     result = [[1]]
+#     for i in range(rows-1):
+#         new_list = list(range(len(result[-1]) + 1))
+#         result.append(new_list)
+#     print(result)
+#     return result
+#
+#
+# generate_rows(3)
