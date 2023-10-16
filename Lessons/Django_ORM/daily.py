@@ -704,4 +704,12 @@ def generate_rows(rows: int) -> list:
     return result
 
 
-print(generate_rows(4))
+def calendar_week(date_string: str) -> int:
+    from datetime import datetime
+    new_date_object = datetime.strptime(date_string, "%Y-%m-%d")
+    return datetime.isocalendar(new_date_object)[1]
+
+
+calendar_week("2019-01-01") == 1
+
+calendar_week("2016-02-29") == 9
