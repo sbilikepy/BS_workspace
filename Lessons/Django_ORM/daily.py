@@ -710,6 +710,32 @@ def calendar_week(date_string: str) -> int:
     return datetime.isocalendar(new_date_object)[1]
 
 
-calendar_week("2019-01-01") == 1
+def pendulum(lst: list) -> list:
+    left, right = [],[]
+    min_el = min(lst)
+    for i in sorted(lst):
+        if i > min_el:
+            right.append(i)
+        if i < min_el:
+            left.append(i)
+        if i == min_el:
+            pass
+    return left + [min_el] + right
 
-calendar_week("2016-02-29") == 9
+
+def reverse_integer(number: int) -> int:
+    int_max = 2**31 - 1
+
+    result = 0
+    sign = 1 if number >= 0 else -1
+    number = abs(number)
+
+    while number != 0:
+        digit = number % 10
+        if result > (int_max - digit) // 10:
+            return 0
+        result = result * 10 + digit
+        number //= 10
+
+    return result * sign
+
