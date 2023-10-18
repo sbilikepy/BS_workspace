@@ -739,3 +739,7 @@ def reverse_integer(number: int) -> int:
 
     return result * sign
 
+def find_the_stray(num_list: list) -> int:
+    for i in num_list:
+        if num_list.count(i) == 1:
+            return i
