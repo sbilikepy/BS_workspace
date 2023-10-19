@@ -711,7 +711,7 @@ def calendar_week(date_string: str) -> int:
 
 
 def pendulum(lst: list) -> list:
-    left, right = [],[]
+    left, right = [], []
     min_el = min(lst)
     for i in sorted(lst):
         if i > min_el:
@@ -724,7 +724,7 @@ def pendulum(lst: list) -> list:
 
 
 def reverse_integer(number: int) -> int:
-    int_max = 2**31 - 1
+    int_max = 2 ** 31 - 1
 
     result = 0
     sign = 1 if number >= 0 else -1
@@ -739,7 +739,16 @@ def reverse_integer(number: int) -> int:
 
     return result * sign
 
+
 def find_the_stray(num_list: list) -> int:
     for i in num_list:
         if num_list.count(i) == 1:
             return i
+
+
+def sum_of_a_sequence(begin_number: int, end_number: int, step: int) -> int:
+    print(range(1, 8))
+    return sum(list(range(begin_number, end_number + 1))[::step])
+
+
+print(sum_of_a_sequence(begin_number=1, end_number=7, step=1))  # 28
