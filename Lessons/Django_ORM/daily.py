@@ -752,3 +752,21 @@ def sum_of_a_sequence(begin_number: int, end_number: int, step: int) -> int:
 
 
 print(sum_of_a_sequence(begin_number=1, end_number=7, step=1))  # 28
+
+
+def student_att(records: str) -> bool:
+    absence_count = 0
+    late_count = 0
+
+    for day in records:
+        if day == "A":
+            absence_count += 1
+            late_count = 0
+        elif day == "L":
+            late_count += 1
+            if late_count >= 3:
+                return False
+        else:
+            late_count = 0
+
+    return absence_count < 2
