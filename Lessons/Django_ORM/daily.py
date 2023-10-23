@@ -770,3 +770,15 @@ def student_att(records: str) -> bool:
             late_count = 0
 
     return absence_count < 2
+
+
+
+def last(*args):
+    if args:
+        last_arg = args[-1]
+        if hasattr(last_arg, '__getitem__'):
+            return last_arg[-1]
+        else:
+            return last_arg
+    else:
+        return None
