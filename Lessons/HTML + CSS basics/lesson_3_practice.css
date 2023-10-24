@@ -1,0 +1,33 @@
+.title {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.text {
+  text-align: justify;
+}
+
+.footer {
+  background-color: rgb(25%,25%,25%);
+  color: white;
+  line-height: 100px;
+  text-align: center;
+  opacity: 1;
+  font-size: 1.2rem;
+}
+
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+body {
+  font-size: 18px;
+}
+
+

@@ -1,0 +1,19 @@
+.prev_example {
+    border: 5px solid #000; /* dased dotted etc */
+    background-color: #8f0;
+    /*padding: 10px; trbl*/
+    padding-bottom: 10px; /* content to border */
+    margin-top: 20px; /* min pad to next elem */
+    border-left: 5px solid;
+    text-align: justify;
+}
+
+html {
+    font-family : Arial, Helvetica, sans-serif;
+}
+.message {
+    padding: 10px 20px;
+    border-left: 5px solid;
+    background-color: #ddd;
+    text-align: justify;
+}
