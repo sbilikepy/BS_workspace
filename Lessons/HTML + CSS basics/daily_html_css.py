@@ -41,4 +41,16 @@ def histogram(results: list) -> str:
             f"1|{'' if results[-6] == 0 else '#' * results[-6] + ' ' + str(results[-6])}\n")
 
 
-print(histogram([7, 3, 10, 1, 0, 5]))
+def contains_duplicates(nums: list) -> bool:
+    if len(nums) >= 2:
+        for i in nums:
+            print(i, nums.count(i))
+            if nums.count(i) >= 2:
+                return True
+    return False
+
+
+def contains_duplicates(nums: list) -> bool:
+    return True if len(nums) >= 2 and len(
+        [i for i in nums if nums.count(i) >= 2]
+    ) >= 1 else False
