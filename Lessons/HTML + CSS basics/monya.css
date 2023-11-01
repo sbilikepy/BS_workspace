@@ -1,0 +1,184 @@
+/* Стилі для навігації */
+nav {
+
+    background-color: #000;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Comic Sans MS", cursive; /* Додавання дитячого шрифту */
+}
+
+/* Стилі для заголовків і тексту */
+h1, h2 {
+    font-family: "Comic Sans MS", cursive; /* Додавання дитячого шрифту */
+    text-align: center;
+}
+
+/* Стилі для секцій */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin: 40px 0;
+    max-width: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 5px solid #000;
+    padding: 20px;
+    background-color: white; /* Установка белого фона */
+}
+
+
+/* Стилі для зображення колбаси */
+img {
+    max-width: 100%; /* Зміна максимальної ширини для зображень */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Стилі для футера */
+
+footer {
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+}
+/* Стилі для кнопки "КУПИТИ" */
+.buy-button {
+    background-color: #ff5733; /* Яркий цвет для кнопки */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buy-button:hover {
+    background-color: #ff4020; /* Цвет при наведении */
+}
+
+/* Стилі для форми обратной связи */
+#feedback-form {
+    text-align: center;
+    max-width: 300px; /* Максимальная ширина формы */
+    margin: 0 auto;
+}
+
+#feedback-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#feedback-form input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+#feedback-form button {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#feedback-form button:hover {
+    background-color: #ff4020;
+}
+section#about {
+    min-width: 630px;
+}
+
+
+/* Стилі для галочки и лейбла */
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.agreement-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* Стилі для галочки и лейбла */
+.agreement-label {
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Стилі для галочки и лейбла */
+.agreement-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.agreement-label input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.5); /* Увеличиваем размер галочки */
+}
+
+
+html {
+    background-color: white;
+}
+
+
+@keyframes movePaws {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+
+.paws {
+  animation: movePaws 5s infinite; /* Анимация будет бесконечной */
+}
+
+
+body {
+    background-image: url(paws.jpg);
+    background-repeat: repeat;
+    cursor: url("Untitled.png"), auto;
+}
