@@ -54,3 +54,7 @@ def contains_duplicates(nums: list) -> bool:
     return True if len(nums) >= 2 and len(
         [i for i in nums if nums.count(i) >= 2]
     ) >= 1 else False
+
+
+def reverse_string(word: list) -> list:
+    return word[::-1]
