@@ -58,3 +58,37 @@ def contains_duplicates(nums: list) -> bool:
 
 def reverse_string(word: list) -> list:
     return word[::-1]
+
+
+def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
+    cat = 0
+    dog = 0
+    cat_flag, dog_flag = False, False
+    if cat_years // 15 >= 1:
+        cat += 1
+        cat_years -= 15
+        if cat_years // 9 >= 1:
+            cat += 1
+            cat_years -= 9
+            cat_flag = True
+    if cat_flag:
+        while cat_years // 4 >= 1:
+            cat += 1
+            cat_years -= 4
+
+    if dog_years // 15 >= 1:
+        dog += 1
+        dog_years -= 15
+        if dog_years // 9 >= 1:
+            dog += 1
+            dog_years -= 9
+            dog_flag = True
+    if dog_flag:
+        while dog_years // 5 >= 1:
+            dog += 1
+            dog_years -= 5
+    print(cat, dog)
+    return [cat, dog]
+
+
+cat_and_dog_years(23, 23)
