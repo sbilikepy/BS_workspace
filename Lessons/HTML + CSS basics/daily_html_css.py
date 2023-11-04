@@ -91,4 +91,13 @@ def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
     return [cat, dog]
 
 
-cat_and_dog_years(23, 23)
+def find_smallest(lst: list, number: int) -> list:
+    lst_2 = sorted(lst)[:number:]
+    result = []
+    for i in lst:
+        if i in lst_2:
+            result.append(i)
+    return result[:number:]
+
+
+print(find_smallest([1, 2, 3, -4, 0], 3))
