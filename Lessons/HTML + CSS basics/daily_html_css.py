@@ -98,6 +98,3 @@ def find_smallest(lst: list, number: int) -> list:
         if i in lst_2:
             result.append(i)
     return result[:number:]
-
-
-print(find_smallest([1, 2, 3, -4, 0], 3))
