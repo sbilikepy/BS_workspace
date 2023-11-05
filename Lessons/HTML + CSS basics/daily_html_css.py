@@ -59,6 +59,17 @@ def contains_duplicates(nums: list) -> bool:
 def reverse_string(word: list) -> list:
     return word[::-1]
 
+def find_smallest(lst: list, number: int) -> list:
+    lst_2 = sorted(lst)[:number:]
+    result = []
+    for i in lst:
+        if i in lst_2:
+            result.append(i)
+    return result[:number:]
+
+
+
+
 
 def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
     cat = 0
@@ -90,11 +101,3 @@ def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
     print(cat, dog)
     return [cat, dog]
 
-
-def find_smallest(lst: list, number: int) -> list:
-    lst_2 = sorted(lst)[:number:]
-    result = []
-    for i in lst:
-        if i in lst_2:
-            result.append(i)
-    return result[:number:]
