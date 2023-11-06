@@ -101,3 +101,12 @@ def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
     print(cat, dog)
     return [cat, dog]
 
+
+
+def generator_example():
+    for i in range(5):
+        yield i
+
+gen = generator_example()
+for value in gen:
+    print(value)
