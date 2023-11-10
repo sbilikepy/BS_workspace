@@ -1,0 +1,7 @@
+0 - * 1st selector
+1 - p, ::after etc
+2 - message, [id], :first-child
+3 - #indicator
+
+prior for css is sum of values (just in case of conflict)
+deepest specificity == prior
