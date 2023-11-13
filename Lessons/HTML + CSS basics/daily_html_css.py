@@ -98,7 +98,7 @@ def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
         while dog_years // 5 >= 1:
             dog += 1
             dog_years -= 5
-    print(cat, dog)
+
     return [cat, dog]
 
 
@@ -108,7 +108,39 @@ def generator_example():
         yield i
 
 gen = generator_example()
-for value in gen:
-    print(value)
+# for value in gen:
+#     print(value)
 
-#
+#####13.11
+
+
+from typing import Callable
+
+
+def add(a: int) -> int:
+    def inner(b: int) -> None:
+        return a + b
+
+    return inner
+
+
+def subtract(a: int) -> int:
+    def inner(b: int) -> None:
+        return a - b
+
+    return inner
+
+
+def multiply(a: int) -> int:
+    def inner(b: int) -> None:
+        return a * b
+
+    return inner
+
+
+def apply(func: Callable) -> int:
+    return func
+
+
+print(add(3)(4))
+print(apply(multiply(3)(4)))
