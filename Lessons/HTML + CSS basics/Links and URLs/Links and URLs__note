@@ -1,0 +1,10 @@
+https://localhost:5500/basics/links/index.html
+
+LoVe HAte - link visited hover active (css order)
+
+scroll-behavior
+
+.class:target {   active section
+background-color: green;
+}
+

@@ -1,0 +1,8 @@
+flaticon.com
+.svg more detailed (vector)
+
+
+.photo {
+object-fit: cover; #original proportion but cutted
+object-position: center -100px;
+}
