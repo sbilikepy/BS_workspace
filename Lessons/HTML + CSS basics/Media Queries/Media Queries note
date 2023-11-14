@@ -1,0 +1,77 @@
+tag <picture>
+<source media="(min-width: 800px)"
+srcset="https://...1200x600"
+>
+
+<source
+media="(min-width: 600px)"
+srcset="https://...400x200"
+>
+
+<img
+class="picture"
+alt = "img desc"
+src="https://...300x150"
+>
+
+
+#css
+@media all and(
+all,screen,print,search
+width, min-width etc
+height
+orientation: portrait, landscape
+resolution, max-resolution: 300 dpi
+
+examples from practice:
+.semaphore {
+  height: 0px;
+  width: 30%;
+  padding: 20px;
+  border-radius: 50px;
+  background-color: #444;
+  background-position: center;
+  margin: 0 auto;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.light {
+  margin-bottom: 5%;
+  padding: 20px;
+  border-radius: 50%;
+  padding-bottom: 100%;
+}
+
+@media (max-width: 499px) {
+  .light--stop {
+    background-color: #f00;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+  .light--ready {
+    background-color: #ff0;
+  }
+}
+
+@media (min-width: 600px) {
+  .light--go {
+    background-color: #0f0;
+  }
+}
+
+
+.light--stop {
+  background-color: #400;
+}
+
+.light--ready {
+  background-color: #440;
+}
+
+.light--go {
+  background-color: #040;
+}
+
+
