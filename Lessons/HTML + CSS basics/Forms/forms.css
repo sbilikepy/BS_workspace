@@ -1,0 +1,34 @@
+.form-field {
+
+    margin-top: 10px;
+    display: block;
+    border: thick;
+
+}
+
+input::placeholder {
+    color: grey;
+    font-weight: bold;
+}
+
+:focus {
+    background-color: blue;
+}
+
+
+input:valid {
+    background-color: green;
+}
+
+
+input:invalid {
+    background-color: red;
+}
+
+
+input:checked + label {
+    color: blue;
+}
+
+
+
