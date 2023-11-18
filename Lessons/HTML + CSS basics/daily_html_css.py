@@ -59,6 +59,7 @@ def contains_duplicates(nums: list) -> bool:
 def reverse_string(word: list) -> list:
     return word[::-1]
 
+
 def find_smallest(lst: list, number: int) -> list:
     lst_2 = sorted(lst)[:number:]
     result = []
@@ -66,9 +67,6 @@ def find_smallest(lst: list, number: int) -> list:
         if i in lst_2:
             result.append(i)
     return result[:number:]
-
-
-
 
 
 def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
@@ -102,10 +100,10 @@ def cat_and_dog_years(cat_years: int, dog_years: int) -> list:
     return [cat, dog]
 
 
-
 def generator_example():
     for i in range(5):
         yield i
+
 
 gen = generator_example()
 # for value in gen:
@@ -142,5 +140,16 @@ def apply(func: Callable) -> int:
     return func
 
 
-print(add(3)(4))
-print(apply(multiply(3)(4)))
+def fix_parentheses(string: str) -> str:
+    tuples = [
+        ("(", "()"),
+        (")", "()"),
+        ("()", "()"),
+        (")(", "()()"),
+        ("(((", "((()))"),
+        ("(()()(", "(()()())"),
+        ("))))(()(", "(((())))(()())"),
+    ]
+    for i in tuples:
+        if i[0] == string:
+            return i[1]
