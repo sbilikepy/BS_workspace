@@ -1,0 +1,12 @@
+info rout
+browser-os-network adapter - router - internet
+
+
+UDP
+Is a transport layer protocol
+Is used to speed up data transferring
+Is used for DNS requests
+
+
+What is default gateway?
+It provides outgoing access to data packets to a destination in some other discrete network
