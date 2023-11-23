@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from datetime import datetime
 from data import traits, champions, composition_iterator
-
+import os
 app = Flask(__name__)
 
 current_composition = []
