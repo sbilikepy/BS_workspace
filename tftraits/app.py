@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, jsonify
+from flask import Flask, render_template, request, redirect, session
 from datetime import datetime
 from data import traits, champions, composition_iterator
 import os
