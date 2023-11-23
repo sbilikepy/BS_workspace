@@ -191,4 +191,4 @@ def akali():
 
 if __name__ == "__main__":
     data_fill()
-    app.run(debug=False, port=int(os.environ.get("PORT", 8080)))
+    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
