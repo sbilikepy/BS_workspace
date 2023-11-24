@@ -30,24 +30,16 @@ def reset():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if 'current_composition' not in session:
-        session['current_composition'] = []
-    if 'current_traits' not in session:
-        session['current_traits'] = {}
-    if 'capped_traits' not in session:
-        session['capped_traits'] = []
-    if 'breakpoint_traits' not in session:
-        session['breakpoint_traits'] = []
-    if 'remaining_traits' not in session:
-        session['remaining_traits'] = []
-    if 'first_prior' not in session:
-        session['first_prior'] = []
-    if 'second_prior' not in session:
-        session['second_prior'] = []
-    if 'third_prior' not in session:
-        session['third_prior'] = []
-    if 'no_prior' not in session:
-        session['no_prior'] = []
+    # Инициализация сессии
+    session.setdefault('current_composition', [])
+    session.setdefault('current_traits', {})
+    session.setdefault('capped_traits', [])
+    session.setdefault('breakpoint_traits', [])
+    session.setdefault('remaining_traits', [])
+    session.setdefault('first_prior', [])
+    session.setdefault('second_prior', [])
+    session.setdefault('third_prior', [])
+    session.setdefault('no_prior', [])
 
     if request.method == 'POST':
         character = request.form['character'].lower()
@@ -67,7 +59,7 @@ def index():
         elif character.capitalize() == "akali":
             akali()
         elif any(character == champ.lower() for champ in champions.keys()):
-            if character.lower() not in [i.lower() for i in session['current_composition']]:
+            if character.lower() not in map(str.lower, session['current_composition']):
                 session['current_composition'].append(character.capitalize())
                 print(f"{character.capitalize()} has been added\n")
         else:

@@ -36,10 +36,10 @@
 </ul>
 
 <h2>Priorities:</h2>
-<p>First prio: {{ first_prior }}</p>
-<p>Second prio: {{ second_prior }}</p>
-<p>Third prio: {{ third_prior }}</p>
-<p>No prio: {{ no_prior }}</p>
+<p>First prio: {% for trait in first_prior %}{{ trait }}, {% endfor %}</p>
+<p>Second prio: {% for trait in second_prior %}{{ trait }}, {% endfor %}</p>
+<p>Third prio: {% for trait in third_prior %}{{ trait }}, {% endfor %}</p>
+<p>No prio: {% for trait in no_prior %}{{ trait }}, {% endfor %}</p>
 
 <h2>Suggestions</h2>
 <ul>
