@@ -101,7 +101,7 @@ champions = {
 
 trait_8_bit_pull = [["Caitlyn", "Garen", "Corki", "Riven"], "8-bit"]
 trait_big_shot_pull = [["Jhin", "Miss fortune", "Kai'sa", "Ezreal", "Corki"], "Big Shot"]
-trait_breakout_pull = [["Akali"], "Breakout"]
+trait_breakout_pull = [["Akali K/DA", "Akali True Damage"], "Breakout"]
 trait_bruiser_pull = [["Illaoi", "Tahm kench", "Gragas", "Sett", "Zac", "Olaf"], "Bruiser"]
 trait_country_pull = [["Thresh", "Urgot", "Samira", "Tahm kench", "Katarina"], "Country"]
 trait_crowd_diver_pull = [["Qiyana", "Zed", "Evelynn", "Katarina", "Yone"], "Crowd Diver"]
@@ -110,7 +110,7 @@ trait_disco_pull = [["Twisted fate", "Blitzcrank", "Nami", "Gragas", "Taric"], "
 trait_edm_pull = [["Zed", "Zac", "Lux", "Jax"], "EDM"]
 trait_edgelord_pull = [["Kayn", "Viego", "Kayle", "Yone", "Yasuo", "Riven"], "Edgelord"]
 trait_emo_pull = [["Vex", "Poppy", "Amumu", "Annie"], "Emo"]
-trait_executioner_pull = [["Akali", "Vex", "Samira", "Karthus", "Twitch"], "Executioner"]
+trait_executioner_pull = [["Akali K/DA", "Akali True Damage", "Vex", "Samira", "Karthus", "Twitch"], "Executioner"]
 trait_guardian_pull = [["Yorick", "Thresh", "Kennen", "Neeko", "Amumu", "Taric", "Pantheon"], "Guardian"]
 trait_heartsteel_pull = [["Kayn", "Sett", "Ezreal", "Yone", "Aphelios", "K`sante"], "Heartsteel"]
 trait_hyperpop_pull = [["Ziggs", "Lulu"], "Hyperpop"]
