@@ -148,7 +148,7 @@ champions = {
 }
 
 trait_8_bit_pull = [["Caitlyn", "Garen", "Corki", "Riven", "8-bit emblem", "8-bit headliner"], "8-bit"]
-trait_big_shot_pull = [["Jhin", "Miss fortune", "Kai'sa", "Ezreal", "Corki", "Big shot emblem", "Big shot headliner"], "Big Shot"]
+trait_big_shot_pull = [["Jhin", "Miss fortune", "Kai'sa", "Ezreal", "Corki", "Big shot emblem", "Big shot headliner"], "Big shot"]
 trait_breakout_pull = [["Akali k/da", "Akali true damage"], "Breakout"]
 trait_bruiser_pull = [["Illaoi", "Tahm kench", "Gragas", "Sett", "Zac", "Olaf", "Bruiser emblem", "Bruiser headliner"], "Bruiser"]
 trait_country_pull = [["Thresh", "Urgot", "Samira", "Tahm kench", "Katarina", "Country emblem", "Country headliner"], "Country"]
