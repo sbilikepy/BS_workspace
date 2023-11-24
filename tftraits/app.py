@@ -122,14 +122,9 @@ def tailor():
         if name not in session.get('current_composition')
     }
     for i in session.get('current_composition', []):
-        print("comp: ", i)
         if i == "Akali k/da":
-            print("need to delete true damage")
-            print(champions["Akali true damage"])
             champions["Akali true damage"] = []
         if i == "Akali true damage":
-            print("need to delete kda")
-            print(champions["Akali k/da"])
             champions["Akali k/da"] = []
     for trait in first_prior + second_prior + third_prior + no_prior:
         for name, traits in champions.items():
