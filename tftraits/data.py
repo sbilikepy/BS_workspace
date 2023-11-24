@@ -79,7 +79,7 @@ champions = {
     "Zed": [],
     "Ahri": [],
     "Akali K/DA": [],
-    "Akali True Damage": []
+    "Akali True Damage": [],
     "Poppy": [],
     "Twisted fate": [],
     "Blitzcrank": [],
