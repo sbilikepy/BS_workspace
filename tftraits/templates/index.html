@@ -50,12 +50,31 @@
     <p>No prio: {{ no_prior }}</p>
 {% endif %}
 
-<h2>Suggestions</h2>
+<h2 class="suggestions">Suggestions</h2>
 <ul>
     {% for score, characters in suggestions.items() %}
-    <li>{{ score }} points: {{ ', '.join(characters) }}</li>
+    <li>
+        {{ score }} points:
+        {% for character in characters %}
+        <a href="#" class="character-link" data-character="{{ character }}">{{ character }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </li>
     {% endfor %}
 </ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var characterLinks = document.querySelectorAll('.character-link');
+        characterLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                var characterName = link.getAttribute('data-character');
+                document.getElementById('character').value = characterName;
+                document.querySelector('form').submit();
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

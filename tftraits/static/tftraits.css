@@ -9,8 +9,25 @@ body {
     background-repeat: no-repeat;
     color: #000;
     font-weight: normal;
+    background-color: mintcream;
+
 }
 
+button {
+    cursor: pointer;
+}
+
+a {
+
+}
+
+
+
+a.character-link {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+}
 
 
 
@@ -26,13 +43,7 @@ input[type="text"] {
     padding: 5px;
 }
 
-button {
-    padding: 5px 10px;
-    background-color: #ddd;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
 
 h2 {
     border: 1px solid #ddd;
@@ -46,12 +57,10 @@ ul {
     padding: 0;
 }
 
-li {
-    margin-bottom: 5px;
-}
+
 
 p {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .suggestions {
