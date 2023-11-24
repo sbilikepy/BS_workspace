@@ -126,7 +126,7 @@ trait_rapidfire_pull = [["Lucian", "Caitlyn", "Senna", "Jinx", "Aphelios"], "Rap
 trait_sentinel_pull = [["Lillia", "Ekko", "Blitzcrank", "Mordekaiser", "Garen", "K`sante"], "Sentinel"]
 trait_spellweaver_pull = [["Sona", "Lulu", "Ahri", "Ekko", "Seraphine", "Gragas", "Annie"], "Spellweaver"]
 trait_superfan_pull = [["Lillia", "Kennen", "Neeko", "Gnar"], "Superfan"]
-trait_true_damage_pull = [["Qiyana", "Akali True Damage" "Kennen", "Ekko", "Senna", "Yasuo"], "True Damage"]
+trait_true_damage_pull = [["Qiyana", "Akali True Damage", "Kennen", "Ekko", "Senna", "Yasuo"], "True Damage"]
 trait_wildcard_pull = [["Kayn"], "Wildcard"]
 
 composition_iterator = [
