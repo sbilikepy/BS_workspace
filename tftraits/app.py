@@ -55,11 +55,6 @@ def index():
 
         elif any(character == champ.lower() for champ in champions.keys()):
             if character.lower() not in [i.lower() for i in session['current_composition']]:
-                if "akali" in character.lower():
-                    if "/" in character.lower():
-                        session['current_composition'].append("Akali K/DA")
-                    else:
-                        session['current_composition'].append("Akali True Damage")
                 session['current_composition'].append(character.capitalize())
                 print(f"{character.capitalize()} has been added\n")
         else:
@@ -136,7 +131,10 @@ def tailor():
     print(f"Third prio: {third_prior}")
     print(f"No prio: {no_prior}\n\n")
 
-    suggestions = {name: 0 for name in champions.keys()}
+    suggestions = {
+        name: 0 for name in champions.keys()
+        if name not in session.get('current_composition')
+    }
 
     for trait in first_prior + second_prior + third_prior + no_prior:
         for name, traits in champions.items():
