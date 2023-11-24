@@ -3,7 +3,7 @@ traits = {
     "Pentakill": [3, 5, 7, 10],
     "K/da": [3, 5, 7, 10],
     "Country": [3, 5, 7],
-    "Crowd Diver": [2, 4, 6],
+    "Crowd diver": [2, 4, 6],
     "True Damage": [2, 4, 6, 9],
     "Jazz": [2, 3, 4],
     "Hyperpop": [1, 2, 3, 4],
@@ -25,7 +25,7 @@ traits = {
     "Heartsteel": [3, 5, 7, 10],
     "Edgelord": [3, 5, 7],
     "Mixmaster": [1],
-    "ILLBEATS": [1],
+    "Illbeats": [1],
     "Maestro": [1],
     "Breakout": [1],
     "Wildcard": [1]
