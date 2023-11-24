@@ -45,7 +45,7 @@ champions = {
     "Olaf": [],
     "Corki": [],
     "Yasuo": [],
-    "K`sante": [],
+    "K'sante": [],
     # 2 cost
     "Bard": [],
     "Kai'sa": [],
@@ -112,7 +112,7 @@ trait_edgelord_pull = [["Kayn", "Viego", "Kayle", "Yone", "Yasuo", "Riven"], "Ed
 trait_emo_pull = [["Vex", "Poppy", "Amumu", "Annie"], "Emo"]
 trait_executioner_pull = [["Akali k/da", "Akali true damage", "Vex", "Samira", "Karthus", "Twitch"], "Executioner"]
 trait_guardian_pull = [["Yorick", "Thresh", "Kennen", "Neeko", "Amumu", "Taric", "Pantheon"], "Guardian"]
-trait_heartsteel_pull = [["Kayn", "Sett", "Ezreal", "Yone", "Aphelios", "K`sante"], "Heartsteel"]
+trait_heartsteel_pull = [["Kayn", "Sett", "Ezreal", "Yone", "Aphelios", "K'sante"], "Heartsteel"]
 trait_hyperpop_pull = [["Ziggs", "Lulu"], "Hyperpop"]
 trait_illbeats_pull = [["Illaoi"], "ILLBEATS"]
 trait_jazz_pull = [["Lucian", "Bard", "Miss fortune"], "Jazz"]
@@ -123,7 +123,7 @@ trait_mosher_pull = [["Yorick", "Poppy", "Urgot", "Gnar", "Sett", "Vi", "Jax"], 
 trait_pentakill_pull = [["Yorick", "Karthus", "Gnar", "Viego", "Mordekaiser", "Kayle", "Olaf"], "Pentakill"]
 trait_punk_pull = [["Twitch", "Vi", "Pantheon", "Jinx"], "Punk"]
 trait_rapidfire_pull = [["Lucian", "Caitlyn", "Senna", "Jinx", "Aphelios"], "Rapidfire"]
-trait_sentinel_pull = [["Lillia", "Ekko", "Blitzcrank", "Mordekaiser", "Garen", "K`sante"], "Sentinel"]
+trait_sentinel_pull = [["Lillia", "Ekko", "Blitzcrank", "Mordekaiser", "Garen", "K'sante"], "Sentinel"]
 trait_spellweaver_pull = [["Sona", "Lulu", "Ahri", "Ekko", "Seraphine", "Gragas", "Annie"], "Spellweaver"]
 trait_superfan_pull = [["Lillia", "Kennen", "Neeko", "Gnar"], "Superfan"]
 trait_true_damage_pull = [["Qiyana", "Akali true damage", "Kennen", "Ekko", "Senna", "Yasuo"], "True Damage"]
