@@ -37,10 +37,18 @@
 </ul>
 
 <h2>Priorities:</h2>
-<p>First prio: {{ first_prior }}</p>
-<p>Second prio: {{ second_prior }}</p>
-<p>Third prio: {{ third_prior }}</p>
-<p>No prio: {{ no_prior }}</p>
+{% if first_prior %}
+    <p>First prio: {{ first_prior }}</p>
+{% endif %}
+{% if second_prior %}
+    <p>Second prio: {{ second_prior }}</p>
+{% endif %}
+{% if third_prior %}
+    <p>Third prio: {{ third_prior }}</p>
+{% endif %}
+{% if no_prior %}
+    <p>No prio: {{ no_prior }}</p>
+{% endif %}
 
 <h2>Suggestions</h2>
 <ul>

@@ -7,8 +7,6 @@ app = Flask(__name__)
 app.secret_key = 'gsdfkq34f89uu9FF9tr0ghs'
 
 
-
-
 def timer(func):
     def wrapper(*args, **kwargs):
         start = datetime.now()
@@ -18,10 +16,12 @@ def timer(func):
 
     return wrapper
 
+
 @app.route('/reset', methods=['POST'])
 def reset():
     session.clear()
     return redirect('/')
+
 
 @timer
 def data_fill():
@@ -30,6 +30,7 @@ def data_fill():
         trait_name = composition[1]
         for champion in trait_champions:
             champions[champion].append(trait_name)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -71,6 +72,7 @@ def index():
                            third_prior=session.get('third_prior', []),
                            no_prior=session.get('no_prior', []),
                            suggestions=suggestions)
+
 
 def group_data():
     current_traits = {}
@@ -117,8 +119,8 @@ def group_data():
     session['third_prior'] = third_prior
     session['no_prior'] = no_prior
 
-def tailor():
 
+def tailor():
     first_prior = session.get('first_prior', [])
     second_prior = session.get('second_prior', [])
     third_prior = session.get('third_prior', [])
@@ -150,7 +152,11 @@ def tailor():
                     if trait in traits:
                         suggestions[name] += 0
 
-    suggestions = dict(sorted(suggestions.items(), key=lambda item: item[1], reverse=True))
+    suggestions = dict(
+        sorted(
+            suggestions.items(), key=lambda item: item[1], reverse=True
+        )
+    )
 
     scoreboard = {}
 
