@@ -3,7 +3,7 @@
         max-width: 500px;
         margin: 0 auto;
         padding: 20px;
-        background-image: url('/static/peng.webp');
+        /*background-image: url('/static/peng.webp');*/
         background-size: 15% auto;
         background-position: right 200px top 80px;
         background-repeat: no-repeat;
@@ -99,4 +99,16 @@
     }
 a:hover {
     border: 1px solid #000; /* тонкая рамка цвета чёрного */
+}
+
+
+footer {
+    height: 5px;
+    width: 100%;
+    color: white;
+    text-align: left;
+    padding: 5px;
+    position: static;
+    bottom: 0;
+
 }
