@@ -55,6 +55,11 @@ def index():
 
         elif any(character == champ.lower() for champ in champions.keys()):
             if character.lower() not in [i.lower() for i in session['current_composition']]:
+                if "akali" in character.lower():
+                    if "/" in character.lower():
+                        session['current_composition'].append("Akali K/DA")
+                    else:
+                        session['current_composition'].append("Akali True Damage")
                 session['current_composition'].append(character.capitalize())
                 print(f"{character.capitalize()} has been added\n")
         else:
