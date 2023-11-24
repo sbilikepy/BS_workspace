@@ -78,7 +78,8 @@ champions = {
     "Thresh": [],
     "Zed": [],
     "Ahri": [],
-    "Akali": [],
+    "Akali K/DA": [],
+    "Akali True Damage": []
     "Poppy": [],
     "Twisted fate": [],
     "Blitzcrank": [],
@@ -115,7 +116,7 @@ trait_heartsteel_pull = [["Kayn", "Sett", "Ezreal", "Yone", "Aphelios", "K`sante
 trait_hyperpop_pull = [["Ziggs", "Lulu"], "Hyperpop"]
 trait_illbeats_pull = [["Illaoi"], "ILLBEATS"]
 trait_jazz_pull = [["Lucian", "Bard", "Miss fortune"], "Jazz"]
-trait_kda_pull = [["Lillia", "Ahri", "Kai'sa", "Neeko", "Evelynn", "Seraphine"], "K/DA"]
+trait_kda_pull = [["Lillia", "Ahri", "Akali K/DA", "Kai'sa", "Neeko", "Evelynn", "Seraphine"], "K/DA"]
 trait_maestro_pull = [["Jhin"], "Maestro"]
 trait_mixmaster_pull = [["Sona"], "Mixmaster"]
 trait_mosher_pull = [["Yorick", "Poppy", "Urgot", "Gnar", "Sett", "Vi", "Jax"], "Mosher"]
@@ -125,7 +126,7 @@ trait_rapidfire_pull = [["Lucian", "Caitlyn", "Senna", "Jinx", "Aphelios"], "Rap
 trait_sentinel_pull = [["Lillia", "Ekko", "Blitzcrank", "Mordekaiser", "Garen", "K`sante"], "Sentinel"]
 trait_spellweaver_pull = [["Sona", "Lulu", "Ahri", "Ekko", "Seraphine", "Gragas", "Annie"], "Spellweaver"]
 trait_superfan_pull = [["Lillia", "Kennen", "Neeko", "Gnar"], "Superfan"]
-trait_true_damage_pull = [["Qiyana", "Kennen", "Ekko", "Senna", "Yasuo"], "True Damage"]
+trait_true_damage_pull = [["Qiyana", "Akali True Damage" "Kennen", "Ekko", "Senna", "Yasuo"], "True Damage"]
 trait_wildcard_pull = [["Kayn"], "Wildcard"]
 
 composition_iterator = [

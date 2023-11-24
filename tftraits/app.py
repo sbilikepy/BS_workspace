@@ -51,8 +51,7 @@ def index():
                                    third_prior=[],
                                    no_prior=[],
                                    suggestions=None)
-        elif character.capitalize() == "akali":
-            akali()
+
         elif any(character == champ.lower() for champ in champions.keys()):
             if character.lower() not in [i.lower() for i in session['current_composition']]:
                 session['current_composition'].append(character.capitalize())
@@ -167,19 +166,19 @@ def tailor():
 
     return result
 
-def akali():
-    if "Akali" not in session['current_composition']:
-        akali_spec = None
-        while akali_spec not in ("1", "2"):
-            akali_spec = input("\nAkali spec: \n1. K/DA\n2. True Damage\n")
-        if akali_spec == "1":
-            champions["Akali"].append("K/DA")
-            print("K/DA Akali has been added\n")
-            session['current_composition'].append("Akali")
-        if akali_spec == "2":
-            champions["Akali"].append("True Damage")
-            print("True Damage Akali has been added\n")
-            session['current_composition'].append("Akali")
+# def akali():
+#     if "Akali" not in session['current_composition']:
+#         akali_spec = None
+#         while akali_spec not in ("1", "2"):
+#             akali_spec = input("\nAkali spec: \n1. K/DA\n2. True Damage\n")
+#         if akali_spec == "1":
+#             champions["Akali"].append("K/DA")
+#             print("K/DA Akali has been added\n")
+#             session['current_composition'].append("Akali")
+#         if akali_spec == "2":
+#             champions["Akali"].append("True Damage")
+#             print("True Damage Akali has been added\n")
+#             session['current_composition'].append("Akali")
 
 if __name__ == "__main__":
     data_fill()
