@@ -1,7 +1,7 @@
 """ {trait : [breakpoints]}"""
 traits = {
     "Pentakill": [3, 5, 7, 10],
-    "K/DA": [3, 5, 7, 10],
+    "K/da": [3, 5, 7, 10],
     "Country": [3, 5, 7],
     "Crowd Diver": [2, 4, 6],
     "True Damage": [2, 4, 6, 9],
