@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request, redirect, session
-from datetime import datetime
-from data import traits, champions, composition_iterator
 import os
+from datetime import datetime
+from flask import Flask, render_template, request, redirect, session
+from data import traits, champions, composition_iterator
 
 app = Flask(__name__)
 app.secret_key = 'gsdfkq34f89uu9FF9tr0ghs'
@@ -36,7 +36,6 @@ def data_fill():
 def index():
     if 'current_composition' not in session:
         session['current_composition'] = []
-
     if request.method == 'POST':
         character = request.form['character'].lower()
         if character.capitalize() in session.get('current_composition', []):
@@ -52,14 +51,12 @@ def index():
                                    third_prior=[],
                                    no_prior=[],
                                    suggestions=None)
-
         elif any(character == champ.lower() for champ in champions.keys()):
             if character.lower() not in [i.lower() for i in session['current_composition']]:
                 session['current_composition'].append(character.capitalize())
                 print(f"{character.capitalize()} has been added\n")
         else:
             print("Enter a valid character\n")
-
     group_data()
     suggestions = tailor()
     return render_template('index.html',
@@ -83,17 +80,13 @@ def group_data():
     second_prior = []
     third_prior = []
     no_prior = []
-
     print("*" * 50, "\n")
     if not session['current_composition']:
         return
-
     print(f"Your composition: {session['current_composition']}")
-
     for character in session['current_composition']:
         for trait in champions[character]:
             current_traits[trait] = current_traits.get(trait, 0) + 1
-
     for trait, count in current_traits.items():
         if count == traits[trait][-1]:
             capped_traits.append(f"{trait}: {count} | CAPPED")
@@ -110,7 +103,6 @@ def group_data():
                 second_prior.append(trait)
             if (traits[trait][0] - count) > 1:
                 third_prior.append(trait)
-
     session['capped_traits'] = capped_traits
     session['breakpoint_traits'] = breakpoint_traits
     session['remaining_traits'] = remaining_traits
@@ -125,17 +117,20 @@ def tailor():
     second_prior = session.get('second_prior', [])
     third_prior = session.get('third_prior', [])
     no_prior = session.get('no_prior', [])
-
-    print(f"\n\nFirst prio: {first_prior}")
-    print(f"Second prio: {second_prior} ")
-    print(f"Third prio: {third_prior}")
-    print(f"No prio: {no_prior}\n\n")
-
     suggestions = {
         name: 0 for name in champions.keys()
         if name not in session.get('current_composition')
     }
-
+    for i in session.get('current_composition', []):
+        print("comp: ", i)
+        if i == "Akali k/da":
+            print("need to delete true damage")
+            print(champions["Akali true damage"])
+            champions["Akali true damage"] = []
+        if i == "Akali true damage":
+            print("need to delete kda")
+            print(champions["Akali k/da"])
+            champions["Akali k/da"] = []
     for trait in first_prior + second_prior + third_prior + no_prior:
         for name, traits in champions.items():
             if name not in session.get('current_composition', []):
@@ -154,7 +149,6 @@ def tailor():
                 if trait in no_prior:
                     if trait in traits:
                         suggestions[name] += 0
-
     suggestions = dict(
         sorted(
             suggestions.items(), key=lambda item: item[1], reverse=True
@@ -162,17 +156,14 @@ def tailor():
     )
 
     scoreboard = {}
-
     for character, score in suggestions.items():
         if score not in scoreboard:
             scoreboard[score] = [character]
         else:
             scoreboard[score].append(character)
-
     result = {}
     for score, characters in scoreboard.items():
         result[score] = characters
-
     return result
 
 

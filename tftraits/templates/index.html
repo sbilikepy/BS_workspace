@@ -26,28 +26,30 @@
 <h2>Your traits:</h2>
 <ul>
     {% for trait in capped_traits %}
-    <li>{{ trait }}</li>
+    <li><span style="{% if 'CAPPED' in trait %}font-weight: bold; color: orange;{% endif %}">{{ trait }}</span></li>
     {% endfor %}
     {% for trait in breakpoint_traits %}
-    <li>{{ trait }}</li>
+    <li><span style="{% if 'BREAKPOINT' in trait %}font-weight: bold; color: purple;{% endif %}">{{ trait }}</span></li>
     {% endfor %}
     {% for trait in remaining_traits %}
-    <li>{{ trait }}</li>
+    <li><span style="{% if '+2' in trait %}color: grey;{% endif %}">{{ trait }}</span></li>
+
     {% endfor %}
 </ul>
 
+
 <h2>Priorities:</h2>
 {% if first_prior %}
-    <p>First prio: {{ first_prior }}</p>
+<p>First prio: {{ first_prior }}</p>
 {% endif %}
 {% if second_prior %}
-    <p>Second prio: {{ second_prior }}</p>
+<p>Second prio: {{ second_prior }}</p>
 {% endif %}
 {% if third_prior %}
-    <p>Third prio: {{ third_prior }}</p>
+<p>Third prio: {{ third_prior }}</p>
 {% endif %}
 {% if no_prior %}
-    <p>No prio: {{ no_prior }}</p>
+<p>No prio: {{ no_prior }}</p>
 {% endif %}
 
 <h2 class="suggestions">Suggestions</h2>
