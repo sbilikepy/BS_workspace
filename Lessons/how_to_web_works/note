@@ -10,3 +10,11 @@ Is used for DNS requests
 
 What is default gateway?
 It provides outgoing access to data packets to a destination in some other discrete network
+
+##############################
+HTTPS Q
+Explain status codes? 2XX
+This class of status codes indicates the action requested by the client was received, understood, and accepted.
+_____
+PUT method in REST
+Updates an item
