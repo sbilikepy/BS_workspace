@@ -1,0 +1,12 @@
+https://www.djangoproject.com/
+
+
+
+python3 -m venv venv
+venv\Scripts\activate
+pip install django
+django-admin startproject app .         # start in current directory, not new
+python manage.py runserver              # test
+CTRL+C # to STOP server
+edit-configuration (right top)
++ django server -> Fix -> choose root for project and settings
