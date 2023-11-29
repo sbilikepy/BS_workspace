@@ -10,3 +10,12 @@ python manage.py runserver              # test
 CTRL+C # to STOP server
 edit-configuration (right top)
 + django server -> Fix -> choose root for project and settings
+
+
+_________________
+or
+File -> new project -> Django
+__________________
+
+python manage.py startapp NAME
+main_dir -> INSTALLED_APPS -> add app name

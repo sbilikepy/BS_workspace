@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Lessons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lessons.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/note" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/note" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Scrapy-Idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../Scrapy-Idealista" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dedomeno" beforeDir="false" afterPath="$PROJECT_DIR$/../dedomeno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-actor-manager" beforeDir="false" afterPath="$PROJECT_DIR$/../py-actor-manager" afterDir="false" />
@@ -285,7 +286,8 @@
       <workItem from="1696957274923" duration="126000" />
       <workItem from="1701187881990" duration="289000" />
       <workItem from="1701188205035" duration="2164000" />
-      <workItem from="1701205058286" duration="670000" />
+      <workItem from="1701205058286" duration="920000" />
+      <workItem from="1701270963595" duration="2105000" />
     </task>
     <servers />
   </component>
