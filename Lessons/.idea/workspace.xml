@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Django_WEB/daily web.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Lessons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lessons.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_WEB/note" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/note" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/catalog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/catalog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Scrapy-Idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../Scrapy-Idealista" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dedomeno" beforeDir="false" afterPath="$PROJECT_DIR$/../dedomeno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-actor-manager" beforeDir="false" afterPath="$PROJECT_DIR$/../py-actor-manager" afterDir="false" />
@@ -58,27 +61,27 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/BS_HOME/PycharmProjects/Lessons/Django_WEB/Intro/setup/app/settings.py&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.django.DjangoModulesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/py-taxi-service-startproject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.django.DjangoModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\BS_HOME\PycharmProjects\Lessons\Python Core\Dict advanced" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.App">
-    <configuration name="Python Console (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.daily web">
+    <configuration name="daily web" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -86,12 +89,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Django_WEB" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="/Python Console" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Django_WEB/daily web.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -215,19 +218,19 @@
     </configuration>
     <list>
       <item itemvalue="Django Server.App" />
+      <item itemvalue="Python.daily web" />
       <item itemvalue="Python.daily" />
       <item itemvalue="Python.getitem_setitem" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.one more" />
-      <item itemvalue="Python.Python Console (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.daily web" />
         <item itemvalue="Python.daily" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.one more" />
         <item itemvalue="Python.getitem_setitem" />
-        <item itemvalue="Python.Python Console (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -288,6 +291,10 @@
       <workItem from="1701188205035" duration="2164000" />
       <workItem from="1701205058286" duration="920000" />
       <workItem from="1701270963595" duration="2105000" />
+      <workItem from="1701290957667" duration="352000" />
+      <workItem from="1701450230460" duration="3211000" />
+      <workItem from="1701457184824" duration="172000" />
+      <workItem from="1701457373804" duration="1374000" />
     </task>
     <servers />
   </component>
@@ -307,6 +314,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lessons$main.coverage" NAME="main Coverage Results" MODIFIED="1692722467034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM/first_configure" />
+    <SUITE FILE_PATH="coverage/Lessons$daily_web.coverage" NAME="daily web Coverage Results" MODIFIED="1701291241706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_WEB" />
     <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1695762291859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
   </component>
 </project>

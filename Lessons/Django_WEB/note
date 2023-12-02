@@ -19,3 +19,14 @@ __________________
 
 python manage.py startapp NAME
 main_dir -> INSTALLED_APPS -> add app name
+___________________
+admin page:
+urls.py -> 
+
+____
+add models to admin panel
+
+
+
+admin.py -> from APPNAME.models import *
+admin.site.register(MODELNAME)
