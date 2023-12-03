@@ -13,3 +13,8 @@ print(flatten_and_sort([[3], [1]]))
 flatten_and_sort([[3, 2], [5, 1]])  #  [1, 2, 3, 5]
 flatten_and_sort([[3, 2, 1], [7, 9, 8], [6, 4, 5]])  #  [1, 2, 3, 4, 5, 6, 7, 8, 9]
 flatten_and_sort([[], []])  #  []
+def testt():
+    for i in range(10):
+        print(i)
+if __name__ == '__main__':
+    testt()

@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Django_WEB/daily web.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django_WEB/note" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/note" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/catalog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/catalog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/daily web.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/daily web.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Scrapy-Idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../Scrapy-Idealista" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dedomeno" beforeDir="false" afterPath="$PROJECT_DIR$/../dedomeno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-actor-manager" beforeDir="false" afterPath="$PROJECT_DIR$/../py-actor-manager" afterDir="false" />
@@ -53,6 +49,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2PW641QFDRgRSCUGusEtQjG7y0r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -71,7 +70,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.django.DjangoModulesConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -226,11 +225,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.daily web" />
-        <item itemvalue="Python.daily" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.one more" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.getitem_setitem" />
+        <item itemvalue="Python.daily" />
+        <item itemvalue="Python.daily web" />
       </list>
     </recent_temporary>
   </component>
@@ -295,6 +294,10 @@
       <workItem from="1701450230460" duration="3211000" />
       <workItem from="1701457184824" duration="172000" />
       <workItem from="1701457373804" duration="1374000" />
+      <workItem from="1701533425486" duration="163000" />
+      <workItem from="1701544778812" duration="726000" />
+      <workItem from="1701555051236" duration="4822000" />
+      <workItem from="1701563060001" duration="1211000" />
     </task>
     <servers />
   </component>
@@ -314,7 +317,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Lessons$main.coverage" NAME="main Coverage Results" MODIFIED="1692722467034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM/first_configure" />
-    <SUITE FILE_PATH="coverage/Lessons$daily_web.coverage" NAME="daily web Coverage Results" MODIFIED="1701291241706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_WEB" />
+    <SUITE FILE_PATH="coverage/Lessons$daily_web.coverage" NAME="daily web Coverage Results" MODIFIED="1701561652467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_WEB" />
     <SUITE FILE_PATH="coverage/Lessons$daily.coverage" NAME="daily Coverage Results" MODIFIED="1695762291859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_ORM" />
   </component>
 </project>
