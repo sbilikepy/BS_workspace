@@ -18,3 +18,11 @@ def testt():
         print(i)
 if __name__ == '__main__':
     testt()
+
+
+def is_isogram(string: str) -> bool:
+    print(set(string))
+    print(string)
+    if len(set(string.lower())) == len(string.lower()):
+        return True
+    return False
