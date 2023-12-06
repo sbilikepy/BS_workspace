@@ -3,8 +3,8 @@ from django.shortcuts import render
 
 from .models import SomeModel, SomeModel_two
 
-x = 1 + 1
-
+app_name = "catalog"
+#TAXI analog
 
 def index(request):
     print(SomeModel.objects.count())

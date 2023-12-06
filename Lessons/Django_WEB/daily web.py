@@ -9,15 +9,7 @@ def flatten_and_sort(lst: list) -> list:
 
 
 
-print(flatten_and_sort([[3], [1]]))
-flatten_and_sort([[3, 2], [5, 1]])  #  [1, 2, 3, 5]
-flatten_and_sort([[3, 2, 1], [7, 9, 8], [6, 4, 5]])  #  [1, 2, 3, 4, 5, 6, 7, 8, 9]
-flatten_and_sort([[], []])  #  []
-def testt():
-    for i in range(10):
-        print(i)
-if __name__ == '__main__':
-    testt()
+
 
 
 def is_isogram(string: str) -> bool:
@@ -26,3 +18,20 @@ def is_isogram(string: str) -> bool:
     if len(set(string.lower())) == len(string.lower()):
         return True
     return False
+
+
+def longest_substring(string: str) -> int:
+    if len(string) == len(set(string)):
+        return len(string)
+    max_len = [0]
+    temp_str = ""
+    for i in string:
+        if i not in temp_str:
+            temp_str += i
+        else:
+            max_len.append(len(temp_str))
+            temp_str = temp_str[temp_str.index(i) + 1:] + i
+    return max(max_len)
+
+
+print(longest_substring(' a '))
