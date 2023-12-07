@@ -33,5 +33,11 @@ def longest_substring(string: str) -> int:
             temp_str = temp_str[temp_str.index(i) + 1:] + i
     return max(max_len)
 
-
-print(longest_substring(' a '))
+def pluck(dicts: list, name: str) -> list:
+    result = []
+    for cur_dict in dicts:
+        if name in cur_dict.keys():
+            result.append(cur_dict[name])
+        else:
+            result.append(None)
+    return result
