@@ -41,3 +41,7 @@ def pluck(dicts: list, name: str) -> list:
         else:
             result.append(None)
     return result
+
+
+def xo(string: str) -> bool:
+    return True if string.lower().count("x") == string.lower().count("o") else False
