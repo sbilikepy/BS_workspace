@@ -1,0 +1,15 @@
+
+{% block content %}
+
+
+  {% if literary_format_list %}
+    <ul>
+
+  {% for lf in literary_format_list %}
+    <li>{{ lf.name }}</li>
+  {% endfor %}
+  {% else %}
+  <p>there's no lf here </p>
+  {% endif %}
+</ul>
+{% endblock %}

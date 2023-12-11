@@ -9,11 +9,12 @@ class BookAdmin(admin.ModelAdmin):
     list_filter = ["format"]
     search_fields = ["title"]
 
+
 @admin.register(Author)
 class AuthorAdmin(UserAdmin):
     list_display = UserAdmin.list_display + ("pseudonym",)
     fieldsets = UserAdmin.fieldsets + (("NEW SECTION", {"fields": ("pseudonym",)}),)
     add_fieldsets = UserAdmin.add_fieldsets + (("NEW SECTION", {"fields": ("first_name", "last_name", "pseudonym",)}),)
 
-admin.site.register(LiteraryFormat)
 
+admin.site.register(LiteraryFormat)
