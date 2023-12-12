@@ -97,3 +97,8 @@ helper.page_index(5)
 helper.page_index(2)
 helper.page_index(20)
 helper.page_index(-10)
+
+
+def find_children(santas_list: list, children: list) -> list:
+    return sorted([kid for kid in children if kid in santas_list])
+

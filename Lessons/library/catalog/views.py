@@ -1,4 +1,4 @@
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render
 from django.views import generic
 
@@ -38,3 +38,14 @@ class LiteraryFormatListView(generic.ListView):
 class BookListView(generic.ListView):
     model = Book
     queryset = Book.objects.select_related("format")  # ORM N+1 issue fixed by select_related
+    paginate_by = 10
+
+
+def book_detail_view(request: HttpRequest, pk: int) -> HttpResponse:
+    try:
+        context = {
+            "book": Book.objects.get(id=pk)
+        }
+    except Book.DoesNotExist:
+        raise Http404("Book does not exist")
+    return render(request, template_name="catalog/book_detail.html", context=context)
