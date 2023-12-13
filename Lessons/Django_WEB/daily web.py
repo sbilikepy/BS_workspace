@@ -102,3 +102,32 @@ helper.page_index(-10)
 def find_children(santas_list: list, children: list) -> list:
     return sorted([kid for kid in children if kid in santas_list])
 
+
+def triangle(row: str) -> str:
+
+    if len(row) == 1:
+        return row[0]
+
+    colours = "RGB"
+    all_rows = [row]
+    next_row = ""
+
+    while len(all_rows) < len(row):
+        for iteration in range(1, len(all_rows[-1])):
+            prev = row[iteration - 1]
+            current = row[iteration]
+
+            if prev == current:
+                next_row += prev
+            else:
+                for colour in colours:
+                    if colour not in prev + current:
+                        next_row += colour
+
+        all_rows.append(next_row)
+        next_row = ""
+
+    return all_rows[-1]
+
+
+print(triangle("RGBG"))  # BRR #GR #B
