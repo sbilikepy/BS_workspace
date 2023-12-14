@@ -130,4 +130,19 @@ def triangle(row: str) -> str:
     return all_rows[-1]
 
 
-print(triangle("RGBG"))  # BRR #GR #B
+def compression(chars: list) -> str:
+    if len(chars) == 1:
+        return 1
+    unique_and_order = []
+    for i in chars:
+        if i not in unique_and_order:
+            unique_and_order.append(i)
+    print(unique_and_order)
+    result = ""
+    for i in unique_and_order:
+        if chars.count(i) == 1:
+            result += i
+        result += f"{i}{chars.count(i)}"
+    print(result)
+    return result
+сompression(["a", "a", "b", "b", "c", "c", "c"]) #a2b2c3
