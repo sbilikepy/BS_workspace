@@ -104,7 +104,6 @@ def find_children(santas_list: list, children: list) -> list:
 
 
 def triangle(row: str) -> str:
-
     if len(row) == 1:
         return row[0]
 
@@ -145,4 +144,15 @@ def compression(chars: list) -> str:
         result += f"{i}{chars.count(i)}"
     print(result)
     return result
-сompression(["a", "a", "b", "b", "c", "c", "c"]) #a2b2c3
+
+
+def sum_of_a_beach(beach: str) -> int:
+    return sum([beach.lower().count(i) for i in ("sand", "water", "fish", "sun")])
+
+
+
+print(sum_of_a_beach("sand"))#1
+print(sum_of_a_beach("fishsandwatersun"))#4
+print(sum_of_a_beach("PROPeRSaNofWATer"))#1
+print(sum_of_a_beach("Given string SuN with spaces"))#1
+
