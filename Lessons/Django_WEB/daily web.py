@@ -1,3 +1,6 @@
+import random
+
+
 def flatten_and_sort(lst: list) -> list:
     if len(lst):
         result = []
@@ -150,9 +153,35 @@ def sum_of_a_beach(beach: str) -> int:
     return sum([beach.lower().count(i) for i in ("sand", "water", "fish", "sun")])
 
 
+def valpa():
+    result = ""
+    for i in range(30):
+        result += random.choice(
+            [
+                str(random.randint(1, 2)),
+                str(random.randint(1, 2)),
+                chr(random.randint(97, 122)).upper(),
+                chr(random.randint(97, 122)).lower()]
+        )
+    return result
 
-print(sum_of_a_beach("sand"))#1
-print(sum_of_a_beach("fishsandwatersun"))#4
-print(sum_of_a_beach("PROPeRSaNofWATer"))#1
-print(sum_of_a_beach("Given string SuN with spaces"))#1
 
+print(valpa())
+print(len("g22O2H1aI21112N11htc"))
+
+
+def longest_vowel_chain(string: str) -> int:
+    if not len(string):
+        return 0
+    vowels = "aeiou"
+    result = 0
+    counter = 0
+    for i in string:
+        if i in vowels:
+            counter += 1
+        else:
+            if result < counter:
+                result = counter
+            counter = 0
+
+    return result
