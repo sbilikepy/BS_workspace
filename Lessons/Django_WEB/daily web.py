@@ -185,3 +185,21 @@ def longest_vowel_chain(string: str) -> int:
             counter = 0
 
     return result
+
+
+def shoot(results: list) -> str:
+    p1_score = 0
+    p2_score = 0
+    multiplier = 0
+    for every_try in results:
+        # [{P1:'XX'', P2:'XO'}, True]
+        multiplier = 2 if every_try[1] is True else 1
+        p1_score += every_try[0]["P1"].count("X") * multiplier
+        p2_score += every_try[0]["P2"].count("X") * multiplier
+    if not p1_score == p2_score:
+        if p1_score > p2_score:
+            return "Pete Wins!"
+        else:
+            return "Phil Wins!"
+    return "Draw!"
+
