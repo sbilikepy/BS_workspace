@@ -16,7 +16,7 @@ class Guild(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name="guild_owner"
     )
-    highest_progress = models.CharField(max_length=5)  # (12/12)
+    highest_progress = models.CharField(max_length=5)  #TODO: set to max(Guild.team.team_progress)
     teams = models.ForeignKey(Team, default=None, blank=True, on_delete=models.PROTECT, related_name="guid_teams")
 
 
