@@ -79,7 +79,7 @@ class PlannedActivity(models.Model):
     )
     start_time = models.TimeField()
     end_time = models.TimeField()
-    by_team = models.ForeignKey("Team", on_delete=models.SET_NULL, null=True, blank=True)
+    by_team = models.ForeignKey("Team", on_delete=models.CASCADE, null=False, blank=False)
 
     def __str__(self):
         return f"{self.raid_day}: {self.start_time} -> {self.end_time}"
