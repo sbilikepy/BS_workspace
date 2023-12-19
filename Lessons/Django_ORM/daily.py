@@ -751,7 +751,6 @@ def sum_of_a_sequence(begin_number: int, end_number: int, step: int) -> int:
     return sum(list(range(begin_number, end_number + 1))[::step])
 
 
-print(sum_of_a_sequence(begin_number=1, end_number=7, step=1))  # 28
 
 
 def student_att(records: str) -> bool:
@@ -782,3 +781,15 @@ def last(*args):
             return last_arg
     else:
         return None
+
+def group_by_commas(number: int) -> str:
+    number_str = str(number)[::-1]
+    groups = [number_str[i:i + 3][::-1] for i in range(0, len(number_str), 3)]
+    result = ','.join(groups[::-1])
+    return result
+
+group_by_commas(100)
+group_by_commas(1000)
+group_by_commas(10000)
+group_by_commas(100000)
+
