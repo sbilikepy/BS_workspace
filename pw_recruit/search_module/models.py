@@ -57,7 +57,13 @@ class Recruit(models.Model):
     character = models.ForeignKey(Character, on_delete=models.SET_DEFAULT, default=None)
     note = models.CharField(max_length=255, blank=True, null=True)
     wcl = models.IntegerField(blank=True, null=True)  # TODO: WCL API sync
-    uptime = models.ForeignKey("PlannedActivity", on_delete=models.SET_NULL, null=True, default=None, related_name="recruit_uptime")
+    uptime = models.ForeignKey(
+        "PlannedActivity",
+        on_delete=models.SET_NULL,
+        null=True,
+        default=None,
+        related_name="recruit_uptime",
+    )
 
     def __str__(self):
         return f"{self.nickname}: Character: {self.character}. Note: {self.note}. WCL: {self.wcl}. Uptime: {self.uptime}"
@@ -79,7 +85,9 @@ class PlannedActivity(models.Model):
     )
     start_time = models.TimeField()
     end_time = models.TimeField()
-    by_team = models.ForeignKey("Team", on_delete=models.CASCADE, null=False, blank=False)
+    by_team = models.ForeignKey(
+        "Team", on_delete=models.CASCADE, null=False, blank=False
+    )
 
     def __str__(self):
         return f"{self.raid_day}: {self.start_time} -> {self.end_time}"
