@@ -751,8 +751,6 @@ def sum_of_a_sequence(begin_number: int, end_number: int, step: int) -> int:
     return sum(list(range(begin_number, end_number + 1))[::step])
 
 
-
-
 def student_att(records: str) -> bool:
     absence_count = 0
     late_count = 0
@@ -771,7 +769,6 @@ def student_att(records: str) -> bool:
     return absence_count < 2
 
 
-
 def last(*args):
     if args:
         last_arg = args[-1]
@@ -782,14 +779,48 @@ def last(*args):
     else:
         return None
 
+
 def group_by_commas(number: int) -> str:
     number_str = str(number)[::-1]
     groups = [number_str[i:i + 3][::-1] for i in range(0, len(number_str), 3)]
     result = ','.join(groups[::-1])
     return result
 
+
 group_by_commas(100)
 group_by_commas(1000)
 group_by_commas(10000)
 group_by_commas(100000)
 
+from string import ascii_lowercase
+
+
+def consonant_value(string: str) -> int:
+    exception = "aeiou"
+    val_count = ascii_lowercase
+    strings = []
+    string_to_add = ""
+    result = []
+
+    for letter in string:
+        if letter not in exception:
+            string_to_add += letter
+        else:
+            strings.append(string_to_add)
+            string_to_add = ""
+
+    strings.append(string_to_add)
+
+    if not len(strings):
+        strings.append(string)
+
+    for combination in strings:
+        points = 0
+        for letter in combination:
+            points += val_count.index(letter) + 1
+        result.append(points)
+
+    return max(result)
+
+
+print(consonant_value("abb"))

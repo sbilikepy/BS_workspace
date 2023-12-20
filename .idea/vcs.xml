@@ -51,6 +51,7 @@
     <mapping directory="$PROJECT_DIR$/py-solid-book-service-refactoring" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-split-integer" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-taxi-service-class-based-views" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-home-page" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-startproject" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-tickets-and-orders" vcs="Git" />
