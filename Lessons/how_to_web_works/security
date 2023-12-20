@@ -1,0 +1,4 @@
+1. passwords in body + hash + salt
+sessions in cookies
+2. Common error message for wrong mail/pass
+3. CSRF tokens
