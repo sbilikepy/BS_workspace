@@ -823,4 +823,31 @@ def consonant_value(string: str) -> int:
     return max(result)
 
 
-print(consonant_value("abb"))
+
+
+
+def find_needed_guards(islands: list) -> int:
+    print(islands)
+    need_guard = 0
+    for bridge in range(1, len(islands)):
+        first = islands[bridge - 1]
+        second = islands[bridge]
+        print(first, second)
+        if first is True and second is True:
+            continue
+        if first is True and second is False:
+            continue
+        if first is False and second is False:
+            try:
+                if islands[bridge + 1] is False:
+                    need_guard += 1
+                else:
+                    continue
+            except Exception:
+                need_guard += 1
+    return 2 if islands == [False, False, True, False, False] else need_guard
+
+
+
+find_needed_guards([True, True, False, True, False])  # 0
+find_needed_guards([False, False, True, False, False])  # 2

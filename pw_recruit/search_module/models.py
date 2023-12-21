@@ -136,7 +136,7 @@ class Guild(models.Model):
         ("Alliance", "Alliance"),
         ("Horde", "Horde"),
     ]
-    name = models.CharField(max_length=255, blank=False, null=False)
+    name = models.CharField(max_length=255, blank=False, null=False, unique=True)
     faction = models.CharField(
         max_length=10,
         choices=FACTION_CHOICES,
