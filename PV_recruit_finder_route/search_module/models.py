@@ -7,6 +7,7 @@ from django.db import models
 
 class User(AbstractUser):
     """Guid owner, who manage recruiting part"""
+
     pass
 
     # guild = models.ForeignKey(
@@ -93,7 +94,9 @@ class Team(models.Model):
     team_size = models.IntegerField()
     team_progress = models.IntegerField(default=0)
     active_search = models.BooleanField(default=True)
-    looking_for = models.ManyToManyField(Character, related_name="looking_for", null=True, blank=True, default=None)
+    looking_for = models.ManyToManyField(
+        Character, related_name="looking_for", null=True, blank=True, default=None
+    )
     team_note = models.CharField(
         max_length=1000,
         blank=True,
@@ -101,8 +104,12 @@ class Team(models.Model):
     )
     # activities = models.ManyToOneRel(PlannedActivity, related_name="activities")
     required_active_days_amount = models.IntegerField(default=0)
-    guild = models.ForeignKey("Guild", on_delete=models.CASCADE, blank=False, null=False)
-    team_name = models.CharField(max_length=255, default=guild.name, null=True, blank=True)
+    guild = models.ForeignKey(
+        "Guild", on_delete=models.CASCADE, blank=False, null=False
+    )
+    team_name = models.CharField(
+        max_length=255, default=guild.name, null=True, blank=True
+    )
 
     LOOT_SYSTEM_CHOICES = [
         ("Loot Council", "Loot Council"),
@@ -159,10 +166,7 @@ class Guild(models.Model):
         null=False,
     )
     highest_progress = models.IntegerField(
-        max_length=2,
-        default=0,
-        null=True,
-        blank=True
+        max_length=2, default=0, null=True, blank=True
     )  # TODO: set to max(Guild.team.team_progress)
     teams = models.ForeignKey(
         Team,
@@ -170,7 +174,7 @@ class Guild(models.Model):
         null=True,
         related_name="teams",
         on_delete=models.SET_NULL,
-        default=None
+        default=None,
     )
     discord_link = models.CharField(max_length=255, null=True, blank=True)
     apply_link = models.CharField(max_length=255, null=True, blank=True)
@@ -185,9 +189,6 @@ class Guild(models.Model):
     # settings.py
     # MEDIA_URL = '/media/'
     # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-
 
     def __str__(self):
         return f"{self.name}"
