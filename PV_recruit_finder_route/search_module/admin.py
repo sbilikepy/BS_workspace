@@ -2,6 +2,10 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from search_module.models import *
 
+@admin.register(User)
+class UserAdmin(UserAdmin):
+    pass
+
 
 @admin.register(InGameClass)
 class InGameClassAdmin(admin.ModelAdmin):

@@ -7,21 +7,20 @@ from django.db import models
 
 class User(AbstractUser):
     """Guid owner, who manage recruiting part"""
-
-    guild = models.ForeignKey(
-        "Guild",
-        default=None,
-        blank=True,
-        null=True,
-        on_delete=models.SET_NULL,
-        related_name="users_guild",
-    )
-
+    pass
+    # guild = models.ForeignKey(
+    #     "Guild",
+    #     default= None, #BP
+    #     blank=True,
+    #     null=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name="users_guild",
+    #
+    #
+    # )
+    todelete = models.CharField(max_length=1)
     def __str__(self):
-        if self.guild:
-            return f"{self.username} - {self.guild.name} owner"
-        else:
-            return f"{self.username}"
+        return f"{self.username}"
 
 
 class InGameClass(models.Model):
@@ -62,7 +61,7 @@ class Recruit(models.Model):
     rt_end = models.TimeField(default=None, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.nickname}: Character: {self.character}. Note: {self.note}. WCL: {self.wcl}. Uptime: {self.uptime}"
+        return f"{self.nickname}: Character: {self.character}. Note: {self.note}. WCL: {self.wcl}. Uptime: {self.uptime_days}"
 
 
 class PlannedActivity(models.Model):
@@ -90,7 +89,7 @@ class PlannedActivity(models.Model):
 
 
 class Team(models.Model):
-    team_name = models.CharField(max_length=255)
+
     team_size = models.IntegerField()
     team_progress = models.IntegerField(default=0)
     active_search = models.BooleanField(default=True)
@@ -100,7 +99,10 @@ class Team(models.Model):
         blank=True,
         null=True,
     )
-    activities = models.ManyToManyField(PlannedActivity, related_name="activities")
+    # activities = models.ManyToOneRel(PlannedActivity, related_name="activities")
+    required_active_days_amount = models.IntegerField(default=0)
+    guild = models.ForeignKey("Guild", on_delete=models.CASCADE, blank=False, null=False)
+    team_name = models.CharField(max_length=255, default=guild.name, null=True, blank=True)
 
     LOOT_SYSTEM_CHOICES = [
         ("Loot Council", "Loot Council"),
@@ -150,11 +152,13 @@ class Guild(models.Model):
     highest_progress = models.CharField(
         max_length=5
     )  # TODO: set to max(Guild.team.team_progress)
-    teams = models.ManyToManyField(
+    teams = models.ForeignKey(
         Team,
         blank=True,
         null=True,
         related_name="teams",
+        on_delete=models.SET_NULL,
+        default=None
     )
     discord_link = models.CharField(max_length=255, null=True, blank=True)
     apply_link = models.CharField(max_length=255, null=True, blank=True)
