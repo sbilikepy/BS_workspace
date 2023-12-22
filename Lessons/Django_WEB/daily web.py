@@ -203,3 +203,18 @@ def shoot(results: list) -> str:
             return "Phil Wins!"
     return "Draw!"
 
+class MinStack:
+    def __init__(self) -> None:
+        self.stack = []
+
+    def push(self, value: int) -> None:
+        self.stack.append(value)
+
+    def pop(self) -> None:
+        self.stack.pop(-1)
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def get_min(self) -> int:
+        return min(self.stack)
