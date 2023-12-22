@@ -7,19 +7,7 @@ from django.db import models
 
 class User(AbstractUser):
     """Guid owner, who manage recruiting part"""
-
     pass
-
-    # guild = models.ForeignKey(
-    #     "Guild",
-    #     default= None, #BP
-    #     blank=True,
-    #     null=True,
-    #     on_delete=models.SET_NULL,
-    #     related_name="users_guild",
-    #
-    #
-    # )
 
     def __str__(self):
         return f"{self.username}"
@@ -135,9 +123,8 @@ class Team(models.Model):
             self.team_name = self.guild.name
         if self.team_progress > self.guild.highest_progress:
             self.guild.highest_progress = self.team_progress
-        self.guild.save()
 
-        # [team.team_progress for team in [guild_team for guild_team in Team.objects.all()] if guild_team.guild.name == self.name]
+        self.guild.save()
 
     def __str__(self):
         return f"Team {self.team_name}"
@@ -182,18 +169,7 @@ class Guild(models.Model):
     guild_note = models.CharField(max_length=1000, null=True, blank=True)
     avatar = models.CharField(
         max_length=255, null=True, blank=True
-    )  # link to img TODO: read comment below
-
-    # avatar = models.ImageField(upload_to='guild_avatars/', null=True, blank=True)
-    # +
-    # settings.py
-    # MEDIA_URL = '/media/'
-    # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    )
 
     def __str__(self):
         return f"{self.name}"
-
-        # return (
-        #     f"{self.name}. Faction: {self.faction}. GM/recruiter: {self.owner}. Teams: {teams_str}. Discord: {self.discord_link}. "
-        #     f"Apply link: {self.apply_link}. WCL link: {self.wcl_link}. Note: {self.guild_note}"
-        # )
