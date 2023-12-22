@@ -57,13 +57,9 @@ class Recruit(models.Model):
     character = models.ForeignKey(Character, on_delete=models.SET_DEFAULT, default=None)
     note = models.CharField(max_length=255, blank=True, null=True)
     wcl = models.IntegerField(blank=True, null=True)  # TODO: WCL API sync
-    uptime = models.ForeignKey(
-        "PlannedActivity",
-        on_delete=models.SET_NULL,
-        null=True,
-        default=None,
-        related_name="recruit_uptime",
-    )
+    uptime_days = models.DateField(default=None, null=True, blank=True)
+    rt_start = models.TimeField(default=None, null=True, blank=True)
+    rt_end = models.TimeField(default=None, null=True, blank=True)
 
     def __str__(self):
         return f"{self.nickname}: Character: {self.character}. Note: {self.note}. WCL: {self.wcl}. Uptime: {self.uptime}"

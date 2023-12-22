@@ -1,5 +1,5 @@
 """
-WSGI config for pw_recruitment project.
+WSGI config for PV_recruit_finder project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pw_recruitment.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PV_recruit_finder.settings")
 
 application = get_wsgi_application()
