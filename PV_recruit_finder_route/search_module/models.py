@@ -8,6 +8,7 @@ from django.db import models
 class User(AbstractUser):
     """Guid owner, who manage recruiting part"""
     pass
+
     # guild = models.ForeignKey(
     #     "Guild",
     #     default= None, #BP
@@ -18,7 +19,7 @@ class User(AbstractUser):
     #
     #
     # )
-    todelete = models.CharField(max_length=1)
+
     def __str__(self):
         return f"{self.username}"
 
@@ -81,7 +82,7 @@ class PlannedActivity(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     by_team = models.ForeignKey(
-        "Team", on_delete=models.CASCADE, null=False, blank=False
+        "Team", on_delete=models.CASCADE, null=False, blank=False, default=None
     )
 
     def __str__(self):
@@ -89,11 +90,10 @@ class PlannedActivity(models.Model):
 
 
 class Team(models.Model):
-
     team_size = models.IntegerField()
     team_progress = models.IntegerField(default=0)
     active_search = models.BooleanField(default=True)
-    looking_for = models.ManyToManyField(Character, related_name="looking_for")
+    looking_for = models.ManyToManyField(Character, related_name="looking_for", null=True, blank=True, default=None)
     team_note = models.CharField(
         max_length=1000,
         blank=True,
@@ -123,6 +123,15 @@ class Team(models.Model):
         default="Other",
     )
 
+    def clean(self):
+        if not self.team_name:
+            self.team_name = self.guild.name
+        if self.team_progress > self.guild.highest_progress:
+            self.guild.highest_progress = self.team_progress
+        self.guild.save()
+
+        # [team.team_progress for team in [guild_team for guild_team in Team.objects.all()] if guild_team.guild.name == self.name]
+
     def __str__(self):
         return f"Team {self.team_name}"
 
@@ -149,8 +158,11 @@ class Guild(models.Model):
         blank=False,
         null=False,
     )
-    highest_progress = models.CharField(
-        max_length=5
+    highest_progress = models.IntegerField(
+        max_length=2,
+        default=0,
+        null=True,
+        blank=True
     )  # TODO: set to max(Guild.team.team_progress)
     teams = models.ForeignKey(
         Team,
@@ -173,6 +185,10 @@ class Guild(models.Model):
     # settings.py
     # MEDIA_URL = '/media/'
     # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+
     def __str__(self):
         return f"{self.name}"
 
