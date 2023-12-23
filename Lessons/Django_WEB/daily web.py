@@ -218,3 +218,11 @@ class MinStack:
 
     def get_min(self) -> int:
         return min(self.stack)
+
+def find_unknown_number(first: int, second: int, third: int) -> int:
+    for i in range(1, 200):
+        if i % 3 == first:
+            if i % 5 == second:
+                if i % 7 == third:
+                    return i
+

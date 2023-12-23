@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="db" uuid="823cb991-6b1c-4aea-a439-2f6f4eb91131">
-      <driver-ref>sqlite.xerial</driver-ref>
+      <driver-ref>054d72f7-1329-44eb-93a5-c059f6b34377</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\BS_HOME\PycharmProjects\Lessons\Django_ORM\first_configure\db.sqlite3</jdbc-url>
