@@ -166,8 +166,7 @@ def valpa():
     return result
 
 
-print(valpa())
-print(len("g22O2H1aI21112N11htc"))
+
 
 
 def longest_vowel_chain(string: str) -> int:
@@ -203,6 +202,7 @@ def shoot(results: list) -> str:
             return "Phil Wins!"
     return "Draw!"
 
+
 class MinStack:
     def __init__(self) -> None:
         self.stack = []
@@ -219,6 +219,7 @@ class MinStack:
     def get_min(self) -> int:
         return min(self.stack)
 
+
 def find_unknown_number(first: int, second: int, third: int) -> int:
     for i in range(1, 200):
         if i % 3 == first:
@@ -226,3 +227,8 @@ def find_unknown_number(first: int, second: int, third: int) -> int:
                 if i % 7 == third:
                     return i
 
+
+def discover_original_price(
+        discounted_price: float, sale_percentage: float
+) -> float:
+    return round((discounted_price / (100 - sale_percentage)) * 100, 2)

@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_WEB/daily web.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/daily web.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Scrapy-Idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../Scrapy-Idealista" afterDir="false" />
@@ -301,7 +298,8 @@
       <workItem from="1702322345123" duration="104000" />
       <workItem from="1703280446290" duration="617000" />
       <workItem from="1703294466127" duration="658000" />
-      <workItem from="1703349683687" duration="602000" />
+      <workItem from="1703349683687" duration="1175000" />
+      <workItem from="1703441360084" duration="1007000" />
     </task>
     <servers />
   </component>
