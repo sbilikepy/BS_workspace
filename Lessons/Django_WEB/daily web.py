@@ -166,9 +166,6 @@ def valpa():
     return result
 
 
-
-
-
 def longest_vowel_chain(string: str) -> int:
     if not len(string):
         return 0
@@ -232,3 +229,41 @@ def discover_original_price(
         discounted_price: float, sale_percentage: float
 ) -> float:
     return round((discounted_price / (100 - sale_percentage)) * 100, 2)
+
+
+def buy_tofu(cost: int, box: str) -> list or str:
+    print(cost)
+    print(box)
+    box = box.split()
+    result = [box.count("mon"),
+              box.count("monme"),
+              box.count("mon") + box.count("monme") * 60,
+              ]
+    min_amount = 0
+    if result[1] > 0:
+        for i in range(result[1]):
+            if cost // 60:
+                min_amount += 1
+                cost -= 60
+    if result[0] >= cost:
+        min_amount += cost
+
+    result.append(min_amount)
+    if result[3] == 0:
+        return "leaving the market"
+    if cost % 60 > result[0]:
+        return "leaving the market"
+    return result
+
+
+cost = 5
+box = "mon monme"
+buy_tofu(cost, box)  # returns "leaving the market"
+
+cost = 122
+box = "monme pie mon mon apple monme"
+buy_tofu(cost, box)  # returns [2,2,122,4]
+
+cost = 674
+box = "mon mon mon"
+buy_tofu(cost, box)  # returns "leaving the market"

@@ -6,7 +6,9 @@ from django.db import models
 
 
 class User(AbstractUser):
-    """Guid owner, who manage recruiting part"""
+    """Guild owner, who manage recruiting part
+    -- also main User"""
+
     pass
 
     def __str__(self):
@@ -92,6 +94,7 @@ class Team(models.Model):
     )
     # activities = models.ManyToOneRel(PlannedActivity, related_name="activities")
     required_active_days_amount = models.IntegerField(default=0)
+
     guild = models.ForeignKey(
         "Guild", on_delete=models.CASCADE, blank=False, null=False
     )
@@ -153,23 +156,14 @@ class Guild(models.Model):
         null=False,
     )
     highest_progress = models.IntegerField(
-        max_length=2, default=0, null=True, blank=True
-    )  # TODO: set to max(Guild.team.team_progress)
-    teams = models.ForeignKey(
-        Team,
-        blank=True,
-        null=True,
-        related_name="teams",
-        on_delete=models.SET_NULL,
-        default=None,
-    )
+        default=0, null=True, blank=True
+    )  # team.clean
+
     discord_link = models.CharField(max_length=255, null=True, blank=True)
     apply_link = models.CharField(max_length=255, null=True, blank=True)
     wcl_link = models.URLField(verbose_name="wcl_link", null=True, blank=True)
     guild_note = models.CharField(max_length=1000, null=True, blank=True)
-    avatar = models.CharField(
-        max_length=255, null=True, blank=True
-    )
+    avatar = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return f"{self.name}"

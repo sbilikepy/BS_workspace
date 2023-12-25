@@ -39,4 +39,14 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Guild)
 class GuildAdmin(admin.ModelAdmin):
-    pass
+    list_display = [
+"name",
+        "owner",
+        "faction",
+
+        "highest_progress",
+        "discord_link",
+        "apply_link",
+
+
+    ]
