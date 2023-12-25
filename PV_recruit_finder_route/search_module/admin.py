@@ -5,13 +5,7 @@ from search_module.models import *
 
 @admin.register(User)
 class UserAdmin(UserAdmin):
-    list_display = [
-        "username",
-        "email",
-        "is_staff",
-        "is_active",
-        "date_joined"
-    ]
+    list_display = ["username", "email", "is_staff", "is_active", "date_joined"]
 
 
 @admin.register(InGameClass)
@@ -31,7 +25,15 @@ class CharacterAdmin(admin.ModelAdmin):
 
 @admin.register(Recruit)
 class RecruitAdmin(admin.ModelAdmin):
-    list_display = ["nickname", "character", "note", "wcl", "uptime_days", "rt_start", "rt_end"]
+    list_display = [
+        "nickname",
+        "character",
+        "note",
+        "wcl",
+        "uptime_days",
+        "rt_start",
+        "rt_end",
+    ]
 
 
 @admin.register(PlannedActivity)
@@ -41,9 +43,16 @@ class PlannedActivityAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ["team_name", "guild", "team_size", "loot_system", "team_progress",
-                    "active_search", "team_note",
-                    "required_active_days_amount"]
+    list_display = [
+        "team_name",
+        "guild",
+        "team_size",
+        "loot_system",
+        "team_progress",
+        "active_search",
+        "team_note",
+        "required_active_days_amount",
+    ]
 
 
 @admin.register(Guild)
