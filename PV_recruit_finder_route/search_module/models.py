@@ -11,7 +11,7 @@ class User(AbstractUser):
 
     class Meta:
         verbose_name_plural = "Users"
-
+        ordering = ["username"]
     def __str__(self):
         return f"{self.username}"
 
@@ -21,7 +21,7 @@ class InGameClass(models.Model):
 
     class Meta:
         verbose_name_plural = "Classes"
-
+        ordering = ["name"]
     def __str__(self):
         return self.name
 
@@ -33,7 +33,7 @@ class InGameSpec(models.Model):
 
     class Meta:
         verbose_name_plural = "Specialisations"
-
+        ordering = ["name"]
     def __str__(self):
         return self.name
 
@@ -48,7 +48,10 @@ class Character(models.Model):
 
     class Meta:
         verbose_name_plural = "Characters"
-
+        constraints = [
+            models.UniqueConstraint(fields=['class_name', 'spec_name'], name='unique_class_spec'),
+        ]
+        ordering = ["class_name"]
     def __str__(self):
         return f"{self.spec_name} {self.class_name}"
 
@@ -76,7 +79,7 @@ class Recruit(models.Model):
 
     class Meta:
         verbose_name_plural = "Recruits"
-
+        ordering = ["nickname"]
     def __str__(self):
         return f"{self.nickname}: Character: {self.character}. Note: {self.note}. WCL: {self.wcl}. Uptime: {self.uptime_days}"
 
@@ -103,7 +106,7 @@ class PlannedActivity(models.Model):
 
     class Meta:
         verbose_name_plural = "Planned activities"
-
+        ordering = ["by_team"]
     def __str__(self):
         return f"{self.raid_day}: {self.start_time} -> {self.end_time}"
 
@@ -151,7 +154,7 @@ class Team(models.Model):
 
     class Meta:
         verbose_name_plural = "Teams"
-
+        ordering = ["team_name"]
     def clean(self):
         if not self.team_name:
             self.team_name = self.guild.name
@@ -198,6 +201,6 @@ class Guild(models.Model):
 
     class Meta:
         verbose_name_plural = "Guilds"
-
+        ordering = ["name"]
     def __str__(self):
         return f"{self.name}"
