@@ -9,7 +9,8 @@ class User(AbstractUser):
     """Guild owner, who manage recruiting part
     -- also main User"""
 
-    pass
+    class Meta:
+        verbose_name_plural = "Users"
 
     def __str__(self):
         return f"{self.username}"
@@ -17,6 +18,9 @@ class User(AbstractUser):
 
 class InGameClass(models.Model):
     name = models.CharField(max_length=255, unique=True)
+
+    class Meta:
+        verbose_name_plural = "Classes"
 
     def __str__(self):
         return self.name
@@ -26,6 +30,9 @@ class InGameSpec(models.Model):
     name = models.CharField(
         max_length=255, unique=True
     )  # TODO: check for Frost Holy  Protection
+
+    class Meta:
+        verbose_name_plural = "Specialisations"
 
     def __str__(self):
         return self.name
@@ -39,18 +46,36 @@ class Character(models.Model):
         InGameSpec, on_delete=models.CASCADE, related_name="character_spec"
     )
 
+    class Meta:
+        verbose_name_plural = "Characters"
+
     def __str__(self):
         return f"{self.spec_name} {self.class_name}"
 
 
 class Recruit(models.Model):
+    UPTIME_DAYS_CHOICES = [
+        ("Monday", "Monday"),
+        ("Tuesday", "Tuesday"),
+        ("Wednesday", "Wednesday"),
+        ("Thursday", "Thursday"),
+        ("Friday", "Friday"),
+        ("Saturday", "Saturday"),
+        ("Sunday", "Sunday"),
+    ]
     nickname = models.CharField(max_length=255, blank=False, null=False)
     character = models.ForeignKey(Character, on_delete=models.SET_DEFAULT, default=None)
     note = models.CharField(max_length=255, blank=True, null=True)
     wcl = models.IntegerField(blank=True, null=True)  # TODO: WCL API sync
-    uptime_days = models.DateField(default=None, null=True, blank=True)
+    uptime_days = models.CharField(  # TODO: make list
+        max_length=255,
+        choices=UPTIME_DAYS_CHOICES,
+    )
     rt_start = models.TimeField(default=None, null=True, blank=True)
     rt_end = models.TimeField(default=None, null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Recruits"
 
     def __str__(self):
         return f"{self.nickname}: Character: {self.character}. Note: {self.note}. WCL: {self.wcl}. Uptime: {self.uptime_days}"
@@ -75,6 +100,9 @@ class PlannedActivity(models.Model):
     by_team = models.ForeignKey(
         "Team", on_delete=models.CASCADE, null=False, blank=False, default=None
     )
+
+    class Meta:
+        verbose_name_plural = "Planned activities"
 
     def __str__(self):
         return f"{self.raid_day}: {self.start_time} -> {self.end_time}"
@@ -121,6 +149,9 @@ class Team(models.Model):
         default="Other",
     )
 
+    class Meta:
+        verbose_name_plural = "Teams"
+
     def clean(self):
         if not self.team_name:
             self.team_name = self.guild.name
@@ -164,6 +195,9 @@ class Guild(models.Model):
     wcl_link = models.URLField(verbose_name="wcl_link", null=True, blank=True)
     guild_note = models.CharField(max_length=1000, null=True, blank=True)
     avatar = models.CharField(max_length=255, null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Guilds"
 
     def __str__(self):
         return f"{self.name}"
