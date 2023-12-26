@@ -1,0 +1,42 @@
+:root {
+    --max-width-page: 1300px;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+body {
+    /*max-width: var(--max-width-page);*/
+    background-image: url("../background/Tavern_art_by_Nina-Galinska-gnome3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+
+}
+
+.content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+}
+
+.content.visible {
+    opacity: 1;
+}
+
+.box {
+    background-color: #50221f;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.col-lg-12 {
+    background-color: #50221f;
+}
+
+.col-lg-4 col-md-6 {
+
+}

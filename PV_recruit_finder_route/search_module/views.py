@@ -14,5 +14,9 @@ app_name = "search_module"
 #
 #     return render(request, template_name="base.html", context=context)
 def index(request):
-    context = {}
+    context = {
+        "num_guilds" : Guild.objects.count(),
+        "num_teams": Team.objects.count(),
+        "num_recruits": Recruit.objects.count(),
+    }
     return render(request, template_name="base.html", context=context)

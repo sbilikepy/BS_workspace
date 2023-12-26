@@ -79,6 +79,8 @@ class Recruit(models.Model):
     uptime_days = models.CharField(  # TODO: make list
         max_length=255,
         choices=UPTIME_DAYS_CHOICES,
+        null=True,
+        blank=True
     )
     rt_start = models.TimeField(default=None, null=True, blank=True)
     rt_end = models.TimeField(default=None, null=True, blank=True)
@@ -124,16 +126,15 @@ class Team(models.Model):
     team_progress = models.IntegerField(default=0)
     active_search = models.BooleanField(default=True)
     looking_for = models.ManyToManyField(
-        Character, related_name="looking_for", null=True, blank=True, default=None
+        Character, related_name="looking_for", blank=True, default=None
     )
     team_note = models.CharField(
         max_length=1000,
         blank=True,
         null=True,
     )
-    # activities = models.ManyToOneRel(PlannedActivity, related_name="activities")
-    required_active_days_amount = models.IntegerField(default=0)
 
+    required_active_days_amount = models.IntegerField(default=0)
     guild = models.ForeignKey(
         "Guild", on_delete=models.CASCADE, blank=False, null=False
     )
