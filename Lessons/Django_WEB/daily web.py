@@ -256,14 +256,25 @@ def buy_tofu(cost: int, box: str) -> list or str:
     return result
 
 
-cost = 5
-box = "mon monme"
-buy_tofu(cost, box)  # returns "leaving the market"
+def is_valid_ip(ip_address: str) -> bool:
+    ip_address = ip_address.split(".")
+    if len(ip_address) != 4:
+        return False
+    for i in ip_address:
+        try:
+            int(i)
+        except Exception:
+            return False
+        if " " in i:
+            return False
+        if int(i) < 0:
+            return False
+        if len(i) > 1:
+            if int(i[0]) == 0:
+                return False
+        if not int(i) in range(255 + 1):
+            return False
+    return True
 
-cost = 122
-box = "monme pie mon mon apple monme"
-buy_tofu(cost, box)  # returns [2,2,122,4]
 
-cost = 674
-box = "mon mon mon"
-buy_tofu(cost, box)  # returns "leaving the market"
+is_valid_ip("12.34.56 .1")
