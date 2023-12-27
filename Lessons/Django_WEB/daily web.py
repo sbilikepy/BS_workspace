@@ -277,4 +277,19 @@ def is_valid_ip(ip_address: str) -> bool:
     return True
 
 
-is_valid_ip("12.34.56 .1")
+def trotter(number: int) -> int | str:
+    if number == 0:
+        return "INSOMNIA"
+
+    digits_seen = set()
+    i = 1
+
+    while len(digits_seen) < 10:
+        current_number = i * number
+        digits_seen.update(set(str(current_number)))
+        i += 1
+
+    return current_number
+
+
+trotter(1692)
