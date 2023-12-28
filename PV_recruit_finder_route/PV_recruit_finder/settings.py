@@ -1,3 +1,4 @@
+#python manage.py shell_plus --print-sql
 """
 Django settings for PV_recruit_finder project.
 

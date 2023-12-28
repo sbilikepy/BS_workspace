@@ -122,6 +122,13 @@ class PlannedActivity(models.Model):
 
 
 class Team(models.Model):
+    guild = models.ForeignKey(
+        "Guild", on_delete=models.CASCADE, blank=False, null=False
+    )
+    team_name = models.CharField(
+        max_length=255, default=guild.name, null=True, blank=True
+    )
+
     team_size = models.IntegerField()
     team_progress = models.IntegerField(default=0)
     active_search = models.BooleanField(default=True)
@@ -135,12 +142,7 @@ class Team(models.Model):
     )
 
     required_active_days_amount = models.IntegerField(default=0)
-    guild = models.ForeignKey(
-        "Guild", on_delete=models.CASCADE, blank=False, null=False
-    )
-    team_name = models.CharField(
-        max_length=255, default=guild.name, null=True, blank=True
-    )
+
 
     LOOT_SYSTEM_CHOICES = [
         ("Loot Council", "Loot Council"),
@@ -164,6 +166,11 @@ class Team(models.Model):
     class Meta:
         verbose_name_plural = "Teams"
         ordering = ["team_name"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["team_name", "guild"], name="unique_team_guild"
+            ),
+        ]
 
     def clean(self):
         if not self.team_name:
