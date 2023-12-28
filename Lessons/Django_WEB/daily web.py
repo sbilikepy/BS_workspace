@@ -292,4 +292,15 @@ def trotter(number: int) -> int | str:
     return current_number
 
 
-trotter(1692)
+def longest_common_prefix(strings_list: list) -> str:
+    if not strings_list:
+        return ""
+
+    min_len = min(len(s) for s in strings_list)
+
+    for i in range(min_len):
+        char = strings_list[0][i]
+        if not all(s[i] == char for s in strings_list):
+            return strings_list[0][:i]
+
+    return strings_list[0][:min_len]
