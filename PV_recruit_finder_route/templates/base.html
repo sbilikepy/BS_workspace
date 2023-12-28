@@ -16,28 +16,28 @@
 
 <div class="container-fluid">
 
-    <div class="row">
-      <div class="col-lg-12">
-        <nav class="w-100">
-          {% block nav %}
-            {% include "includes/navigation.html" %}
-          {% endblock nav %}
-        </nav>
-      </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <nav class="w-100">
+        {% block page_nav  %}
+          {% include "includes/navigation.html" %}
+        {% endblock page_nav  %}
+      </nav>
     </div>
+  </div>
 
 
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="content">
-          {% block content %}
-            <div class="box">
-              {% include "search_module/index.html" %}
-            </div>
-          {% endblock content %}
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="content">
+
+          <div class="box">
+            {% block unique_content %}{% endblock %}
+          </div>
+
       </div>
     </div>
+  </div>
 
 </div>
 

@@ -76,7 +76,8 @@ class Recruit(models.Model):
     character = models.ForeignKey(Character, on_delete=models.SET_DEFAULT, default=None)
     note = models.CharField(max_length=255, blank=True, null=True)
     wcl = models.IntegerField(blank=True, null=True)  # TODO: WCL API sync
-    uptime_days = models.CharField(  # TODO: make list
+
+    uptime_days = models.CharField(  # TODO: make it as foreign key to PlannedActivity or smth
         max_length=255,
         choices=UPTIME_DAYS_CHOICES,
         null=True,
@@ -142,7 +143,6 @@ class Team(models.Model):
     )
 
     required_active_days_amount = models.IntegerField(default=0)
-
 
     LOOT_SYSTEM_CHOICES = [
         ("Loot Council", "Loot Council"),

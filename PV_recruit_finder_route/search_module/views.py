@@ -18,34 +18,35 @@ def index(request):
         "num_guilds": Guild.objects.count(),
         "num_teams": Team.objects.count(),
         "num_recruits": Recruit.objects.count(),
+
     }
-    return render(request, template_name="base.html", context=context)
+    return render(request, template_name="search_module/index.html", context=context)
 
 
 def recruits(request):
     context = {
+        "num_recruits": Recruit.objects.count(),
+        "all_recruits": Recruit.objects.all()
+
     }
-    now = datetime.now()
-    data = [i.nickname for i in Recruit.objects.all()]
-    html = f"<html><body>Formed at: [{now}] <br>Recruits list: {data}</body></html>"
-    return HttpResponse(html)
+    return render(request, template_name="search_module/recruits.html", context=context)
+
 
 def teams(request):
     context = {
+
+        "num_teams": Team.objects.count(),
+
     }
-    now = datetime.now()
-    data = [i.team_name for i in Team.objects.all()]
-    html = f"<html><body>Formed at: [{now}] <br>Teams list: {data}</body></html>"
-    return HttpResponse(html)
+    return render(request, template_name="search_module/teams.html", context=context)
 
 
 def guilds(request):
     context = {
+        "num_guilds": Guild.objects.count(),
+
     }
-    now = datetime.now()
-    data = [i.name for i in Guild.objects.all()]
-    html = f"<html><body>Formed at: [{now}] <br>Recruits list: {data}</body></html>"
-    return HttpResponse(html)
+    return render(request, template_name="search_module/guilds.html", context=context)
 
 
 def login_page(request):

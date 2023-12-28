@@ -1,11 +1,16 @@
-{% block content %}
+{% extends 'base.html' %}
 
-
-  <h1>Welcome to the Pyrewood Village recruitment hub</h1>
-   <ul>
-    <li>Guilds: {{ num_guilds }}</li>
-    <li>Teams: {{ num_teams }}</li>
-    <li>Recruits: {{ num_recruits }}</li>
-  </ul>
-
-{% endblock content %}
+{% block unique_content %}
+  <h1>Welcome to the Pyrewood Village Recruitment Hub!<br>In this place,
+    guilds can strengthen their ranks,
+    and players can find their new home :)</h1>
+  <p><br>Contact information about players is only available to authorized recruiters</p>
+  <p>Information about Guilds and their Teams is accessible to all users<br></p>
+  <p> Currently:
+     <ul>
+      <li>{{ num_guilds }} guilds have registered their teams</li>
+      <li>{{ num_teams }} teams are looking for players</li>
+      <li>{{ num_recruits }} players are looking for a team</li>
+    </ul>
+  </p>
+{% endblock unique_content %}

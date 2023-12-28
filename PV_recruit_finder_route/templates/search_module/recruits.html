@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block unique_content %}
+
+  <h1></h1>
+
+  <p> Currently {{ num_recruits }} <strong>players</strong> are looking for a team:<br></p>
+  {% for recruit in all_recruits %}
+    <li>{{ recruit.nickname }} :
+      {{ recruit.character }}
+      | WCL_avg: {{ recruit.wcl }}
+      | uptime: {{ recruit.uptime_days }}
+      | note : {{ recruit.note }}
+
+
+
+    </li>
+
+
+  {% endfor %}
+
+  </p>
+
+{% endblock unique_content %}
