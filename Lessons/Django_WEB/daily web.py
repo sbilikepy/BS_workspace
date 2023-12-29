@@ -304,3 +304,16 @@ def longest_common_prefix(strings_list: list) -> str:
             return strings_list[0][:i]
 
     return strings_list[0][:min_len]
+
+
+
+def scramble(first_string: str, second_string: str) -> bool:
+    print(first_string)
+    print(second_string)
+    for i in second_string:
+        if i in first_string:
+            if not first_string.count(i) >= second_string.count(i):
+                return False
+        else:
+            return False
+    return True
