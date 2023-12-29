@@ -30,6 +30,7 @@ class RecruitAdmin(admin.ModelAdmin):
         "character",
         "note",
         "wcl",
+        "discord_tag",
         "uptime_days",
         "rt_start",
         "rt_end",

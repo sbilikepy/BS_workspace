@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block unique_content %}
 
   <p>Currently {{ num_recruits }} <strong>players</strong> are looking for team:<br></p></p>
@@ -11,18 +12,21 @@
           text-align: center;
       }
 
-
   </style>
+
 
   <table class="table">
     <thead>
     <tr>
       <th scope="col" class="bg_and_placement">nickname</th>
       <th scope="col" class="bg_and_placement">character</th>
+        <th scope="col" class="bg_and_placement">uptime_days</th>
+        <th scope="col" class="bg_and_placement">wcl</th>
+
       <th scope="col" class="bg_and_placement">discord</th>
       <th scope="col" class="bg_and_placement">note</th>
-      <th scope="col" class="bg_and_placement">wcl</th>
-      <th scope="col" class="bg_and_placement">uptime_days</th>
+
+
       <th scope="col" class="bg_and_placement">rt_start</th>
       <th scope="col" class="bg_and_placement">rt_end</th>
 
@@ -33,11 +37,18 @@
       <tr>
         <th scope="row" class="bg_and_placement" style="text-align: left">{{ recruit.nickname }}</th>
 
-        <td class="bg_and_placement">{{ recruit.character }}</td>
+
+        <td class="bg_and_placement">
+          <img src="{% static recruit.character.get_class_image %}" alt="class_image">
+          <img src="{% static recruit.character.get_spec_image %}" alt="spec_image">
+
+        </td>
+
+        <td class="bg_and_placement">{{ recruit.uptime_days }}</td>
+                <td class="bg_and_placement">{{ recruit.wcl }}</td>
+        <td class="bg_and_placement">{{ recruit.discord_tag }}</td>
         <td class="bg_and_placement">{{ recruit.note }}</td>
 
-        <td class="bg_and_placement">{{ recruit.wcl }}</td>
-        <td class="bg_and_placement">{{ recruit.uptime_days }}</td>
         <td class="bg_and_placement">{{ recruit.rt_start }}</td>
         <td class="bg_and_placement">{{ recruit.rt_end }}</td>
 

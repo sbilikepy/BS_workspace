@@ -56,7 +56,37 @@ class Character(models.Model):
                 fields=["class_name", "spec_name"], name="unique_class_spec"
             ),
         ]
-        ordering = ["class_name"]
+        ordering = ["spec_name"]
+
+    def get_class_image(self):
+        if self.class_name.name == "Death Knight":
+            return "character_icons/spec_icons/death_knight/dk.jpeg"
+        return f"character_icons/spec_icons/{self.class_name}/{self.class_name}.jpeg"
+
+    def get_spec_image(self):
+
+        if self.class_name.name == "Death Knight":
+            return f"character_icons/spec_icons/death_knight/{self.spec_name.name}.jpg"
+        if self.spec_name.name == "Feral DPS":
+            return "character_icons/spec_icons/druid/Feral_cat.jpg"
+        if self.spec_name.name == "Feral Tank":
+            return "character_icons/spec_icons/druid/Feral_bear.jpg"
+        if self.spec_name.name == "Beast Mastery":
+            return "character_icons/spec_icons/hunter/Beast_Mastery.jpg"
+
+        if self.spec_name.name == "Protection":
+            if self.class_name.name == "Warrior":
+                return "character_icons/spec_icons/warrior/Protection.jpg"
+            return "character_icons/spec_icons/paladin/Protection.jpg"
+
+        if self.spec_name.name == "Holy":
+            if self.class_name.name == "Paladin":
+                return "character_icons/spec_icons/paladin/Holy.jpg"
+            return "character_icons/spec_icons/priest/Holy.jpg"
+
+        return f"character_icons/spec_icons/{self.class_name.name}/{self.spec_name.name}.jpg"
+
+
 
     def __str__(self):
         return f"{self.spec_name} {self.class_name}"
@@ -72,7 +102,7 @@ class Recruit(models.Model):
         ("Saturday", "Saturday"),
         ("Sunday", "Sunday"),
     ]
-    nickname = models.CharField(max_length=255, blank=False, null=False)
+    nickname = models.CharField(max_length=255, blank=False, null=False, unique=True)
     character = models.ForeignKey(Character, on_delete=models.SET_DEFAULT, default=None)
     note = models.CharField(max_length=255, blank=True, null=True)
     wcl = models.IntegerField(blank=True, null=True)  # TODO: WCL API sync
@@ -84,7 +114,7 @@ class Recruit(models.Model):
     )
     rt_start = models.TimeField(default=None, null=True, blank=True)
     rt_end = models.TimeField(default=None, null=True, blank=True)
-    discord_tag = models.CharField(max_length=255, null=False,blank=False,default=f"{nickname} discord not provided")
+    discord_tag = models.CharField(max_length=255, null=False, blank=True, default="unknown")
 
     class Meta:
         verbose_name_plural = "Recruits"
