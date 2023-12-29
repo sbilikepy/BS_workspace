@@ -64,7 +64,6 @@ class Character(models.Model):
         return f"character_icons/spec_icons/{self.class_name}/{self.class_name}.jpeg"
 
     def get_spec_image(self):
-
         if self.class_name.name == "Death Knight":
             return f"character_icons/spec_icons/death_knight/{self.spec_name.name}.jpg"
         if self.spec_name.name == "Feral DPS":
@@ -86,8 +85,6 @@ class Character(models.Model):
 
         return f"character_icons/spec_icons/{self.class_name.name}/{self.spec_name.name}.jpg"
 
-
-
     def __str__(self):
         return f"{self.spec_name} {self.class_name}"
 
@@ -106,15 +103,16 @@ class Recruit(models.Model):
     character = models.ForeignKey(Character, on_delete=models.SET_DEFAULT, default=None)
     note = models.CharField(max_length=255, blank=True, null=True)
     wcl = models.IntegerField(blank=True, null=True)  # TODO: WCL API sync
-    uptime_days = models.CharField(  # TODO: make it as foreign key to PlannedActivity or smth
-        max_length=255,
-        choices=UPTIME_DAYS_CHOICES,
-        null=True,
-        blank=True
+    uptime_days = (
+        models.CharField(  # TODO: make it as foreign key to PlannedActivity or smth
+            max_length=255, choices=UPTIME_DAYS_CHOICES, null=True, blank=True
+        )
     )
     rt_start = models.TimeField(default=None, null=True, blank=True)
     rt_end = models.TimeField(default=None, null=True, blank=True)
-    discord_tag = models.CharField(max_length=255, null=False, blank=True, default="unknown")
+    discord_tag = models.CharField(
+        max_length=255, null=False, blank=True, default="unknown"
+    )
 
     class Meta:
         verbose_name_plural = "Recruits"
