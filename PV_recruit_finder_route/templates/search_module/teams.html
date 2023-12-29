@@ -1,15 +1,56 @@
 {% extends 'base.html' %}
 {% block unique_content %}
 
+  <p>Currently {{ num_teams }} <strong>teams</strong> are looking for player:<br></p></p>
 
-  <h1></h1>
+  <style>
 
-  <p> Currently:
-  <ul>
+      .bg_and_placement {
+          background-color: #50221f !important;
+          color: #ffffff !important;
+          text-align: center;
+      }
 
-    <li>{{ num_teams }} <strong>teams</strong> are looking for players</li>
 
-  </ul>
-  </p>
+  </style>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col" class="bg_and_placement">Name</th>
+      <th scope="col" class="bg_and_placement">Guild</th>
+      <th scope="col" class="bg_and_placement">Size</th>
+      <th scope="col" class="bg_and_placement">Progress</th>
+      <th scope="col" class="bg_and_placement">Active days per week</th>
+      <th scope="col" class="bg_and_placement">Loot system</th>
+      <th scope="col" class="bg_and_placement">Note</th>
+      <th scope="col" class="bg_and_placement">Looking for</th>
+      <th scope="col" class="bg_and_placement">Active search</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for team in all_teams %}
+      <tr>
+        <th scope="row" class="bg_and_placement" style="text-align: left">{{ team.team_name }}</th>
+        <td class="bg_and_placement">{{ team.guild }}</td>
+        <td class="bg_and_placement">{{ team.team_size }}</td>
+        <td class="bg_and_placement">{{ team.team_progress }}</td>
+        <td class="bg_and_placement">{{ team.required_active_days_amount }}</td>
+        <td class="bg_and_placement">{{ team.loot_system }}</td>
+        <td class="bg_and_placement">{{ team.team_note }}</td>
+
+        <td class="bg_and_placement">
+          {% for character in team.looking_for.all %}
+            {{ character }}
+            {% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        </td>
+
+
+        <td class="bg_and_placement">{{ team.active_search }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
 {% endblock unique_content %}

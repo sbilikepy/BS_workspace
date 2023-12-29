@@ -1,23 +1,49 @@
 {% extends 'base.html' %}
 {% block unique_content %}
 
-  <h1></h1>
+  <p>Currently {{ num_recruits }} <strong>players</strong> are looking for team:<br></p></p>
 
-  <p> Currently {{ num_recruits }} <strong>players</strong> are looking for a team:<br></p>
-  {% for recruit in all_recruits %}
-    <li>{{ recruit.nickname }} :
-      {{ recruit.character }}
-      | WCL_avg: {{ recruit.wcl }}
-      | uptime: {{ recruit.uptime_days }}
-      | note : {{ recruit.note }}
+  <style>
 
-
-
-    </li>
+      .bg_and_placement {
+          background-color: #50221f !important;
+          color: #ffffff !important;
+          text-align: center;
+      }
 
 
-  {% endfor %}
+  </style>
 
-  </p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col" class="bg_and_placement">nickname</th>
+      <th scope="col" class="bg_and_placement">character</th>
+      <th scope="col" class="bg_and_placement">discord</th>
+      <th scope="col" class="bg_and_placement">note</th>
+      <th scope="col" class="bg_and_placement">wcl</th>
+      <th scope="col" class="bg_and_placement">uptime_days</th>
+      <th scope="col" class="bg_and_placement">rt_start</th>
+      <th scope="col" class="bg_and_placement">rt_end</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for recruit in all_recruits %}
+      <tr>
+        <th scope="row" class="bg_and_placement" style="text-align: left">{{ recruit.nickname }}</th>
+
+        <td class="bg_and_placement">{{ recruit.character }}</td>
+        <td class="bg_and_placement">{{ recruit.note }}</td>
+
+        <td class="bg_and_placement">{{ recruit.wcl }}</td>
+        <td class="bg_and_placement">{{ recruit.uptime_days }}</td>
+        <td class="bg_and_placement">{{ recruit.rt_start }}</td>
+        <td class="bg_and_placement">{{ recruit.rt_end }}</td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
 {% endblock unique_content %}

@@ -76,7 +76,6 @@ class Recruit(models.Model):
     character = models.ForeignKey(Character, on_delete=models.SET_DEFAULT, default=None)
     note = models.CharField(max_length=255, blank=True, null=True)
     wcl = models.IntegerField(blank=True, null=True)  # TODO: WCL API sync
-
     uptime_days = models.CharField(  # TODO: make it as foreign key to PlannedActivity or smth
         max_length=255,
         choices=UPTIME_DAYS_CHOICES,
@@ -85,6 +84,7 @@ class Recruit(models.Model):
     )
     rt_start = models.TimeField(default=None, null=True, blank=True)
     rt_end = models.TimeField(default=None, null=True, blank=True)
+    discord_tag = models.CharField(max_length=255, null=False,blank=False,default=f"{nickname} discord not provided")
 
     class Meta:
         verbose_name_plural = "Recruits"
@@ -165,7 +165,7 @@ class Team(models.Model):
 
     class Meta:
         verbose_name_plural = "Teams"
-        ordering = ["team_name"]
+        ordering = ["?"]
         constraints = [
             models.UniqueConstraint(
                 fields=["team_name", "guild"], name="unique_team_guild"
@@ -218,7 +218,7 @@ class Guild(models.Model):
 
     class Meta:
         verbose_name_plural = "Guilds"
-        ordering = ["name"]
+        ordering = ["?"]
 
     def __str__(self):
         return f"{self.name}"

@@ -1,24 +1,42 @@
-{% block main_nav  %}
 
+
+
+{% block main_nav  %}
   <ul class="nav nav-tabs justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="/">Home</a>
+    <li class="nav-item{% if request.path == '/' %} active{% endif %}">
+      <a class="nav-link" href="/">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item{% if request.path == '/recruits/' %} active{% endif %}">
       <a class="nav-link" href="/recruits/">Recruits</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item{% if request.path == '/teams/' %} active{% endif %}">
       <a class="nav-link" href="/teams/">Teams</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item{% if request.path == '/guilds/' %} active{% endif %}">
       <a class="nav-link" href="/guilds/">Guilds</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="https://discord.com/invite/BvEKtzsubF" target="_blank">Discord</a>
     </li>
-
-    <li class="nav-item">
+    <li class="nav-item{% if request.path == '/login/' %} active{% endif %}">
       <a class="nav-link" href="/login/">Login</a>
     </li>
   </ul>
 {% endblock main_nav  %}
+<style>
+  .nav-tabs {
+    background-color: #50221f;
+  }
+
+  .nav-link {
+    color: white !important;
+  }
+
+  .nav-item.active {
+    background-color: orangered ;
+  }
+
+  .nav-link.active {
+    color: white !important;
+  }
+</style>

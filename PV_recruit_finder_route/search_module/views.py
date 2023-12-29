@@ -26,7 +26,7 @@ def index(request):
 def recruits(request):
     context = {
         "num_recruits": Recruit.objects.count(),
-        "all_recruits": Recruit.objects.all()
+        "all_recruits": Recruit.objects.all(),
 
     }
     return render(request, template_name="search_module/recruits.html", context=context)
@@ -36,6 +36,7 @@ def teams(request):
     context = {
 
         "num_teams": Team.objects.count(),
+        "all_teams": Team.objects.all(),
 
     }
     return render(request, template_name="search_module/teams.html", context=context)
@@ -44,6 +45,7 @@ def teams(request):
 def guilds(request):
     context = {
         "num_guilds": Guild.objects.count(),
+        "all_guilds": Guild.objects.all(),
 
     }
     return render(request, template_name="search_module/guilds.html", context=context)

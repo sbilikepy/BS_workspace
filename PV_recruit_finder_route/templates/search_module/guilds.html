@@ -1,14 +1,60 @@
 {% extends 'base.html' %}
 {% block unique_content %}
 
+  <p>Currently {{ num_guilds }} <strong>guilds</strong> are looking for players:<br></p></p>
 
-  <h1></h1>
+  <style>
 
-  <p> Currently:
-  <ul>
-    <li>{{ num_guilds }} <strong>guilds</strong> have registered their teams</li>
+      .bg_and_placement {
+          background-color: #50221f !important;
+          color: #ffffff !important;
+          text-align: center;
+      }
 
-  </ul>
-  </p>
+
+  </style>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col" class="bg_and_placement">Name</th>
+      <th scope="col" class="bg_and_placement">Faction</th>
+      <th scope="col" class="bg_and_placement">Teams</th>
+      <th scope="col" class="bg_and_placement">Owner</th>
+      <th scope="col" class="bg_and_placement">Highest_progress</th>
+      <th scope="col" class="bg_and_placement">Discord_link</th>
+      <th scope="col" class="bg_and_placement">Apply_link</th>
+      <th scope="col" class="bg_and_placement">Wcl_link</th>
+      <th scope="col" class="bg_and_placement">Guild_note</th>
+      <th scope="col" class="bg_and_placement">Avatar</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for guild in all_guilds %}
+      <tr>
+        <th scope="row" class="bg_and_placement" style="text-align: left">{{ guild.name }}</th>
+        <td class="bg_and_placement">{{ guild.faction }}</td>
+        <td class="bg_and_placement">
+          {% for team in guild.team_set.all %}
+            {{ team.team_name }}
+            {% if not forloop.last %}
+              ,
+            {% endif %}
+          {% endfor %}
+        </td>
+        <td class="bg_and_placement">{{ guild.owner }}</td>
+        <td class="bg_and_placement">{{ guild.highest_progress }}</td>
+        <td class="bg_and_placement">{{ guild.discord_link }}</td>
+        <td class="bg_and_placement">{{ guild.apply_link }}</td>
+        <td class="bg_and_placement">{{ guild.wcl_link }}</td>
+        <td class="bg_and_placement">{{ guild.guild_note }}</td>
+        <td class="bg_and_placement">{{ guild.avatar }}</td>
+
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
 {% endblock unique_content %}
