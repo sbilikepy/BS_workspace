@@ -306,7 +306,6 @@ def longest_common_prefix(strings_list: list) -> str:
     return strings_list[0][:min_len]
 
 
-
 def scramble(first_string: str, second_string: str) -> bool:
     print(first_string)
     print(second_string)
@@ -317,3 +316,14 @@ def scramble(first_string: str, second_string: str) -> bool:
         else:
             return False
     return True
+
+
+def credit_card_mask(card_number: str) -> str:
+    return f"{'#' * len(card_number[:-4:])}{card_number[-4::]}"
+
+
+credit_card_mask("4556364607935616")  # == "############5616"
+credit_card_mask("64607935616")  # == "#######5616"
+credit_card_mask("55556")  # == "#5556"
+credit_card_mask("1")  # == "1"
+credit_card_mask("")  # == ""
