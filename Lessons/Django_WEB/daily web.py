@@ -322,8 +322,30 @@ def credit_card_mask(card_number: str) -> str:
     return f"{'#' * len(card_number[:-4:])}{card_number[-4::]}"
 
 
-credit_card_mask("4556364607935616")  # == "############5616"
-credit_card_mask("64607935616")  # == "#######5616"
-credit_card_mask("55556")  # == "#5556"
-credit_card_mask("1")  # == "1"
-credit_card_mask("")  # == ""
+def is_solved(board: list) -> int:
+    param = 3
+    for i in range(3):
+        param -= 1
+        if board[0][i] == board[1][1] == board[2][param]:
+            if board[0][i] != 0:
+                if board[0][i] == 1:
+                    return 1
+                return 2
+
+        if len(set(board[i])) == 1:
+            if board[i][0] != 0:
+                if board[i][0] == 1:
+                    return 1
+                return 2
+
+    for row in board:
+        if 0 in row:
+            return -1
+    return 0
+
+
+print(is_solved(
+    [[2, 1, 2],
+     [2, 1, 1],
+     [1, 2, 1]]
+))
