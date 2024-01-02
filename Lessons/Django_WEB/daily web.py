@@ -344,6 +344,24 @@ def is_solved(board: list) -> int:
     return 0
 
 
+def is_happy(number):
+    def get_next(n):
+        total_sum = 0
+        while n > 0:
+            n, digit = divmod(n, 10)
+            total_sum += digit ** 2
+        return total_sum
+
+    slow = number
+    fast = get_next(number)
+
+    while fast != 1 and slow != fast:
+        slow = get_next(slow)
+        fast = get_next(get_next(fast))
+
+    return fast == 1
+
+
 # flake8: noqa E501
 WORDS = ["ACT", "ADD", "ALL", "APE", "AND", "ANN", "ANY", "ANT", "ARE", "ART", "ASS", "BAD", "BAR", "BAT", "BAY", "BEE", "BIG", "BIT", "BOB", "BOY", "BUN",
          "BUT", "CAN", "CAR", "CAT", "COT", "COW", "CUT", "DAD", "DAY", "DEW", "DID", "DIN", "DOG", "DON", "DOT", "DUD", "EAR", "EAT", "EEL", "EGG", "ERR",
@@ -379,7 +397,7 @@ WORDS = ["ACT", "ADD", "ALL", "APE", "AND", "ANN", "ANY", "ANT", "ARE", "ART", "
 
 
 def check_1800(string: str) -> set:
-    numbers = {
+    panel = {
         "2": "ABC",
         "3": "DEF",
         "4": "GHI",
@@ -389,25 +407,38 @@ def check_1800(string: str) -> set:
         "8": "TUV",
         "9": "WXYZ",
     }
-    all_words = {word: None for word in WORDS}
+
+    codes = {str(i): [] for i in range(10_000)}
+    result = []
+
     for word in WORDS:
         code = ""
         for letter in word:
-            for key in numbers.keys():
-                if letter in numbers[key]:
-                    code += key
-        all_words[word] = code
-    code_to_process = ""
-    new_string = string.split("-")
-    for word in new_string[2::]:
-        code_to_process += all_words[word]
+            for number in panel:
+                if letter in panel[number]:
+                    code += number
+        codes[code].append(word)
 
-    lil_code_part = ""
-    second_code_part = ""
-    for i in code_to_process:
-        while lil_code_part not in all_words.values():
-            lil_code_part += i
-    print(lil_code_part)
+    cleared = {
+        k: codes[k] for k in codes.keys() if len(codes[k])
+    }
+    del codes
+
+    code_from_string_1 = ""
+    code_from_string_2 = ""
+    for word in string.split("-")[2::]:
+
+        for letter in word:
+            for button in panel:
+                if letter in panel[button]:
+                    code_from_string_1 += button
+    for word in string.split("-")[2::][::-1]:
+
+        for letter in word:
+            for button in panel:
+                if letter in panel[button]:
+                    code_from_string_2 += button
+    return None
 
 
 check_1800("1-800-INK-WANT")
@@ -415,21 +446,31 @@ check_1800("1-800-INK-WANT")
 
 # "{'1-800-HOLY-COT', '1-800-INK-WANT', '1-800-HOLY-ANT'}"
 
+def make_readable(seconds: int) -> str:
+    if seconds > 359999:
+        return ""
+    result = ""
+    hours, minutes = 0, 0
+    while seconds >= 3600:
+        hours += 1
+        seconds -= 3600
+    while seconds >= 60:
+        minutes += 1
+        seconds -= 60
 
-def is_happy(number):
-    def get_next(n):
-        total_sum = 0
-        while n > 0:
-            n, digit = divmod(n, 10)
-            total_sum += digit ** 2
-        return total_sum
+    result = f"0{hours}:" if len(str(hours)) == 1 else f"{hours}:"
+    if minutes < 10:
+        result += f"0{minutes}:"
+    else:
+        result += str(minutes)
+        result += ":"
 
-    slow = number
-    fast = get_next(number)
+    if seconds < 10:
+        result += f"0{seconds}"
+    else:
+        result += str(seconds)
+    print(result)
+    return result
 
-    while fast != 1 and slow != fast:
-        slow = get_next(slow)
-        fast = get_next(get_next(fast))
-
-    return fast == 1
-
+make_readable(359999)  # повертає "99:59:59"
+make_readable(131)
