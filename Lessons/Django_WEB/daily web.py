@@ -472,5 +472,21 @@ def make_readable(seconds: int) -> str:
     print(result)
     return result
 
-make_readable(359999)  # повертає "99:59:59"
-make_readable(131)
+
+def pendulum(lst: list) -> list:
+    left = []
+    mid = []
+    right = []
+    counter = 0
+    print(sorted(lst, reverse=True))
+    for i in sorted(lst, reverse=True):
+        print(i)
+        if counter % 2 == 0:
+            left.append(i)
+        else:
+            right.append(i)
+        counter += 1
+    print(left + mid + right[::-1])
+    return left + mid + right[::-1]
+
+
