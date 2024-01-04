@@ -490,3 +490,26 @@ def pendulum(lst: list) -> list:
     return left + mid + right[::-1]
 
 
+def tv_remote(word: str) -> int:
+    all_rows = [
+        ["a", "b", "c", "d", "e", "1", "2", "3"],
+        ["f", "g", "h", "i", "j", "4", "5", "6"],
+        ["k", "l", "m", "n", "o", "7", "8", "9"],
+        ["p", "q", "r", "s", "t", ".", "@", "0"],
+        ["u", "v", "w", "x", "y", "z", "_", "/"]
+    ]
+    steps = 0
+    current_position = [0, 0]  # Починаємо з літери "a"
+
+    for letter in word:
+        for i, row in enumerate(all_rows):
+            if letter in row:
+                letter_index = row.index(letter)
+                steps += abs(current_position[0] - i) + abs(current_position[1] - letter_index) + 1  # +1 за крок OK
+                current_position = [i, letter_index]
+                break
+
+    return steps
+
+
+tv_remote("code")
