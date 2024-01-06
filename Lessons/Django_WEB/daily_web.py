@@ -519,3 +519,10 @@ def check_1800(string: str) -> set:
 
 check_1800("1-800-CODE-WAR")
 # "{'1-800-INK-WANT', '1-800-HOLY-ANT', '1-800-HOLY-COT'}"
+
+
+def duplicate_arguments(*args) -> bool:
+    if len(args) == len(set(args)):
+        return False
+    else:
+        return True
