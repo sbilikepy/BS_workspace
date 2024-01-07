@@ -526,3 +526,13 @@ def duplicate_arguments(*args) -> bool:
         return False
     else:
         return True
+
+
+
+def str_in_str(haystack: str, needle: str) -> int:
+    if not len(needle):
+        return 0
+    try:
+        return haystack.index(needle)
+    except Exception:
+        return -1
