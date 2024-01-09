@@ -1,0 +1,8 @@
+https://mate.academy/learn/django/django-sessions-and-authentication?section=video&videoId=3149&testTaskSlug=django_sessions_and_authentication_quiz
+crucial req:
+apps: "django.contrib.sessions",
+middleware:   "django.contrib.sessions.middleware.SessionMiddleware"
+
+request.session["key"] = value
+
+from django.contrib.sessions.models import Session
