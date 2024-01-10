@@ -6,3 +6,6 @@ middleware:   "django.contrib.sessions.middleware.SessionMiddleware"
 request.session["key"] = value
 
 from django.contrib.sessions.models import Session
+
+
+https://github.com/mate-academy/py-taxi-service-class-based-views/pull/532
