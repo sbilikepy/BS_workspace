@@ -11,3 +11,20 @@ from django.contrib.sessions.models import Session
 https://github.com/mate-academy/py-taxi-service-class-based-views/pull/532
 
 put {% csrf_token %} inside form
+
+
+
+from django.contrib.sessions.models import Session
+session = Session.objects.get(session_key="wjipxsdsgmpiy51m61ym1dpu92f8h5wy")
+session.get_decoded()
+{'test': 'test session'}
+
+
+def test_session_view(request):
+    request.session["test"] = "test session"
+    num_visits = request.session.get("num_visits", 0) + 1
+    request.session["num_visits"] = num_visits
+    return HttpResponse(
+        f"<h1>Session data: {request.session['test']}</h1>"
+        f"You have visited this page {num_visits} times"
+    )

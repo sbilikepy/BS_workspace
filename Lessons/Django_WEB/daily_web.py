@@ -1137,3 +1137,25 @@ def count_and_say(number: int) -> str:
         result = new_result
 
     return result
+
+
+def one_down(txt: str) -> str:
+    if not isinstance(txt, str):
+        return "Input is not a string"
+    result = ""
+    for letter in txt:
+        if ord(letter) == 32:
+            result += " "
+        else:
+            if letter == "A":
+                result += "Z"
+                continue
+            if letter == "a":
+                result += "z"
+                continue
+            else:
+                result += chr(ord(letter) - 1)
+    return result
+
+
+one_down("Ifmmp")
