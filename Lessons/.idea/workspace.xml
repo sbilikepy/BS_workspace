@@ -6,13 +6,119 @@
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/823cb991-6b1c-4aea-a439-2f6f4eb91131.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/823cb991-6b1c-4aea-a439-2f6f4eb91131.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/taxi/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/taxi/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/taxi_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/taxi_service/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/tests/test_taxi_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/tests/test_taxi_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/assign_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/assign_values.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/bank_deposit.py.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/bank_deposit.py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/declare_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/declare_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/double power.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/double power.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/double.py.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/double.py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/get_largest_expression_result.py.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/get_largest_expression_result.py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/get_plan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/get_plan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/make_abbr.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/make_abbr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/parity_checker.py.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/parity_checker.py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/string_interpolation.py.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/1. Python Basics/string_interpolation.py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/10 sticks game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/10 sticks game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/XO game try n1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/XO game try n1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/XO game try n2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/XO game try n2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/buble sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/buble sort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/convert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/even_odd_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/even_odd_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/gigadraft.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/gigadraft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/guess num game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/guess num game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/login test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/login test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/rome to arabic Fofanov version.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/rome to arabic Fofanov version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/rome to arabic nums.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/rome to arabic nums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/still_in_bus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/still_in_bus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/table xx.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/1. Mate_academy/Other/table xx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/comparison operators python.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/comparison operators python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/files operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/files operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/strings and bytes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/strings and bytes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/strint formating.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/2. basics/strint formating.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/Cycle_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/Cycle_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/dict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/list practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/list practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/logic with conditions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/logic with conditions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/named_tuple.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/named_tuple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/set - multitude .py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/set - multitude .py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/tuple.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/tuple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/while cycle.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/3. collections, cycles, logic/while cycle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/functions_ scope.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/functions_ scope.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/functions_fundamentals.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/functions_fundamentals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/lambda map filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/lambda map filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/string functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/4. functions and modules/string functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/1. basics_error.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/1. basics_error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/2. exceptions. custom exception types..py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/2. exceptions. custom exception types..py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/basic_error files.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/basic_error files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/fizzbuzz def.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/fizzbuzz def.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/fizzbuzz test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/5. errors, autotests/fizzbuzz test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/1. classes basics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/1. classes basics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/2. atributes and methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/2. atributes and methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/3. constants, protected and private atributes, properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/3. constants, protected and private atributes, properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/4. @static method @class method.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/4. @static method @class method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/5. inheritance and polymorphism.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/5. inheritance and polymorphism.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/6. multiple inheritance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/6. multiple inheritance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/8.abstract class and ABC module.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/8.abstract class and ABC module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/9. magic methods python.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/2. Other/Udemy/6. OOP/9. magic methods python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/Text_recognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/Text_recognize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/basics_extended_note.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/basics_extended_note.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-start-Udemy-Mate-/basics_note.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python-start-Udemy-Mate-/basics_note.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Scrapy-Idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../Scrapy-Idealista" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dedomeno" beforeDir="false" afterPath="$PROJECT_DIR$/../dedomeno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-actor-manager" beforeDir="false" afterPath="$PROJECT_DIR$/../py-actor-manager" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-aquapark" beforeDir="false" afterPath="$PROJECT_DIR$/../py-aquapark" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-battleship" beforeDir="false" afterPath="$PROJECT_DIR$/../py-battleship" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-burger-recipe" beforeDir="false" afterPath="$PROJECT_DIR$/../py-burger-recipe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-cache-decorator" beforeDir="false" afterPath="$PROJECT_DIR$/../py-cache-decorator" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-can-access-google-page" beforeDir="false" afterPath="$PROJECT_DIR$/../py-can-access-google-page" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-car-wash-station" beforeDir="false" afterPath="$PROJECT_DIR$/../py-car-wash-station" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-cat-and-dog-years" beforeDir="false" afterPath="$PROJECT_DIR$/../py-cat-and-dog-years" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-check-password" beforeDir="false" afterPath="$PROJECT_DIR$/../py-check-password" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-cinema-visit" beforeDir="false" afterPath="$PROJECT_DIR$/../py-cinema-visit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-clean-up-file" beforeDir="false" afterPath="$PROJECT_DIR$/../py-clean-up-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-copy-file" beforeDir="false" afterPath="$PROJECT_DIR$/../py-copy-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-create-file-every-second" beforeDir="false" afterPath="$PROJECT_DIR$/../py-create-file-every-second" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-create-file-from-input" beforeDir="false" afterPath="$PROJECT_DIR$/../py-create-file-from-input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-create-file-from-terminal" beforeDir="false" afterPath="$PROJECT_DIR$/../py-create-file-from-terminal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-create-management-system" beforeDir="false" afterPath="$PROJECT_DIR$/../py-create-management-system" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-cryptocurrency" beforeDir="false" afterPath="$PROJECT_DIR$/../py-cryptocurrency" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-delivery-drone" beforeDir="false" afterPath="$PROJECT_DIR$/../py-delivery-drone" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-dictionary" beforeDir="false" afterPath="$PROJECT_DIR$/../py-dictionary" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-distance-class" beforeDir="false" afterPath="$PROJECT_DIR$/../py-distance-class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-elves-and-dwarves" beforeDir="false" afterPath="$PROJECT_DIR$/../py-elves-and-dwarves" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-feed-animals" beforeDir="false" afterPath="$PROJECT_DIR$/../py-feed-animals" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-flip-coin" beforeDir="false" afterPath="$PROJECT_DIR$/../py-flip-coin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-game-models" beforeDir="false" afterPath="$PROJECT_DIR$/../py-game-models" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-genres-and-actors" beforeDir="false" afterPath="$PROJECT_DIR$/../py-genres-and-actors" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-get-coin-combination" beforeDir="false" afterPath="$PROJECT_DIR$/../py-get-coin-combination" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-herbivores-and-carnivores" beforeDir="false" afterPath="$PROJECT_DIR$/../py-herbivores-and-carnivores" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-is-isogram" beforeDir="false" afterPath="$PROJECT_DIR$/../py-is-isogram" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-knights-fighting" beforeDir="false" afterPath="$PROJECT_DIR$/../py-knights-fighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-lockdown-cafe" beforeDir="false" afterPath="$PROJECT_DIR$/../py-lockdown-cafe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-matecoin-trades" beforeDir="false" afterPath="$PROJECT_DIR$/../py-matecoin-trades" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-move-file" beforeDir="false" afterPath="$PROJECT_DIR$/../py-move-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-movie-moviesession-cinemahall" beforeDir="false" afterPath="$PROJECT_DIR$/../py-movie-moviesession-cinemahall" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-mutable-immutable" beforeDir="false" afterPath="$PROJECT_DIR$/../py-mutable-immutable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-products-out-of-date" beforeDir="false" afterPath="$PROJECT_DIR$/../py-products-out-of-date" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-shop-trip" beforeDir="false" afterPath="$PROJECT_DIR$/../py-shop-trip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-software-engineers" beforeDir="false" afterPath="$PROJECT_DIR$/../py-software-engineers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-split-integer" beforeDir="false" afterPath="$PROJECT_DIR$/../py-split-integer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-taxi-service-class-based-views" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-class-based-views" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-taxi-service-home-page" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-home-page" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-taxi-service-startproject" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-startproject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-tickets-and-orders" beforeDir="false" afterPath="$PROJECT_DIR$/../py-tickets-and-orders" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-vector-class" beforeDir="false" afterPath="$PROJECT_DIR$/../py-vector-class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-work-with-file" beforeDir="false" afterPath="$PROJECT_DIR$/../py-work-with-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../python-datascraping-fotocasa-idealista" beforeDir="false" afterPath="$PROJECT_DIR$/../python-datascraping-fotocasa-idealista" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../roop" beforeDir="false" afterPath="$PROJECT_DIR$/../roop" afterDir="false" />
     </list>
@@ -61,14 +167,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons",
+    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -81,6 +189,7 @@
   <component name="RunManager" selected="Python.daily web">
     <configuration name="daily web" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -103,6 +212,7 @@
     </configuration>
     <configuration name="getitem_setitem" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -125,6 +235,7 @@
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -147,6 +258,7 @@
     </configuration>
     <configuration name="one more" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -169,6 +281,7 @@
     </configuration>
     <configuration name="App" type="Python.DjangoServer" factoryName="Django server">
       <module name="Lessons" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -194,6 +307,7 @@
     </configuration>
     <configuration name="Python tests in daily web.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Lessons" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -208,11 +322,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.App" />
       <item itemvalue="Python.daily web" />
       <item itemvalue="Python.getitem_setitem" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.one more" />
+      <item itemvalue="Django Server.App" />
       <item itemvalue="Python tests.Python tests in daily web.py" />
     </list>
     <recent_temporary>
@@ -224,6 +338,13 @@
         <item itemvalue="Python.getitem_setitem" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -301,6 +422,8 @@
       <workItem from="1703441360084" duration="1165000" />
       <workItem from="1703506019539" duration="2136000" />
       <workItem from="1704487449012" duration="514000" />
+      <workItem from="1705199389992" duration="91000" />
+      <workItem from="1705199490248" duration="77000" />
     </task>
     <servers />
   </component>
