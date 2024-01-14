@@ -1,20 +1,21 @@
 # when lil class have more then 1 giga class
 
-class Animal():
+
+class Animal:
     def die(self):
-        print('bye ;(')
+        print("bye ;(")
         self.health = 0
 
 
-class Carnivour():
+class Carnivour:
     def hunt(self):
-        print('eating')
+        print("eating")
         self.satiety = 100
 
 
 class Dog(Animal, Carnivour):
     def bark(self):
-        print('woof-woof')
+        print("woof-woof")
 
 
 dogo = Dog()
@@ -22,7 +23,7 @@ dogo.bark()
 dogo.hunt()
 dogo.die()
 
-print('_________________________________')
+print("_________________________________")
 
 
 # class Animal:                        #deadly diamond of death example
@@ -41,9 +42,9 @@ print('_________________________________')
 # class Dog(Carnivour, Mammal):          # НАСЛЕДУЕТ ПЕРВОЕ в случае, если у предка одинаковые методы
 #     pass
 #
-print('_________________________________')
+print("_________________________________")
 
-print('_________________________________')
+print("_________________________________")
 
 # dogo = Dog()
 # dogo.set_health(10)
@@ -70,9 +71,9 @@ print('_________________________________')
 # dogo = Dog()
 # dogo.set_health(10)
 
-print('_________________________________')
+print("_________________________________")
 
-print('_________________________________')
+print("_________________________________")
 
 # class Animal:  # deadly diamond of death example
 #     def set_health(self, health):
@@ -106,21 +107,24 @@ print('_________________________________')
 
 # функция super даёт гарантию последовательности выхова
 
-print('_________________________________')
+print("_________________________________")
 
-print('_________________________________')
+print("_________________________________")
 
-class Animal():
+
+class Animal:
     def __init__(self):
         self.health = 100
 
-    def hit(self,damage):
+    def hit(self, damage):
         self.health -= damage
+
 
 class Carnivour(Animal):
     def __init__(self):
         super().__init__()
         self.legs = 4
+
 
 c = Carnivour()
 c.hit(10)

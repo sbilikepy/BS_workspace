@@ -19,11 +19,11 @@ class Shape(ABC):
 
     @abstractmethod
     def perimeter(self):
-        print('calc perimeter')
+        print("calc perimeter")
         # pass
 
     def drag(self):
-        print('basic dragging functionality')
+        print("basic dragging functionality")
 
 
 class Triangle(Shape):  # Наследует абстрактный класс
@@ -44,7 +44,7 @@ class Triangle(Shape):  # Наследует абстрактный класс
 
     def drag(self):
         super().drag()
-        print('Additional action')
+        print("Additional action")
 
 
 t = Triangle(10, 10, 10)

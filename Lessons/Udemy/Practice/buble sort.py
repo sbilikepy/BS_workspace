@@ -5,7 +5,6 @@ def bubbleSort(theSeq):
         flag = 0
 
         for j in range(n - 1):
-
             if theSeq[j] > theSeq[j + 1]:
                 print(theSeq)
                 tmp = theSeq[j]

@@ -7,7 +7,9 @@ class invalidtriangeerror(Exception):
 
 def calc_square(ab, ac, bc):
     if ab <= 0 or ac <= 0 or bc <= 0:
-        raise invalidtriangeerror(f" One of the sides is less or equal to zero")  # RAISE
+        raise invalidtriangeerror(
+            f" One of the sides is less or equal to zero"
+        )  # RAISE
     p = (ab + ac + bc) / 2
     s = math.sqrt(p * (p - ab) * (p - ac) * (p - bc))
     return s

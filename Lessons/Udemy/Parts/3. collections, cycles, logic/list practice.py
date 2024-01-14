@@ -6,7 +6,7 @@
 #
 # None of the arrays will be empty, so you don't have to worry about that!
 
+
 def remove_every_other(my_list):
     new_list = my_list[::2]
     return new_list
-

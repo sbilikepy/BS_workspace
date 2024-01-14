@@ -1,4 +1,4 @@
-class Character():
+class Character:
     max_speed = 1000  # можно обращаться без создания экземпляра
     max_health = 100
     death_health = 0
@@ -17,7 +17,7 @@ class Character():
         return self.health <= Character.death_health
 
 
-unit = Character('Orc')
+unit = Character("Orc")
 
 print(unit.race, unit.dmg, unit.armor)
 print(unit.max_speed)
@@ -33,4 +33,3 @@ unit.health = -200
 print(unit.is_dead())
 
 print(unit.health)
-

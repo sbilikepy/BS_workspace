@@ -12,8 +12,8 @@
 
 
 def spiral(resolution: int):
-    result = [0] * resolution ** 2
-    result[-1] = resolution ** 2
+    result = [0] * resolution**2
+    result[-1] = resolution**2
     result = result[::-1]
 
     for i in range(1, len(result)):
@@ -23,17 +23,14 @@ def spiral(resolution: int):
 
     result = result[::-1]
 
-
-
-    #result.insert(resolution, "change direction")
+    # result.insert(resolution, "change direction")
     # for i in result[resolution-1::resolution+1]:
     #     result.insert(i,'change direction')
     # result.append('change direction')
     # print(f"result list at this stage: {result}")
 
-
-
     print(f"result list at final stage: {result}")
     return result
+
 
 spiral(3)
