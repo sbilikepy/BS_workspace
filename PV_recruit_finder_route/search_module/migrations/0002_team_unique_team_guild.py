@@ -4,14 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('search_module', '0001_initial'),
+        ("search_module", "0001_initial"),
     ]
 
     operations = [
         migrations.AddConstraint(
-            model_name='team',
-            constraint=models.UniqueConstraint(fields=('team_name', 'guild'), name='unique_team_guild'),
+            model_name="team",
+            constraint=models.UniqueConstraint(
+                fields=("team_name", "guild"), name="unique_team_guild"
+            ),
         ),
     ]

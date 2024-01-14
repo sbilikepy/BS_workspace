@@ -3,13 +3,14 @@ from db.models import Company
 
 
 def main():
-    other_company = Company(description="descr", company_name = "Some_name")
-    other_company.save() #SAVE TO DB
+    other_company = Company(description="descr", company_name="Some_name")
+    other_company.save()  # SAVE TO DB
     other_company.description = "new_descr"
     other_company.save()
-    print("result: ",Company.objects.all)
+    print("result: ", Company.objects.all)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
 
 # from django.db import models

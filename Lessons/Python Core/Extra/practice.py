@@ -3,7 +3,11 @@ def sort_names(names: list) -> list:
 
 
 def get_uppercase_string(source_strings: list) -> list:
-    return [i.upper() for i in source_strings if len(i) and i[0] in ("a", "b") and len(i) >= 3]
+    return [
+        i.upper()
+        for i in source_strings
+        if len(i) and i[0] in ("a", "b") and len(i) >= 3
+    ]
 
 
 def pretty_list(numbers: list) -> bool:
@@ -34,11 +38,9 @@ def sum_of_segments(segments: str) -> int:
 
 
 class User:
-    def __init__(self,
-                 email: str,
-                 username: str,
-                 last_activity: str,
-                 is_online: bool) -> None:
+    def __init__(
+        self, email: str, username: str, last_activity: str, is_online: bool
+    ) -> None:
         self.email = email
         self.username = username
         self.last_activity = last_activity

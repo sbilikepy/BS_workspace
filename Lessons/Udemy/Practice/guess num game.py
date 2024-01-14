@@ -11,32 +11,26 @@
 
 
 import random
+
 random_num = random.randint(1, 100)
 
-attempt_range = range (1,6)
+attempt_range = range(1, 6)
 attempt_start = 6
 attempt_final = 7 - attempt_start
 attempt_match = attempt_start - 1
-user_num = int(input('your num please: '))
+user_num = int(input("your num please: "))
 
 for n in attempt_range:
     if user_num == random_num:
-        print(f'You won, gj')
+        print(f"You won, gj")
         break
     if user_num > random_num:
         attempt_start -= 1
-        print(f'answer num LOWER than your, you have {attempt_start} more attempts')
-        user_num = int(input('your num please: '))
+        print(f"answer num LOWER than your, you have {attempt_start} more attempts")
+        user_num = int(input("your num please: "))
     if user_num < random_num:
         attempt_start -= 1
-        print(f'answer num GREATER than your, you have {attempt_start} more attempts')
-        user_num = int(input('your num please: '))
+        print(f"answer num GREATER than your, you have {attempt_start} more attempts")
+        user_num = int(input("your num please: "))
     if attempt_start == 0:
         break
-
-
-
-
-
-
-

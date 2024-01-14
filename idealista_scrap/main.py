@@ -12,8 +12,8 @@ def main():
         secret = "JVXEDkENILNo"
         access_token = get_auth(apikey, secret, creds.OATH_URL)
 
-        sess = create_session(access_token['access_token'])
-        loc, op, ptype, country, dist = read_filter_params('filters.json')
+        sess = create_session(access_token["access_token"])
+        loc, op, ptype, country, dist = read_filter_params("filters.json")
 
         base_url = "https://api.idealista.com/3.5"  # Base URL for the API
         endpoint = f"/{country}/search"  # Endpoint for the property search
@@ -29,7 +29,9 @@ def main():
 
         search_response = json.loads(resp.text)
 
-        properties = search_response.get("elementList", [])[:5]  # Get the first 5 properties
+        properties = search_response.get("elementList", [])[
+            :5
+        ]  # Get the first 5 properties
 
         print("Fetched 5 properties:")
         for property_data in properties:

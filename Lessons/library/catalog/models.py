@@ -29,25 +29,17 @@ class Book(models.Model):
     title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     format = models.ForeignKey(
-        LiteraryFormat,
-        on_delete=models.CASCADE,
-        related_name="books"
+        LiteraryFormat, on_delete=models.CASCADE, related_name="books"
     )
     authors: list = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        related_name="books"
+        settings.AUTH_USER_MODEL, related_name="books"
     )
 
     class Meta:
         ordering = ("title",)
 
     def get_absolute_url(self):
-        return reverse(
-            "catalog:book-detail",
-            args=[
-                str(self.id)
-            ]
-        )
+        return reverse("catalog:book-detail", args=[str(self.id)])
 
     def __str__(self):
         return f"{self.title} (price: {self.price}, format: {self.format.name})"

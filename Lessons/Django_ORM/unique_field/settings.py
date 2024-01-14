@@ -13,14 +13,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-SECRET_KEY = 'django-insecure-tr=%xt0l5#a6_lzf#xw7660pbfn@)95gtb(29(@gschfic*fsd'
-INSTALLED_APPS = [
-    "db"
-]
+SECRET_KEY = "django-insecure-tr=%xt0l5#a6_lzf#xw7660pbfn@)95gtb(29(@gschfic*fsd"
+INSTALLED_APPS = ["db"]
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 USE_TZ = False

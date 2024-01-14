@@ -33,11 +33,10 @@ def data_fill():
 
 @timer
 def request():
-    print("Enter \"help\" to calculate")
+    print('Enter "help" to calculate')
 
     flag = True
     while flag:
-
         character = input("Character name: ").lower()
         if character.capitalize() in current_composition:
             print(f"{character.capitalize()} already here")
@@ -46,7 +45,6 @@ def request():
 
         if character.capitalize() == "Akali":
             akali()
-
 
         else:
             if any(character == champ.lower() for champ in champions.keys()):
@@ -104,7 +102,10 @@ def group():
     for breakpoint_trait in breakpoint_traits:
         print(breakpoint_trait)
 
-    sorted_remaining_traits = sorted(remaining_traits, key=lambda x: traits[x.split(':')[0]][0] - int(x.split(':')[1].split()[0]))
+    sorted_remaining_traits = sorted(
+        remaining_traits,
+        key=lambda x: traits[x.split(":")[0]][0] - int(x.split(":")[1].split()[0]),
+    )
     for sorted_remaining_trait in sorted_remaining_traits:
         print(sorted_remaining_trait)
     tailor()
@@ -116,15 +117,11 @@ def tailor():
     print(f"Second prio: {second_prior} ")
     print(f"Third prio: {third_prior}")
     print(f"No prio: {no_prior}\n\n")
-    suggestions = {
-        name: 0 for name in champions.keys()
-    }
+    suggestions = {name: 0 for name in champions.keys()}
 
     for trait in first_prior + second_prior + third_prior + no_prior:
-
         for name, traits in champions.items():
             if name not in current_composition:
-
                 if trait in first_prior:
                     if trait in traits:
                         suggestions[name] += 3
@@ -141,7 +138,9 @@ def tailor():
                     if trait in traits:
                         suggestions[name] += 0
 
-    suggestions = dict(sorted(suggestions.items(), key=lambda item: item[1], reverse=True))
+    suggestions = dict(
+        sorted(suggestions.items(), key=lambda item: item[1], reverse=True)
+    )
 
     scoreboard = {}
 

@@ -100,6 +100,6 @@
 #
 # {}
 
-print(120%8)
+print(120 % 8)
 x = 15
 print(x.log)

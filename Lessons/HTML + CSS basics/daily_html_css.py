@@ -33,12 +33,14 @@ if __name__ == "__main__":
 
 
 def histogram(results: list) -> str:
-    return (f"6|{'' if results[-1] == 0 else '#' * results[-1] + ' ' + str(results[-1])}\n"
-            f"5|{'' if results[-2] == 0 else '#' * results[-2] + ' ' + str(results[-2])}\n"
-            f"4|{'' if results[-3] == 0 else '#' * results[-3] + ' ' + str(results[-3])}\n"
-            f"3|{'' if results[-4] == 0 else '#' * results[-4] + ' ' + str(results[-4])}\n"
-            f"2|{'' if results[-5] == 0 else '#' * results[-5] + ' ' + str(results[-5])}\n"
-            f"1|{'' if results[-6] == 0 else '#' * results[-6] + ' ' + str(results[-6])}\n")
+    return (
+        f"6|{'' if results[-1] == 0 else '#' * results[-1] + ' ' + str(results[-1])}\n"
+        f"5|{'' if results[-2] == 0 else '#' * results[-2] + ' ' + str(results[-2])}\n"
+        f"4|{'' if results[-3] == 0 else '#' * results[-3] + ' ' + str(results[-3])}\n"
+        f"3|{'' if results[-4] == 0 else '#' * results[-4] + ' ' + str(results[-4])}\n"
+        f"2|{'' if results[-5] == 0 else '#' * results[-5] + ' ' + str(results[-5])}\n"
+        f"1|{'' if results[-6] == 0 else '#' * results[-6] + ' ' + str(results[-6])}\n"
+    )
 
 
 def contains_duplicates(nums: list) -> bool:
@@ -51,9 +53,11 @@ def contains_duplicates(nums: list) -> bool:
 
 
 def contains_duplicates(nums: list) -> bool:
-    return True if len(nums) >= 2 and len(
-        [i for i in nums if nums.count(i) >= 2]
-    ) >= 1 else False
+    return (
+        True
+        if len(nums) >= 2 and len([i for i in nums if nums.count(i) >= 2]) >= 1
+        else False
+    )
 
 
 def reverse_string(word: list) -> list:

@@ -5,25 +5,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0001_initial'),
+        ("db", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='car',
-            name='creation_date',
+            model_name="car",
+            name="creation_date",
             field=models.DateField(default=datetime.date.today),
         ),
         migrations.AddField(
-            model_name='car',
-            name='description',
-            field=models.TextField(default='.'),
+            model_name="car",
+            name="description",
+            field=models.TextField(default="."),
         ),
         migrations.AddField(
-            model_name='car',
-            name='horse_power',
+            model_name="car",
+            name="horse_power",
             field=models.IntegerField(default=0),
         ),
     ]

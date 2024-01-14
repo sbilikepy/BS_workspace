@@ -28,7 +28,7 @@ traits = {
     "Illbeats": [1],
     "Maestro": [1],
     "Breakout": [1],
-    "Wildcard": [1]
+    "Wildcard": [1],
 }
 """ {name : [trait, cost]}"""
 champions = {
@@ -144,37 +144,258 @@ champions = {
     "8-bit headliner": [],
     "Heartsteel emblem": [],
     "Heartsteel headliner": [],
-"Edm headliner": []
+    "Edm headliner": [],
 }
 
-trait_8_bit_pull = [["Caitlyn", "Garen", "Corki", "Riven", "8-bit emblem", "8-bit headliner"], "8-bit"]
-trait_big_shot_pull = [["Jhin", "Miss fortune", "Kai'sa", "Ezreal", "Corki", "Big shot emblem", "Big shot headliner"], "Big shot"]
+trait_8_bit_pull = [
+    ["Caitlyn", "Garen", "Corki", "Riven", "8-bit emblem", "8-bit headliner"],
+    "8-bit",
+]
+trait_big_shot_pull = [
+    [
+        "Jhin",
+        "Miss fortune",
+        "Kai'sa",
+        "Ezreal",
+        "Corki",
+        "Big shot emblem",
+        "Big shot headliner",
+    ],
+    "Big shot",
+]
 trait_breakout_pull = [["Akali k/da", "Akali true damage"], "Breakout"]
-trait_bruiser_pull = [["Illaoi", "Tahm kench", "Gragas", "Sett", "Zac", "Olaf", "Bruiser emblem", "Bruiser headliner"], "Bruiser"]
-trait_country_pull = [["Thresh", "Urgot", "Samira", "Tahm kench", "Katarina", "Country emblem", "Country headliner"], "Country"]
-trait_crowd_diver_pull = [["Qiyana", "Zed", "Evelynn", "Katarina", "Yone", "Crowd diver emblem", "Crowd diver headliner"], "Crowd diver"]
-trait_dazzler_pull = [["Ziggs", "Bard", "Twisted fate", "Nami", "Lux", "Dazzler emblem", "Dazzler headliner"], "Dazzler"]
-trait_disco_pull = [["Twisted fate", "Blitzcrank", "Nami", "Gragas", "Taric", "Disco emblem", "Disco headliner"], "Disco"]
+trait_bruiser_pull = [
+    [
+        "Illaoi",
+        "Tahm kench",
+        "Gragas",
+        "Sett",
+        "Zac",
+        "Olaf",
+        "Bruiser emblem",
+        "Bruiser headliner",
+    ],
+    "Bruiser",
+]
+trait_country_pull = [
+    [
+        "Thresh",
+        "Urgot",
+        "Samira",
+        "Tahm kench",
+        "Katarina",
+        "Country emblem",
+        "Country headliner",
+    ],
+    "Country",
+]
+trait_crowd_diver_pull = [
+    [
+        "Qiyana",
+        "Zed",
+        "Evelynn",
+        "Katarina",
+        "Yone",
+        "Crowd diver emblem",
+        "Crowd diver headliner",
+    ],
+    "Crowd diver",
+]
+trait_dazzler_pull = [
+    [
+        "Ziggs",
+        "Bard",
+        "Twisted fate",
+        "Nami",
+        "Lux",
+        "Dazzler emblem",
+        "Dazzler headliner",
+    ],
+    "Dazzler",
+]
+trait_disco_pull = [
+    [
+        "Twisted fate",
+        "Blitzcrank",
+        "Nami",
+        "Gragas",
+        "Taric",
+        "Disco emblem",
+        "Disco headliner",
+    ],
+    "Disco",
+]
 trait_edm_pull = [["Zed", "Zac", "Lux", "Jax", "Edm headliner"], "Edm"]
-trait_edgelord_pull = [["Kayn", "Viego", "Kayle", "Yone", "Yasuo", "Riven", "Edgelord emblem", "Edgelord headliner"], "Edgelord"]
-trait_emo_pull = [["Vex", "Poppy", "Amumu", "Annie", "Emo emblem", "Emo headliner"], "Emo"]
-trait_executioner_pull = [["Akali k/da", "Akali true damage", "Vex", "Samira", "Karthus", "Twitch", "Executioner emblem", "Executioner headliner"], "Executioner"]
-trait_guardian_pull = [["Yorick", "Thresh", "Kennen", "Neeko", "Amumu", "Taric", "Pantheon", "Guardian emblem", "Guardian headliner"], "Guardian"]
-trait_heartsteel_pull = [["Kayn", "Sett", "Ezreal", "Yone", "Aphelios", "K'sante", "Heartsteel emblem", "Heartsteel headliner"], "Heartsteel"]
-trait_hyperpop_pull = [["Ziggs", "Lulu", "Hyperpop emblem", "Hyperpop headliner"], "Hyperpop"]
+trait_edgelord_pull = [
+    [
+        "Kayn",
+        "Viego",
+        "Kayle",
+        "Yone",
+        "Yasuo",
+        "Riven",
+        "Edgelord emblem",
+        "Edgelord headliner",
+    ],
+    "Edgelord",
+]
+trait_emo_pull = [
+    ["Vex", "Poppy", "Amumu", "Annie", "Emo emblem", "Emo headliner"],
+    "Emo",
+]
+trait_executioner_pull = [
+    [
+        "Akali k/da",
+        "Akali true damage",
+        "Vex",
+        "Samira",
+        "Karthus",
+        "Twitch",
+        "Executioner emblem",
+        "Executioner headliner",
+    ],
+    "Executioner",
+]
+trait_guardian_pull = [
+    [
+        "Yorick",
+        "Thresh",
+        "Kennen",
+        "Neeko",
+        "Amumu",
+        "Taric",
+        "Pantheon",
+        "Guardian emblem",
+        "Guardian headliner",
+    ],
+    "Guardian",
+]
+trait_heartsteel_pull = [
+    [
+        "Kayn",
+        "Sett",
+        "Ezreal",
+        "Yone",
+        "Aphelios",
+        "K'sante",
+        "Heartsteel emblem",
+        "Heartsteel headliner",
+    ],
+    "Heartsteel",
+]
+trait_hyperpop_pull = [
+    ["Ziggs", "Lulu", "Hyperpop emblem", "Hyperpop headliner"],
+    "Hyperpop",
+]
 trait_illbeats_pull = [["Illaoi"], "Illbeats"]
-trait_jazz_pull = [["Lucian", "Bard", "Miss fortune", "Jazz emblem", "Jazz headliner"], "Jazz"]
-trait_kda_pull = [["Lillia", "Ahri", "Akali k/da", "Kai'sa", "Neeko", "Evelynn", "Seraphine", "K/da emblem", "K/da headliner"], "K/da"]
+trait_jazz_pull = [
+    ["Lucian", "Bard", "Miss fortune", "Jazz emblem", "Jazz headliner"],
+    "Jazz",
+]
+trait_kda_pull = [
+    [
+        "Lillia",
+        "Ahri",
+        "Akali k/da",
+        "Kai'sa",
+        "Neeko",
+        "Evelynn",
+        "Seraphine",
+        "K/da emblem",
+        "K/da headliner",
+    ],
+    "K/da",
+]
 trait_maestro_pull = [["Jhin"], "Maestro"]
 trait_mixmaster_pull = [["Sona"], "Mixmaster"]
-trait_mosher_pull = [["Yorick", "Poppy", "Urgot", "Gnar", "Sett", "Vi", "Jax", "Mosher emblem", "Mosher headliner"], "Mosher"]
-trait_pentakill_pull = [["Yorick", "Karthus", "Gnar", "Viego", "Mordekaiser", "Kayle", "Olaf", "Pentakill emblem", "Pentakill headliner"], "Pentakill"]
-trait_punk_pull = [["Twitch", "Vi", "Pantheon", "Jinx", "Punk emblem", "Punk headliner"], "Punk"]
-trait_rapidfire_pull = [["Lucian", "Caitlyn", "Senna", "Jinx", "Aphelios", "Rapidfire emblem", "Rapidfire headliner"], "Rapidfire"]
-trait_sentinel_pull = [["Lillia", "Ekko", "Blitzcrank", "Mordekaiser", "Garen", "K'sante", "Sentinel emblem", "Sentinel headliner"], "Sentinel"]
-trait_spellweaver_pull = [["Sona", "Lulu", "Ahri", "Ekko", "Seraphine", "Gragas", "Annie", "Spellweaver emblem", "Spellweaver headliner"], "Spellweaver"]
-trait_superfan_pull = [["Lillia", "Kennen", "Neeko", "Gnar", "Superfan emblem", "Superfan headliner"], "Superfan"]
-trait_true_damage_pull = [["Qiyana", "Akali true damage", "Kennen", "Ekko", "Senna", "Yasuo", "True damage emblem", "True damage headliner"], "True Damage"]
+trait_mosher_pull = [
+    [
+        "Yorick",
+        "Poppy",
+        "Urgot",
+        "Gnar",
+        "Sett",
+        "Vi",
+        "Jax",
+        "Mosher emblem",
+        "Mosher headliner",
+    ],
+    "Mosher",
+]
+trait_pentakill_pull = [
+    [
+        "Yorick",
+        "Karthus",
+        "Gnar",
+        "Viego",
+        "Mordekaiser",
+        "Kayle",
+        "Olaf",
+        "Pentakill emblem",
+        "Pentakill headliner",
+    ],
+    "Pentakill",
+]
+trait_punk_pull = [
+    ["Twitch", "Vi", "Pantheon", "Jinx", "Punk emblem", "Punk headliner"],
+    "Punk",
+]
+trait_rapidfire_pull = [
+    [
+        "Lucian",
+        "Caitlyn",
+        "Senna",
+        "Jinx",
+        "Aphelios",
+        "Rapidfire emblem",
+        "Rapidfire headliner",
+    ],
+    "Rapidfire",
+]
+trait_sentinel_pull = [
+    [
+        "Lillia",
+        "Ekko",
+        "Blitzcrank",
+        "Mordekaiser",
+        "Garen",
+        "K'sante",
+        "Sentinel emblem",
+        "Sentinel headliner",
+    ],
+    "Sentinel",
+]
+trait_spellweaver_pull = [
+    [
+        "Sona",
+        "Lulu",
+        "Ahri",
+        "Ekko",
+        "Seraphine",
+        "Gragas",
+        "Annie",
+        "Spellweaver emblem",
+        "Spellweaver headliner",
+    ],
+    "Spellweaver",
+]
+trait_superfan_pull = [
+    ["Lillia", "Kennen", "Neeko", "Gnar", "Superfan emblem", "Superfan headliner"],
+    "Superfan",
+]
+trait_true_damage_pull = [
+    [
+        "Qiyana",
+        "Akali true damage",
+        "Kennen",
+        "Ekko",
+        "Senna",
+        "Yasuo",
+        "True damage emblem",
+        "True damage headliner",
+    ],
+    "True Damage",
+]
 trait_wildcard_pull = [["Kayn"], "Wildcard"]
 
 
@@ -207,5 +428,5 @@ composition_iterator = [
     trait_spellweaver_pull,
     trait_superfan_pull,
     trait_true_damage_pull,
-    trait_wildcard_pull
+    trait_wildcard_pull,
 ]

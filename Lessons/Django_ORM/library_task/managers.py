@@ -12,8 +12,7 @@ class LiteraryFormatManager:
     # CREATE C
     def create(self, format_: str):
         self._connection.execute(
-            f"INSERT INTO {self.table_name} (format) VALUES (?)",
-            (format_,)
+            f"INSERT INTO {self.table_name} (format) VALUES (?)", (format_,)
         )
         self._connection.commit()
 
@@ -23,25 +22,20 @@ class LiteraryFormatManager:
             f"SELECT id, format FROM {self.table_name}"
         )
 
-        return [LiteraryFormat(*row)
-                for row in literary_formats_cursor]
+        return [LiteraryFormat(*row) for row in literary_formats_cursor]
 
     # UPDATE U
     def update(self, id_to_update, new_format):
         self._connection.execute(
-            f"UPDATE {self.table_name} "
-            "SET format = ? "
-            "WHERE id = ?",
-            (new_format, id_to_update)
+            f"UPDATE {self.table_name} " "SET format = ? " "WHERE id = ?",
+            (new_format, id_to_update),
         )
         self._connection.commit()
 
     # DELETE D
     def delete(self, id_to_delete):
         self._connection.execute(
-            f"DELETE FROM {self.table_name} "
-            f"WHERE id =  ?",
-            (id_to_delete,)
+            f"DELETE FROM {self.table_name} " f"WHERE id =  ?", (id_to_delete,)
         )
         self._connection.commit()
 

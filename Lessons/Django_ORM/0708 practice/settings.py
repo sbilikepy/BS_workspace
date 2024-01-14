@@ -16,26 +16,19 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 
 
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)tuvg6t#vozmr!*_vtx!mysy!wg4gcm=o_w5&ot0p=12@kfq7v'
-
-
+SECRET_KEY = "django-insecure-)tuvg6t#vozmr!*_vtx!mysy!wg4gcm=o_w5&ot0p=12@kfq7v"
 
 
 # Application definition
 
-INSTALLED_APPS = [
-    "db"
-]
-
-
+INSTALLED_APPS = ["db"]
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -44,11 +37,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
 
 USE_TZ = False
@@ -56,4 +48,3 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-

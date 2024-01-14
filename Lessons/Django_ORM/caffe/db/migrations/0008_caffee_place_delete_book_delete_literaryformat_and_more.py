@@ -5,34 +5,51 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0007_alter_book_format'),
+        ("db", "0007_alter_book_format"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Caffee',
+            name="Caffee",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Place',
+            name="Place",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('post_index', models.CharField(max_length=32)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("post_index", models.CharField(max_length=32)),
             ],
         ),
         migrations.DeleteModel(
-            name='Book',
+            name="Book",
         ),
         migrations.DeleteModel(
-            name='LiteraryFormat',
+            name="LiteraryFormat",
         ),
         migrations.AddField(
-            model_name='caffee',
-            name='place',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='db.place'),
+            model_name="caffee",
+            name="place",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="db.place"
+            ),
         ),
     ]

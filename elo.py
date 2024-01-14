@@ -22,11 +22,7 @@ class Player:
 
 
 def game(lobby: list[Player]) -> float:
-    avg_elo = sum(
-        [
-            player.elo for player in lobby
-        ]
-    ) / len(lobby)
+    avg_elo = sum([player.elo for player in lobby]) / len(lobby)
     for player in lobby:
         if player.elo < avg_elo:
             player.expectation = False
@@ -43,9 +39,7 @@ def elo_change(average_elo: float, result: Dict[Player, int]) -> None:
     print("\n", "*" * 10, "GG", "*" * 10, "\n")
     print(f"\nAverage ELO: {AVERAGE_ELO}\n")
     for i in range(int(len(result) / 2)):
-        elo_primary_distribution.append(
-            DEFAULT_GAIN
-        )
+        elo_primary_distribution.append(DEFAULT_GAIN)
         DEFAULT_GAIN /= 2
     part_reverse = copy.deepcopy(elo_primary_distribution)[::-1]
 
@@ -70,8 +64,10 @@ def elo_change(average_elo: float, result: Dict[Player, int]) -> None:
 
         player.elo += points
         index_ += 1
-        print(f"{player.name}: {old_elo} -> {round(player.elo, 2)}"
-              f" {'[+' if points > 0 else '['}{round(points, 2)}]")
+        print(
+            f"{player.name}: {old_elo} -> {round(player.elo, 2)}"
+            f" {'[+' if points > 0 else '['}{round(points, 2)}]"
+        )
 
 
 player_1 = Player("Sanya", elo=None)

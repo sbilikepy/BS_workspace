@@ -17,7 +17,7 @@ def just_one_more():
     amount_log.append(amount)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for k in range(100):
         for i in range(100):
             just_one_more()
@@ -25,4 +25,4 @@ if __name__ == '__main__':
         print(amount_log[-1])
         global_avg.append(amount_log[-1])
     print(global_avg)
-    print(sum(global_avg)/len(global_avg))
+    print(sum(global_avg) / len(global_avg))

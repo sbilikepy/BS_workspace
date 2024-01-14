@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0008_caffee_place_delete_book_delete_literaryformat_and_more'),
+        ("db", "0008_caffee_place_delete_book_delete_literaryformat_and_more"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='Caffee',
-            new_name='Caffe',
+            old_name="Caffee",
+            new_name="Caffe",
         ),
         migrations.AddField(
-            model_name='place',
-            name='address',
-            field=models.CharField(default='address', max_length=255),
+            model_name="place",
+            name="address",
+            field=models.CharField(default="address", max_length=255),
         ),
     ]

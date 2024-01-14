@@ -3,7 +3,7 @@ import datetime
 import init_django_orm  # noqa: F401
 from db.models import Book, LiteraryFormat, Author
 from services import book as book_service
-from  django.db.models.query import QuerySet
+from django.db.models.query import QuerySet
 
 
 def get_time(func):
@@ -25,19 +25,20 @@ def del_all():
 
 
 def main():
-    authors = ["William Shakespeare", "Dante Alighieri", "Oscar Wilde",
-               "Charles Dickens", "James Joyce", "Jane Austen"]
+    authors = [
+        "William Shakespeare",
+        "Dante Alighieri",
+        "Oscar Wilde",
+        "Charles Dickens",
+        "James Joyce",
+        "Jane Austen",
+    ]
     for i in authors:
-        Author.objects.get_or_create(
-            first_name=i.split()[0],
-            last_name=i.split()[1]
-        )
+        Author.objects.get_or_create(first_name=i.split()[0], last_name=i.split()[1])
     formats = ["Drama", "Fantasy", "Fiction", "Folclore"]
     counter = 10
     for i in formats:
-        LiteraryFormat.objects.get_or_create(
-            format=i
-        )
+        LiteraryFormat.objects.get_or_create(format=i)
     # books = ["book_1", "book_2", "book_3", "book_4"]
     # counter = 10
     # for i in books:
@@ -48,18 +49,10 @@ def main():
     #     )
     #     counter += 1
 
-    biography = LiteraryFormat.objects.create(
-        format="biography"
-    )
+    biography = LiteraryFormat.objects.create(format="biography")
 
-    robert = Author.objects.create(
-        first_name="Robert",
-        last_name="Kiyosaki"
-    )
-    sharon = Author.objects.create(
-        first_name="Sharon",
-        last_name="Lechter"
-    )
+    robert = Author.objects.create(first_name="Robert", last_name="Kiyosaki")
+    sharon = Author.objects.create(first_name="Sharon", last_name="Lechter")
     robert.save()
     sharon.save()
 
@@ -112,28 +105,27 @@ def main():
     ##########___SERVICES____########################
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     del_all()
     main()
     authors_id = [
         Author.objects.get(first_name="Robert").id,
-        Author.objects.get(first_name="Sharon").id
-
+        Author.objects.get(first_name="Sharon").id,
     ]
     book_2 = book_service.create_book(
         title="RdPd",
         price=17.5,
-        format_id=LiteraryFormat.objects.get(
-            format="mystery"
-        ).id
+        format_id=LiteraryFormat.objects.get(format="mystery").id,
     )
     book_2.authors.set(authors_id)
     get_mys_id = LiteraryFormat.objects.get(format="mystery").id
     print(get_mys_id)
-    print(book_service.get_books(
-        format_id=get_mys_id,
-        authors_ids=[1255, 12312]  # 911 <QuerySet [RdPd 17.50 mystery]>
-    ))
+    print(
+        book_service.get_books(
+            format_id=get_mys_id,
+            authors_ids=[1255, 12312],  # 911 <QuerySet [RdPd 17.50 mystery]>
+        )
+    )
     #####19.08#####
     #### Django ORM / Queries in Details #####
     drama = LiteraryFormat.objects.get(format="Drama")
@@ -214,4 +206,3 @@ if __name__ == '__main__':
     #     print("LF->", lit_format.format, books)
     #
     print(type(QuerySet))
-

@@ -34,7 +34,7 @@ class Trip(models.Model):
         # index_together = ["source", "destination"]
         indexes = [
             models.Index(fields=["source", "destination"]),
-            models.Index(fields=["departure"])
+            models.Index(fields=["departure"]),
         ]
 
     def __str__(self):
@@ -49,19 +49,22 @@ class Ticket(models.Model):
     class Meta:
         # unique_together = ["trip", "seat"] # combination should be unique
         constraints = [
-            UniqueConstraint(fields=["trip", "seat"],
-                             name="unique trip and seat combination")
+            UniqueConstraint(
+                fields=["trip", "seat"], name="unique trip and seat combination"
+            )
         ]
 
     def clean(self):
         if not (1 <= self.seat <= self.trip.bus.num_seats):
             raise ValidationError(
-                {"seat": f"seat must be in range "
-                         f"[1, {self.trip.bus.num_seats}], not {self.seat}"}
+                {
+                    "seat": f"seat must be in range "
+                    f"[1, {self.trip.bus.num_seats}], not {self.seat}"
+                }
             )
 
     def save(
-            self, force_insert=False, force_update=False, using=None, update_fields=None
+        self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         """
         Call clean_fields(), clean(), validate_unique(), and
@@ -93,6 +96,7 @@ class Order(models.Model):
 #
 #     def __str__(self):
 #         return str(self.created_at)
+
 
 class User(AbstractUser):
     pass

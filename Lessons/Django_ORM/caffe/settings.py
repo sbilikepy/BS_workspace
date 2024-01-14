@@ -16,26 +16,21 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q-!l(90fph6c%*se30*yz5cpne5i250h8n*j%s70hf#l(2ki_d'
+SECRET_KEY = "django-insecure-q-!l(90fph6c%*se30*yz5cpne5i250h8n*j%s70hf#l(2ki_d"
 
 # Application definition
 
-INSTALLED_APPS = [
-    "db"
-]
+INSTALLED_APPS = ["db"]
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
 
-
-
 USE_TZ = False
-

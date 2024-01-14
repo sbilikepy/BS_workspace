@@ -4,18 +4,17 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('bus_station', '0002_alter_bus_table'),
+        ("bus_station", "0002_alter_bus_table"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='bus',
-            options={'verbose_name': 'bus', 'verbose_name_plural': 'buses'},
+            name="bus",
+            options={"verbose_name": "bus", "verbose_name_plural": "buses"},
         ),
         migrations.AlterModelTable(
-            name='bus',
+            name="bus",
             table=None,
         ),
     ]

@@ -9,152 +9,410 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('auth', '0012_alter_user_first_name_max_length'),
+        ("auth", "0012_alter_user_first_name_max_length"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name="User",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('password', models.CharField(max_length=128, verbose_name='password')),
-                ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
-                ('is_superuser', models.BooleanField(default=False, help_text='Designates that this user has all permissions without explicitly assigning them.', verbose_name='superuser status')),
-                ('username', models.CharField(error_messages={'unique': 'A user with that username already exists.'}, help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.', max_length=150, unique=True, validators=[django.contrib.auth.validators.UnicodeUsernameValidator()], verbose_name='username')),
-                ('first_name', models.CharField(blank=True, max_length=150, verbose_name='first name')),
-                ('last_name', models.CharField(blank=True, max_length=150, verbose_name='last name')),
-                ('email', models.EmailField(blank=True, max_length=254, verbose_name='email address')),
-                ('is_staff', models.BooleanField(default=False, help_text='Designates whether the user can log into this admin site.', verbose_name='staff status')),
-                ('is_active', models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active')),
-                ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
-                ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
-                ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("password", models.CharField(max_length=128, verbose_name="password")),
+                (
+                    "last_login",
+                    models.DateTimeField(
+                        blank=True, null=True, verbose_name="last login"
+                    ),
+                ),
+                (
+                    "is_superuser",
+                    models.BooleanField(
+                        default=False,
+                        help_text="Designates that this user has all permissions without explicitly assigning them.",
+                        verbose_name="superuser status",
+                    ),
+                ),
+                (
+                    "username",
+                    models.CharField(
+                        error_messages={
+                            "unique": "A user with that username already exists."
+                        },
+                        help_text="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                        max_length=150,
+                        unique=True,
+                        validators=[
+                            django.contrib.auth.validators.UnicodeUsernameValidator()
+                        ],
+                        verbose_name="username",
+                    ),
+                ),
+                (
+                    "first_name",
+                    models.CharField(
+                        blank=True, max_length=150, verbose_name="first name"
+                    ),
+                ),
+                (
+                    "last_name",
+                    models.CharField(
+                        blank=True, max_length=150, verbose_name="last name"
+                    ),
+                ),
+                (
+                    "email",
+                    models.EmailField(
+                        blank=True, max_length=254, verbose_name="email address"
+                    ),
+                ),
+                (
+                    "is_staff",
+                    models.BooleanField(
+                        default=False,
+                        help_text="Designates whether the user can log into this admin site.",
+                        verbose_name="staff status",
+                    ),
+                ),
+                (
+                    "is_active",
+                    models.BooleanField(
+                        default=True,
+                        help_text="Designates whether this user should be treated as active. Unselect this instead of deleting accounts.",
+                        verbose_name="active",
+                    ),
+                ),
+                (
+                    "date_joined",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, verbose_name="date joined"
+                    ),
+                ),
+                (
+                    "groups",
+                    models.ManyToManyField(
+                        blank=True,
+                        help_text="The groups this user belongs to. A user will get all permissions granted to each of their groups.",
+                        related_name="user_set",
+                        related_query_name="user",
+                        to="auth.Group",
+                        verbose_name="groups",
+                    ),
+                ),
+                (
+                    "user_permissions",
+                    models.ManyToManyField(
+                        blank=True,
+                        help_text="Specific permissions for this user.",
+                        related_name="user_set",
+                        related_query_name="user",
+                        to="auth.Permission",
+                        verbose_name="user permissions",
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Users',
-                'ordering': ['username'],
+                "verbose_name_plural": "Users",
+                "ordering": ["username"],
             },
             managers=[
-                ('objects', django.contrib.auth.models.UserManager()),
+                ("objects", django.contrib.auth.models.UserManager()),
             ],
         ),
         migrations.CreateModel(
-            name='Character',
+            name="Character",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Characters',
-                'ordering': ['class_name'],
+                "verbose_name_plural": "Characters",
+                "ordering": ["class_name"],
             },
         ),
         migrations.CreateModel(
-            name='Guild',
+            name="Guild",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, unique=True)),
-                ('faction', models.CharField(choices=[('Alliance', 'Alliance'), ('Horde', 'Horde')], default='Unrecognized', max_length=10)),
-                ('highest_progress', models.IntegerField(blank=True, default=0, null=True)),
-                ('discord_link', models.CharField(blank=True, max_length=255, null=True)),
-                ('apply_link', models.CharField(blank=True, max_length=255, null=True)),
-                ('wcl_link', models.URLField(blank=True, null=True, verbose_name='wcl_link')),
-                ('guild_note', models.CharField(blank=True, max_length=1000, null=True)),
-                ('avatar', models.CharField(blank=True, max_length=255, null=True)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='guild_owner', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, unique=True)),
+                (
+                    "faction",
+                    models.CharField(
+                        choices=[("Alliance", "Alliance"), ("Horde", "Horde")],
+                        default="Unrecognized",
+                        max_length=10,
+                    ),
+                ),
+                (
+                    "highest_progress",
+                    models.IntegerField(blank=True, default=0, null=True),
+                ),
+                (
+                    "discord_link",
+                    models.CharField(blank=True, max_length=255, null=True),
+                ),
+                ("apply_link", models.CharField(blank=True, max_length=255, null=True)),
+                (
+                    "wcl_link",
+                    models.URLField(blank=True, null=True, verbose_name="wcl_link"),
+                ),
+                (
+                    "guild_note",
+                    models.CharField(blank=True, max_length=1000, null=True),
+                ),
+                ("avatar", models.CharField(blank=True, max_length=255, null=True)),
+                (
+                    "owner",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="guild_owner",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Guilds',
-                'ordering': ['name'],
+                "verbose_name_plural": "Guilds",
+                "ordering": ["name"],
             },
         ),
         migrations.CreateModel(
-            name='InGameClass',
+            name="InGameClass",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, unique=True)),
             ],
             options={
-                'verbose_name_plural': 'Classes',
-                'ordering': ['name'],
+                "verbose_name_plural": "Classes",
+                "ordering": ["name"],
             },
         ),
         migrations.CreateModel(
-            name='InGameSpec',
+            name="InGameSpec",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, unique=True)),
             ],
             options={
-                'verbose_name_plural': 'Specialisations',
-                'ordering': ['name'],
+                "verbose_name_plural": "Specialisations",
+                "ordering": ["name"],
             },
         ),
         migrations.CreateModel(
-            name='Team',
+            name="Team",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('team_size', models.IntegerField()),
-                ('team_progress', models.IntegerField(default=0)),
-                ('active_search', models.BooleanField(default=True)),
-                ('team_note', models.CharField(blank=True, max_length=1000, null=True)),
-                ('required_active_days_amount', models.IntegerField(default=0)),
-                ('team_name', models.CharField(blank=True, default=None, max_length=255, null=True)),
-                ('loot_system', models.CharField(choices=[('Loot Council', 'Loot Council'), ('EPGP', 'EPGP'), ('DKP', 'DKP'), ('SR', 'SR'), ('BIS > MS > OS roll', 'BIS > MS > OS roll'), ('GDKP', 'GDKP'), ('Roll', 'Roll'), ('Other', 'Other')], default='Other', max_length=20)),
-                ('guild', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='search_module.guild')),
-                ('looking_for', models.ManyToManyField(blank=True, default=None, related_name='looking_for', to='search_module.Character')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("team_size", models.IntegerField()),
+                ("team_progress", models.IntegerField(default=0)),
+                ("active_search", models.BooleanField(default=True)),
+                ("team_note", models.CharField(blank=True, max_length=1000, null=True)),
+                ("required_active_days_amount", models.IntegerField(default=0)),
+                (
+                    "team_name",
+                    models.CharField(
+                        blank=True, default=None, max_length=255, null=True
+                    ),
+                ),
+                (
+                    "loot_system",
+                    models.CharField(
+                        choices=[
+                            ("Loot Council", "Loot Council"),
+                            ("EPGP", "EPGP"),
+                            ("DKP", "DKP"),
+                            ("SR", "SR"),
+                            ("BIS > MS > OS roll", "BIS > MS > OS roll"),
+                            ("GDKP", "GDKP"),
+                            ("Roll", "Roll"),
+                            ("Other", "Other"),
+                        ],
+                        default="Other",
+                        max_length=20,
+                    ),
+                ),
+                (
+                    "guild",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="search_module.guild",
+                    ),
+                ),
+                (
+                    "looking_for",
+                    models.ManyToManyField(
+                        blank=True,
+                        default=None,
+                        related_name="looking_for",
+                        to="search_module.Character",
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Teams',
-                'ordering': ['team_name'],
+                "verbose_name_plural": "Teams",
+                "ordering": ["team_name"],
             },
         ),
         migrations.CreateModel(
-            name='Recruit',
+            name="Recruit",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nickname', models.CharField(max_length=255)),
-                ('note', models.CharField(blank=True, max_length=255, null=True)),
-                ('wcl', models.IntegerField(blank=True, null=True)),
-                ('uptime_days', models.CharField(blank=True, choices=[('Monday', 'Monday'), ('Tuesday', 'Tuesday'), ('Wednesday', 'Wednesday'), ('Thursday', 'Thursday'), ('Friday', 'Friday'), ('Saturday', 'Saturday'), ('Sunday', 'Sunday')], max_length=255, null=True)),
-                ('rt_start', models.TimeField(blank=True, default=None, null=True)),
-                ('rt_end', models.TimeField(blank=True, default=None, null=True)),
-                ('character', models.ForeignKey(default=None, on_delete=django.db.models.deletion.SET_DEFAULT, to='search_module.character')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nickname", models.CharField(max_length=255)),
+                ("note", models.CharField(blank=True, max_length=255, null=True)),
+                ("wcl", models.IntegerField(blank=True, null=True)),
+                (
+                    "uptime_days",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("Monday", "Monday"),
+                            ("Tuesday", "Tuesday"),
+                            ("Wednesday", "Wednesday"),
+                            ("Thursday", "Thursday"),
+                            ("Friday", "Friday"),
+                            ("Saturday", "Saturday"),
+                            ("Sunday", "Sunday"),
+                        ],
+                        max_length=255,
+                        null=True,
+                    ),
+                ),
+                ("rt_start", models.TimeField(blank=True, default=None, null=True)),
+                ("rt_end", models.TimeField(blank=True, default=None, null=True)),
+                (
+                    "character",
+                    models.ForeignKey(
+                        default=None,
+                        on_delete=django.db.models.deletion.SET_DEFAULT,
+                        to="search_module.character",
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Recruits',
-                'ordering': ['nickname'],
+                "verbose_name_plural": "Recruits",
+                "ordering": ["nickname"],
             },
         ),
         migrations.CreateModel(
-            name='PlannedActivity',
+            name="PlannedActivity",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('raid_day', models.CharField(choices=[('Monday', 'Monday'), ('Tuesday', 'Tuesday'), ('Wednesday', 'Wednesday'), ('Thursday', 'Thursday'), ('Friday', 'Friday'), ('Saturday', 'Saturday'), ('Sunday', 'Sunday')], max_length=255)),
-                ('start_time', models.TimeField()),
-                ('end_time', models.TimeField()),
-                ('by_team', models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to='search_module.team')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "raid_day",
+                    models.CharField(
+                        choices=[
+                            ("Monday", "Monday"),
+                            ("Tuesday", "Tuesday"),
+                            ("Wednesday", "Wednesday"),
+                            ("Thursday", "Thursday"),
+                            ("Friday", "Friday"),
+                            ("Saturday", "Saturday"),
+                            ("Sunday", "Sunday"),
+                        ],
+                        max_length=255,
+                    ),
+                ),
+                ("start_time", models.TimeField()),
+                ("end_time", models.TimeField()),
+                (
+                    "by_team",
+                    models.ForeignKey(
+                        default=None,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="search_module.team",
+                    ),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Planned activities',
-                'ordering': ['by_team'],
+                "verbose_name_plural": "Planned activities",
+                "ordering": ["by_team"],
             },
         ),
         migrations.AddField(
-            model_name='character',
-            name='class_name',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='character_class', to='search_module.ingameclass'),
+            model_name="character",
+            name="class_name",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="character_class",
+                to="search_module.ingameclass",
+            ),
         ),
         migrations.AddField(
-            model_name='character',
-            name='spec_name',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='character_spec', to='search_module.ingamespec'),
+            model_name="character",
+            name="spec_name",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="character_spec",
+                to="search_module.ingamespec",
+            ),
         ),
         migrations.AddConstraint(
-            model_name='character',
-            constraint=models.UniqueConstraint(fields=('class_name', 'spec_name'), name='unique_class_spec'),
+            model_name="character",
+            constraint=models.UniqueConstraint(
+                fields=("class_name", "spec_name"), name="unique_class_spec"
+            ),
         ),
     ]

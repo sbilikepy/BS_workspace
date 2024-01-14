@@ -9,9 +9,8 @@ try:
     soup = BeautifulSoup(response.content, "html.parser")
     links = soup.find_all("a", class_="item-link")
 
-
     for i in range(min(3, len(links))):
-        print(links[i]['href'])
+        print(links[i]["href"])
 
 except requests.exceptions.RequestException as e:
     print(f"Error: {e}")

@@ -4,35 +4,25 @@ from utils import add_css_classes
 
 
 class TestAddCssClass:
-
     @pytest.mark.parametrize(
         "initial_classes, class_to_add, expected_classes",
         [
             pytest.param(
-                "joke new",
-                "active",
-                "joke new active",
-                id="should add new classes"
+                "joke new", "active", "joke new active", id="should add new classes"
             ),
             pytest.param(
-                "joke new",
-                "new",
-                "joke new",
-                id="should not add existing classes"
+                "joke new", "new", "joke new", id="should not add existing classes"
             ),
             pytest.param(
                 "joke new active",
                 "ok",
                 "joke new active ok",
-                id="should add class which is part of another one"
-            )
-        ]
+                id="should add class which is part of another one",
+            ),
+        ],
     )
     def test_modify_classes_correctly(
-            self,
-            initial_classes,
-            class_to_add,
-            expected_classes
+        self, initial_classes, class_to_add, expected_classes
     ):
         el = {"classes": initial_classes}
 

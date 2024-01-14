@@ -29,17 +29,21 @@
 # print_matrix(th)
 
 import datetime
+
+
 def im_not_stupid(func):
     start = datetime.datetime.now()
-    def wrapa(*args,**kwargs):
 
+    def wrapa(*args, **kwargs):
         func(*args)
         final = datetime.datetime.now()
         print(f"Difference: {datetime.datetime.now() - start}")
 
     return wrapa
+
+
 @im_not_stupid
-def find_po(ls, num): # that's why we need worst case to describe O
+def find_po(ls, num):  # that's why we need worst case to describe O
     for ind, val in enumerate(ls):
         if val == num:
             return ind

@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('search_module', '0003_alter_guild_options'),
+        ("search_module", "0003_alter_guild_options"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='team',
-            options={'ordering': ['?'], 'verbose_name_plural': 'Teams'},
+            name="team",
+            options={"ordering": ["?"], "verbose_name_plural": "Teams"},
         ),
     ]

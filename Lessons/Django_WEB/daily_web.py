@@ -28,7 +28,7 @@ def longest_substring(string: str) -> int:
             temp_str += i
         else:
             max_len.append(len(temp_str))
-            temp_str = temp_str[temp_str.index(i) + 1:] + i
+            temp_str = temp_str[temp_str.index(i) + 1 :] + i
     return max(max_len)
 
 
@@ -43,8 +43,7 @@ def pluck(dicts: list, name: str) -> list:
 
 
 def xo(string: str) -> bool:
-    return True if string.lower().count("x") == string.lower().count(
-        "o") else False
+    return True if string.lower().count("x") == string.lower().count("o") else False
 
 
 class PaginationHelper:
@@ -58,7 +57,7 @@ class PaginationHelper:
         for i in range(0, (len(self.collection) // items_per_page) + 1):
             self.content.append(
                 self.collection[
-                self.iter_index: self.iter_index + self.items_per_page:
+                    self.iter_index : self.iter_index + self.items_per_page :
                 ]
             )
             self.iter_index += items_per_page
@@ -151,8 +150,7 @@ def compression(chars: list) -> str:
 
 
 def sum_of_a_beach(beach: str) -> int:
-    return sum(
-        [beach.lower().count(i) for i in ("sand", "water", "fish", "sun")])
+    return sum([beach.lower().count(i) for i in ("sand", "water", "fish", "sun")])
 
 
 def valpa():
@@ -228,8 +226,7 @@ def find_unknown_number(first: int, second: int, third: int) -> int:
                     return i
 
 
-def discover_original_price(discounted_price: float,
-                            sale_percentage: float) -> float:
+def discover_original_price(discounted_price: float, sale_percentage: float) -> float:
     return round((discounted_price / (100 - sale_percentage)) * 100, 2)
 
 
@@ -352,7 +349,7 @@ def is_happy(number):
         total_sum = 0
         while n > 0:
             n, digit = divmod(n, 10)
-            total_sum += digit ** 2
+            total_sum += digit**2
         return total_sum
 
     slow = number
@@ -431,9 +428,9 @@ def tv_remote(word: str) -> int:
             if letter in row:
                 letter_index = row.index(letter)
                 steps += (
-                        abs(current_position[0] - i)
-                        + abs(current_position[1] - letter_index)
-                        + 1
+                    abs(current_position[0] - i)
+                    + abs(current_position[1] - letter_index)
+                    + 1
                 )  # +1 за крок OK
                 current_position = [i, letter_index]
                 break
@@ -1091,16 +1088,15 @@ def count_ones(left: int, right: int) -> int:
 
 
 def coupon_code(
-        entered_code: str,
-        correct_code: str,
-        current_date: str,
-        expiration_date: str,
+    entered_code: str,
+    correct_code: str,
+    current_date: str,
+    expiration_date: str,
 ) -> bool:
     from datetime import datetime
 
     if entered_code == correct_code:
-        return datetime.strptime(expiration_date,
-                                 "%B %d, %Y") >= datetime.strptime(
+        return datetime.strptime(expiration_date, "%B %d, %Y") >= datetime.strptime(
             current_date, "%B %d, %Y"
         )
     return False

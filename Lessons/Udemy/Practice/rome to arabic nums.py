@@ -25,7 +25,7 @@
 
 
 def rome_to_arabic():
-    rome = input('input your rome number here: ')
+    rome = input("input your rome number here: ")
     pares = dict(I=1, V=5, X=10, L=50, C=100, D=500, M=1000)
     cycle_range = range(1, len(rome))
     arabic_list = []
@@ -34,22 +34,22 @@ def rome_to_arabic():
     decrement = 0
     result = 0
 
-    print(f'input rome len = {len(rome)}')
-    print(f'current cycle range len = {len(cycle_range)}')
+    print(f"input rome len = {len(rome)}")
+    print(f"current cycle range len = {len(cycle_range)}")
 
-    print('_____________________________________________')
-    print('_____________________________________________')
+    print("_____________________________________________")
+    print("_____________________________________________")
 
     for rome_number in rome:
         for k, v in pares.items():
             if rome_number == k:
-                print('_________')
-                print(f'current rome number = {rome_number}, his arabic pare = {v}')
+                print("_________")
+                print(f"current rome number = {rome_number}, his arabic pare = {v}")
                 arabic_list.append(v)
-                print(f'arabic_list in process: {arabic_list}')
-    print('_____________________________________________')
-    print('_____________________________________________')
-    print('we have next index/value pares in arabic_list')
+                print(f"arabic_list in process: {arabic_list}")
+    print("_____________________________________________")
+    print("_____________________________________________")
+    print("we have next index/value pares in arabic_list")
     for index, value in enumerate(arabic_list):
         print((index, value))
 
@@ -60,9 +60,9 @@ def rome_to_arabic():
             decrement += arabic_list[i]
 
     result = increment + arabic_list[-1] - decrement
-    print('_____________________________________________')
-    print('_________________result_section______________')
-    print(f'{rome} = {result}')
+    print("_____________________________________________")
+    print("_________________result_section______________")
+    print(f"{rome} = {result}")
     return result
 
 

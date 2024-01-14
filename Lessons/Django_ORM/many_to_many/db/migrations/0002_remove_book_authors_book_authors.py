@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0001_initial'),
+        ("db", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='book',
-            name='authors',
+            model_name="book",
+            name="authors",
         ),
         migrations.AddField(
-            model_name='book',
-            name='authors',
-            field=models.ManyToManyField(related_name='by_author', to='db.author'),
+            model_name="book",
+            name="authors",
+            field=models.ManyToManyField(related_name="by_author", to="db.author"),
         ),
     ]

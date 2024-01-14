@@ -6,6 +6,8 @@ class LiteraryFormat(models.Model):
 
     def __str__(self):
         return self.name
+
+
 class Author(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -16,13 +18,8 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
-    price = models.DecimalField(max_digits=7,decimal_places=2)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
     format = models.ForeignKey(
-        LiteraryFormat,
-        related_name="by_genre",
-        on_delete=models.CASCADE
+        LiteraryFormat, related_name="by_genre", on_delete=models.CASCADE
     )
-    authors = models.ManyToManyField(
-        Author,
-        related_name="by_author"
-    )
+    authors = models.ManyToManyField(Author, related_name="by_author")

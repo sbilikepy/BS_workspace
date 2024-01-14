@@ -4,7 +4,8 @@ from django.shortcuts import render
 from .models import SomeModel, SomeModel_two
 
 app_name = "catalog"
-#TAXI analog
+# TAXI analog
+
 
 def index(request):
     print(SomeModel.objects.count())

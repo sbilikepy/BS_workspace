@@ -42,6 +42,7 @@
 # rectangles[rect_2] = 200
 # print(rectangles)
 
+
 class Rectangle:
     def __init__(self, length, width):
         self.length = length
@@ -143,21 +144,22 @@ print(exa1 == exa2)
 print(hash(exa1) == hash(exa2))
 import sys
 
-print((2**63-1)) #old sys.maxint
+print((2**63 - 1))  # old sys.maxint
 print(sys.maxsize)
 
 prjuststr = "hello my name is Rob and this is my password: aff39q0h57g8w4o"
 print(hash(prjuststr))
 
+
 def thrashold():
     counter = 0
     capacity = 8
     for i in range(1000):
-        print(f"elem = {i}, box #{counter},"
-              f" capacity: {capacity}")
+        print(f"elem = {i}, box #{counter}," f" capacity: {capacity}")
 
         counter += 1
-        if counter > (capacity/3*2):
+        if counter > (capacity / 3 * 2):
             capacity *= 2
+
 
 thrashold()

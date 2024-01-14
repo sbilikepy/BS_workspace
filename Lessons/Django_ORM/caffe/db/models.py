@@ -12,9 +12,8 @@ class Place(models.Model):
 class Caffe(models.Model):
     name = models.CharField(max_length=255, default="unknown")
     place = models.OneToOneField(
-        Place,
-        on_delete=models.CASCADE
-    ) #BEST PRACTICE > unique=True
+        Place, on_delete=models.CASCADE
+    )  # BEST PRACTICE > unique=True
 
     # place = models.ForeignKey(
     #     Place,

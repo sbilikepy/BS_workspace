@@ -5,7 +5,7 @@ from main import add, subtract
 
 
 class TestMain(unittest.TestCase):  # !unittest.TestCase
-    #@classmethod
+    # @classmethod
     # def setUpClass(cls) -> None:
     #     before all tests in this class
 
@@ -20,6 +20,7 @@ class TestMain(unittest.TestCase):  # !unittest.TestCase
 
     def test_can_sub_2_numbers(self):
         self.assertEqual(subtract(3, 5), -2)
+
 
 # if __name__ == '__main__':
 #    unittest.main()

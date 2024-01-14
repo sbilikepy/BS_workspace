@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('search_module', '0006_alter_recruit_discord_tag'),
+        ("search_module", "0006_alter_recruit_discord_tag"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='recruit',
-            name='nickname',
+            model_name="recruit",
+            name="nickname",
             field=models.CharField(max_length=255, unique=True),
         ),
     ]

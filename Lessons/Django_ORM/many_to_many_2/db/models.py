@@ -10,18 +10,19 @@ class Product(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
 class Order(models.Model):
     order_date = models.DateTimeField(auto_now_add=True)
     products: List[Product] = models.ManyToManyField(
-        Product,
-        related_name="orders",
-        through="OrderItem"
+        Product, related_name="orders", through="OrderItem"
     )
+
     # owner: User = models.CharField(max_length=255)
     # id = models.IntegerField()
     def __str__(self):
         products_str = ", ".join([str(product) for product in self.products.all()])
         return f"Order {self.pk}: {products_str}"
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)

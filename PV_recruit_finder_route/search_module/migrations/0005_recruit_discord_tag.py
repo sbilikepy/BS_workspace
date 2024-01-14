@@ -4,15 +4,17 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('search_module', '0004_alter_team_options'),
+        ("search_module", "0004_alter_team_options"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='recruit',
-            name='discord_tag',
-            field=models.CharField(default='<django.db.models.fields.CharField> discord not provided', max_length=255),
+            model_name="recruit",
+            name="discord_tag",
+            field=models.CharField(
+                default="<django.db.models.fields.CharField> discord not provided",
+                max_length=255,
+            ),
         ),
     ]

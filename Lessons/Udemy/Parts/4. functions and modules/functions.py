@@ -2,7 +2,7 @@ numbers = [1, 2, 3]
 numbers.append(4)
 help(numbers.append)  # позволяет получить документацию.
 
-print('________________встроенные функции математические_________________')
+print("________________встроенные функции математические_________________")
 
 print(abs(-1))  # abs берет модуль
 print(max(1, 2, 3, 4, 5))  # берет максимальное значение,
@@ -15,46 +15,56 @@ o = oct(42)  # вывод в 8-ми ричный формат (самый ред
 b = bin(42)  # вывод в 2-ичную систему (бинарную)
 print(h, o, b)
 
-print('________________встроенные функции с итерируемыми объектами_________________')
+print("________________встроенные функции с итерируемыми объектами_________________")
 
 all_true1 = all([True, True, True])  # cтановится тру, если все элементы тру
 all_true2 = all([True, False, False])
 print(all_true1, all_true2)
 
-players = [('Carlsen', 2842), ('Caruana', 2822), ('Mamedyarov', 2801), ('Giri', 2780), ('Ding', 2797)]
+players = [
+    ("Carlsen", 2842),
+    ("Caruana", 2822),
+    ("Mamedyarov", 2801),
+    ("Giri", 2780),
+    ("Ding", 2797),
+]
 print(all(rating > 2800 for _, rating in players))  # all( b > 123 for name, b in (X)
-print(all([rating > 2800 for _, rating in players]))  # all( b > 123 for name, b in (X), медленный вариант
-                                                        #  вызова
+print(
+    all([rating > 2800 for _, rating in players])
+)  # all( b > 123 for name, b in (X), медленный вариант
+#  вызова
 
-any # хотя бы 1 элем должен быть тру для тру, а фолс вернется только если все фолс
+any  # хотя бы 1 элем должен быть тру для тру, а фолс вернется только если все фолс
 any_true1 = any([True, False, False])
 any_true2 = any([False, False, False])
 print(any_true1, any_true2)
 
-players = [('Carlsen', 2842), ('Caruana', 2822), ('Mamedyarov', 2801), ('Giri', 2780), ('Ding', 2797)]
+players = [
+    ("Carlsen", 2842),
+    ("Caruana", 2822),
+    ("Mamedyarov", 2801),
+    ("Giri", 2780),
+    ("Ding", 2797),
+]
 print(any([rating < 2790 for _, rating in players]))
 print(any([rating < 2700 for _, rating in players]))
 
-letters = 'abcd'
-numbers = (10,20,30) #tuple
-zipped = zip(letters, numbers
-             )
+letters = "abcd"
+numbers = (10, 20, 30)  # tuple
+zipped = zip(letters, numbers)
 print(zipped)
 print(type(zipped))
-zipped_list = list(zipped) # срабатывает только после конструктора лист
-print(zipped_list)            # излишние элементы будут отсечены
+zipped_list = list(zipped)  # срабатывает только после конструктора лист
+print(zipped_list)  # излишние элементы будут отсечены
 
 
-
-names = ['Carlsen', 'Caruana', 'mamedyarov', "Ding", "Giri"]
+names = ["Carlsen", "Caruana", "mamedyarov", "Ding", "Giri"]
 ratings = [2842, 2822, 2801, 2797, 2780]
-players = dict(zip(names, ratings))                # зип со словарём
+players = dict(zip(names, ratings))  # зип со словарём
 print(players)
 
 
-
-
-code = ord('a')      # конверт в юникод для работы на низком уровне
+code = ord("a")  # конверт в юникод для работы на низком уровне
 print(code)
-c = chr(97)          # конверт из юникода для работы на низком уровне
+c = chr(97)  # конверт из юникода для работы на низком уровне
 print(c)

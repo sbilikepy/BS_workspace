@@ -4,5 +4,4 @@ class LiteraryFormat:
         self.format = genre
 
     def __repr__(self):
-        return (f"LiteraryFormat(id={self.id} "
-                f"format={self.format})")
+        return f"LiteraryFormat(id={self.id} " f"format={self.format})"

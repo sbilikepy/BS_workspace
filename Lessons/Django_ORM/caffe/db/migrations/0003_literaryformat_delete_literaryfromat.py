@@ -4,20 +4,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0002_alter_literaryfromat_format'),
+        ("db", "0002_alter_literaryfromat_format"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='LiteraryFormat',
+            name="LiteraryFormat",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('format', models.CharField(max_length=63)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("format", models.CharField(max_length=63)),
             ],
         ),
         migrations.DeleteModel(
-            name='LiteraryFromat',
+            name="LiteraryFromat",
         ),
     ]

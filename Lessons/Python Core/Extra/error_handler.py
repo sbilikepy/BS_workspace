@@ -2,10 +2,7 @@ from typing import Any, Callable
 
 
 def error_handler(
-    error_type: Exception,
-    callback: Callable,
-    *callback_args,
-    **callback_kwargs
+    error_type: Exception, callback: Callable, *callback_args, **callback_kwargs
 ) -> Callable:
     def wrapper(func: Callable) -> Callable:
         def inner(*args, **kwargs) -> Any:
@@ -13,7 +10,9 @@ def error_handler(
                 return func(*args, **kwargs)
             except error_type:
                 return callback(*callback_args, **callback_kwargs)
+
         return inner
+
     return wrapper
 
 

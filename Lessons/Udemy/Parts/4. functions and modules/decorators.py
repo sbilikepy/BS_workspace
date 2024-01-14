@@ -3,7 +3,7 @@
 
 
 def hello_world():
-    print('Hello world')
+    print("Hello world")
 
 
 hello_world()
@@ -14,7 +14,7 @@ print(hello2())
 
 def hello_world():
     def internal():
-        print('Hello world')
+        print("Hello world")
 
     return internal
 
@@ -24,7 +24,9 @@ hello2 = hello_world()
 print(hello2)
 hello2()
 
-print('________________функция в качестве аргумента принимает другую функцию_________________')
+print(
+    "________________функция в качестве аргумента принимает другую функцию_________________"
+)
 
 
 def say_something(func):
@@ -32,7 +34,7 @@ def say_something(func):
 
 
 def hello_world():
-    print('Hello world')
+    print("Hello world")
 
 
 say_something(hello_world)
@@ -40,15 +42,15 @@ say_something(hello_world)
 
 def log_decorator(func):
     def wrap():
-        print(f'calling func: {func}')
+        print(f"calling func: {func}")
         func()
-        print(f'func {func} finished, its wkr')
+        print(f"func {func} finished, its wkr")
 
     return wrap
 
 
 def hello():
-    print('hello world')
+    print("hello world")
 
 
 wrappedbylogger = log_decorator(hello)
@@ -57,12 +59,12 @@ wrappedbylogger()
 
 @log_decorator
 def hello():
-    print('hello')
+    print("hello")
 
 
 hello()
 
-print('________________Замер скорости выполнения функций_________________')
+print("________________Замер скорости выполнения функций_________________")
 
 from timeit import default_timer as timer
 import math
@@ -77,13 +79,15 @@ def measure_time(func):
 
         end = timer()
 
-        print(f'{func.__name__} tool {end - start} for execution')
+        print(f"{func.__name__} tool {end - start} for execution")
 
     return inner
+
 
 @measure_time
 def factorial(num):
     time.sleep(3)
     print(math.factorial(num))
+
 
 factorial(10)

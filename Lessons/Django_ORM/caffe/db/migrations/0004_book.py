@@ -5,19 +5,32 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0003_literaryformat_delete_literaryfromat'),
+        ("db", "0003_literaryformat_delete_literaryfromat"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Book',
+            name="Book",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=7)),
-                ('format', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='db.literaryformat')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                ("price", models.DecimalField(decimal_places=2, max_digits=7)),
+                (
+                    "format",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="db.literaryformat",
+                    ),
+                ),
             ],
         ),
     ]

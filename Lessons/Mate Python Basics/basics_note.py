@@ -22,7 +22,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # name = 'aboba'
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # message2 = f'{name} is {age+1}'
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(message2)
-message3 = "{name} is {age}".format(name = name, age = age)
+message3 = "{name} is {age}".format(name=name, age=age)
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(message3)
 # # # # # # # # # # # # # # # #w # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # long_text = f"""this is
@@ -817,4 +817,3 @@ message3 = "{name} is {age}".format(name = name, age = age)
 #         return True
 #     else:
 #         return False
-

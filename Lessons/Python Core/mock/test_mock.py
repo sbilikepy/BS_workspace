@@ -36,4 +36,4 @@ def test_sleep(mocked_sleep):
     #     delay(100, lambda: None)
     delay(100, lambda: None)
     mocked_sleep.assert_called_once_with(100)
-        #time.sleep.assert_called_once_with(100)
+    # time.sleep.assert_called_once_with(100)

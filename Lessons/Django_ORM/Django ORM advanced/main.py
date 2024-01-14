@@ -1,7 +1,8 @@
-#from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from django.contrib.auth import get_user_model
 from django.db import transaction
-#from django.contrib.auth.models import User
+
+# from django.contrib.auth.models import User
 import init_django_orm  # noqa: F401
 from bus_station.models import Trip, Ticket, Bus, Order, User
 import random
@@ -22,34 +23,27 @@ def random_data():
     buses_list = ["Bohdan", "Mercedes", "BMW"]
     city_list = ["Kyiv", "Kharkiv", "Zaporizzhya", "Dnipro"]
     for bus in buses_list:
-        Bus.objects.create(
-            info=bus,
-            num_seats=20
-        )
+        Bus.objects.create(info=bus, num_seats=20)
     for city in city_list:
         Trip.objects.create(
             source=city,
             destination=random.choice(city_list),
             departure="2023-08-24",
-            bus_id=Bus.objects.get(
-                info=random.choice(buses_list)
-            ).id)
+            bus_id=Bus.objects.get(info=random.choice(buses_list)).id,
+        )
 
 
 def create_order(tickets: list[dict]):
     with transaction.atomic():
-
         new_order = Order.objects.create()
         for i in tickets:
             Ticket.objects.create(
-                seat = i["seat"],
-                trip_id = i["trip_id"],
-                order_id = new_order.id
+                seat=i["seat"], trip_id=i["trip_id"], order_id=new_order.id
             )
         return new_order
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     clear_db()
     # john = get_user_model().objects.create_user(
     #     username="Jo", email= "jo@gmail.com", password="jopassword"

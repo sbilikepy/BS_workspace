@@ -104,7 +104,7 @@ def jewels_and_stones(jewels: str, stones: str) -> int:
 
 def sum_of_pairs(nums: list, sum_value: int) -> list:
     for num in nums:
-        if (sum_value - num) in nums[nums.index(num) + 1::]:
+        if (sum_value - num) in nums[nums.index(num) + 1 : :]:
             return [num, (sum_value - num)]
     return None
 
@@ -184,11 +184,11 @@ def url_code():
     import os
     import urllib.parse
 
-    file_path = r'C:\Users\...'
-    result_path = r'C:\Users\...'
+    file_path = r"C:\Users\..."
+    result_path = r"C:\Users\..."
 
     if os.path.exists(file_path):
-        with open(file_path, 'r', encoding="utf-8") as file:
+        with open(file_path, "r", encoding="utf-8") as file:
             file_contents = file.read()
             encoded_text = urllib.parse.quote(file_contents)
             print(encoded_text)
@@ -323,20 +323,14 @@ def sum_of_odd_numbers(row_number: int) -> int:
     current_len = 1
     current_num = 1
     for row in range(current_len, row_number + 1):
-        triangle.append(
-            [
-                None for i in range(row)
-            ]
-        )
+        triangle.append([None for i in range(row)])
 
     for row in triangle:
         for num in enumerate(row):
             row[num[0]] = current_num
             current_num += 2
     print(triangle)
-    return sum(
-        triangle[row_number - 1]
-    )
+    return sum(triangle[row_number - 1])
 
 
 def sum_of_odd_numbers(row_number: int) -> int:
@@ -358,13 +352,7 @@ def sum_of_odd_numbers(row_number: int) -> int:
 
     print(start, stop)
 
-    triangle_row = [
-        i for i in [
-            i for i in range(
-                start, stop + 1
-            ) if i % 2 != 0
-        ]
-    ]
+    triangle_row = [i for i in [i for i in range(start, stop + 1) if i % 2 != 0]]
     print(triangle_row)
     return sum(triangle_row)
 
@@ -426,9 +414,7 @@ def buy_tofu(cost: int, box: str) -> list or str:
         if cost % 60 < 60 and monme >= 1 and mon >= (cost % 60):
             coins_amount_min = (cost % 60) + 1
 
-    return [
-        mon, monme, mon + (monme * 60), coins_amount_min
-    ]
+    return [mon, monme, mon + (monme * 60), coins_amount_min]
 
     # result = [
     #     count_of_mon_coins_in_box,
@@ -439,7 +425,7 @@ def buy_tofu(cost: int, box: str) -> list or str:
 
 
 def rotate_list(nums: list, steps: int) -> list:
-    return nums[-steps::] + nums[:len(nums) - steps:] if steps > 0 else nums
+    return nums[-steps::] + nums[: len(nums) - steps :] if steps > 0 else nums
 
 
 def isomorphic_strings(first_string: str, second_string: str) -> bool:
@@ -497,12 +483,11 @@ def who_likes_it(names: list) -> str:
     if len(names) == 1:
         return f"{names[0]} likes this"
     if len(names) == 2:
-        return (f"{names[0]} and {names[1]}"
-                " like this")
+        return f"{names[0]} and {names[1]}" " like this"
     if len(names) == 3:
-        return (f"{names[0]}, {names[1]} and {names[2]} like this")
+        return f"{names[0]}, {names[1]} and {names[2]} like this"
     if len(names) > 3:
-        return (f"{names[0]}, {names[1]} and {len(names) - 2} others like this")
+        return f"{names[0]}, {names[1]} and {len(names) - 2} others like this"
 
 
 def descending_order(num_value: int) -> int:
@@ -579,8 +564,7 @@ def unique_code(words: list) -> int:
         "w": ".--",
         "x": "-..-",
         "y": "-.--",
-        "z": "--.."
-
+        "z": "--..",
     }
     result = []
     for word in words:
@@ -593,6 +577,7 @@ def unique_code(words: list) -> int:
 
 def convert_to_title(num: int) -> str:
     import string
+
     temp = list(string.ascii_uppercase)
     if num / 26 <= 1:
         return temp[num - 1]
@@ -603,7 +588,7 @@ def convert_to_title(num: int) -> str:
 
 
 def longest_gap(num_decimal: int) -> int:
-    num_decimal = (bin(num_decimal).split("b")[1])
+    num_decimal = bin(num_decimal).split("b")[1]
     pairs = []
     longest_chain = 1
 
@@ -706,6 +691,7 @@ def generate_rows(rows: int) -> list:
 
 def calendar_week(date_string: str) -> int:
     from datetime import datetime
+
     new_date_object = datetime.strptime(date_string, "%Y-%m-%d")
     return datetime.isocalendar(new_date_object)[1]
 
@@ -724,7 +710,7 @@ def pendulum(lst: list) -> list:
 
 
 def reverse_integer(number: int) -> int:
-    int_max = 2 ** 31 - 1
+    int_max = 2**31 - 1
 
     result = 0
     sign = 1 if number >= 0 else -1
@@ -772,7 +758,7 @@ def student_att(records: str) -> bool:
 def last(*args):
     if args:
         last_arg = args[-1]
-        if hasattr(last_arg, '__getitem__'):
+        if hasattr(last_arg, "__getitem__"):
             return last_arg[-1]
         else:
             return last_arg
@@ -782,8 +768,8 @@ def last(*args):
 
 def group_by_commas(number: int) -> str:
     number_str = str(number)[::-1]
-    groups = [number_str[i:i + 3][::-1] for i in range(0, len(number_str), 3)]
-    result = ','.join(groups[::-1])
+    groups = [number_str[i : i + 3][::-1] for i in range(0, len(number_str), 3)]
+    result = ",".join(groups[::-1])
     return result
 
 
@@ -823,9 +809,6 @@ def consonant_value(string: str) -> int:
     return max(result)
 
 
-
-
-
 def find_needed_guards(islands: list) -> int:
     print(islands)
     need_guard = 0
@@ -846,7 +829,6 @@ def find_needed_guards(islands: list) -> int:
             except Exception:
                 need_guard += 1
     return 2 if islands == [False, False, True, False, False] else need_guard
-
 
 
 find_needed_guards([True, True, False, True, False])  # 0

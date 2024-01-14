@@ -1,8 +1,9 @@
 from django.urls import path
 from catalog.views import index
-#TAXI analog
+
+# TAXI analog
 
 urlpatterns = [
-    path('', index, name="index"),
-    path('hello/', index),
+    path("", index, name="index"),
+    path("hello/", index),
 ]

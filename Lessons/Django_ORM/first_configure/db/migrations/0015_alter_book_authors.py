@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0014_book_authors'),
+        ("db", "0014_book_authors"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='book',
-            name='authors',
-            field=models.ManyToManyField(related_name='by_author', to='db.author'),
+            model_name="book",
+            name="authors",
+            field=models.ManyToManyField(related_name="by_author", to="db.author"),
         ),
     ]

@@ -8,4 +8,4 @@ def get_largest_expression_result(a, b):
     result.append(v2)
     result.append(v3)
     result.append(v4)
-    return(max(result))
+    return max(result)

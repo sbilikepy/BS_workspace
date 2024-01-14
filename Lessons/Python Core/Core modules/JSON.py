@@ -8,13 +8,7 @@ with open("some.json") as f:
     except Exception as e:
         print(e)
 
-user_data.append({
-    "users_data_new": {
-        "name": "Sanya",
-        "surname": "Smo",
-        "age": 25
-    }
-})
+user_data.append({"users_data_new": {"name": "Sanya", "surname": "Smo", "age": 25}})
 print(user_data)
 
 with open("some.json", "w") as f:
@@ -28,11 +22,7 @@ class User:
         self.age = age
 
 
-user_data.append(User(
-    name="Anna",
-    surname="White",
-    age=33
-))
+user_data.append(User(name="Anna", surname="White", age=33))
 print(user_data)
 with open("some.json", "w") as f:
-    json.dump(user_data,f, indent=2)
+    json.dump(user_data, f, indent=2)
