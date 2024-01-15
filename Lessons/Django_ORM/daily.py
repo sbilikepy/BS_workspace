@@ -833,3 +833,13 @@ def find_needed_guards(islands: list) -> int:
 
 find_needed_guards([True, True, False, True, False])  # 0
 find_needed_guards([False, False, True, False, False])  # 2
+
+
+import math
+
+
+def sum_of_squares(number: int) -> int:
+    def binomial_coefficient(n: int, k: int) -> int:
+        return math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
+
+    return sum(binomial_coefficient(number, k) ** 2 for k in range(number + 1))
