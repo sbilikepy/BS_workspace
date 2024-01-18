@@ -1199,3 +1199,34 @@ def middle_character(word: str) -> str:
 
 print(middle_character("testing"))  # t
 print(middle_character("middle"))  # dd
+
+
+def roman_to_int(roman: str) -> int:
+    result = 0
+    data = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000,
+        "IV": 4,
+        "IX": 9,
+        "XL": 40,
+        "XC": 90,
+        "CD": 400,
+        "CM": 900,
+    }
+
+    prev_value = 0
+
+    for numeral in reversed(roman):
+        current_value = data[numeral]
+        if current_value < prev_value:
+            result -= current_value
+        else:
+            result += current_value
+        prev_value = current_value
+
+    return result
