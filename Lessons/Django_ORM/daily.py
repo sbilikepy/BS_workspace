@@ -862,5 +862,12 @@ def max_sub_list(nums: list[int]) -> int:
     return max_sum
 
 
-max_sub_list([-2, 1, -3, 4, -1, 2, 1, -5, 4])
-# max_sub_list([[5, 4, -1, 7, 8]])
+def plus_one(digits: list[int]) -> list[int]:
+    result = ""
+    for i in digits:
+        result += str(i)
+    result = int(result) + 1
+    return [int(i) for i in list(str(result))]
+
+
+print(plus_one([4, 3, 2, 1]))
