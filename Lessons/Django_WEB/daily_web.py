@@ -1197,10 +1197,6 @@ def middle_character(word: str) -> str:
     return word[int(lenw / 2 - 0.5)]
 
 
-print(middle_character("testing"))  # t
-print(middle_character("middle"))  # dd
-
-
 def roman_to_int(roman: str) -> int:
     result = 0
     data = {
@@ -1230,3 +1226,37 @@ def roman_to_int(roman: str) -> int:
         prev_value = current_value
 
     return result
+
+
+def find_number(start: int, stop: int, string: str) -> list:
+    result = []
+    data_list = [data for data in range(start, stop + 1)]
+    print(string)
+    for number in data_list:
+        if str(number) in string:
+            print(string)
+            string = string.replace(str(number), ".")
+            print(string)
+        else:
+            result.append(number)
+    if not len(result):
+        return []
+    return result
+
+
+def multiples_3_5(number: int) -> int:
+    if number < 3:
+        return 0
+    data = []
+    for i in range(3, number):
+        flag_3 = (i % 3 == 0)
+        flag_5 = (i % 5 == 0)
+        if flag_3 or flag_5:
+            data.append(i)
+    print(data)
+    return sum(data)
+
+
+
+
+multiples_3_5(10)
