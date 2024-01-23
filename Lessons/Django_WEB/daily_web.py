@@ -1259,4 +1259,27 @@ def multiples_3_5(number: int) -> int:
 
 
 
-multiples_3_5(10)
+import itertools as it
+
+
+def equal_to_24(*cards) -> str:
+    for template in ["aZ(bX(cVd))", "(aZb)X(cVd)", "((aZb)Xc)Vd"]:
+        for card in it.permutations(cards):
+            for prod in it.product("*/+-", repeat=3):
+                temp = template
+                for char in (
+                    ("Z", prod[0]),
+                    ("X", prod[1]),
+                    ("V", prod[2]),
+                    ("a", str(card[0])),
+                    ("b", str(card[1])),
+                    ("c", str(card[2])),
+                    ("d", str(card[3])),
+                ):
+                    temp = temp.replace(*char)
+                try:
+                    if eval(temp) == 24:
+                        return temp
+                except ZeroDivisionError:
+                    pass
+    return "It's not possible!"
