@@ -1283,3 +1283,6 @@ def equal_to_24(*cards) -> str:
                 except ZeroDivisionError:
                     pass
     return "It's not possible!"
+
+
+#token test
