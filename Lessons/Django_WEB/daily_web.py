@@ -1257,8 +1257,6 @@ def multiples_3_5(number: int) -> int:
     return sum(data)
 
 
-
-
 import itertools as it
 
 
@@ -1268,13 +1266,13 @@ def equal_to_24(*cards) -> str:
             for prod in it.product("*/+-", repeat=3):
                 temp = template
                 for char in (
-                    ("Z", prod[0]),
-                    ("X", prod[1]),
-                    ("V", prod[2]),
-                    ("a", str(card[0])),
-                    ("b", str(card[1])),
-                    ("c", str(card[2])),
-                    ("d", str(card[3])),
+                        ("Z", prod[0]),
+                        ("X", prod[1]),
+                        ("V", prod[2]),
+                        ("a", str(card[0])),
+                        ("b", str(card[1])),
+                        ("c", str(card[2])),
+                        ("d", str(card[3])),
                 ):
                     temp = temp.replace(*char)
                 try:
@@ -1285,4 +1283,19 @@ def equal_to_24(*cards) -> str:
     return "It's not possible!"
 
 
-#token test
+def credit_card_issuer_checking(number: int) -> str:
+    if len(str(number)) == 15:
+        amex_start = ["34", "37"]
+        if str(number)[:2:] in amex_start:
+            return "AMEX"
+    visa_lens = [13, 16]
+    if len(str(number)) in visa_lens:
+        if str(number)[:1:] == "4":
+            return "VISA"
+        if str(number)[:4:] == "6011":
+            return "Discover"
+        mastercard_start = ["51", "52", "53", "54", "55"]
+        if str(number)[:2:] in mastercard_start:
+            return "Mastercard"
+
+    return "Unknown"
