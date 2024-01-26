@@ -1299,3 +1299,22 @@ def credit_card_issuer_checking(number: int) -> str:
             return "Mastercard"
 
     return "Unknown"
+
+
+def perfect_number(number: int) -> bool:
+    if number <= 1:
+        return False
+
+    result = 1
+
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            result += i
+            complement = number // i
+            if i != complement:
+                result += complement
+
+    return result == number
+
+
+print(perfect_number(137438691328))
