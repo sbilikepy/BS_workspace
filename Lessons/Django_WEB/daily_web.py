@@ -1,5 +1,5 @@
 import random
-
+import pytest
 
 def flatten_and_sort(lst: list) -> list:
     if len(lst):
@@ -1307,7 +1307,7 @@ def perfect_number(number: int) -> bool:
 
     result = 1
 
-    for i in range(2, int(number**0.5) + 1):
+    for i in range(2, int(number ** 0.5) + 1):
         if number % i == 0:
             result += i
             complement = number // i
@@ -1317,4 +1317,37 @@ def perfect_number(number: int) -> bool:
     return result == number
 
 
-print(perfect_number(137438691328))
+def highest_and_lowest(string_of_nums: str) -> str:
+    try:
+        data_list = string_of_nums.split(sep=" ")
+        return f"{max(data_list)} {min(data_list)}"
+    except Exception:
+        return ""
+
+
+@pytest.mark.parametrize(
+    "string_of_nums, max_min_string",
+    [
+        ("-100", "-100 -100"),
+        ("-1", "-1 -1"),
+        ("0", "0 0"),
+        ("1", "1 1"),
+        ("-1 0 1", "1 -1"),
+        ("1 2 3 4", "4 1"),
+        ("4 3 2 1", "4 1"),
+        ("1 2 3 4 5", "5 1"),
+        ("1 2 -3 4 5", "5 -3"),
+        ("1 9 3 4 -5", "9 -5"),
+        ("0 0 0 0 0", "0 0"),
+        ("-1 0 1 0", "1 -1"),
+        ("10 8 90 -7", "90 -7"),
+        ("-100 100", "100 -100"),
+        ("-10000000 0", "0 -10000000"),
+        ("-123456789 -1234567810", "-123456789 -1234567810"),
+    ],
+)
+def test_highest_and_lowest(string_of_nums, max_min_string):
+    assert highest_and_lowest(string_of_nums) == max_min_string, (
+        f"Function 'highest_and_lowest' should return '{max_min_string}' "
+        f"when string is '{string_of_nums}'"
+    )
