@@ -1,6 +1,7 @@
 import random
 import pytest
 
+
 def flatten_and_sort(lst: list) -> list:
     if len(lst):
         result = []
@@ -1351,3 +1352,17 @@ def test_highest_and_lowest(string_of_nums, max_min_string):
         f"Function 'highest_and_lowest' should return '{max_min_string}' "
         f"when string is '{string_of_nums}'"
     )
+
+
+def pascal_triangle_row(row_index: int) -> list:
+    def calculate_combination(n: int, k: int) -> int:
+        result = 1
+        for i in range(1, k + 1):
+            result *= (n - i + 1)
+            result //= i
+        return result
+
+    row = []
+    for k in range(row_index + 1):
+        row.append(calculate_combination(row_index, k))
+    return row
