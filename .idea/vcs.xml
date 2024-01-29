@@ -11,6 +11,7 @@
     <mapping directory="$PROJECT_DIR$/py-actor-manager" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-aquapark" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-battleship" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-blog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-burger-recipe" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-cache-decorator" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-can-access-google-page" vcs="Git" />
@@ -58,6 +59,7 @@
     <mapping directory="$PROJECT_DIR$/py-taxi-service-forms" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-home-page" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-startproject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-taxi-service-user-form-and-validation" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-tickets-and-orders" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-vector-class" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-work-with-file" vcs="Git" />
