@@ -1,4 +1,5 @@
 import random
+
 import pytest
 
 
@@ -1366,3 +1367,13 @@ def pascal_triangle_row(row_index: int) -> list:
     for k in range(row_index + 1):
         row.append(calculate_combination(row_index, k))
     return row
+
+
+def calculate_profit(**kwargs) -> int:
+    if 0 in kwargs:
+        return 0
+    old = amount
+    for year in range(period):
+        amount *= 1 + (percent / 100)
+        print(amount)
+    return amount - old
