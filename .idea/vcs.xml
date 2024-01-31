@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="" />
     <mapping directory="$PROJECT_DIR$/IdealistaScraping" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Forms/py-taxi-service-authentication" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Forms_in_details/py-taxi-service-forms" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Scrapy-Idealista" vcs="Git" />
