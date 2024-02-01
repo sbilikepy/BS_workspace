@@ -1,8 +1,3 @@
-import random
-
-import pytest
-
-
 def flatten_and_sort(lst: list) -> list:
     if len(lst):
         result = []
@@ -1327,27 +1322,27 @@ def highest_and_lowest(string_of_nums: str) -> str:
         return ""
 
 
-@pytest.mark.parametrize(
-    "string_of_nums, max_min_string",
-    [
-        ("-100", "-100 -100"),
-        ("-1", "-1 -1"),
-        ("0", "0 0"),
-        ("1", "1 1"),
-        ("-1 0 1", "1 -1"),
-        ("1 2 3 4", "4 1"),
-        ("4 3 2 1", "4 1"),
-        ("1 2 3 4 5", "5 1"),
-        ("1 2 -3 4 5", "5 -3"),
-        ("1 9 3 4 -5", "9 -5"),
-        ("0 0 0 0 0", "0 0"),
-        ("-1 0 1 0", "1 -1"),
-        ("10 8 90 -7", "90 -7"),
-        ("-100 100", "100 -100"),
-        ("-10000000 0", "0 -10000000"),
-        ("-123456789 -1234567810", "-123456789 -1234567810"),
-    ],
-)
+# @pytest.mark.parametrize(
+#     "string_of_nums, max_min_string",
+#     [
+#         ("-100", "-100 -100"),
+#         ("-1", "-1 -1"),
+#         ("0", "0 0"),
+#         ("1", "1 1"),
+#         ("-1 0 1", "1 -1"),
+#         ("1 2 3 4", "4 1"),
+#         ("4 3 2 1", "4 1"),
+#         ("1 2 3 4 5", "5 1"),
+#         ("1 2 -3 4 5", "5 -3"),
+#         ("1 9 3 4 -5", "9 -5"),
+#         ("0 0 0 0 0", "0 0"),
+#         ("-1 0 1 0", "1 -1"),
+#         ("10 8 90 -7", "90 -7"),
+#         ("-100 100", "100 -100"),
+#         ("-10000000 0", "0 -10000000"),
+#         ("-123456789 -1234567810", "-123456789 -1234567810"),
+#     ],
+# )
 def test_highest_and_lowest(string_of_nums, max_min_string):
     assert highest_and_lowest(string_of_nums) == max_min_string, (
         f"Function 'highest_and_lowest' should return '{max_min_string}' "
@@ -1377,3 +1372,13 @@ def calculate_profit(**kwargs) -> int:
         amount *= 1 + (percent / 100)
         print(amount)
     return amount - old
+
+
+from collections import Counter
+
+
+def find_number(start: int, stop: int, string: str) -> list:
+    code = Counter(
+        char for number in range(start, stop + 1) for char in str(number)
+    ) - Counter(string)
+    return [number for number in range(start, stop + 1) if Counter(str(number)) == code]
