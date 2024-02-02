@@ -1,3 +1,6 @@
+import math
+
+
 def flatten_and_sort(lst: list) -> list:
     if len(lst):
         result = []
@@ -1381,4 +1384,16 @@ def find_number(start: int, stop: int, string: str) -> list:
     code = Counter(
         char for number in range(start, stop + 1) for char in str(number)
     ) - Counter(string)
-    return [number for number in range(start, stop + 1) if Counter(str(number)) == code]
+    return [number for number in range(start, stop + 1) if
+            Counter(str(number)) == code]
+
+
+def get_plan(cur, month, perc):
+    result = []
+    for i in range(month):
+        result.append(math.floor(cur / 100 * (100 + perc)))
+        cur = result[-1]
+    return result
+
+
+get_plan(1000, 6, 20)
