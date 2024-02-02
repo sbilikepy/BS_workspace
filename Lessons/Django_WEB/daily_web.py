@@ -1396,4 +1396,19 @@ def get_plan(cur, month, perc):
     return result
 
 
-get_plan(1000, 6, 20)
+def reverse_random_string(random_string: str, amount_of_symbols: int) -> str:
+    if len(random_string) < amount_of_symbols:
+
+        return random_string[::-1]
+    elif len(random_string) < 2 * amount_of_symbols:
+        fp = random_string[amount_of_symbols - 1::-1]
+        sp = random_string[amount_of_symbols:]
+        return fp + sp
+    else:
+
+        result = ""
+        aos = amount_of_symbols
+        for i in range(0, len(random_string), 2 * amount_of_symbols):
+            result += random_string[i:i + aos][::-1]
+            result += random_string[i + aos:i + 2 * aos]
+        return result
