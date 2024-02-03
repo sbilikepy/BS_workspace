@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09bd6499-24ce-4f79-9657-a54858a8a3ae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms_in_details/py-taxi-service-forms/taxi/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IdealistaScraping" beforeDir="false" afterPath="$PROJECT_DIR$/../IdealistaScraping" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/823cb991-6b1c-4aea-a439-2f6f4eb91131.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/823cb991-6b1c-4aea-a439-2f6f4eb91131.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/taxi/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/taxi/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/taxi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/taxi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/taxi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/taxi/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/templates/taxi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication/templates/taxi/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Forms_in_details/py-taxi-service-forms" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Forms_in_details/py-taxi-service-forms" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/templates/registration/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/templates/accounts/logged_out.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views/templates/accounts/login.html" afterDir="false" />
@@ -111,9 +118,11 @@
       <change beforePath="$PROJECT_DIR$/../py-shop-trip" beforeDir="false" afterPath="$PROJECT_DIR$/../py-shop-trip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-software-engineers" beforeDir="false" afterPath="$PROJECT_DIR$/../py-software-engineers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-split-integer" beforeDir="false" afterPath="$PROJECT_DIR$/../py-split-integer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-taxi-service-authentication" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-authentication" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-taxi-service-class-based-views" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-class-based-views" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-taxi-service-home-page" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-home-page" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-taxi-service-startproject" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-startproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py-taxi-service-user-form-and-validation" beforeDir="false" afterPath="$PROJECT_DIR$/../py-taxi-service-user-form-and-validation" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-tickets-and-orders" beforeDir="false" afterPath="$PROJECT_DIR$/../py-tickets-and-orders" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-vector-class" beforeDir="false" afterPath="$PROJECT_DIR$/../py-vector-class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py-work-with-file" beforeDir="false" afterPath="$PROJECT_DIR$/../py-work-with-file" afterDir="false" />
@@ -147,7 +156,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -169,7 +178,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons/Django_WEB/Django/Forms",
+    "last_opened_file_path": "C:/Users/BS_HOME/PycharmProjects/Lessons",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -423,6 +432,7 @@
       <workItem from="1705199389992" duration="91000" />
       <workItem from="1705199490248" duration="77000" />
       <workItem from="1705406385217" duration="391000" />
+      <workItem from="1706978474121" duration="47000" />
     </task>
     <servers />
   </component>
