@@ -1427,3 +1427,23 @@ def snail(matrix: list) -> list:
             for row in matrix[::-1]:
                 result.append(row.pop(0))
     return result
+
+
+
+def next_smaller(number: int) -> int:
+    digits = list(str(number))
+    i = len(digits) - 2
+    while i >= 0 and digits[i] <= digits[i + 1]:
+        i -= 1
+    if i == -1:
+        return -1
+    j = len(digits) - 1
+    while digits[j] >= digits[i]:
+        j -= 1
+    digits[i], digits[j] = digits[j], digits[i]
+    digits[i + 1:] = reversed(digits[i + 1:])
+    result = int("".join(digits))
+    return result
+
+
+next_smaller(2071)# == -1
