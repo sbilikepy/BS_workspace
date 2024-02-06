@@ -1429,7 +1429,6 @@ def snail(matrix: list) -> list:
     return result
 
 
-
 def next_smaller(number: int) -> int:
     digits = list(str(number))
     i = len(digits) - 2
@@ -1446,4 +1445,13 @@ def next_smaller(number: int) -> int:
     return result
 
 
-next_smaller(2071)# == -1
+def intersection_of_two(nums1: list, nums2: list) -> list:
+    data = list(set(nums1)) + list(set(nums2))
+    data_dict = {
+        key: data.count(key) for key in data
+    }
+    result = [
+        num for num in data_dict if data_dict[num] == 2
+    ]
+    result.sort()
+    return result
