@@ -1455,3 +1455,21 @@ def intersection_of_two(nums1: list, nums2: list) -> list:
     ]
     result.sort()
     return result
+
+
+def performant_smallest(nums: list, n: int) -> list:
+    condition = nums.copy()
+    condition.sort()
+    condition = condition[:n:]
+    result = []
+    for num in nums:
+        if num in condition:
+            result.append(num)
+            condition.remove(num)
+    print(result)
+    return result
+
+
+performant_smallest([1, 2, 3, 4, 5], 3)
+performant_smallest([5, 4, 3, 2, 1], 3)
+performant_smallest([1, 2, 4, 1, 2], 3)
