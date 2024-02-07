@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from data import traits, champions, composition_iterator
 
 current_composition = []
@@ -48,7 +49,8 @@ def request():
 
         else:
             if any(character == champ.lower() for champ in champions.keys()):
-                if character.lower() not in [i.lower() for i in current_composition]:
+                if character.lower() not in [i.lower() for i in
+                                             current_composition]:
                     current_composition.append(character.capitalize())
                     print(f"{character.capitalize()} has been added\n")
             else:
@@ -83,12 +85,14 @@ def group():
         elif count in traits[trait]:
             current_index = traits[trait].index(count)
             next_upgrade = traits[trait][current_index + 1] - count
-            breakpoint_traits.append(f"{trait}: {count} | BREAKPOINT [+{next_upgrade}]")
+            breakpoint_traits.append(
+                f"{trait}: {count} | BREAKPOINT [+{next_upgrade}]")
             if next_upgrade == 1:
                 first_prior.append(trait)
 
         else:
-            remaining_traits.append(f"{trait}: {count} [+{traits[trait][0] - count}]")
+            remaining_traits.append(
+                f"{trait}: {count} [+{traits[trait][0] - count}]")
             if (traits[trait][0] - count) == 1:
                 second_prior.append(trait)
             if (traits[trait][0] - count) > 1:
@@ -104,7 +108,8 @@ def group():
 
     sorted_remaining_traits = sorted(
         remaining_traits,
-        key=lambda x: traits[x.split(":")[0]][0] - int(x.split(":")[1].split()[0]),
+        key=lambda x: traits[x.split(":")[0]][0] - int(
+            x.split(":")[1].split()[0]),
     )
     for sorted_remaining_trait in sorted_remaining_traits:
         print(sorted_remaining_trait)

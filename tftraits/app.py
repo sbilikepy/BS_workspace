@@ -100,11 +100,13 @@ def group_data():
         elif count in traits[trait]:
             current_index = traits[trait].index(count)
             next_upgrade = traits[trait][current_index + 1] - count
-            breakpoint_traits.append(f"{trait}: {count} | BREAKPOINT [+{next_upgrade}]")
+            breakpoint_traits.append(
+                f"{trait}: {count} | BREAKPOINT [+{next_upgrade}]")
             if next_upgrade == 1:
                 first_prior.append(trait)
         else:
-            remaining_traits.append(f"{trait}: {count} [+{traits[trait][0] - count}]")
+            remaining_traits.append(
+                f"{trait}: {count} [+{traits[trait][0] - count}]")
             if (traits[trait][0] - count) == 1:
                 second_prior.append(trait)
             if (traits[trait][0] - count) > 1:
@@ -169,4 +171,5 @@ def tailor():
 
 if __name__ == "__main__":
     data_fill()
-    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=False, host="0.0.0.0",
+            port=int(os.environ.get("PORT", 5000)))
