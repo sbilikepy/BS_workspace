@@ -28,7 +28,7 @@ def longest_substring(string: str) -> int:
             temp_str += i
         else:
             max_len.append(len(temp_str))
-            temp_str = temp_str[temp_str.index(i) + 1 :] + i
+            temp_str = temp_str[temp_str.index(i) + 1:] + i
     return max(max_len)
 
 
@@ -43,7 +43,8 @@ def pluck(dicts: list, name: str) -> list:
 
 
 def xo(string: str) -> bool:
-    return True if string.lower().count("x") == string.lower().count("o") else False
+    return True if string.lower().count("x") == string.lower().count(
+        "o") else False
 
 
 class PaginationHelper:
@@ -57,7 +58,7 @@ class PaginationHelper:
         for i in range(0, (len(self.collection) // items_per_page) + 1):
             self.content.append(
                 self.collection[
-                    self.iter_index : self.iter_index + self.items_per_page :
+                self.iter_index: self.iter_index + self.items_per_page:
                 ]
             )
             self.iter_index += items_per_page
@@ -150,7 +151,8 @@ def compression(chars: list) -> str:
 
 
 def sum_of_a_beach(beach: str) -> int:
-    return sum([beach.lower().count(i) for i in ("sand", "water", "fish", "sun")])
+    return sum(
+        [beach.lower().count(i) for i in ("sand", "water", "fish", "sun")])
 
 
 def valpa():
@@ -226,7 +228,8 @@ def find_unknown_number(first: int, second: int, third: int) -> int:
                     return i
 
 
-def discover_original_price(discounted_price: float, sale_percentage: float) -> float:
+def discover_original_price(discounted_price: float,
+                            sale_percentage: float) -> float:
     return round((discounted_price / (100 - sale_percentage)) * 100, 2)
 
 
@@ -349,7 +352,7 @@ def is_happy(number):
         total_sum = 0
         while n > 0:
             n, digit = divmod(n, 10)
-            total_sum += digit**2
+            total_sum += digit ** 2
         return total_sum
 
     slow = number
@@ -428,9 +431,9 @@ def tv_remote(word: str) -> int:
             if letter in row:
                 letter_index = row.index(letter)
                 steps += (
-                    abs(current_position[0] - i)
-                    + abs(current_position[1] - letter_index)
-                    + 1
+                        abs(current_position[0] - i)
+                        + abs(current_position[1] - letter_index)
+                        + 1
                 )  # +1 за крок OK
                 current_position = [i, letter_index]
                 break
@@ -1088,15 +1091,16 @@ def count_ones(left: int, right: int) -> int:
 
 
 def coupon_code(
-    entered_code: str,
-    correct_code: str,
-    current_date: str,
-    expiration_date: str,
+        entered_code: str,
+        correct_code: str,
+        current_date: str,
+        expiration_date: str,
 ) -> bool:
     from datetime import datetime
 
     if entered_code == correct_code:
-        return datetime.strptime(expiration_date, "%B %d, %Y") >= datetime.strptime(
+        return datetime.strptime(expiration_date,
+                                 "%B %d, %Y") >= datetime.strptime(
             current_date, "%B %d, %Y"
         )
     return False
@@ -1160,7 +1164,6 @@ one_down("Ifmmp")
 def timer(func):
     def wrapper(*args, **kwargs):
         import datetime
-        import time
 
         start = datetime.datetime.now()
         func(*args)
@@ -1176,7 +1179,7 @@ def timer(func):
 def some_func(x: int, y: int) -> int:
     result = 0
     for i in range(10):
-        result += x - y**2
+        result += x - y ** 2
     print(result)
     return result
 
@@ -1263,13 +1266,13 @@ def equal_to_24(*cards) -> str:
             for prod in it.product("*/+-", repeat=3):
                 temp = template
                 for char in (
-                    ("Z", prod[0]),
-                    ("X", prod[1]),
-                    ("V", prod[2]),
-                    ("a", str(card[0])),
-                    ("b", str(card[1])),
-                    ("c", str(card[2])),
-                    ("d", str(card[3])),
+                        ("Z", prod[0]),
+                        ("X", prod[1]),
+                        ("V", prod[2]),
+                        ("a", str(card[0])),
+                        ("b", str(card[1])),
+                        ("c", str(card[2])),
+                        ("d", str(card[3])),
                 ):
                     temp = temp.replace(*char)
                 try:
@@ -1304,7 +1307,7 @@ def perfect_number(number: int) -> bool:
 
     result = 1
 
-    for i in range(2, int(number**0.5) + 1):
+    for i in range(2, int(number ** 0.5) + 1):
         if number % i == 0:
             result += i
             complement = number // i
@@ -1381,7 +1384,8 @@ def find_number(start: int, stop: int, string: str) -> list:
     code = Counter(
         char for number in range(start, stop + 1) for char in str(number)
     ) - Counter(string)
-    return [number for number in range(start, stop + 1) if Counter(str(number)) == code]
+    return [number for number in range(start, stop + 1) if
+            Counter(str(number)) == code]
 
 
 def get_plan(cur, month, perc):
@@ -1396,15 +1400,15 @@ def reverse_random_string(random_string: str, amount_of_symbols: int) -> str:
     if len(random_string) < amount_of_symbols:
         return random_string[::-1]
     elif len(random_string) < 2 * amount_of_symbols:
-        fp = random_string[amount_of_symbols - 1 :: -1]
+        fp = random_string[amount_of_symbols - 1:: -1]
         sp = random_string[amount_of_symbols:]
         return fp + sp
     else:
         result = ""
         aos = amount_of_symbols
         for i in range(0, len(random_string), 2 * amount_of_symbols):
-            result += random_string[i : i + aos][::-1]
-            result += random_string[i + aos : i + 2 * aos]
+            result += random_string[i: i + aos][::-1]
+            result += random_string[i + aos: i + 2 * aos]
         return result
 
 
@@ -1434,7 +1438,7 @@ def next_smaller(number: int) -> int:
     while digits[j] >= digits[i]:
         j -= 1
     digits[i], digits[j] = digits[j], digits[i]
-    digits[i + 1 :] = reversed(digits[i + 1 :])
+    digits[i + 1:] = reversed(digits[i + 1:])
     result = int("".join(digits))
     return result
 
@@ -1458,3 +1462,23 @@ def performant_smallest(nums: list, n: int) -> list:
             condition.remove(num)
     print(result)
     return result
+
+
+def performant_smallest(nums: list, n: int) -> list:
+    if n == len(nums):
+        return nums
+    try:
+        target = (list(set(nums))[n:n + 1:])[0]
+    except Exception:
+        target = sorted(nums)[-1]
+
+    result = []
+    for i in nums:
+        if i < target:
+            result.append(i)
+            if len(result) == n:
+                break
+    return result
+
+
+performant_smallest([1, 1, 1, 2, 2, 2, 4, 3, 3, 3], 3)
