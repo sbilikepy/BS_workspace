@@ -1,0 +1,49 @@
+Arithmetic Operators
+Addition: +
+Subtraction: -
+Multiplication: *
+Division: /
+Modulus (Remainder): %
+Increment: ++
+Decrement: --
+Assignment Operators
+Assignment: =
+Addition Assignment: +=
+Subtraction Assignment: -=
+Multiplication Assignment: *=
+Division Assignment: /=
+Modulus Assignment: %=
+Comparison Operators
+Equal to: ==
+Not equal to: !=
+Strict equal to: ===
+Strict not equal to: !==
+Greater than: >
+Less than: <
+Greater than or equal to: >=
+Less than or equal to: <=
+Logical Operators
+Logical AND: &&
+Logical OR: ||
+Logical NOT: !
+Bitwise Operators
+Bitwise AND: &
+Bitwise OR: |
+Bitwise XOR: ^
+Bitwise NOT: ~
+Left shift: <<
+Sign-propagating right shift: >>
+Zero-fill right shift: >>>
+Conditional (Ternary) Operator
+condition ? expr1 : expr2
+String Operators
+Concatenation: +
+Type Operators
+typeof: typeof
+Miscellaneous Operators
+Comma: ,
+Member Access: .
+Square Bracket Access: []
+Function Call: ()
+New (object instantiation): new
+Instanceof (type checking): instanceof

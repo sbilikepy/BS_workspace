@@ -2,13 +2,17 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="" />
+    <mapping directory="$PROJECT_DIR$/Discord-QR-Auth-Client" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/IdealistaScraping" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LFT-recruit-finder/LFTdjangoProject" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Forms/py-taxi-service-authentication" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Forms_in_details/py-taxi-service-forms" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/search_custom_tags_get_q_fixes_tests/py-taxi-service-user-form-and-validation" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Scrapy-Idealista" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/dedomeno" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/django-discord-oauth2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-actor-manager" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-aquapark" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-battleship" vcs="Git" />
@@ -59,6 +63,7 @@
     <mapping directory="$PROJECT_DIR$/py-taxi-service-class-based-views" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-forms" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-home-page" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py-taxi-service-search-and-tests" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-startproject" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-user-form-and-validation" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-tickets-and-orders" vcs="Git" />
@@ -66,5 +71,6 @@
     <mapping directory="$PROJECT_DIR$/py-work-with-file" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/python-datascraping-fotocasa-idealista" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/roop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tftraits-render" vcs="Git" />
   </component>
 </project>
