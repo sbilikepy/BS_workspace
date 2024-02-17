@@ -1481,4 +1481,11 @@ def performant_smallest(nums: list, n: int) -> list:
     return result
 
 
-performant_smallest([1, 1, 1, 2, 2, 2, 4, 3, 3, 3], 3)
+def climb_stairs(number: int) -> int:
+    if number <= 2:
+        return number
+    first, second = 1, 2
+    for _ in range(3, number + 1):
+        third = first + second
+        first, second = second, third
+    return second
