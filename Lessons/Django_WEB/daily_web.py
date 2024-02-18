@@ -1489,3 +1489,15 @@ def climb_stairs(number: int) -> int:
         third = first + second
         first, second = second, third
     return second
+
+
+def choose_best_sum(limit: int, number_of_towns: int,
+                    list_of_distances: list) -> int:
+    from itertools import combinations
+    best_sum = None
+    for towns in combinations(list_of_distances, number_of_towns):
+        current_sum = sum(towns)
+        if current_sum <= limit:
+            if best_sum is None or current_sum > best_sum:
+                best_sum = current_sum
+    return best_sum
