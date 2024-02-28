@@ -1653,3 +1653,18 @@ b = BstNode(50)
 for _ in range(50):
     b.insert(random.randint(0, 100))
 b.display()
+
+
+import datetime
+import random
+
+def date_generated(d1, d2):
+    start = datetime.datetime.strptime(d1, '%d-%m-%Y')
+    end = datetime.datetime.strptime(d2, '%d-%m-%Y')
+    intervalo = [start + datetime.timedelta(x) for x in range(int ((end-start).days)+1)]
+    datas = []
+    for data in intervalo:
+        datas.append(data.strftime('%d-%m-%Y'))
+    print(*random.sample(datas, 1))
+
+date_generated('03-12-2021','03-01-2022')
