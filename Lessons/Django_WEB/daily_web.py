@@ -1668,3 +1668,16 @@ def date_generated(d1, d2):
     print(*random.sample(datas, 1))
 
 date_generated('03-12-2021','03-01-2022')
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        if not prices:
+            return 0
+
+        best_deal = 0
+        min_price = prices[0]
+        for i in range(1, len(prices)):
+            best_deal = max(best_deal, prices[i] - min_price)
+            min_price = min(min_price, prices[i])
+        return best_deal
