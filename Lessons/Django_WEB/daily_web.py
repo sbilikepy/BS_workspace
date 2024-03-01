@@ -1567,15 +1567,9 @@ class Node:
          self.right.PrintTree()
 
 
-root = Node(12)
-root.insert(6)
-root.insert(14)
-root.insert(3)
-root.PrintTree()
-
-
 
 class BstNode:
+    import random
 
     def __init__(self, key):
         self.key = key
@@ -1647,7 +1641,7 @@ class BstNode:
         return lines, n + m + u, max(p, q) + 2, n + u // 2
 
 
-import random
+
 
 b = BstNode(50)
 for _ in range(50):
@@ -1655,10 +1649,11 @@ for _ in range(50):
 b.display()
 
 
-import datetime
-import random
+
 
 def date_generated(d1, d2):
+    import datetime
+    import random
     start = datetime.datetime.strptime(d1, '%d-%m-%Y')
     end = datetime.datetime.strptime(d2, '%d-%m-%Y')
     intervalo = [start + datetime.timedelta(x) for x in range(int ((end-start).days)+1)]
