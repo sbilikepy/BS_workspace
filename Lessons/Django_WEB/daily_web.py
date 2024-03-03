@@ -1,4 +1,5 @@
 import math
+from typing import *
 
 
 def flatten_and_sort(lst: list) -> list:
@@ -156,6 +157,7 @@ def sum_of_a_beach(beach: str) -> int:
 
 
 def valpa():
+    import random
     result = ""
     for i in range(30):
         result += random.choice(
@@ -1536,40 +1538,38 @@ root.left.right.right = TreeNode(7)
 root.right.right = TreeNode(24)
 root.right.right.left = TreeNode(22)
 
+
 class Node:
-   def __init__(self, data):
-      self.left = None
-      self.right = None
-      self.data = data
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
 
-   def insert(self, data):
+    def insert(self, data):
 
-      if self.data:
-         if data < self.data:
-            if self.left is None:
-               self.left = Node(data)
-            else:
-               self.left.insert(data)
-         elif data > self.data:
-               if self.right is None:
-                  self.right = Node(data)
-               else:
-                  self.right.insert(data)
-      else:
-         self.data = data
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)
+                else:
+                    self.left.insert(data)
+            elif data > self.data:
+                if self.right is None:
+                    self.right = Node(data)
+                else:
+                    self.right.insert(data)
+        else:
+            self.data = data
 
-
-   def PrintTree(self):
-      if self.left:
-         self.left.PrintTree()
-      print( self.data),
-      if self.right:
-         self.right.PrintTree()
-
+    def PrintTree(self):
+        if self.left:
+            self.left.PrintTree()
+        print(self.data),
+        if self.right:
+            self.right.PrintTree()
 
 
 class BstNode:
-    import random
 
     def __init__(self, key):
         self.key = key
@@ -1584,7 +1584,7 @@ class BstNode:
                 self.right = BstNode(key)
             else:
                 self.right.insert(key)
-        else: # self.key > key
+        else:  # self.key > key
             if self.left is None:
                 self.left = BstNode(key)
             else:
@@ -1613,7 +1613,8 @@ class BstNode:
             first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s
             second_line = x * ' ' + '/' + (n - x - 1 + u) * ' '
             shifted_lines = [line + u * ' ' for line in lines]
-            return [first_line, second_line] + shifted_lines, n + u, p + 2, n + u // 2
+            return [first_line,
+                    second_line] + shifted_lines, n + u, p + 2, n + u // 2
 
         # Only right child.
         if self.left is None:
@@ -1623,32 +1624,26 @@ class BstNode:
             first_line = s + x * '_' + (n - x) * ' '
             second_line = (u + x) * ' ' + '\\' + (n - x - 1) * ' '
             shifted_lines = [u * ' ' + line for line in lines]
-            return [first_line, second_line] + shifted_lines, n + u, p + 2, u // 2
+            return [first_line,
+                    second_line] + shifted_lines, n + u, p + 2, u // 2
 
         # Two children.
         left, n, p, x = self.left._display_aux()
         right, m, q, y = self.right._display_aux()
         s = '%s' % self.key
         u = len(s)
-        first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (m - y) * ' '
-        second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (m - y - 1) * ' '
+        first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (
+                m - y) * ' '
+        second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (
+                m - y - 1) * ' '
         if p < q:
             left += [n * ' '] * (q - p)
         elif q < p:
             right += [m * ' '] * (p - q)
         zipped_lines = zip(left, right)
-        lines = [first_line, second_line] + [a + u * ' ' + b for a, b in zipped_lines]
+        lines = [first_line, second_line] + [a + u * ' ' + b for a, b in
+                                             zipped_lines]
         return lines, n + m + u, max(p, q) + 2, n + u // 2
-
-
-
-
-b = BstNode(50)
-for _ in range(50):
-    b.insert(random.randint(0, 100))
-b.display()
-
-
 
 
 def date_generated(d1, d2):
@@ -1656,13 +1651,15 @@ def date_generated(d1, d2):
     import random
     start = datetime.datetime.strptime(d1, '%d-%m-%Y')
     end = datetime.datetime.strptime(d2, '%d-%m-%Y')
-    intervalo = [start + datetime.timedelta(x) for x in range(int ((end-start).days)+1)]
+    intervalo = [start + datetime.timedelta(x) for x in
+                 range(int((end - start).days) + 1)]
     datas = []
     for data in intervalo:
         datas.append(data.strftime('%d-%m-%Y'))
     print(*random.sample(datas, 1))
 
-date_generated('03-12-2021','03-01-2022')
+
+date_generated('03-12-2021', '03-01-2022')
 
 
 class Solution:
@@ -1676,3 +1673,11 @@ class Solution:
             best_deal = max(best_deal, prices[i] - min_price)
             min_price = min(min_price, prices[i])
         return best_deal
+
+
+def is_prime(number: int) -> bool:
+    result = lambda number: number > 1 and all(
+        number % i != 0 for i in range(2, int(number ** 0.5) + 1))
+    return result(number)
+
+
