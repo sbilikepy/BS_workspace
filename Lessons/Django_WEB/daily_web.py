@@ -97,13 +97,6 @@ class PaginationHelper:
             return -1
 
 
-helper = PaginationHelper(["a", "b", "c", "d", "e", "f"], 4)
-helper.page_index(5)
-helper.page_index(2)
-helper.page_index(20)
-helper.page_index(-10)
-
-
 def find_children(santas_list: list, children: list) -> list:
     return sorted([kid for kid in children if kid in santas_list])
 
@@ -442,8 +435,6 @@ def tv_remote(word: str) -> int:
 
     return steps
 
-
-# flake8: noqa E501
 
 WORDS = [
     "ACT",
@@ -1066,12 +1057,6 @@ def check_1800(string: str) -> set:
     return set(result)
 
 
-check_1800("1-800-CODE-WAR")
-
-
-# "{'1-800-INK-WANT', '1-800-HOLY-ANT', '1-800-HOLY-COT'}"
-
-
 def duplicate_arguments(*args) -> bool:
     if len(args) == len(set(args)):
         return False
@@ -1158,9 +1143,6 @@ def one_down(txt: str) -> str:
             else:
                 result += chr(ord(letter) - 1)
     return result
-
-
-one_down("Ifmmp")
 
 
 def timer(func):
@@ -1327,27 +1309,6 @@ def highest_and_lowest(string_of_nums: str) -> str:
         return ""
 
 
-# @pytest.mark.parametrize(
-#     "string_of_nums, max_min_string",
-#     [
-#         ("-100", "-100 -100"),
-#         ("-1", "-1 -1"),
-#         ("0", "0 0"),
-#         ("1", "1 1"),
-#         ("-1 0 1", "1 -1"),
-#         ("1 2 3 4", "4 1"),
-#         ("4 3 2 1", "4 1"),
-#         ("1 2 3 4 5", "5 1"),
-#         ("1 2 -3 4 5", "5 -3"),
-#         ("1 9 3 4 -5", "9 -5"),
-#         ("0 0 0 0 0", "0 0"),
-#         ("-1 0 1 0", "1 -1"),
-#         ("10 8 90 -7", "90 -7"),
-#         ("-100 100", "100 -100"),
-#         ("-10000000 0", "0 -10000000"),
-#         ("-123456789 -1234567810", "-123456789 -1234567810"),
-#     ],
-# )
 def test_highest_and_lowest(string_of_nums, max_min_string):
     assert highest_and_lowest(string_of_nums) == max_min_string, (
         f"Function 'highest_and_lowest' should return '{max_min_string}' "
@@ -1505,8 +1466,6 @@ def choose_best_sum(limit: int, number_of_towns: int,
     return best_sum
 
 
-# Write a Python program to find the kth smallest element in a given binary search tree
-
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
@@ -1526,17 +1485,6 @@ def kth_smallest(root, k):
             break
         root = root.right
     return root.val
-
-
-root = TreeNode(8)
-root.left = TreeNode(5)
-root.right = TreeNode(14)
-root.left.left = TreeNode(4)
-root.left.right = TreeNode(6)
-root.left.right.left = TreeNode(8)
-root.left.right.right = TreeNode(7)
-root.right.right = TreeNode(24)
-root.right.right.left = TreeNode(22)
 
 
 class Node:
@@ -1659,9 +1607,6 @@ def date_generated(d1, d2):
     print(*random.sample(datas, 1))
 
 
-date_generated('03-12-2021', '03-01-2022')
-
-
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         if not prices:
@@ -1707,3 +1652,77 @@ def longest_common_subsequence(s1, s2):
             j -= 1
 
     return lcs
+
+
+def saronite(ore_amount):
+    import math
+    num_trials = int(ore_amount / 5)
+    result = simulate(num_trials)
+    print("Results after", num_trials, "trials:")
+    for item, count in result.items():
+        print(item + ":",
+              str(count) + " (" + str(count / num_trials * 100) + "%)")
+    blue_count = sum(
+        result[item] for item in result if item.startswith("Blue"))
+    green_count = sum(
+        result[item] for item in result if item.startswith("Green"))
+    blue_weight = round((blue_count / 6 * 5 * 4.5) + blue_count / 6 * 65)
+    green_weight = round(green_count/6*0.5 + green_count/6*5*2)
+    print(f"Total blues: {blue_count} ("
+          f"{blue_weight}g)")
+    print(f"Total greens: {green_count} ("
+          f"{green_weight})g")
+    print(f"Total gold = {int(ore_amount*0.7)} to {blue_weight+green_weight}")
+    return blue_weight+green_weight - ore_amount * 0.7
+
+
+def get_item():
+    import random
+    chance = random.uniform(0, 1)
+    if chance <= 0.21:
+        blue_chance = random.uniform(0, 1)
+        if blue_chance <= 1 / 6:
+            return "Blue_r1"
+        elif blue_chance <= 2 / 6:
+            return "Blue_r2"
+        elif blue_chance <= 3 / 6:
+            return "Blue_r3"
+        elif blue_chance <= 4 / 6:
+            return "Blue_r4"
+        elif blue_chance <= 5 / 6:
+            return "Blue_r5"
+        else:
+            return "Blue_r6"
+    elif chance <= 0.92:
+        green_chance = random.uniform(0, 1)
+        if green_chance <= 0.2:
+            return "Green_1"
+        elif green_chance <= 0.4:
+            return "Green_2"
+        elif green_chance <= 0.6:
+            return "Green_3"
+        elif green_chance <= 0.8:
+            return "Green_4"
+        else:
+            return "Green_5"
+    else:
+        return "2_Greens"
+
+
+def simulate(num_trials):
+    results = {"Blue_r1": 0, "Blue_r2": 0, "Blue_r3": 0, "Blue_r4": 0,
+               "Blue_r5": 0, "Blue_r6": 0, "Green_1": 0, "Green_2": 0,
+               "Green_3": 0, "Green_4": 0, "Green_5": 0, "2_Greens": 0}
+    for _ in range(num_trials):
+        item = get_item()
+        results[item] += 1
+    return results
+
+
+def simulations(iterations, ores):
+    result = 0
+    for i in range(iterations):
+        result += saronite(ores)
+    print(f"average result is {result/iterations}")
+simulations(iterations=10_000,
+            ores=50000)
