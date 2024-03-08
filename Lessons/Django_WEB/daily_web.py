@@ -1655,7 +1655,6 @@ def longest_common_subsequence(s1, s2):
 
 
 def saronite(ore_amount):
-    import math
     num_trials = int(ore_amount / 5)
     result = simulate(num_trials)
     print("Results after", num_trials, "trials:")
@@ -1667,62 +1666,49 @@ def saronite(ore_amount):
     green_count = sum(
         result[item] for item in result if item.startswith("Green"))
     blue_weight = round((blue_count / 6 * 5 * 4.5) + blue_count / 6 * 65)
-    green_weight = round(green_count/6*0.5 + green_count/6*5*2)
+    green_weight = round(green_count / 6 * 0.5 + green_count / 6 * 5 * 2)
     print(f"Total blues: {blue_count} ("
           f"{blue_weight}g)")
     print(f"Total greens: {green_count} ("
           f"{green_weight})g")
-    print(f"Total gold = {int(ore_amount*0.7)} to {blue_weight+green_weight}")
-    return blue_weight+green_weight - ore_amount * 0.7
+    print(
+        f"Total gold = {int(ore_amount * 0.7)} to {blue_weight + green_weight}")
+    return blue_weight + green_weight - ore_amount * 0.7
 
 
-def get_item():
-    import random
-    chance = random.uniform(0, 1)
-    if chance <= 0.21:
-        blue_chance = random.uniform(0, 1)
-        if blue_chance <= 1 / 6:
-            return "Blue_r1"
-        elif blue_chance <= 2 / 6:
-            return "Blue_r2"
-        elif blue_chance <= 3 / 6:
-            return "Blue_r3"
-        elif blue_chance <= 4 / 6:
-            return "Blue_r4"
-        elif blue_chance <= 5 / 6:
-            return "Blue_r5"
-        else:
-            return "Blue_r6"
-    elif chance <= 0.92:
-        green_chance = random.uniform(0, 1)
-        if green_chance <= 0.2:
-            return "Green_1"
-        elif green_chance <= 0.4:
-            return "Green_2"
-        elif green_chance <= 0.6:
-            return "Green_3"
-        elif green_chance <= 0.8:
-            return "Green_4"
-        else:
-            return "Green_5"
-    else:
-        return "2_Greens"
+def saronite(mat_price, amount):
+    set_data = {
+        "green_1_price": [0.5, 0.18],
+        "green_2_price": [1.35, 0.18],
+        "green_3_price": [1.35, 0.18],
+        "green_4_price": [1.35, 0.18],
+        "green_5_price": [1.35, 0.18],
+        "green_6_price": [1.35, 0.18],
+
+        "blue_1_price ": [4.5, 0.035],
+        "blue_2_price ": [4.5, 0.035],
+        "blue_3_price": [4.5, 0.035],
+        "blue_4_price ": [4.5, 0.035],
+        "blue_5_price ": [4.5, 0.035],
+        "blue_6_price ": [73.39, 0.035]
+    }
+    one_ore_val = 0
+
+    for key, value in set_data.items():
+        dbmarket = value[0]
+        chance_to_get = value[1]
+        value_per_ore = (dbmarket * chance_to_get) / 5
+        one_ore_val += value_per_ore
+        print(key, round(value_per_ore, 4))
+    all_ore_val = one_ore_val * amount
+    print(f"One ore db_market = {round(mat_price, 2)} | prospect val ="
+          f" {round(one_ore_val, 2)}")
+    print(
+        f"All ores db_market = {round(mat_price * amount, 2)} | prospect val ="
+        f" {round(all_ore_val, 2)} | profit = "
+        f"{round(all_ore_val - (mat_price * amount), 2)} or "
+        f"{round(100 - all_ore_val / (mat_price * amount / 100)) * -1}%")
 
 
-def simulate(num_trials):
-    results = {"Blue_r1": 0, "Blue_r2": 0, "Blue_r3": 0, "Blue_r4": 0,
-               "Blue_r5": 0, "Blue_r6": 0, "Green_1": 0, "Green_2": 0,
-               "Green_3": 0, "Green_4": 0, "Green_5": 0, "2_Greens": 0}
-    for _ in range(num_trials):
-        item = get_item()
-        results[item] += 1
-    return results
-
-
-def simulations(iterations, ores):
-    result = 0
-    for i in range(iterations):
-        result += saronite(ores)
-    print(f"average result is {result/iterations}")
-simulations(iterations=10_000,
-            ores=50000)
+saronite(mat_price=0.7122,
+         amount=10)
