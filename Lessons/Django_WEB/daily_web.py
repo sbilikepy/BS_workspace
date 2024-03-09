@@ -1732,4 +1732,3 @@ class Player:
             print("You move to", self.current_room.description)
         else:
             print("There is no door in that direction!")
-g
