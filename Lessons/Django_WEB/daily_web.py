@@ -1712,3 +1712,24 @@ def saronite(mat_price, amount):
 
 saronite(mat_price=0.7122,
          amount=10)
+
+
+class Room:
+    def __init__(self, description):
+        self.description = description
+        self.doors = {}
+
+    def add_door(self, direction, room):
+        self.doors[direction] = room
+
+class Player:
+    def __init__(self, current_room):
+        self.current_room = current_room
+
+    def move(self, direction):
+        if direction in self.current_room.doors:
+            self.current_room = self.current_room.doors[direction]
+            print("You move to", self.current_room.description)
+        else:
+            print("There is no door in that direction!")
+g
