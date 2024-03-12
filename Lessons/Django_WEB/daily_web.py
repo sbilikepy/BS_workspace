@@ -1710,10 +1710,6 @@ def saronite(mat_price, amount):
         f"{round(100 - all_ore_val / (mat_price * amount / 100)) * -1}%")
 
 
-saronite(mat_price=0.7122,
-         amount=10)
-
-
 class Room:
     def __init__(self, description):
         self.description = description
@@ -1721,6 +1717,7 @@ class Room:
 
     def add_door(self, direction, room):
         self.doors[direction] = room
+
 
 class Player:
     def __init__(self, current_room):
@@ -1734,12 +1731,13 @@ class Player:
             print("There is no door in that direction!")
 
 
-
 import random
+
 
 def choose_word():
     words = ['apple', 'banana', 'orange', 'grape', 'pineapple']
     return random.choice(words)
+
 
 def display_word(word, guessed_letters):
     display = ''
@@ -1749,6 +1747,7 @@ def display_word(word, guessed_letters):
         else:
             display += '_'
     return display
+
 
 def main():
     word = choose_word()
@@ -1779,3 +1778,72 @@ def main():
         if set(word) == set(guessed_letters):
             print("Congratulations! You've guessed the word correctly:", word)
             break
+
+
+def calc_sar(all_sessions: list[list[float]]) -> str:
+    ORE_PICE = 0.75
+    ore_total_amount = 0
+    gold_spent = 0
+    green_amount = 0
+    blue_amount = 0
+    averages_for_greens = []
+    averages_for_blues = []
+    for session in all_sessions:
+        ore_amount, greens, blues = session
+        ore_total_amount += ore_amount
+        prospects = int(ore_amount / 5)
+        greens_expect = prospects * 1.08
+        blues_expect = prospects * 0.21
+        gold_spent += ore_amount * ORE_PICE
+        green_amount += greens
+        blue_amount += blues
+        for i in range(int(ore_amount / 100)):
+            averages_for_greens.append(greens / prospects)
+            averages_for_blues.append(blues / prospects)
+
+        print(
+            f"{'*' * 30}\n"
+            f"{ore_amount} saronite session\n"
+            f"{prospects} prospects\n"
+            f"greens expected -> {greens_expect} | got {greens} ||| "
+            f"{round(greens / prospects, 4)} per 1 prospect"
+            f" | "
+            f"difference "
+            f"{int(greens - greens_expect)}\n"
+            f"blues expected -> {blues_expect} | got {blues} ||| "
+            f"{round(blues / prospects, 4)} per 1 prospect"
+            f" | difference {int(blues - blues_expect)}"
+            f"\n{'*' * 30}\n"
+        )
+    print(f"TOTAL:\n"
+          f"Ore amount: {ore_total_amount}\n"
+          f"Gold spent: {int(gold_spent)}\n"
+          f"AVG green %: {sum(averages_for_greens) / len(averages_for_greens)}\n"
+          f"AVG blue %: {sum(averages_for_blues) / len(averages_for_blues)}\n"
+          f"Greens profit = "
+
+          f"{green_amount} * {(2 * 5 + 0.5) / 6} = "
+          f"{int(green_amount * (2 * 5 + 0.5) / 6)}\nBlues profit = "
+          f"{blue_amount} * {round((4.5 * 5 + 65) / 6, 2)} = "
+          f"{round(blue_amount * (4.5 * 5 + 65) / 6)}"
+          f"\nPROFIT = "
+
+          f"{round(((green_amount * (2 * 5 + 0.5) / 6) + (blue_amount * (4.5 * 5 + 65) / 6)) - gold_spent)
+          }"
+          )
+
+
+calc_sar(  # ORE, GREENS, BLUES
+    [
+        [1455, 314, 66],
+        [7925, 802 + 940, 185 + 218],
+        [2260, 494, 111],
+        [3640, 798, 178],
+        [16945 - 15070,
+         (92 + 124 + 114 + 114 + 109 + 108),
+         (26 + 20 + 22 + 26 + 22 + 26)
+         ],
+        [16945 - 15070, 88 + 126 + 87 + 110 + 125 + 111,
+         28 + 21 + 22 + 28 + 25 + 19]
+    ]
+)
