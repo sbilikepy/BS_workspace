@@ -1653,63 +1653,6 @@ def longest_common_subsequence(s1, s2):
 
     return lcs
 
-
-def saronite(ore_amount):
-    num_trials = int(ore_amount / 5)
-    result = simulate(num_trials)
-    print("Results after", num_trials, "trials:")
-    for item, count in result.items():
-        print(item + ":",
-              str(count) + " (" + str(count / num_trials * 100) + "%)")
-    blue_count = sum(
-        result[item] for item in result if item.startswith("Blue"))
-    green_count = sum(
-        result[item] for item in result if item.startswith("Green"))
-    blue_weight = round((blue_count / 6 * 5 * 4.5) + blue_count / 6 * 65)
-    green_weight = round(green_count / 6 * 0.5 + green_count / 6 * 5 * 2)
-    print(f"Total blues: {blue_count} ("
-          f"{blue_weight}g)")
-    print(f"Total greens: {green_count} ("
-          f"{green_weight})g")
-    print(
-        f"Total gold = {int(ore_amount * 0.7)} to {blue_weight + green_weight}")
-    return blue_weight + green_weight - ore_amount * 0.7
-
-
-def saronite(mat_price, amount):
-    set_data = {
-        "green_1_price": [0.5, 0.18],
-        "green_2_price": [1.35, 0.18],
-        "green_3_price": [1.35, 0.18],
-        "green_4_price": [1.35, 0.18],
-        "green_5_price": [1.35, 0.18],
-        "green_6_price": [1.35, 0.18],
-
-        "blue_1_price ": [4.5, 0.035],
-        "blue_2_price ": [4.5, 0.035],
-        "blue_3_price": [4.5, 0.035],
-        "blue_4_price ": [4.5, 0.035],
-        "blue_5_price ": [4.5, 0.035],
-        "blue_6_price ": [73.39, 0.035]
-    }
-    one_ore_val = 0
-
-    for key, value in set_data.items():
-        dbmarket = value[0]
-        chance_to_get = value[1]
-        value_per_ore = (dbmarket * chance_to_get) / 5
-        one_ore_val += value_per_ore
-        print(key, round(value_per_ore, 4))
-    all_ore_val = one_ore_val * amount
-    print(f"One ore db_market = {round(mat_price, 2)} | prospect val ="
-          f" {round(one_ore_val, 2)}")
-    print(
-        f"All ores db_market = {round(mat_price * amount, 2)} | prospect val ="
-        f" {round(all_ore_val, 2)} | profit = "
-        f"{round(all_ore_val - (mat_price * amount), 2)} or "
-        f"{round(100 - all_ore_val / (mat_price * amount / 100)) * -1}%")
-
-
 class Room:
     def __init__(self, description):
         self.description = description
