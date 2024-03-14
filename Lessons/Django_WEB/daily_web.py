@@ -1723,6 +1723,16 @@ def main():
             break
 
 
+def get_reversed_color(hex_color: str) -> str:
+    if not isinstance(hex_color, str) or len(hex_color) > 6 or not all(
+            c in "0123456789ABCDEFabcdef" for c in hex_color):
+        raise ValueError("Invalid hex-color string")
+
+    hex_color = hex_color.upper().zfill(6)
+    reversed_color = "".join([hex(15 - int(c, 16))[2:] for c in hex_color])
+    return "#" + reversed_color.upper()
+
+
 def calc_sar(all_sessions: list[list[float]]) -> str:
     ORE_PICE = 0.75
     ore_total_amount = 0
