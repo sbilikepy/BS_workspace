@@ -1653,6 +1653,7 @@ def longest_common_subsequence(s1, s2):
 
     return lcs
 
+
 class Room:
     def __init__(self, description):
         self.description = description
@@ -1681,6 +1682,27 @@ def choose_word():
     words = ['apple', 'banana', 'orange', 'grape', 'pineapple']
     return random.choice(words)
 
+def longest_consecutive_subsequence(nums):
+    nums_set = set(nums)
+    longest_seq_length = 0
+    longest_seq_start = None
+
+    for num in nums_set:
+        if num - 1 not in nums_set:
+            current_num = num
+            current_seq_length = 1
+
+            while current_num + 1 in nums_set:
+                current_num += 1
+                current_seq_length += 1
+
+            if current_seq_length > longest_seq_length:
+                longest_seq_length = current_seq_length
+                longest_seq_start = num
+
+    longest_seq = [num for num in range(longest_seq_start, longest_seq_start + longest_seq_length)]
+
+    return longest_seq, longest_seq_length
 
 def display_word(word, guessed_letters):
     display = ''
@@ -1797,6 +1819,14 @@ calc_sar(  # ORE, GREENS, BLUES
          (26 + 20 + 22 + 26 + 22 + 26)
          ],
         [16945 - 15070, 88 + 126 + 87 + 110 + 125 + 111,
-         28 + 21 + 22 + 28 + 25 + 19]
+         28 + 21 + 22 + 28 + 25 + 19],
+        [
+            13696 - 1, (
+                581 + 652 + 582 + 587 + 634 + 627
+        ),
+         (
+                 151 + 137 + 143 + 158 + 128 + 140
+         )
+         ]
     ]
 )
