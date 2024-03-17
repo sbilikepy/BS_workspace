@@ -1682,6 +1682,7 @@ def choose_word():
     words = ['apple', 'banana', 'orange', 'grape', 'pineapple']
     return random.choice(words)
 
+
 def longest_consecutive_subsequence(nums):
     nums_set = set(nums)
     longest_seq_length = 0
@@ -1700,9 +1701,11 @@ def longest_consecutive_subsequence(nums):
                 longest_seq_length = current_seq_length
                 longest_seq_start = num
 
-    longest_seq = [num for num in range(longest_seq_start, longest_seq_start + longest_seq_length)]
+    longest_seq = [num for num in range(longest_seq_start,
+                                        longest_seq_start + longest_seq_length)]
 
     return longest_seq, longest_seq_length
+
 
 def display_word(word, guessed_letters):
     display = ''
@@ -1743,6 +1746,17 @@ def main():
         if set(word) == set(guessed_letters):
             print("Congratulations! You've guessed the word correctly:", word)
             break
+
+
+def max_subarray_sum(nums: list[int]):
+    max_sum = float('-inf')
+    current_sum = 0
+
+    for num in nums:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum
 
 
 def get_reversed_color(hex_color: str) -> str:
@@ -1824,9 +1838,9 @@ calc_sar(  # ORE, GREENS, BLUES
             13696 - 1, (
                 581 + 652 + 582 + 587 + 634 + 627
         ),
-         (
-                 151 + 137 + 143 + 158 + 128 + 140
-         )
-         ]
+            (
+                    151 + 137 + 143 + 158 + 128 + 140
+            )
+        ]
     ]
 )
