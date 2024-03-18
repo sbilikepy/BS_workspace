@@ -1,5 +1,7 @@
 import math
 from typing import *
+import random
+
 
 
 def flatten_and_sort(lst: list) -> list:
@@ -1675,9 +1677,6 @@ class Player:
             print("There is no door in that direction!")
 
 
-import random
-
-
 def choose_word():
     words = ['apple', 'banana', 'orange', 'grape', 'pineapple']
     return random.choice(words)
@@ -1811,13 +1810,13 @@ def calc_sar(all_sessions: list[list[float]]) -> str:
           f"AVG blue %: {sum(averages_for_blues) / len(averages_for_blues)}\n"
           f"Greens profit = "
 
-          f"{green_amount} * {(2 * 5 + 0.5) / 6} = "
+          f"{green_amount} * {(1.25 * 5 + 0.5) / 6} = "
           f"{int(green_amount * (2 * 5 + 0.5) / 6)}\nBlues profit = "
           f"{blue_amount} * {round((4.5 * 5 + 65) / 6, 2)} = "
           f"{round(blue_amount * (4.5 * 5 + 65) / 6)}"
           f"\nPROFIT = "
 
-          f"{round(((green_amount * (2 * 5 + 0.5) / 6) + (blue_amount * (4.5 * 5 + 65) / 6)) - gold_spent)
+          f"{round(((green_amount * (1.25 * 5 + 0.5) / 6) + (blue_amount * (4.5 * 5 + 65) / 6)) - gold_spent)
           }"
           )
 
@@ -1828,19 +1827,6 @@ calc_sar(  # ORE, GREENS, BLUES
         [7925, 802 + 940, 185 + 218],
         [2260, 494, 111],
         [3640, 798, 178],
-        [16945 - 15070,
-         (92 + 124 + 114 + 114 + 109 + 108),
-         (26 + 20 + 22 + 26 + 22 + 26)
-         ],
-        [16945 - 15070, 88 + 126 + 87 + 110 + 125 + 111,
-         28 + 21 + 22 + 28 + 25 + 19],
-        [
-            13696 - 1, (
-                581 + 652 + 582 + 587 + 634 + 627
-        ),
-            (
-                    151 + 137 + 143 + 158 + 128 + 140
-            )
-        ]
+
     ]
 )
