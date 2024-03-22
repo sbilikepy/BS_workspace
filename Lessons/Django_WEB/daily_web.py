@@ -1,7 +1,6 @@
 import math
-from typing import *
 import random
-
+from typing import *
 
 
 def flatten_and_sort(lst: list) -> list:
@@ -1390,6 +1389,16 @@ def snail(matrix: list) -> list:
             for row in matrix[::-1]:
                 result.append(row.pop(0))
     return result
+
+
+# JS TASK
+# function canBuyBeer(age) {
+#     if (age < 18) {
+#         return 'You can not buy beer';
+#     } else {
+#         return 'You can buy beer';
+#     }
+# }
 
 
 def next_smaller(number: int) -> int:
