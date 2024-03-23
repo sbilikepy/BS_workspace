@@ -1390,6 +1390,17 @@ def snail(matrix: list) -> list:
                 result.append(row.pop(0))
     return result
 
+from collections import Counter
+
+def most_common_character(input_string):
+    char_count = Counter(input_string)
+    max_frequency = max(char_count.values())
+    most_common_chars = [char for char, freq in char_count.items() if freq == max_frequency]
+    return most_common_chars[0] if most_common_chars else None
+
+input_string = "hello world"
+result = most_common_character(input_string)
+print("Most common character:", result)
 
 # JS TASK
 # function canBuyBeer(age) {
