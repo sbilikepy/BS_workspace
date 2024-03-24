@@ -1341,9 +1341,6 @@ def calculate_profit(**kwargs) -> int:
     return amount - old
 
 
-from collections import Counter
-
-
 def find_number(start: int, stop: int, string: str) -> list:
     code = Counter(
         char for number in range(start, stop + 1) for char in str(number)
@@ -1390,17 +1387,32 @@ def snail(matrix: list) -> list:
                 result.append(row.pop(0))
     return result
 
+
+from itertools import combinations
+
+
+def unique_combinations(nums, k):
+    unique_combinations_set = set()
+    for combination in combinations(nums, k):
+        unique_combinations_set.add(tuple(sorted(combination)))
+    return sorted(unique_combinations_set)
+
+
 from collections import Counter
+
 
 def most_common_character(input_string):
     char_count = Counter(input_string)
     max_frequency = max(char_count.values())
-    most_common_chars = [char for char, freq in char_count.items() if freq == max_frequency]
+    most_common_chars = [char for char, freq in char_count.items() if
+                         freq == max_frequency]
     return most_common_chars[0] if most_common_chars else None
+
 
 input_string = "hello world"
 result = most_common_character(input_string)
 print("Most common character:", result)
+
 
 # JS TASK
 # function canBuyBeer(age) {
