@@ -1424,6 +1424,11 @@ print("Most common character:", result)
 # }
 
 
+from collections import OrderedDict
+
+def remove_duplicates(input_list):
+    return list(OrderedDict.fromkeys(input_list))
+
 def next_smaller(number: int) -> int:
     digits = list(str(number))
     i = len(digits) - 2
