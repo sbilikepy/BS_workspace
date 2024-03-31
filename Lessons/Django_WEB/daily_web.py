@@ -1436,6 +1436,13 @@ def remove_duplicates(input_list):
 #     }
 # }
 
+# for (let i = 5; i >= 1; i--) {
+#     console.log(i);
+# }
+
+
+
+
 def next_smaller(number: int) -> int:
     digits = list(str(number))
     i = len(digits) - 2
