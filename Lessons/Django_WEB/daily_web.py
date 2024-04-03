@@ -1440,6 +1440,11 @@ def remove_duplicates(input_list):
 #     console.log(i);
 # }
 
+# let title = "Hello, world!";
+#
+# for (let i = 0; i < title.length; i++) {
+#     console.log(title[i]);
+# }
 
 
 
