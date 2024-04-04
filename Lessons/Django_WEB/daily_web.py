@@ -1445,6 +1445,17 @@ def remove_duplicates(input_list):
 # for (let i = 0; i < title.length; i++) {
 #     console.log(title[i]);
 # }
+# function replaceSpaces(input) {
+#   let modifiedString = '';
+#   for (let i = 0; i < input.length; i++) {
+#     if (input[i] === ' ') {
+#       modifiedString += '-';
+#     } else {
+#       modifiedString += input[i];
+#     }
+#   }
+#   return modifiedString;
+# }
 
 
 
