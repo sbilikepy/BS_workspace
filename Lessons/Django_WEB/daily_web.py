@@ -1421,6 +1421,10 @@ print("Most common character:", result)
 #         return 'You can buy beer';
 #     }
 # }
+# function replaceA(input) {
+#
+#     return input.replace(/a|A/gi, '*');
+# }
 
 
 from collections import OrderedDict
