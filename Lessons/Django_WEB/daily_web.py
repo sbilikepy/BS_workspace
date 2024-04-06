@@ -1460,7 +1460,26 @@ def remove_duplicates(input_list):
 #   }
 #   return modifiedString;
 # }
-
+# function
+# countMs(text)
+# {
+#     let
+# uppercaseCount = 0;
+# let
+# lowercaseCount = 0;
+#
+# for (let i = 0; i < text.length; i++)
+# {
+# if (text[i] === 'M')
+# {
+#     uppercaseCount + +;
+# } else if (text[i] === 'm') {
+# lowercaseCount++;
+# }
+# }
+#
+# return uppercaseCount + lowercaseCount;
+# }
 
 
 def next_smaller(number: int) -> int:
