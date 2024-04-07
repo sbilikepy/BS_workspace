@@ -1480,7 +1480,11 @@ def remove_duplicates(input_list):
 #
 # return uppercaseCount + lowercaseCount;
 # }
-
+# const title = 'Strings';
+#
+# for (let i = 0; i < title.length; i++) {
+#     console.log(title[i]);
+# }
 
 def next_smaller(number: int) -> int:
     digits = list(str(number))
