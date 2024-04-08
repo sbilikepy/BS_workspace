@@ -1485,7 +1485,23 @@ def remove_duplicates(input_list):
 # for (let i = 0; i < title.length; i++) {
 #     console.log(title[i]);
 # }
-
+# function
+# calculateTaxes(income)
+# {
+#     let
+# taxAmount;
+#
+# if (income <= 1000)
+# {
+#     taxAmount = income * 0.02; // 2 %
+# } else if (income <= 10000) {
+# taxAmount = 1000 * 0.02 + (income - 1000) * 0.03; // 2 % for the first 1000, 3 % for the rest up to 10000
+# } else {
+# taxAmount = 1000 * 0.02 + 9000 * 0.03 + (income - 10000) * 0.05; // 2 % for the first 1000, 3 % for the next 9000, 5 % for the rest
+# }
+#
+# return taxAmount;
+# }
 def next_smaller(number: int) -> int:
     digits = list(str(number))
     i = len(digits) - 2
