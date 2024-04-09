@@ -1502,6 +1502,17 @@ def remove_duplicates(input_list):
 #
 # return taxAmount;
 # }
+
+# function printFromTo(input, start, end) {
+#   if (start < 0 || end >= input.length || start > end) {
+#     console.log("Invalid start or end index.");
+#     return;
+#   }
+#
+#   for (let i = start; i <= end; i++) {
+#     console.log(input[i]);
+#   }
+# }
 def next_smaller(number: int) -> int:
     digits = list(str(number))
     i = len(digits) - 2
