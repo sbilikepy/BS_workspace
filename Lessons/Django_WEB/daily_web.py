@@ -1513,6 +1513,25 @@ def remove_duplicates(input_list):
 #     console.log(input[i]);
 #   }
 # }
+
+# function
+# printBackwards(input, start, end)
+# {
+#
+# if (start < 0 | | end >= input.length | | start > end)
+# {
+#     console.log("Invalid start or end index.");
+# return;
+# }
+#
+# let
+# reversedSubstring = input.reverse()
+#
+# for (let i = 0; i < reversedSubstring.length; i++) {
+#     console.log(reversedSubstring[(i + start) % reversedSubstring.length]);
+# }
+#
+# }
 def next_smaller(number: int) -> int:
     digits = list(str(number))
     i = len(digits) - 2
