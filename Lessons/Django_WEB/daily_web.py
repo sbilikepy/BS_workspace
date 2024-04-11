@@ -1532,6 +1532,22 @@ def remove_duplicates(input_list):
 # }
 #
 # }
+# /**
+#  * This comment gives you autocompletion
+#  *
+#  * @param {string} input
+#  * @param {number} start
+#  * @param {number} end
+#  */
+# function printBackwards(input, start, end) {
+#   let substring = input.substring(start, end+1);
+#   let reversedStr = substring.split("").reverse().join("");
+#     for (let i = 0; i < reversedStr.length; i++) {
+#     console.log(reversedStr[i]);
+#   }
+# }
+
+
 def next_smaller(number: int) -> int:
     digits = list(str(number))
     i = len(digits) - 2
