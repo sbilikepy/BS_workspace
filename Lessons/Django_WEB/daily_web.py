@@ -1546,6 +1546,13 @@ def remove_duplicates(input_list):
 #     console.log(reversedStr[i]);
 #   }
 # }
+# function isSubstring(phrase, part) {
+#     return phrase.includes(part);
+# }
+#
+# // Example usage:
+# console.log(isSubstring("Hello, world!", "world")); // true
+# console.log(isSubstring("Hello, world!", "universe")); // false
 
 
 def next_smaller(number: int) -> int:
