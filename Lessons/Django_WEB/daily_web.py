@@ -1558,6 +1558,18 @@ def remove_duplicates(input_list):
 # for (let i = 0; i < title.length; i++) {
 #     console.log(title[i]);
 # }
+# /**
+#  * This comment gives you autocompletion
+#  *
+#  * @param {string} input
+#  */
+# function convertToUpperCase(input) {
+#   return input.toUpperCase()
+# }
+#
+
+
+
 
 
 def next_smaller(number: int) -> int:
