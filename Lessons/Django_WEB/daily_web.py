@@ -58,11 +58,8 @@ class PaginationHelper:
         self.items_per_page = items_per_page
 
         for i in range(0, (len(self.collection) // items_per_page) + 1):
-            self.content.append(
-                self.collection[
-                self.iter_index: self.iter_index + self.items_per_page:
-                ]
-            )
+            self.content.append(self.collection[
+                                self.iter_index: self.iter_index + self.items_per_page:])
             self.iter_index += items_per_page
 
     def item_count(self) -> int:
@@ -155,13 +152,9 @@ def valpa():
     result = ""
     for i in range(30):
         result += random.choice(
-            [
-                str(random.randint(1, 2)),
-                str(random.randint(1, 2)),
+            [str(random.randint(1, 2)), str(random.randint(1, 2)),
                 chr(random.randint(97, 122)).upper(),
-                chr(random.randint(97, 122)).lower(),
-            ]
-        )
+                chr(random.randint(97, 122)).lower(), ])
     return result
 
 
@@ -233,11 +226,8 @@ def buy_tofu(cost: int, box: str) -> list or str:
     print(cost)
     print(box)
     box = box.split()
-    result = [
-        box.count("mon"),
-        box.count("monme"),
-        box.count("mon") + box.count("monme") * 60,
-    ]
+    result = [box.count("mon"), box.count("monme"),
+        box.count("mon") + box.count("monme") * 60, ]
     min_amount = 0
     if result[1] > 0:
         for i in range(result[1]):
@@ -412,13 +402,11 @@ def pendulum(lst: list) -> list:
 
 
 def tv_remote(word: str) -> int:
-    all_rows = [
-        ["a", "b", "c", "d", "e", "1", "2", "3"],
+    all_rows = [["a", "b", "c", "d", "e", "1", "2", "3"],
         ["f", "g", "h", "i", "j", "4", "5", "6"],
         ["k", "l", "m", "n", "o", "7", "8", "9"],
         ["p", "q", "r", "s", "t", ".", "@", "0"],
-        ["u", "v", "w", "x", "y", "z", "_", "/"],
-    ]
+        ["u", "v", "w", "x", "y", "z", "_", "/"], ]
     steps = 0
     current_position = [0, 0]  # Починаємо з літери "a"
 
@@ -426,605 +414,81 @@ def tv_remote(word: str) -> int:
         for i, row in enumerate(all_rows):
             if letter in row:
                 letter_index = row.index(letter)
-                steps += (
-                        abs(current_position[0] - i)
-                        + abs(current_position[1] - letter_index)
-                        + 1
-                )  # +1 за крок OK
+                steps += (abs(current_position[0] - i) + abs(
+                    current_position[1] - letter_index) + 1)  # +1 за крок OK
                 current_position = [i, letter_index]
                 break
 
     return steps
 
 
-WORDS = [
-    "ACT",
-    "ADD",
-    "ALL",
-    "APE",
-    "AND",
-    "ANN",
-    "ANY",
-    "ANT",
-    "ARE",
-    "ART",
-    "ASS",
-    "BAD",
-    "BAR",
-    "BAT",
-    "BAY",
-    "BEE",
-    "BIG",
-    "BIT",
-    "BOB",
-    "BOY",
-    "BUN",
-    "BUT",
-    "CAN",
-    "CAR",
-    "CAT",
-    "COT",
-    "COW",
-    "CUT",
-    "DAD",
-    "DAY",
-    "DEW",
-    "DID",
-    "DIN",
-    "DOG",
-    "DON",
-    "DOT",
-    "DUD",
-    "EAR",
-    "EAT",
-    "EEL",
-    "EGG",
-    "ERR",
-    "EYE",
-    "FAG",
-    "FAR",
-    "FLY",
-    "FOR",
-    "FUN",
-    "FUR",
-    "GAY",
-    "GET",
-    "GOT",
-    "GUM",
-    "GUN",
-    "GUY",
-    "GUT",
-    "GYM",
-    "HAS",
-    "HAT",
-    "HER",
-    "HEY",
-    "HIM",
-    "HIS",
-    "HIT",
-    "HOW",
-    "HUG",
-    "HUN",
-    "ICE",
-    "INK",
-    "ITS",
-    "IVE",
-    "JAN",
-    "JET",
-    "JOB",
-    "JOT",
-    "JOY",
-    "KEY",
-    "LAP",
-    "LAY",
-    "LIE",
-    "LET",
-    "LOG",
-    "MAN",
-    "MAP",
-    "MAY",
-    "MEN",
-    "MOM",
-    "MUD",
-    "MUM",
-    "NAP",
-    "NEW",
-    "NOD",
-    "NOT",
-    "NOW",
-    "OAR",
-    "ODD",
-    "OFF",
-    "OLD",
-    "ONE",
-    "OUR",
-    "OUT",
-    "PAN",
-    "PAL",
-    "PAT",
-    "PAW",
-    "PEN",
-    "PET",
-    "PIG",
-    "PIT",
-    "POT",
-    "PRO",
-    "PUT",
-    "QUO",
-    "RAG",
-    "RAM",
-    "RAN",
-    "RAP",
-    "RAT",
-    "RED",
-    "RIP",
-    "ROD",
-    "ROT",
-    "RUN",
-    "RUT",
-    "SAT",
-    "SAW",
-    "SAY",
-    "SEA",
-    "SEE",
-    "SEX",
-    "SHE",
-    "SOY",
-    "SUN",
-    "SUX",
-    "TAN",
-    "TAT",
-    "TEA",
-    "THE",
-    "TIN",
-    "TIP",
-    "TIT",
-    "TON",
-    "TOP",
-    "TOO",
-    "TWO",
-    "URN",
-    "USE",
-    "VAN",
-    "VET",
-    "VIP",
-    "WAR",
-    "WAS",
-    "WAY",
-    "WED",
-    "WHO",
-    "WHY",
-    "WIN",
-    "WON",
-    "XXX",
-    "YAK",
-    "YAM",
-    "YAP",
-    "YOU",
-    "YUM",
-    "ZAP",
-    "ZIP",
-    "ZIT",
-    "ZOO",
-    "ABLE",
-    "ACED",
-    "AGOG",
-    "AHEM",
-    "AHOY",
-    "ALLY",
-    "AMEN",
-    "ANTI",
-    "ANTS",
-    "ANUS",
-    "APES",
-    "ARMY",
-    "ARSE",
-    "ARTY",
-    "AVID",
-    "AWED",
-    "BABY",
-    "BARS",
-    "BATS",
-    "BAYS",
-    "BEAR",
-    "BEES",
-    "BILL",
-    "BITE",
-    "BITS",
-    "BLOW",
-    "BLUE",
-    "BOLD",
-    "BONE",
-    "BOOB",
-    "BOOM",
-    "BOSS",
-    "BOYS",
-    "BUFF",
-    "BUNG",
-    "BUNS",
-    "BUMS",
-    "BURP",
-    "BUST",
-    "BUSY",
-    "BUZZ",
-    "CANS",
-    "CANT",
-    "CARS",
-    "CART",
-    "CATS",
-    "CHAP",
-    "CHIC",
-    "CHUM",
-    "CIAO",
-    "CLAP",
-    "COCK",
-    "CODE",
-    "COOL",
-    "COWS",
-    "COZY",
-    "CRAB",
-    "CREW",
-    "CURE",
-    "CULT",
-    "DADS",
-    "DAFT",
-    "DAWN",
-    "DAYS",
-    "DECK",
-    "DEED",
-    "DICK",
-    "DING",
-    "DOGS",
-    "DOTS",
-    "DOLL",
-    "DOLT",
-    "DONG",
-    "DOPE",
-    "DOWN",
-    "DRAW",
-    "DUCK",
-    "DUDE",
-    "DUMB",
-    "DUTY",
-    "EARL",
-    "EARN",
-    "EARS",
-    "EASY",
-    "EATS",
-    "EDGE",
-    "EELS",
-    "EGGS",
-    "ENVY",
-    "EPIC",
-    "EYES",
-    "FACE",
-    "FAGS",
-    "FANG",
-    "FARM",
-    "FART",
-    "FANS",
-    "FAST",
-    "FEAT",
-    "FEET",
-    "FISH",
-    "FIVE",
-    "FIZZ",
-    "FLAG",
-    "FLEW",
-    "FLIP",
-    "FLOW",
-    "FOOD",
-    "FORT",
-    "FUCK",
-    "FUND",
-    "GAIN",
-    "GEEK",
-    "GEMS",
-    "GIFT",
-    "GIRL",
-    "GIST",
-    "GIVE",
-    "GLEE",
-    "GLOW",
-    "GOLD",
-    "GOOD",
-    "GOSH",
-    "GRAB",
-    "GRIN",
-    "GRIT",
-    "GROT",
-    "GROW",
-    "GRUB",
-    "GUNS",
-    "GUSH",
-    "GYMS",
-    "HAIL",
-    "HAIR",
-    "HALO",
-    "HANG",
-    "HATS",
-    "HEAD",
-    "HEAL",
-    "HEIR",
-    "HELL",
-    "HELP",
-    "HERE",
-    "HERO",
-    "HERS",
-    "HIGH",
-    "HIRE",
-    "HITS",
-    "HOLY",
-    "HOPE",
-    "HOST",
-    "HUNK",
-    "HUGE",
-    "HUNG",
-    "HUNS",
-    "HURT",
-    "ICON",
-    "IDEA",
-    "IDLE",
-    "IDOL",
-    "IOTA",
-    "JAZZ",
-    "JERK",
-    "JESS",
-    "JETS",
-    "JINX",
-    "JOBS",
-    "JOHN",
-    "JOKE",
-    "JUMP",
-    "JUNE",
-    "JULY",
-    "JUNK",
-    "JUST",
-    "KATA",
-    "KEYS",
-    "KICK",
-    "KIND",
-    "KING",
-    "KISS",
-    "KONG",
-    "KNOB",
-    "KNOW",
-    "LARK",
-    "LATE",
-    "LEAN",
-    "LICE",
-    "LICK",
-    "LIKE",
-    "LION",
-    "LIVE",
-    "LOGS",
-    "LOCK",
-    "LONG",
-    "LOOK",
-    "LORD",
-    "LOVE",
-    "LUCK",
-    "LUSH",
-    "MAKE",
-    "MANY",
-    "MART",
-    "MATE",
-    "MAXI",
-    "MEEK",
-    "MIKE",
-    "MILD",
-    "MINT",
-    "MMMM",
-    "MOMS",
-    "MOOD",
-    "MOON",
-    "MOOT",
-    "MUCH",
-    "MUFF",
-    "MUMS",
-    "MUTT",
-    "NAPS",
-    "NAZI",
-    "NEAT",
-    "NECK",
-    "NEED",
-    "NEWS",
-    "NEXT",
-    "NICE",
-    "NICK",
-    "NOON",
-    "NOSE",
-    "NOTE",
-    "OARS",
-    "OATS",
-    "ONCE",
-    "ONLY",
-    "OPEN",
-    "ORGY",
-    "OVAL",
-    "OVER",
-    "PANS",
-    "PALS",
-    "PART",
-    "PAST",
-    "PATS",
-    "PAWS",
-    "PEAR",
-    "PERT",
-    "PENS",
-    "PETS",
-    "PHEW",
-    "PIPE",
-    "PIPS",
-    "PLAN",
-    "PLUM",
-    "PLUS",
-    "POET",
-    "POOF",
-    "POOP",
-    "POSH",
-    "POTS",
-    "PROS",
-    "PSST",
-    "PUKE",
-    "PUNK",
-    "PURE",
-    "PUSH",
-    "PUSS",
-    "QUAD",
-    "QUAK",
-    "QUID",
-    "QUIT",
-    "RANT",
-    "RAPE",
-    "RAPS",
-    "RAPT",
-    "RATE",
-    "RAMS",
-    "RATS",
-    "REAP",
-    "RICK",
-    "RING",
-    "RIPE",
-    "ROOT",
-    "ROSE",
-    "ROSY",
-    "ROTS",
-    "RUNT",
-    "RUTS",
-    "SAFE",
-    "SAGE",
-    "SANE",
-    "SAVE",
-    "SAWS",
-    "SEEK",
-    "SEXY",
-    "SHAG",
-    "SHIT",
-    "SICK",
-    "SIGH",
-    "SIRE",
-    "SLAG",
-    "SLIT",
-    "SLUT",
-    "SNAP",
-    "SNOG",
-    "SNUG",
-    "SOFT",
-    "SOON",
-    "SOUL",
-    "SOUP",
-    "SPRY",
-    "STIR",
-    "STUN",
-    "SUCK",
-    "SWAG",
-    "SWAY",
-    "TACT",
-    "TANK",
-    "TANS",
-    "THAT",
-    "THIS",
-    "TIME",
-    "TINS",
-    "TINY",
-    "TITS",
-    "TOES",
-    "TONS",
-    "TONY",
-    "TOPS",
-    "TOYS",
-    "UBER",
-    "URNS",
-    "USED",
-    "USER",
-    "USES",
-    "VAIN",
-    "VAMP",
-    "VARY",
-    "VEIN",
-    "VENT",
-    "VERY",
-    "VEST",
-    "VIEW",
-    "VIVA",
-    "VOLT",
-    "VOTE",
-    "WAFT",
-    "WAGE",
-    "WAKE",
-    "WALK",
-    "WALL",
-    "WANG",
-    "WANK",
-    "WANT",
-    "WARD",
-    "WARM",
-    "WARP",
-    "WARS",
-    "WART",
-    "WASH",
-    "WAVE",
-    "WEAR",
-    "WEDS",
-    "WEED",
-    "WEEN",
-    "WELD",
-    "WHAT",
-    "WHEE",
-    "WHEW",
-    "WHIP",
-    "WHIZ",
-    "WHOA",
-    "WIFE",
-    "WILL",
-    "WIND",
-    "WING",
-    "WINK",
-    "WINS",
-    "WIRE",
-    "WISH",
-    "WITH",
-    "WORD",
-    "WORK",
-    "WRAP",
-    "XMAN",
-    "XMEN",
-    "XRAY",
-    "XTRA",
-    "XXXX",
-    "YANK",
-    "YAKS",
-    "YAMS",
-    "YAPS",
-    "YARD",
-    "YARN",
-    "YELP",
-    "YERN",
-    "YOKE",
-    "YOLK",
-    "YULE",
-    "ZANY",
-    "ZAPS",
-    "ZIPS",
-    "ZITS",
-    "ZERO",
-    "ZOOM",
-    "ZOOS",
-]
+WORDS = ["ACT", "ADD", "ALL", "APE", "AND", "ANN", "ANY", "ANT", "ARE", "ART",
+    "ASS", "BAD", "BAR", "BAT", "BAY", "BEE", "BIG", "BIT", "BOB", "BOY",
+    "BUN", "BUT", "CAN", "CAR", "CAT", "COT", "COW", "CUT", "DAD", "DAY",
+    "DEW", "DID", "DIN", "DOG", "DON", "DOT", "DUD", "EAR", "EAT", "EEL",
+    "EGG", "ERR", "EYE", "FAG", "FAR", "FLY", "FOR", "FUN", "FUR", "GAY",
+    "GET", "GOT", "GUM", "GUN", "GUY", "GUT", "GYM", "HAS", "HAT", "HER",
+    "HEY", "HIM", "HIS", "HIT", "HOW", "HUG", "HUN", "ICE", "INK", "ITS",
+    "IVE", "JAN", "JET", "JOB", "JOT", "JOY", "KEY", "LAP", "LAY", "LIE",
+    "LET", "LOG", "MAN", "MAP", "MAY", "MEN", "MOM", "MUD", "MUM", "NAP",
+    "NEW", "NOD", "NOT", "NOW", "OAR", "ODD", "OFF", "OLD", "ONE", "OUR",
+    "OUT", "PAN", "PAL", "PAT", "PAW", "PEN", "PET", "PIG", "PIT", "POT",
+    "PRO", "PUT", "QUO", "RAG", "RAM", "RAN", "RAP", "RAT", "RED", "RIP",
+    "ROD", "ROT", "RUN", "RUT", "SAT", "SAW", "SAY", "SEA", "SEE", "SEX",
+    "SHE", "SOY", "SUN", "SUX", "TAN", "TAT", "TEA", "THE", "TIN", "TIP",
+    "TIT", "TON", "TOP", "TOO", "TWO", "URN", "USE", "VAN", "VET", "VIP",
+    "WAR", "WAS", "WAY", "WED", "WHO", "WHY", "WIN", "WON", "XXX", "YAK",
+    "YAM", "YAP", "YOU", "YUM", "ZAP", "ZIP", "ZIT", "ZOO", "ABLE", "ACED",
+    "AGOG", "AHEM", "AHOY", "ALLY", "AMEN", "ANTI", "ANTS", "ANUS", "APES",
+    "ARMY", "ARSE", "ARTY", "AVID", "AWED", "BABY", "BARS", "BATS", "BAYS",
+    "BEAR", "BEES", "BILL", "BITE", "BITS", "BLOW", "BLUE", "BOLD", "BONE",
+    "BOOB", "BOOM", "BOSS", "BOYS", "BUFF", "BUNG", "BUNS", "BUMS", "BURP",
+    "BUST", "BUSY", "BUZZ", "CANS", "CANT", "CARS", "CART", "CATS", "CHAP",
+    "CHIC", "CHUM", "CIAO", "CLAP", "COCK", "CODE", "COOL", "COWS", "COZY",
+    "CRAB", "CREW", "CURE", "CULT", "DADS", "DAFT", "DAWN", "DAYS", "DECK",
+    "DEED", "DICK", "DING", "DOGS", "DOTS", "DOLL", "DOLT", "DONG", "DOPE",
+    "DOWN", "DRAW", "DUCK", "DUDE", "DUMB", "DUTY", "EARL", "EARN", "EARS",
+    "EASY", "EATS", "EDGE", "EELS", "EGGS", "ENVY", "EPIC", "EYES", "FACE",
+    "FAGS", "FANG", "FARM", "FART", "FANS", "FAST", "FEAT", "FEET", "FISH",
+    "FIVE", "FIZZ", "FLAG", "FLEW", "FLIP", "FLOW", "FOOD", "FORT", "FUCK",
+    "FUND", "GAIN", "GEEK", "GEMS", "GIFT", "GIRL", "GIST", "GIVE", "GLEE",
+    "GLOW", "GOLD", "GOOD", "GOSH", "GRAB", "GRIN", "GRIT", "GROT", "GROW",
+    "GRUB", "GUNS", "GUSH", "GYMS", "HAIL", "HAIR", "HALO", "HANG", "HATS",
+    "HEAD", "HEAL", "HEIR", "HELL", "HELP", "HERE", "HERO", "HERS", "HIGH",
+    "HIRE", "HITS", "HOLY", "HOPE", "HOST", "HUNK", "HUGE", "HUNG", "HUNS",
+    "HURT", "ICON", "IDEA", "IDLE", "IDOL", "IOTA", "JAZZ", "JERK", "JESS",
+    "JETS", "JINX", "JOBS", "JOHN", "JOKE", "JUMP", "JUNE", "JULY", "JUNK",
+    "JUST", "KATA", "KEYS", "KICK", "KIND", "KING", "KISS", "KONG", "KNOB",
+    "KNOW", "LARK", "LATE", "LEAN", "LICE", "LICK", "LIKE", "LION", "LIVE",
+    "LOGS", "LOCK", "LONG", "LOOK", "LORD", "LOVE", "LUCK", "LUSH", "MAKE",
+    "MANY", "MART", "MATE", "MAXI", "MEEK", "MIKE", "MILD", "MINT", "MMMM",
+    "MOMS", "MOOD", "MOON", "MOOT", "MUCH", "MUFF", "MUMS", "MUTT", "NAPS",
+    "NAZI", "NEAT", "NECK", "NEED", "NEWS", "NEXT", "NICE", "NICK", "NOON",
+    "NOSE", "NOTE", "OARS", "OATS", "ONCE", "ONLY", "OPEN", "ORGY", "OVAL",
+    "OVER", "PANS", "PALS", "PART", "PAST", "PATS", "PAWS", "PEAR", "PERT",
+    "PENS", "PETS", "PHEW", "PIPE", "PIPS", "PLAN", "PLUM", "PLUS", "POET",
+    "POOF", "POOP", "POSH", "POTS", "PROS", "PSST", "PUKE", "PUNK", "PURE",
+    "PUSH", "PUSS", "QUAD", "QUAK", "QUID", "QUIT", "RANT", "RAPE", "RAPS",
+    "RAPT", "RATE", "RAMS", "RATS", "REAP", "RICK", "RING", "RIPE", "ROOT",
+    "ROSE", "ROSY", "ROTS", "RUNT", "RUTS", "SAFE", "SAGE", "SANE", "SAVE",
+    "SAWS", "SEEK", "SEXY", "SHAG", "SHIT", "SICK", "SIGH", "SIRE", "SLAG",
+    "SLIT", "SLUT", "SNAP", "SNOG", "SNUG", "SOFT", "SOON", "SOUL", "SOUP",
+    "SPRY", "STIR", "STUN", "SUCK", "SWAG", "SWAY", "TACT", "TANK", "TANS",
+    "THAT", "THIS", "TIME", "TINS", "TINY", "TITS", "TOES", "TONS", "TONY",
+    "TOPS", "TOYS", "UBER", "URNS", "USED", "USER", "USES", "VAIN", "VAMP",
+    "VARY", "VEIN", "VENT", "VERY", "VEST", "VIEW", "VIVA", "VOLT", "VOTE",
+    "WAFT", "WAGE", "WAKE", "WALK", "WALL", "WANG", "WANK", "WANT", "WARD",
+    "WARM", "WARP", "WARS", "WART", "WASH", "WAVE", "WEAR", "WEDS", "WEED",
+    "WEEN", "WELD", "WHAT", "WHEE", "WHEW", "WHIP", "WHIZ", "WHOA", "WIFE",
+    "WILL", "WIND", "WING", "WINK", "WINS", "WIRE", "WISH", "WITH", "WORD",
+    "WORK", "WRAP", "XMAN", "XMEN", "XRAY", "XTRA", "XXXX", "YANK", "YAKS",
+    "YAMS", "YAPS", "YARD", "YARN", "YELP", "YERN", "YOKE", "YOLK", "YULE",
+    "ZANY", "ZAPS", "ZIPS", "ZITS", "ZERO", "ZOOM", "ZOOS", ]
 
 
 def check_1800(string: str) -> set:
-    panel = {
-        "2": "ABC",
-        "3": "DEF",
-        "4": "GHI",
-        "5": "JKL",
-        "6": "MNO",
-        "7": "PQRS",
-        "8": "TUV",
-        "9": "WXYZ",
-    }
+    panel = {"2": "ABC", "3": "DEF", "4": "GHI", "5": "JKL", "6": "MNO",
+        "7": "PQRS", "8": "TUV", "9": "WXYZ", }
     codes = {str(i): [] for i in range(10_000)}
     for word in WORDS:
         code = ""
@@ -1041,10 +505,8 @@ def check_1800(string: str) -> set:
             for button in panel:
                 if letter in panel[button]:
                     code_from_string += button
-    codes_to_process = [
-        [code_from_string[:4:], code_from_string[4::]],
-        [code_from_string[:3:], code_from_string[3::]],
-    ]
+    codes_to_process = [[code_from_string[:4:], code_from_string[4::]],
+        [code_from_string[:3:], code_from_string[3::]], ]
     result = []
 
     for code_pair in codes_to_process:
@@ -1078,28 +540,19 @@ def count_ones(left: int, right: int) -> int:
     return sum(bin(i).count("1") for i in range(left, right + 1))
 
 
-def coupon_code(
-        entered_code: str,
-        correct_code: str,
-        current_date: str,
-        expiration_date: str,
-) -> bool:
+def coupon_code(entered_code: str, correct_code: str, current_date: str,
+        expiration_date: str, ) -> bool:
     from datetime import datetime
 
     if entered_code == correct_code:
         return datetime.strptime(expiration_date,
                                  "%B %d, %Y") >= datetime.strptime(
-            current_date, "%B %d, %Y"
-        )
+            current_date, "%B %d, %Y")
     return False
 
 
-coupon_code(
-    entered_code="123",
-    correct_code="123",
-    current_date="July 9, 2015",
-    expiration_date="July 9, 2015",
-)
+coupon_code(entered_code="123", correct_code="123",
+    current_date="July 9, 2015", expiration_date="July 9, 2015", )
 
 
 def count_and_say(number: int) -> str:
@@ -1154,8 +607,7 @@ def timer(func):
         func(*args)
 
         print(
-            f"Function {func.__name__} execution takes {datetime.datetime.now() - start} s."
-        )
+            f"Function {func.__name__} execution takes {datetime.datetime.now() - start} s.")
 
     return wrapper
 
@@ -1184,21 +636,8 @@ def middle_character(word: str) -> str:
 
 def roman_to_int(roman: str) -> int:
     result = 0
-    data = {
-        "I": 1,
-        "V": 5,
-        "X": 10,
-        "L": 50,
-        "C": 100,
-        "D": 500,
-        "M": 1000,
-        "IV": 4,
-        "IX": 9,
-        "XL": 40,
-        "XC": 90,
-        "CD": 400,
-        "CM": 900,
-    }
+    data = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000,
+        "IV": 4, "IX": 9, "XL": 40, "XC": 90, "CD": 400, "CM": 900, }
 
     prev_value = 0
 
@@ -1250,15 +689,9 @@ def equal_to_24(*cards) -> str:
         for card in it.permutations(cards):
             for prod in it.product("*/+-", repeat=3):
                 temp = template
-                for char in (
-                        ("Z", prod[0]),
-                        ("X", prod[1]),
-                        ("V", prod[2]),
-                        ("a", str(card[0])),
-                        ("b", str(card[1])),
-                        ("c", str(card[2])),
-                        ("d", str(card[3])),
-                ):
+                for char in (("Z", prod[0]), ("X", prod[1]), ("V", prod[2]),
+                             ("a", str(card[0])), ("b", str(card[1])),
+                             ("c", str(card[2])), ("d", str(card[3])),):
                     temp = temp.replace(*char)
                 try:
                     if eval(temp) == 24:
@@ -1313,8 +746,7 @@ def highest_and_lowest(string_of_nums: str) -> str:
 def test_highest_and_lowest(string_of_nums, max_min_string):
     assert highest_and_lowest(string_of_nums) == max_min_string, (
         f"Function 'highest_and_lowest' should return '{max_min_string}' "
-        f"when string is '{string_of_nums}'"
-    )
+        f"when string is '{string_of_nums}'")
 
 
 def pascal_triangle_row(row_index: int) -> list:
@@ -1342,9 +774,8 @@ def calculate_profit(**kwargs) -> int:
 
 
 def find_number(start: int, stop: int, string: str) -> list:
-    code = Counter(
-        char for number in range(start, stop + 1) for char in str(number)
-    ) - Counter(string)
+    code = Counter(char for number in range(start, stop + 1) for char in
+                   str(number)) - Counter(string)
     return [number for number in range(start, stop + 1) if
             Counter(str(number)) == code]
 
@@ -1432,6 +863,7 @@ from collections import OrderedDict
 
 def remove_duplicates(input_list):
     return list(OrderedDict.fromkeys(input_list))
+
 
 # js dail:
 # for (let i = 3; i <= 11; i++) {
@@ -1567,9 +999,6 @@ def remove_duplicates(input_list):
 #   return input.toUpperCase()
 # }
 #
-
-
-
 
 
 def next_smaller(number: int) -> int:
@@ -1835,6 +1264,7 @@ def longest_common_subsequence(s1, s2):
 
     return lcs
 
+
 # function factorial(N) {
 #     if (N === 0 || N === 1) {
 #         return 1;
@@ -1988,20 +1418,18 @@ def calc_sar(all_sessions: list[list[float]]) -> str:
             averages_for_greens.append(greens / prospects)
             averages_for_blues.append(blues / prospects)
 
-        print(
-            f"{'*' * 30}\n"
-            f"{ore_amount} saronite session\n"
-            f"{prospects} prospects\n"
-            f"greens expected -> {greens_expect} | got {greens} ||| "
-            f"{round(greens / prospects, 4)} per 1 prospect"
-            f" | "
-            f"difference "
-            f"{int(greens - greens_expect)}\n"
-            f"blues expected -> {blues_expect} | got {blues} ||| "
-            f"{round(blues / prospects, 4)} per 1 prospect"
-            f" | difference {int(blues - blues_expect)}"
-            f"\n{'*' * 30}\n"
-        )
+        print(f"{'*' * 30}\n"
+              f"{ore_amount} saronite session\n"
+              f"{prospects} prospects\n"
+              f"greens expected -> {greens_expect} | got {greens} ||| "
+              f"{round(greens / prospects, 4)} per 1 prospect"
+              f" | "
+              f"difference "
+              f"{int(greens - greens_expect)}\n"
+              f"blues expected -> {blues_expect} | got {blues} ||| "
+              f"{round(blues / prospects, 4)} per 1 prospect"
+              f" | difference {int(blues - blues_expect)}"
+              f"\n{'*' * 30}\n")
     print(f"TOTAL:\n"
           f"Ore amount: {ore_total_amount}\n"
           f"Gold spent: {int(gold_spent)}\n"
@@ -2015,18 +1443,32 @@ def calc_sar(all_sessions: list[list[float]]) -> str:
           f"{round(blue_amount * (4.5 * 5 + 65) / 6)}"
           f"\nPROFIT = "
 
-          f"{round(((green_amount * (1.25 * 5 + 0.5) / 6) + (blue_amount * (4.5 * 5 + 65) / 6)) - gold_spent)
-          }"
-          )
+          f"{round(((green_amount * (1.25 * 5 + 0.5) / 6) + (blue_amount * (4.5 * 5 + 65) / 6)) - gold_spent)}")
 
 
-calc_sar(  # ORE, GREENS, BLUES
-    [
-        [1455, 314, 66],
-        [7925, 802 + 940, 185 + 218],
-        [2260, 494, 111],
-        [3640, 798, 178],
+# calc_sar(  # ORE, GREENS, BLUES
+#     [
+#         [1455, 314, 66],
+#         [7925, 802 + 940, 185 + 218],
+#         [2260, 494, 111],
+#         [3640, 798, 178],
+#
+#     ]
+# )
 
-    ]
-)
+CLASS_SPEC_VALID_COMBINATIONS = {"Death Knight": {"Blood", "Frost", "Unholy"},
+    "Druid": {"Balance", "Feral dps", "Feral tank", "Restoration"},  # !
+    "Hunter": {"Beast Mastery", "Marksmanship", "Survival"},
+    "Mage": {"Arcane", "Fire", "Frost"},  # !
+    "Paladin": {"Holy", "Protection", "Retribution"},  # !
+    "Priest": {"Discipline", "Holy", "Shadow"},  # !  # !
+    "Rogue": {"Assassination", "Combat", "Subtlety"},
+    "Shaman": {"Elemental", "Enhancement", "Restoration"},  # !
+    "Warlock": {"Affliction", "Demonology", "Destruction"},
+    "Warrior": {"Arms", "Fury", "Protection"},  # !
+}
 
+print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
+# function getPosition(text, word) {
+#     return text.indexOf(word);
+# }
