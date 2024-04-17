@@ -1492,3 +1492,21 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # //
 # return count;
 # //}
+# function
+# countLetters(input)
+# {
+#     const
+# letterRegex = / [a - zA - Z] /;
+# let
+# count = 0;
+#
+# for (let i = 0; i < input.length; i++)
+# {
+# if (letterRegex.test(input[i]))
+# {
+#     count + +;
+# }
+# }
+#
+# return count;
+# }
