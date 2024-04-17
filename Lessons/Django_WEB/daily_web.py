@@ -1472,3 +1472,23 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # function getPosition(text, word) {
 #     return text.indexOf(word);
 # }
+# function
+# countConsonants(input)
+# {
+# // const
+# consonantsSet = new
+# Set('bcdfghjklmnpqrstvwxyz');
+# // let
+# count = 0;
+#
+# // for (let i = 0; i < input.length; i++) {
+#                                           // if (
+#         consonantsSet.has(input[i].toLowerCase()) & & input[i].toLowerCase() !=
+# = 'y') {
+# // count++;
+# //}
+# //}
+#
+# //
+# return count;
+# //}
