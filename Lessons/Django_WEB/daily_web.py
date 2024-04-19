@@ -1510,3 +1510,6 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 #
 # return count;
 # }
+# function convertToLowerCase(input) {
+#   return input.toLowerCase();
+# }
