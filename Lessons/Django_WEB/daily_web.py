@@ -1513,3 +1513,12 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # function convertToLowerCase(input) {
 #   return input.toLowerCase();
 # }
+# function calculateTaxes(income) {
+#     if (income <= 1000) {
+#         return income * 0.02;
+#     } else if (income <= 10000) {
+#         return income * 0.03;
+#     } else {
+#         return income * 0.05;
+#     }
+# }
