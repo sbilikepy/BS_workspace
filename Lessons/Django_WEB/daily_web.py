@@ -1537,3 +1537,14 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 #
 #   return sum;
 # }
+#
+# /**
+#  * Returns the largest number from an array of numbers.
+#  *
+#  * @param {number[]} numbers - An array of numbers.
+#  * @returns {number} The largest number.
+#  */
+# function getLargestNumber(numbers) {
+#
+#     return Math.max(...numbers);
+# }
