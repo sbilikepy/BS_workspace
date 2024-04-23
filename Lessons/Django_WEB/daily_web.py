@@ -1548,3 +1548,8 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 #
 #     return Math.max(...numbers);
 # }
+
+# function splitWords(text) {
+#     // Using a regular expression to split the text into words
+#     return text.match(/\w+/g) || [];
+# }
