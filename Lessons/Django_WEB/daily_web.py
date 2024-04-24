@@ -1553,3 +1553,6 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 #     // Using a regular expression to split the text into words
 #     return text.match(/\w+/g) || [];
 # }
+# function joinWords(words, glue) {
+#     return words.join(glue);
+# }
