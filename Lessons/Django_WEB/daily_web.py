@@ -1556,3 +1556,6 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # function joinWords(words, glue) {
 #     return words.join(glue);
 # }
+# function checkWord(words, word) {
+#     return words.includes(word);
+# }
