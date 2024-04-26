@@ -1559,3 +1559,7 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # function checkWord(words, word) {
 #     return words.includes(word);
 # }
+# function getFirstPosition(values, value) {
+#   const index = values.indexOf(value);
+#   return index !== -1 ? index : -1;
+# }
