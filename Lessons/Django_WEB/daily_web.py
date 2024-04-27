@@ -1563,3 +1563,24 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 #   const index = values.indexOf(value);
 #   return index !== -1 ? index : -1;
 # }
+# function sumArray(arr) {
+#     let sum = 0;
+#     for (let i = 0; i < arr.length; i++) {
+#
+#         if (typeof arr[i] === 'number' && !isNaN(arr[i])) {
+#
+#             if (arr[i] < 0) {
+#                 sum -= arr[i];
+#             } else {
+#                 sum += arr[i];
+#             }
+#         }
+#     }
+#
+#
+#     return sum;
+# }
+#
+# console.log(sumArray([1, 2, 3])); // Output: 6
+# console.log(sumArray([-1, -2, -3])); // Output: 6
+#
