@@ -153,8 +153,8 @@ def valpa():
     for i in range(30):
         result += random.choice(
             [str(random.randint(1, 2)), str(random.randint(1, 2)),
-                chr(random.randint(97, 122)).upper(),
-                chr(random.randint(97, 122)).lower(), ])
+             chr(random.randint(97, 122)).upper(),
+             chr(random.randint(97, 122)).lower(), ])
     return result
 
 
@@ -227,7 +227,7 @@ def buy_tofu(cost: int, box: str) -> list or str:
     print(box)
     box = box.split()
     result = [box.count("mon"), box.count("monme"),
-        box.count("mon") + box.count("monme") * 60, ]
+              box.count("mon") + box.count("monme") * 60, ]
     min_amount = 0
     if result[1] > 0:
         for i in range(result[1]):
@@ -403,10 +403,10 @@ def pendulum(lst: list) -> list:
 
 def tv_remote(word: str) -> int:
     all_rows = [["a", "b", "c", "d", "e", "1", "2", "3"],
-        ["f", "g", "h", "i", "j", "4", "5", "6"],
-        ["k", "l", "m", "n", "o", "7", "8", "9"],
-        ["p", "q", "r", "s", "t", ".", "@", "0"],
-        ["u", "v", "w", "x", "y", "z", "_", "/"], ]
+                ["f", "g", "h", "i", "j", "4", "5", "6"],
+                ["k", "l", "m", "n", "o", "7", "8", "9"],
+                ["p", "q", "r", "s", "t", ".", "@", "0"],
+                ["u", "v", "w", "x", "y", "z", "_", "/"], ]
     steps = 0
     current_position = [0, 0]  # Починаємо з літери "a"
 
@@ -423,72 +423,117 @@ def tv_remote(word: str) -> int:
 
 
 WORDS = ["ACT", "ADD", "ALL", "APE", "AND", "ANN", "ANY", "ANT", "ARE", "ART",
-    "ASS", "BAD", "BAR", "BAT", "BAY", "BEE", "BIG", "BIT", "BOB", "BOY",
-    "BUN", "BUT", "CAN", "CAR", "CAT", "COT", "COW", "CUT", "DAD", "DAY",
-    "DEW", "DID", "DIN", "DOG", "DON", "DOT", "DUD", "EAR", "EAT", "EEL",
-    "EGG", "ERR", "EYE", "FAG", "FAR", "FLY", "FOR", "FUN", "FUR", "GAY",
-    "GET", "GOT", "GUM", "GUN", "GUY", "GUT", "GYM", "HAS", "HAT", "HER",
-    "HEY", "HIM", "HIS", "HIT", "HOW", "HUG", "HUN", "ICE", "INK", "ITS",
-    "IVE", "JAN", "JET", "JOB", "JOT", "JOY", "KEY", "LAP", "LAY", "LIE",
-    "LET", "LOG", "MAN", "MAP", "MAY", "MEN", "MOM", "MUD", "MUM", "NAP",
-    "NEW", "NOD", "NOT", "NOW", "OAR", "ODD", "OFF", "OLD", "ONE", "OUR",
-    "OUT", "PAN", "PAL", "PAT", "PAW", "PEN", "PET", "PIG", "PIT", "POT",
-    "PRO", "PUT", "QUO", "RAG", "RAM", "RAN", "RAP", "RAT", "RED", "RIP",
-    "ROD", "ROT", "RUN", "RUT", "SAT", "SAW", "SAY", "SEA", "SEE", "SEX",
-    "SHE", "SOY", "SUN", "SUX", "TAN", "TAT", "TEA", "THE", "TIN", "TIP",
-    "TIT", "TON", "TOP", "TOO", "TWO", "URN", "USE", "VAN", "VET", "VIP",
-    "WAR", "WAS", "WAY", "WED", "WHO", "WHY", "WIN", "WON", "XXX", "YAK",
-    "YAM", "YAP", "YOU", "YUM", "ZAP", "ZIP", "ZIT", "ZOO", "ABLE", "ACED",
-    "AGOG", "AHEM", "AHOY", "ALLY", "AMEN", "ANTI", "ANTS", "ANUS", "APES",
-    "ARMY", "ARSE", "ARTY", "AVID", "AWED", "BABY", "BARS", "BATS", "BAYS",
-    "BEAR", "BEES", "BILL", "BITE", "BITS", "BLOW", "BLUE", "BOLD", "BONE",
-    "BOOB", "BOOM", "BOSS", "BOYS", "BUFF", "BUNG", "BUNS", "BUMS", "BURP",
-    "BUST", "BUSY", "BUZZ", "CANS", "CANT", "CARS", "CART", "CATS", "CHAP",
-    "CHIC", "CHUM", "CIAO", "CLAP", "COCK", "CODE", "COOL", "COWS", "COZY",
-    "CRAB", "CREW", "CURE", "CULT", "DADS", "DAFT", "DAWN", "DAYS", "DECK",
-    "DEED", "DICK", "DING", "DOGS", "DOTS", "DOLL", "DOLT", "DONG", "DOPE",
-    "DOWN", "DRAW", "DUCK", "DUDE", "DUMB", "DUTY", "EARL", "EARN", "EARS",
-    "EASY", "EATS", "EDGE", "EELS", "EGGS", "ENVY", "EPIC", "EYES", "FACE",
-    "FAGS", "FANG", "FARM", "FART", "FANS", "FAST", "FEAT", "FEET", "FISH",
-    "FIVE", "FIZZ", "FLAG", "FLEW", "FLIP", "FLOW", "FOOD", "FORT", "FUCK",
-    "FUND", "GAIN", "GEEK", "GEMS", "GIFT", "GIRL", "GIST", "GIVE", "GLEE",
-    "GLOW", "GOLD", "GOOD", "GOSH", "GRAB", "GRIN", "GRIT", "GROT", "GROW",
-    "GRUB", "GUNS", "GUSH", "GYMS", "HAIL", "HAIR", "HALO", "HANG", "HATS",
-    "HEAD", "HEAL", "HEIR", "HELL", "HELP", "HERE", "HERO", "HERS", "HIGH",
-    "HIRE", "HITS", "HOLY", "HOPE", "HOST", "HUNK", "HUGE", "HUNG", "HUNS",
-    "HURT", "ICON", "IDEA", "IDLE", "IDOL", "IOTA", "JAZZ", "JERK", "JESS",
-    "JETS", "JINX", "JOBS", "JOHN", "JOKE", "JUMP", "JUNE", "JULY", "JUNK",
-    "JUST", "KATA", "KEYS", "KICK", "KIND", "KING", "KISS", "KONG", "KNOB",
-    "KNOW", "LARK", "LATE", "LEAN", "LICE", "LICK", "LIKE", "LION", "LIVE",
-    "LOGS", "LOCK", "LONG", "LOOK", "LORD", "LOVE", "LUCK", "LUSH", "MAKE",
-    "MANY", "MART", "MATE", "MAXI", "MEEK", "MIKE", "MILD", "MINT", "MMMM",
-    "MOMS", "MOOD", "MOON", "MOOT", "MUCH", "MUFF", "MUMS", "MUTT", "NAPS",
-    "NAZI", "NEAT", "NECK", "NEED", "NEWS", "NEXT", "NICE", "NICK", "NOON",
-    "NOSE", "NOTE", "OARS", "OATS", "ONCE", "ONLY", "OPEN", "ORGY", "OVAL",
-    "OVER", "PANS", "PALS", "PART", "PAST", "PATS", "PAWS", "PEAR", "PERT",
-    "PENS", "PETS", "PHEW", "PIPE", "PIPS", "PLAN", "PLUM", "PLUS", "POET",
-    "POOF", "POOP", "POSH", "POTS", "PROS", "PSST", "PUKE", "PUNK", "PURE",
-    "PUSH", "PUSS", "QUAD", "QUAK", "QUID", "QUIT", "RANT", "RAPE", "RAPS",
-    "RAPT", "RATE", "RAMS", "RATS", "REAP", "RICK", "RING", "RIPE", "ROOT",
-    "ROSE", "ROSY", "ROTS", "RUNT", "RUTS", "SAFE", "SAGE", "SANE", "SAVE",
-    "SAWS", "SEEK", "SEXY", "SHAG", "SHIT", "SICK", "SIGH", "SIRE", "SLAG",
-    "SLIT", "SLUT", "SNAP", "SNOG", "SNUG", "SOFT", "SOON", "SOUL", "SOUP",
-    "SPRY", "STIR", "STUN", "SUCK", "SWAG", "SWAY", "TACT", "TANK", "TANS",
-    "THAT", "THIS", "TIME", "TINS", "TINY", "TITS", "TOES", "TONS", "TONY",
-    "TOPS", "TOYS", "UBER", "URNS", "USED", "USER", "USES", "VAIN", "VAMP",
-    "VARY", "VEIN", "VENT", "VERY", "VEST", "VIEW", "VIVA", "VOLT", "VOTE",
-    "WAFT", "WAGE", "WAKE", "WALK", "WALL", "WANG", "WANK", "WANT", "WARD",
-    "WARM", "WARP", "WARS", "WART", "WASH", "WAVE", "WEAR", "WEDS", "WEED",
-    "WEEN", "WELD", "WHAT", "WHEE", "WHEW", "WHIP", "WHIZ", "WHOA", "WIFE",
-    "WILL", "WIND", "WING", "WINK", "WINS", "WIRE", "WISH", "WITH", "WORD",
-    "WORK", "WRAP", "XMAN", "XMEN", "XRAY", "XTRA", "XXXX", "YANK", "YAKS",
-    "YAMS", "YAPS", "YARD", "YARN", "YELP", "YERN", "YOKE", "YOLK", "YULE",
-    "ZANY", "ZAPS", "ZIPS", "ZITS", "ZERO", "ZOOM", "ZOOS", ]
+         "ASS", "BAD", "BAR", "BAT", "BAY", "BEE", "BIG", "BIT", "BOB", "BOY",
+         "BUN", "BUT", "CAN", "CAR", "CAT", "COT", "COW", "CUT", "DAD", "DAY",
+         "DEW", "DID", "DIN", "DOG", "DON", "DOT", "DUD", "EAR", "EAT", "EEL",
+         "EGG", "ERR", "EYE", "FAG", "FAR", "FLY", "FOR", "FUN", "FUR", "GAY",
+         "GET", "GOT", "GUM", "GUN", "GUY", "GUT", "GYM", "HAS", "HAT", "HER",
+         "HEY", "HIM", "HIS", "HIT", "HOW", "HUG", "HUN", "ICE", "INK", "ITS",
+         "IVE", "JAN", "JET", "JOB", "JOT", "JOY", "KEY", "LAP", "LAY", "LIE",
+         "LET", "LOG", "MAN", "MAP", "MAY", "MEN", "MOM", "MUD", "MUM", "NAP",
+         "NEW", "NOD", "NOT", "NOW", "OAR", "ODD", "OFF", "OLD", "ONE", "OUR",
+         "OUT", "PAN", "PAL", "PAT", "PAW", "PEN", "PET", "PIG", "PIT", "POT",
+         "PRO", "PUT", "QUO", "RAG", "RAM", "RAN", "RAP", "RAT", "RED", "RIP",
+         "ROD", "ROT", "RUN", "RUT", "SAT", "SAW", "SAY", "SEA", "SEE", "SEX",
+         "SHE", "SOY", "SUN", "SUX", "TAN", "TAT", "TEA", "THE", "TIN", "TIP",
+         "TIT", "TON", "TOP", "TOO", "TWO", "URN", "USE", "VAN", "VET", "VIP",
+         "WAR", "WAS", "WAY", "WED", "WHO", "WHY", "WIN", "WON", "XXX", "YAK",
+         "YAM", "YAP", "YOU", "YUM", "ZAP", "ZIP", "ZIT", "ZOO", "ABLE",
+         "ACED",
+         "AGOG", "AHEM", "AHOY", "ALLY", "AMEN", "ANTI", "ANTS", "ANUS",
+         "APES",
+         "ARMY", "ARSE", "ARTY", "AVID", "AWED", "BABY", "BARS", "BATS",
+         "BAYS",
+         "BEAR", "BEES", "BILL", "BITE", "BITS", "BLOW", "BLUE", "BOLD",
+         "BONE",
+         "BOOB", "BOOM", "BOSS", "BOYS", "BUFF", "BUNG", "BUNS", "BUMS",
+         "BURP",
+         "BUST", "BUSY", "BUZZ", "CANS", "CANT", "CARS", "CART", "CATS",
+         "CHAP",
+         "CHIC", "CHUM", "CIAO", "CLAP", "COCK", "CODE", "COOL", "COWS",
+         "COZY",
+         "CRAB", "CREW", "CURE", "CULT", "DADS", "DAFT", "DAWN", "DAYS",
+         "DECK",
+         "DEED", "DICK", "DING", "DOGS", "DOTS", "DOLL", "DOLT", "DONG",
+         "DOPE",
+         "DOWN", "DRAW", "DUCK", "DUDE", "DUMB", "DUTY", "EARL", "EARN",
+         "EARS",
+         "EASY", "EATS", "EDGE", "EELS", "EGGS", "ENVY", "EPIC", "EYES",
+         "FACE",
+         "FAGS", "FANG", "FARM", "FART", "FANS", "FAST", "FEAT", "FEET",
+         "FISH",
+         "FIVE", "FIZZ", "FLAG", "FLEW", "FLIP", "FLOW", "FOOD", "FORT",
+         "FUCK",
+         "FUND", "GAIN", "GEEK", "GEMS", "GIFT", "GIRL", "GIST", "GIVE",
+         "GLEE",
+         "GLOW", "GOLD", "GOOD", "GOSH", "GRAB", "GRIN", "GRIT", "GROT",
+         "GROW",
+         "GRUB", "GUNS", "GUSH", "GYMS", "HAIL", "HAIR", "HALO", "HANG",
+         "HATS",
+         "HEAD", "HEAL", "HEIR", "HELL", "HELP", "HERE", "HERO", "HERS",
+         "HIGH",
+         "HIRE", "HITS", "HOLY", "HOPE", "HOST", "HUNK", "HUGE", "HUNG",
+         "HUNS",
+         "HURT", "ICON", "IDEA", "IDLE", "IDOL", "IOTA", "JAZZ", "JERK",
+         "JESS",
+         "JETS", "JINX", "JOBS", "JOHN", "JOKE", "JUMP", "JUNE", "JULY",
+         "JUNK",
+         "JUST", "KATA", "KEYS", "KICK", "KIND", "KING", "KISS", "KONG",
+         "KNOB",
+         "KNOW", "LARK", "LATE", "LEAN", "LICE", "LICK", "LIKE", "LION",
+         "LIVE",
+         "LOGS", "LOCK", "LONG", "LOOK", "LORD", "LOVE", "LUCK", "LUSH",
+         "MAKE",
+         "MANY", "MART", "MATE", "MAXI", "MEEK", "MIKE", "MILD", "MINT",
+         "MMMM",
+         "MOMS", "MOOD", "MOON", "MOOT", "MUCH", "MUFF", "MUMS", "MUTT",
+         "NAPS",
+         "NAZI", "NEAT", "NECK", "NEED", "NEWS", "NEXT", "NICE", "NICK",
+         "NOON",
+         "NOSE", "NOTE", "OARS", "OATS", "ONCE", "ONLY", "OPEN", "ORGY",
+         "OVAL",
+         "OVER", "PANS", "PALS", "PART", "PAST", "PATS", "PAWS", "PEAR",
+         "PERT",
+         "PENS", "PETS", "PHEW", "PIPE", "PIPS", "PLAN", "PLUM", "PLUS",
+         "POET",
+         "POOF", "POOP", "POSH", "POTS", "PROS", "PSST", "PUKE", "PUNK",
+         "PURE",
+         "PUSH", "PUSS", "QUAD", "QUAK", "QUID", "QUIT", "RANT", "RAPE",
+         "RAPS",
+         "RAPT", "RATE", "RAMS", "RATS", "REAP", "RICK", "RING", "RIPE",
+         "ROOT",
+         "ROSE", "ROSY", "ROTS", "RUNT", "RUTS", "SAFE", "SAGE", "SANE",
+         "SAVE",
+         "SAWS", "SEEK", "SEXY", "SHAG", "SHIT", "SICK", "SIGH", "SIRE",
+         "SLAG",
+         "SLIT", "SLUT", "SNAP", "SNOG", "SNUG", "SOFT", "SOON", "SOUL",
+         "SOUP",
+         "SPRY", "STIR", "STUN", "SUCK", "SWAG", "SWAY", "TACT", "TANK",
+         "TANS",
+         "THAT", "THIS", "TIME", "TINS", "TINY", "TITS", "TOES", "TONS",
+         "TONY",
+         "TOPS", "TOYS", "UBER", "URNS", "USED", "USER", "USES", "VAIN",
+         "VAMP",
+         "VARY", "VEIN", "VENT", "VERY", "VEST", "VIEW", "VIVA", "VOLT",
+         "VOTE",
+         "WAFT", "WAGE", "WAKE", "WALK", "WALL", "WANG", "WANK", "WANT",
+         "WARD",
+         "WARM", "WARP", "WARS", "WART", "WASH", "WAVE", "WEAR", "WEDS",
+         "WEED",
+         "WEEN", "WELD", "WHAT", "WHEE", "WHEW", "WHIP", "WHIZ", "WHOA",
+         "WIFE",
+         "WILL", "WIND", "WING", "WINK", "WINS", "WIRE", "WISH", "WITH",
+         "WORD",
+         "WORK", "WRAP", "XMAN", "XMEN", "XRAY", "XTRA", "XXXX", "YANK",
+         "YAKS",
+         "YAMS", "YAPS", "YARD", "YARN", "YELP", "YERN", "YOKE", "YOLK",
+         "YULE",
+         "ZANY", "ZAPS", "ZIPS", "ZITS", "ZERO", "ZOOM", "ZOOS", ]
 
 
 def check_1800(string: str) -> set:
     panel = {"2": "ABC", "3": "DEF", "4": "GHI", "5": "JKL", "6": "MNO",
-        "7": "PQRS", "8": "TUV", "9": "WXYZ", }
+             "7": "PQRS", "8": "TUV", "9": "WXYZ", }
     codes = {str(i): [] for i in range(10_000)}
     for word in WORDS:
         code = ""
@@ -506,7 +551,7 @@ def check_1800(string: str) -> set:
                 if letter in panel[button]:
                     code_from_string += button
     codes_to_process = [[code_from_string[:4:], code_from_string[4::]],
-        [code_from_string[:3:], code_from_string[3::]], ]
+                        [code_from_string[:3:], code_from_string[3::]], ]
     result = []
 
     for code_pair in codes_to_process:
@@ -541,7 +586,7 @@ def count_ones(left: int, right: int) -> int:
 
 
 def coupon_code(entered_code: str, correct_code: str, current_date: str,
-        expiration_date: str, ) -> bool:
+                expiration_date: str, ) -> bool:
     from datetime import datetime
 
     if entered_code == correct_code:
@@ -552,7 +597,7 @@ def coupon_code(entered_code: str, correct_code: str, current_date: str,
 
 
 coupon_code(entered_code="123", correct_code="123",
-    current_date="July 9, 2015", expiration_date="July 9, 2015", )
+            current_date="July 9, 2015", expiration_date="July 9, 2015", )
 
 
 def count_and_say(number: int) -> str:
@@ -637,7 +682,7 @@ def middle_character(word: str) -> str:
 def roman_to_int(roman: str) -> int:
     result = 0
     data = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000,
-        "IV": 4, "IX": 9, "XL": 40, "XC": 90, "CD": 400, "CM": 900, }
+            "IV": 4, "IX": 9, "XL": 40, "XC": 90, "CD": 400, "CM": 900, }
 
     prev_value = 0
 
@@ -840,9 +885,10 @@ def most_common_character(input_string):
     return most_common_chars[0] if most_common_chars else None
 
 
-input_string = "hello world"
-result = most_common_character(input_string)
-print("Most common character:", result)
+#
+# input_string = "hello world"
+# result = most_common_character(input_string)
+# print("Most common character:", result)
 
 # JS TASK
 # function canBuyBeer(age) {
@@ -1001,268 +1047,268 @@ def remove_duplicates(input_list):
 #
 
 
-def next_smaller(number: int) -> int:
-    digits = list(str(number))
-    i = len(digits) - 2
-    while i >= 0 and digits[i] <= digits[i + 1]:
-        i -= 1
-    if i == -1:
-        return -1
-    j = len(digits) - 1
-    while digits[j] >= digits[i]:
-        j -= 1
-    digits[i], digits[j] = digits[j], digits[i]
-    digits[i + 1:] = reversed(digits[i + 1:])
-    result = int("".join(digits))
-    return result
-
-
-def intersection_of_two(nums1: list, nums2: list) -> list:
-    data = list(set(nums1)) + list(set(nums2))
-    data_dict = {key: data.count(key) for key in data}
-    result = [num for num in data_dict if data_dict[num] == 2]
-    result.sort()
-    return result
-
-
-def performant_smallest(nums: list, n: int) -> list:
-    condition = nums.copy()
-    condition.sort()
-    condition = condition[:n:]
-    result = []
-    for num in nums:
-        if num in condition:
-            result.append(num)
-            condition.remove(num)
-    print(result)
-    return result
-
-
-def performant_smallest(nums: list, n: int) -> list:
-    if n == len(nums):
-        return nums
-    try:
-        target = (list(set(nums))[n:n + 1:])[0]
-    except Exception:
-        target = sorted(nums)[-1]
-
-    result = []
-    for i in nums:
-        if i < target:
-            result.append(i)
-            if len(result) == n:
-                break
-    return result
-
-
-def climb_stairs(number: int) -> int:
-    if number <= 2:
-        return number
-    first, second = 1, 2
-    for _ in range(3, number + 1):
-        third = first + second
-        first, second = second, third
-    return second
-
-
-def choose_best_sum(limit: int, number_of_towns: int,
-                    list_of_distances: list) -> int:
-    from itertools import combinations
-    best_sum = None
-    for towns in combinations(list_of_distances, number_of_towns):
-        current_sum = sum(towns)
-        if current_sum <= limit:
-            if best_sum is None or current_sum > best_sum:
-                best_sum = current_sum
-    return best_sum
-
-
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
-
-def kth_smallest(root, k):
-    stack = []
-    while root or stack:
-        while root:
-            stack.append(root)
-            root = root.left
-        root = stack.pop()
-        k -= 1
-        if k == 0:
-            break
-        root = root.right
-    return root.val
-
-
-class Node:
-    def __init__(self, data):
-        self.left = None
-        self.right = None
-        self.data = data
-
-    def insert(self, data):
-
-        if self.data:
-            if data < self.data:
-                if self.left is None:
-                    self.left = Node(data)
-                else:
-                    self.left.insert(data)
-            elif data > self.data:
-                if self.right is None:
-                    self.right = Node(data)
-                else:
-                    self.right.insert(data)
-        else:
-            self.data = data
-
-    def PrintTree(self):
-        if self.left:
-            self.left.PrintTree()
-        print(self.data),
-        if self.right:
-            self.right.PrintTree()
-
-
-class BstNode:
-
-    def __init__(self, key):
-        self.key = key
-        self.right = None
-        self.left = None
-
-    def insert(self, key):
-        if self.key == key:
-            return
-        elif self.key < key:
-            if self.right is None:
-                self.right = BstNode(key)
-            else:
-                self.right.insert(key)
-        else:  # self.key > key
-            if self.left is None:
-                self.left = BstNode(key)
-            else:
-                self.left.insert(key)
-
-    def display(self):
-        lines, *_ = self._display_aux()
-        for line in lines:
-            print(line)
-
-    def _display_aux(self):
-        """Returns list of strings, width, height, and horizontal coordinate of the root."""
-        # No child.
-        if self.right is None and self.left is None:
-            line = '%s' % self.key
-            width = len(line)
-            height = 1
-            middle = width // 2
-            return [line], width, height, middle
-
-        # Only left child.
-        if self.right is None:
-            lines, n, p, x = self.left._display_aux()
-            s = '%s' % self.key
-            u = len(s)
-            first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s
-            second_line = x * ' ' + '/' + (n - x - 1 + u) * ' '
-            shifted_lines = [line + u * ' ' for line in lines]
-            return [first_line,
-                    second_line] + shifted_lines, n + u, p + 2, n + u // 2
-
-        # Only right child.
-        if self.left is None:
-            lines, n, p, x = self.right._display_aux()
-            s = '%s' % self.key
-            u = len(s)
-            first_line = s + x * '_' + (n - x) * ' '
-            second_line = (u + x) * ' ' + '\\' + (n - x - 1) * ' '
-            shifted_lines = [u * ' ' + line for line in lines]
-            return [first_line,
-                    second_line] + shifted_lines, n + u, p + 2, u // 2
-
-        # Two children.
-        left, n, p, x = self.left._display_aux()
-        right, m, q, y = self.right._display_aux()
-        s = '%s' % self.key
-        u = len(s)
-        first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (
-                m - y) * ' '
-        second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (
-                m - y - 1) * ' '
-        if p < q:
-            left += [n * ' '] * (q - p)
-        elif q < p:
-            right += [m * ' '] * (p - q)
-        zipped_lines = zip(left, right)
-        lines = [first_line, second_line] + [a + u * ' ' + b for a, b in
-                                             zipped_lines]
-        return lines, n + m + u, max(p, q) + 2, n + u // 2
-
-
-def date_generated(d1, d2):
-    import datetime
-    import random
-    start = datetime.datetime.strptime(d1, '%d-%m-%Y')
-    end = datetime.datetime.strptime(d2, '%d-%m-%Y')
-    intervalo = [start + datetime.timedelta(x) for x in
-                 range(int((end - start).days) + 1)]
-    datas = []
-    for data in intervalo:
-        datas.append(data.strftime('%d-%m-%Y'))
-    print(*random.sample(datas, 1))
-
-
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        if not prices:
-            return 0
-
-        best_deal = 0
-        min_price = prices[0]
-        for i in range(1, len(prices)):
-            best_deal = max(best_deal, prices[i] - min_price)
-            min_price = min(min_price, prices[i])
-        return best_deal
-
-
-def is_prime(number: int) -> bool:
-    result = lambda number: number > 1 and all(
-        number % i != 0 for i in range(2, int(number ** 0.5) + 1))
-    return result(number)
-
-
-def longest_common_subsequence(s1, s2):
-    m = len(s1)
-    n = len(s2)
-
-    dp = [[0] * (n + 1) for _ in range(m + 1)]
-
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if s1[i - 1] == s2[j - 1]:
-                dp[i][j] = dp[i - 1][j - 1] + 1
-            else:
-                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-
-    lcs = ""
-    i, j = m, n
-    while i > 0 and j > 0:
-        if s1[i - 1] == s2[j - 1]:
-            lcs = s1[i - 1] + lcs
-            i -= 1
-            j -= 1
-        elif dp[i - 1][j] > dp[i][j - 1]:
-            i -= 1
-        else:
-            j -= 1
-
-    return lcs
+# def next_smaller(number: int) -> int:
+#     digits = list(str(number))
+#     i = len(digits) - 2
+#     while i >= 0 and digits[i] <= digits[i + 1]:
+#         i -= 1
+#     if i == -1:
+#         return -1
+#     j = len(digits) - 1
+#     while digits[j] >= digits[i]:
+#         j -= 1
+#     digits[i], digits[j] = digits[j], digits[i]
+#     digits[i + 1:] = reversed(digits[i + 1:])
+#     result = int("".join(digits))
+#     return result
+#
+#
+# def intersection_of_two(nums1: list, nums2: list) -> list:
+#     data = list(set(nums1)) + list(set(nums2))
+#     data_dict = {key: data.count(key) for key in data}
+#     result = [num for num in data_dict if data_dict[num] == 2]
+#     result.sort()
+#     return result
+#
+#
+# def performant_smallest(nums: list, n: int) -> list:
+#     condition = nums.copy()
+#     condition.sort()
+#     condition = condition[:n:]
+#     result = []
+#     for num in nums:
+#         if num in condition:
+#             result.append(num)
+#             condition.remove(num)
+#     print(result)
+#     return result
+#
+#
+# def performant_smallest(nums: list, n: int) -> list:
+#     if n == len(nums):
+#         return nums
+#     try:
+#         target = (list(set(nums))[n:n + 1:])[0]
+#     except Exception:
+#         target = sorted(nums)[-1]
+#
+#     result = []
+#     for i in nums:
+#         if i < target:
+#             result.append(i)
+#             if len(result) == n:
+#                 break
+#     return result
+#
+#
+# def climb_stairs(number: int) -> int:
+#     if number <= 2:
+#         return number
+#     first, second = 1, 2
+#     for _ in range(3, number + 1):
+#         third = first + second
+#         first, second = second, third
+#     return second
+#
+#
+# def choose_best_sum(limit: int, number_of_towns: int,
+#                     list_of_distances: list) -> int:
+#     from itertools import combinations
+#     best_sum = None
+#     for towns in combinations(list_of_distances, number_of_towns):
+#         current_sum = sum(towns)
+#         if current_sum <= limit:
+#             if best_sum is None or current_sum > best_sum:
+#                 best_sum = current_sum
+#     return best_sum
+#
+#
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+#
+#
+# def kth_smallest(root, k):
+#     stack = []
+#     while root or stack:
+#         while root:
+#             stack.append(root)
+#             root = root.left
+#         root = stack.pop()
+#         k -= 1
+#         if k == 0:
+#             break
+#         root = root.right
+#     return root.val
+#
+#
+# class Node:
+#     def __init__(self, data):
+#         self.left = None
+#         self.right = None
+#         self.data = data
+#
+#     def insert(self, data):
+#
+#         if self.data:
+#             if data < self.data:
+#                 if self.left is None:
+#                     self.left = Node(data)
+#                 else:
+#                     self.left.insert(data)
+#             elif data > self.data:
+#                 if self.right is None:
+#                     self.right = Node(data)
+#                 else:
+#                     self.right.insert(data)
+#         else:
+#             self.data = data
+#
+#     def PrintTree(self):
+#         if self.left:
+#             self.left.PrintTree()
+#         print(self.data),
+#         if self.right:
+#             self.right.PrintTree()
+#
+#
+# class BstNode:
+#
+#     def __init__(self, key):
+#         self.key = key
+#         self.right = None
+#         self.left = None
+#
+#     def insert(self, key):
+#         if self.key == key:
+#             return
+#         elif self.key < key:
+#             if self.right is None:
+#                 self.right = BstNode(key)
+#             else:
+#                 self.right.insert(key)
+#         else:  # self.key > key
+#             if self.left is None:
+#                 self.left = BstNode(key)
+#             else:
+#                 self.left.insert(key)
+#
+#     def display(self):
+#         lines, *_ = self._display_aux()
+#         for line in lines:
+#             print(line)
+#
+#     def _display_aux(self):
+#         """Returns list of strings, width, height, and horizontal coordinate of the root."""
+#         # No child.
+#         if self.right is None and self.left is None:
+#             line = '%s' % self.key
+#             width = len(line)
+#             height = 1
+#             middle = width // 2
+#             return [line], width, height, middle
+#
+#         # Only left child.
+#         if self.right is None:
+#             lines, n, p, x = self.left._display_aux()
+#             s = '%s' % self.key
+#             u = len(s)
+#             first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s
+#             second_line = x * ' ' + '/' + (n - x - 1 + u) * ' '
+#             shifted_lines = [line + u * ' ' for line in lines]
+#             return [first_line,
+#                     second_line] + shifted_lines, n + u, p + 2, n + u // 2
+#
+#         # Only right child.
+#         if self.left is None:
+#             lines, n, p, x = self.right._display_aux()
+#             s = '%s' % self.key
+#             u = len(s)
+#             first_line = s + x * '_' + (n - x) * ' '
+#             second_line = (u + x) * ' ' + '\\' + (n - x - 1) * ' '
+#             shifted_lines = [u * ' ' + line for line in lines]
+#             return [first_line,
+#                     second_line] + shifted_lines, n + u, p + 2, u // 2
+#
+#         # Two children.
+#         left, n, p, x = self.left._display_aux()
+#         right, m, q, y = self.right._display_aux()
+#         s = '%s' % self.key
+#         u = len(s)
+#         first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (
+#                 m - y) * ' '
+#         second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (
+#                 m - y - 1) * ' '
+#         if p < q:
+#             left += [n * ' '] * (q - p)
+#         elif q < p:
+#             right += [m * ' '] * (p - q)
+#         zipped_lines = zip(left, right)
+#         lines = [first_line, second_line] + [a + u * ' ' + b for a, b in
+#                                              zipped_lines]
+#         return lines, n + m + u, max(p, q) + 2, n + u // 2
+#
+#
+# def date_generated(d1, d2):
+#     import datetime
+#     import random
+#     start = datetime.datetime.strptime(d1, '%d-%m-%Y')
+#     end = datetime.datetime.strptime(d2, '%d-%m-%Y')
+#     intervalo = [start + datetime.timedelta(x) for x in
+#                  range(int((end - start).days) + 1)]
+#     datas = []
+#     for data in intervalo:
+#         datas.append(data.strftime('%d-%m-%Y'))
+#     print(*random.sample(datas, 1))
+#
+#
+# class Solution:
+#     def maxProfit(self, prices: List[int]) -> int:
+#         if not prices:
+#             return 0
+#
+#         best_deal = 0
+#         min_price = prices[0]
+#         for i in range(1, len(prices)):
+#             best_deal = max(best_deal, prices[i] - min_price)
+#             min_price = min(min_price, prices[i])
+#         return best_deal
+#
+#
+# def is_prime(number: int) -> bool:
+#     result = lambda number: number > 1 and all(
+#         number % i != 0 for i in range(2, int(number ** 0.5) + 1))
+#     return result(number)
+#
+#
+# def longest_common_subsequence(s1, s2):
+#     m = len(s1)
+#     n = len(s2)
+#
+#     dp = [[0] * (n + 1) for _ in range(m + 1)]
+#
+#     for i in range(1, m + 1):
+#         for j in range(1, n + 1):
+#             if s1[i - 1] == s2[j - 1]:
+#                 dp[i][j] = dp[i - 1][j - 1] + 1
+#             else:
+#                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+#
+#     lcs = ""
+#     i, j = m, n
+#     while i > 0 and j > 0:
+#         if s1[i - 1] == s2[j - 1]:
+#             lcs = s1[i - 1] + lcs
+#             i -= 1
+#             j -= 1
+#         elif dp[i - 1][j] > dp[i][j - 1]:
+#             i -= 1
+#         else:
+#             j -= 1
+#
+#     return lcs
 
 
 # function factorial(N) {
@@ -1278,197 +1324,197 @@ def longest_common_subsequence(s1, s2):
 # }
 
 
-class Room:
-    def __init__(self, description):
-        self.description = description
-        self.doors = {}
-
-    def add_door(self, direction, room):
-        self.doors[direction] = room
-
-
-class Player:
-    def __init__(self, current_room):
-        self.current_room = current_room
-
-    def move(self, direction):
-        if direction in self.current_room.doors:
-            self.current_room = self.current_room.doors[direction]
-            print("You move to", self.current_room.description)
-        else:
-            print("There is no door in that direction!")
-
-
-def choose_word():
-    words = ['apple', 'banana', 'orange', 'grape', 'pineapple']
-    return random.choice(words)
-
-
-def longest_consecutive_subsequence(nums):
-    nums_set = set(nums)
-    longest_seq_length = 0
-    longest_seq_start = None
-
-    for num in nums_set:
-        if num - 1 not in nums_set:
-            current_num = num
-            current_seq_length = 1
-
-            while current_num + 1 in nums_set:
-                current_num += 1
-                current_seq_length += 1
-
-            if current_seq_length > longest_seq_length:
-                longest_seq_length = current_seq_length
-                longest_seq_start = num
-
-    longest_seq = [num for num in range(longest_seq_start,
-                                        longest_seq_start + longest_seq_length)]
-
-    return longest_seq, longest_seq_length
-
-
-def display_word(word, guessed_letters):
-    display = ''
-    for letter in word:
-        if letter in guessed_letters:
-            display += letter
-        else:
-            display += '_'
-    return display
-
-
-def main():
-    word = choose_word()
-    guessed_letters = []
-    attempts = 6
-
-    print("Welcome to the Word Guessing Game!")
-    print("Try to guess the word one letter at a time.")
-
-    while True:
-        print("\nWord:", display_word(word, guessed_letters))
-        print("Attempts left:", attempts)
-        guess = input("Enter a letter: ").lower()
-
-        if guess in guessed_letters:
-            print("You've already guessed that letter.")
-        else:
-            guessed_letters.append(guess)
-            if guess not in word:
-                attempts -= 1
-                print("Incorrect guess!")
-                if attempts == 0:
-                    print("You've run out of attempts. The word was:", word)
-                    break
-            else:
-                print("Correct guess!")
-
-        if set(word) == set(guessed_letters):
-            print("Congratulations! You've guessed the word correctly:", word)
-            break
-
-
-def max_subarray_sum(nums: list[int]):
-    max_sum = float('-inf')
-    current_sum = 0
-
-    for num in nums:
-        current_sum = max(num, current_sum + num)
-        max_sum = max(max_sum, current_sum)
-
-    return max_sum
-
-
-def get_reversed_color(hex_color: str) -> str:
-    if not isinstance(hex_color, str) or len(hex_color) > 6 or not all(
-            c in "0123456789ABCDEFabcdef" for c in hex_color):
-        raise ValueError("Invalid hex-color string")
-
-    hex_color = hex_color.upper().zfill(6)
-    reversed_color = "".join([hex(15 - int(c, 16))[2:] for c in hex_color])
-    return "#" + reversed_color.upper()
-
-
-import json
-
-
-def convert_to_json(data_list):
-    return json.dumps(data_list)
-
-
-def calc_sar(all_sessions: list[list[float]]) -> str:
-    ORE_PICE = 0.75
-    ore_total_amount = 0
-    gold_spent = 0
-    green_amount = 0
-    blue_amount = 0
-    averages_for_greens = []
-    averages_for_blues = []
-    for session in all_sessions:
-        ore_amount, greens, blues = session
-        ore_total_amount += ore_amount
-        prospects = int(ore_amount / 5)
-        greens_expect = prospects * 1.08
-        blues_expect = prospects * 0.21
-        gold_spent += ore_amount * ORE_PICE
-        green_amount += greens
-        blue_amount += blues
-        for i in range(int(ore_amount / 100)):
-            averages_for_greens.append(greens / prospects)
-            averages_for_blues.append(blues / prospects)
-
-        print(f"{'*' * 30}\n"
-              f"{ore_amount} saronite session\n"
-              f"{prospects} prospects\n"
-              f"greens expected -> {greens_expect} | got {greens} ||| "
-              f"{round(greens / prospects, 4)} per 1 prospect"
-              f" | "
-              f"difference "
-              f"{int(greens - greens_expect)}\n"
-              f"blues expected -> {blues_expect} | got {blues} ||| "
-              f"{round(blues / prospects, 4)} per 1 prospect"
-              f" | difference {int(blues - blues_expect)}"
-              f"\n{'*' * 30}\n")
-    print(f"TOTAL:\n"
-          f"Ore amount: {ore_total_amount}\n"
-          f"Gold spent: {int(gold_spent)}\n"
-          f"AVG green %: {sum(averages_for_greens) / len(averages_for_greens)}\n"
-          f"AVG blue %: {sum(averages_for_blues) / len(averages_for_blues)}\n"
-          f"Greens profit = "
-
-          f"{green_amount} * {(1.25 * 5 + 0.5) / 6} = "
-          f"{int(green_amount * (2 * 5 + 0.5) / 6)}\nBlues profit = "
-          f"{blue_amount} * {round((4.5 * 5 + 65) / 6, 2)} = "
-          f"{round(blue_amount * (4.5 * 5 + 65) / 6)}"
-          f"\nPROFIT = "
-
-          f"{round(((green_amount * (1.25 * 5 + 0.5) / 6) + (blue_amount * (4.5 * 5 + 65) / 6)) - gold_spent)}")
-
-
-# calc_sar(  # ORE, GREENS, BLUES
-#     [
-#         [1455, 314, 66],
-#         [7925, 802 + 940, 185 + 218],
-#         [2260, 494, 111],
-#         [3640, 798, 178],
+# class Room:
+#     def __init__(self, description):
+#         self.description = description
+#         self.doors = {}
 #
-#     ]
-# )
-
-CLASS_SPEC_VALID_COMBINATIONS = {"Death Knight": {"Blood", "Frost", "Unholy"},
-    "Druid": {"Balance", "Feral dps", "Feral tank", "Restoration"},  # !
-    "Hunter": {"Beast Mastery", "Marksmanship", "Survival"},
-    "Mage": {"Arcane", "Fire", "Frost"},  # !
-    "Paladin": {"Holy", "Protection", "Retribution"},  # !
-    "Priest": {"Discipline", "Holy", "Shadow"},  # !  # !
-    "Rogue": {"Assassination", "Combat", "Subtlety"},
-    "Shaman": {"Elemental", "Enhancement", "Restoration"},  # !
-    "Warlock": {"Affliction", "Demonology", "Destruction"},
-    "Warrior": {"Arms", "Fury", "Protection"},  # !
-}
-
-print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
+#     def add_door(self, direction, room):
+#         self.doors[direction] = room
+#
+#
+# class Player:
+#     def __init__(self, current_room):
+#         self.current_room = current_room
+#
+#     def move(self, direction):
+#         if direction in self.current_room.doors:
+#             self.current_room = self.current_room.doors[direction]
+#             print("You move to", self.current_room.description)
+#         else:
+#             print("There is no door in that direction!")
+#
+#
+# def choose_word():
+#     words = ['apple', 'banana', 'orange', 'grape', 'pineapple']
+#     return random.choice(words)
+#
+#
+# def longest_consecutive_subsequence(nums):
+#     nums_set = set(nums)
+#     longest_seq_length = 0
+#     longest_seq_start = None
+#
+#     for num in nums_set:
+#         if num - 1 not in nums_set:
+#             current_num = num
+#             current_seq_length = 1
+#
+#             while current_num + 1 in nums_set:
+#                 current_num += 1
+#                 current_seq_length += 1
+#
+#             if current_seq_length > longest_seq_length:
+#                 longest_seq_length = current_seq_length
+#                 longest_seq_start = num
+#
+#     longest_seq = [num for num in range(longest_seq_start,
+#                                         longest_seq_start + longest_seq_length)]
+#
+#     return longest_seq, longest_seq_length
+#
+#
+# def display_word(word, guessed_letters):
+#     display = ''
+#     for letter in word:
+#         if letter in guessed_letters:
+#             display += letter
+#         else:
+#             display += '_'
+#     return display
+#
+#
+# def main():
+#     word = choose_word()
+#     guessed_letters = []
+#     attempts = 6
+#
+#     print("Welcome to the Word Guessing Game!")
+#     print("Try to guess the word one letter at a time.")
+#
+#     while True:
+#         print("\nWord:", display_word(word, guessed_letters))
+#         print("Attempts left:", attempts)
+#         guess = input("Enter a letter: ").lower()
+#
+#         if guess in guessed_letters:
+#             print("You've already guessed that letter.")
+#         else:
+#             guessed_letters.append(guess)
+#             if guess not in word:
+#                 attempts -= 1
+#                 print("Incorrect guess!")
+#                 if attempts == 0:
+#                     print("You've run out of attempts. The word was:", word)
+#                     break
+#             else:
+#                 print("Correct guess!")
+#
+#         if set(word) == set(guessed_letters):
+#             print("Congratulations! You've guessed the word correctly:", word)
+#             break
+#
+#
+# def max_subarray_sum(nums: list[int]):
+#     max_sum = float('-inf')
+#     current_sum = 0
+#
+#     for num in nums:
+#         current_sum = max(num, current_sum + num)
+#         max_sum = max(max_sum, current_sum)
+#
+#     return max_sum
+#
+#
+# def get_reversed_color(hex_color: str) -> str:
+#     if not isinstance(hex_color, str) or len(hex_color) > 6 or not all(
+#             c in "0123456789ABCDEFabcdef" for c in hex_color):
+#         raise ValueError("Invalid hex-color string")
+#
+#     hex_color = hex_color.upper().zfill(6)
+#     reversed_color = "".join([hex(15 - int(c, 16))[2:] for c in hex_color])
+#     return "#" + reversed_color.upper()
+#
+#
+# import json
+#
+#
+# def convert_to_json(data_list):
+#     return json.dumps(data_list)
+#
+#
+# def calc_sar(all_sessions: list[list[float]]) -> str:
+#     ORE_PICE = 0.75
+#     ore_total_amount = 0
+#     gold_spent = 0
+#     green_amount = 0
+#     blue_amount = 0
+#     averages_for_greens = []
+#     averages_for_blues = []
+#     for session in all_sessions:
+#         ore_amount, greens, blues = session
+#         ore_total_amount += ore_amount
+#         prospects = int(ore_amount / 5)
+#         greens_expect = prospects * 1.08
+#         blues_expect = prospects * 0.21
+#         gold_spent += ore_amount * ORE_PICE
+#         green_amount += greens
+#         blue_amount += blues
+#         for i in range(int(ore_amount / 100)):
+#             averages_for_greens.append(greens / prospects)
+#             averages_for_blues.append(blues / prospects)
+#
+#         print(f"{'*' * 30}\n"
+#               f"{ore_amount} saronite session\n"
+#               f"{prospects} prospects\n"
+#               f"greens expected -> {greens_expect} | got {greens} ||| "
+#               f"{round(greens / prospects, 4)} per 1 prospect"
+#               f" | "
+#               f"difference "
+#               f"{int(greens - greens_expect)}\n"
+#               f"blues expected -> {blues_expect} | got {blues} ||| "
+#               f"{round(blues / prospects, 4)} per 1 prospect"
+#               f" | difference {int(blues - blues_expect)}"
+#               f"\n{'*' * 30}\n")
+#     print(f"TOTAL:\n"
+#           f"Ore amount: {ore_total_amount}\n"
+#           f"Gold spent: {int(gold_spent)}\n"
+#           f"AVG green %: {sum(averages_for_greens) / len(averages_for_greens)}\n"
+#           f"AVG blue %: {sum(averages_for_blues) / len(averages_for_blues)}\n"
+#           f"Greens profit = "
+#
+#           f"{green_amount} * {(1.25 * 5 + 0.5) / 6} = "
+#           f"{int(green_amount * (2 * 5 + 0.5) / 6)}\nBlues profit = "
+#           f"{blue_amount} * {round((4.5 * 5 + 65) / 6, 2)} = "
+#           f"{round(blue_amount * (4.5 * 5 + 65) / 6)}"
+#           f"\nPROFIT = "
+#
+#           f"{round(((green_amount * (1.25 * 5 + 0.5) / 6) + (blue_amount * (4.5 * 5 + 65) / 6)) - gold_spent)}")
+#
+#
+# # calc_sar(  # ORE, GREENS, BLUES
+# #     [
+# #         [1455, 314, 66],
+# #         [7925, 802 + 940, 185 + 218],
+# #         [2260, 494, 111],
+# #         [3640, 798, 178],
+# #
+# #     ]
+# # )
+#
+# CLASS_SPEC_VALID_COMBINATIONS = {"Death Knight": {"Blood", "Frost", "Unholy"},
+#     "Druid": {"Balance", "Feral dps", "Feral tank", "Restoration"},  # !
+#     "Hunter": {"Beast Mastery", "Marksmanship", "Survival"},
+#     "Mage": {"Arcane", "Fire", "Frost"},  # !
+#     "Paladin": {"Holy", "Protection", "Retribution"},  # !
+#     "Priest": {"Discipline", "Holy", "Shadow"},  # !  # !
+#     "Rogue": {"Assassination", "Combat", "Subtlety"},
+#     "Shaman": {"Elemental", "Enhancement", "Restoration"},  # !
+#     "Warlock": {"Affliction", "Demonology", "Destruction"},
+#     "Warrior": {"Arms", "Fury", "Protection"},  # !
+# }
+#
+# print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # function getPosition(text, word) {
 #     return text.indexOf(word);
 # }
@@ -1584,3 +1630,15 @@ print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # console.log(sumArray([1, 2, 3])); // Output: 6
 # console.log(sumArray([-1, -2, -3])); // Output: 6
 #
+
+def remove_duplicates(sorted_numbers: list) -> int:
+    print(sorted_numbers)
+    for num in sorted_numbers:
+        if sorted_numbers.count(num) > 1:
+            for _ in range(sorted_numbers.count(num) - 1):
+                sorted_numbers.remove(num)
+    return len(sorted_numbers)
+
+
+
+remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
