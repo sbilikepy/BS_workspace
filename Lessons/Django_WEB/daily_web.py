@@ -1642,3 +1642,17 @@ def remove_duplicates(sorted_numbers: list) -> int:
 
 
 remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
+
+
+# function checkNumber(n) {
+#     let results = [];
+#     results.push(n > 0);
+#     results.push(n % 2 === 0);
+#     results.push(n % 10 === 0);
+#     return results;
+# }
+#
+# console.log(checkNumber(3));   // [true, false, false]
+# console.log(checkNumber(10));  // [true, true, true]
+# console.log(checkNumber(0));   // [false, true, true]
+# console.log(checkNumber(-1));  // [false, false, false]
