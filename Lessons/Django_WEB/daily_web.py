@@ -1656,3 +1656,12 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 # console.log(checkNumber(10));  // [true, true, true]
 # console.log(checkNumber(0));   // [false, true, true]
 # console.log(checkNumber(-1));  // [false, false, false]
+
+
+# function createArray(N) {
+#   if (N === 0) {
+#     return [];
+#   } else {
+#     return Array.from({ length: N }, (_, index) => index + 1);
+#   }
+# }
