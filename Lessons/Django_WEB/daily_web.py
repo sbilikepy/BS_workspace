@@ -1674,3 +1674,29 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 #   }
 #   return sum;
 # }
+
+# function
+# combineArrays(first, second)
+# {
+#
+# if (first.length !== second.length)
+# {
+#     throw
+# new
+# Error("Arrays must be of equal length");
+# }
+#
+# const
+# result = [];
+#
+# for (let i = 0; i < first.length; i++)
+# {
+#     result.push(first[i] + second[i]);
+# }
+#
+# return result;
+# }
+#
+# console.log(combineArrays([1, 2, 5], [3, 6, 1])); // [4, 8, 6]
+# console.log(combineArrays([1], [6])); // [7]
+# console.log(combineArrays([], [])); // []
