@@ -1700,3 +1700,6 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 # console.log(combineArrays([1, 2, 5], [3, 6, 1])); // [4, 8, 6]
 # console.log(combineArrays([1], [6])); // [7]
 # console.log(combineArrays([], [])); // []
+# function doublePower(currentPowers) {
+#   return currentPowers.map(power => power * 2);
+# }
