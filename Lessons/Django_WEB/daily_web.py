@@ -1703,3 +1703,19 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 # function doublePower(currentPowers) {
 #   return currentPowers.map(power => power * 2);
 # }
+
+
+# function
+# makeStickers(detailsCount, robotPart)
+# {
+#     const
+# stickers = [];
+#
+# for (let i = 1; i <= detailsCount; i++)
+# {
+#     stickers.push(`${robotPart}
+# detail  # ${i}`);
+# }
+#
+# return stickers;
+# }
