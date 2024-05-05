@@ -1719,3 +1719,11 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 #
 # return stickers;
 # }
+
+#
+# function decryptMessage(message) {
+#   const characters = message.split('');
+#   const reversedCharacters = characters.reverse();
+#   const decryptedMessage = reversedCharacters.join('');
+#   return decryptedMessage;
+# }
