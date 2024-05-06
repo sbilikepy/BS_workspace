@@ -1727,3 +1727,7 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 #   const decryptedMessage = reversedCharacters.join('');
 #   return decryptedMessage;
 # }
+
+function getDrinks(numberOfGuests) {
+  return numberOfGuests * (numberOfGuests + 1) / 2;
+}
