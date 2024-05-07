@@ -1717,7 +1717,7 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 # detail  # ${i}`);
 # }
 #
-# return stickers;
+# return stickers;www
 # }
 
 #
@@ -1728,6 +1728,16 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 #   return decryptedMessage;
 # }
 
-function getDrinks(numberOfGuests) {
-  return numberOfGuests * (numberOfGuests + 1) / 2;
-}
+# function getDrinks(numberOfGuests) {
+#   return numberOfGuests * (numberOfGuests + 1) / 2;
+# }
+
+
+# function isSorted(boxNumbers) {
+#   for (let i = 0; i < boxNumbers.length - 1; i++) {
+#     if (boxNumbers[i] > boxNumbers[i + 1]) {
+#       return false;
+#     }
+#   }
+#   return true;
+# }
