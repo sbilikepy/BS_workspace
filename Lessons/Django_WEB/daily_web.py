@@ -1741,3 +1741,39 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 #   }
 #   return true;
 # }
+#
+# function
+# getLocation(coordinates, commands)
+# {
+#     let
+# x = coordinates[0];
+# let
+# y = coordinates[1];
+#
+# for (let i = 0; i < commands.length; i++)
+# {
+#     switch(commands[i])
+# {
+#     case
+# 'forward':
+# y += 1;
+# break;
+# case
+# 'back':
+# y -= 1;
+# break;
+# case
+# 'right':
+# x += 1;
+# break;
+# case
+# 'left':
+# x -= 1;
+# break;
+# default:
+# break;
+# }
+# }
+#
+# return [x, y];
+# }
