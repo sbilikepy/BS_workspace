@@ -1777,3 +1777,13 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 #
 # return [x, y];
 # }
+
+
+# /**
+#  * This comment gives you autocompletion
+#  *
+#  * @param {string} doc
+#  */
+# function removeVowels(doc) {
+#   return doc.replace(/[aeiouyAEIOUY]/g, '');
+# }
