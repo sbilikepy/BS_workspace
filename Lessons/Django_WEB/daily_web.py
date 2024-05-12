@@ -1787,15 +1787,26 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 # function removeVowels(doc) {
 #   return doc.replace(/[aeiouyAEIOUY]/g, '');
 # }
-function compareRobots(firstRobotResults, secondRobotResults) {
-    const totalWeightFirstRobot = firstRobotResults.reduce((acc, curr) => acc + curr, 0);
-    const totalWeightSecondRobot = secondRobotResults.reduce((acc, curr) => acc + curr, 0);
+# function compareRobots(firstRobotResults, secondRobotResults) {
+#     const totalWeightFirstRobot = firstRobotResults.reduce((acc, curr) => acc + curr, 0);
+#     const totalWeightSecondRobot = secondRobotResults.reduce((acc, curr) => acc + curr, 0);
+#
+#     if (totalWeightFirstRobot > totalWeightSecondRobot) {
+#         return 'First robot for sale!';
+#     } else if (totalWeightSecondRobot > totalWeightFirstRobot) {
+#         return 'Second robot for sale!';
+#     } else {
+#         return 'Both robots for sale!';
+#     }
+# }
 
-    if (totalWeightFirstRobot > totalWeightSecondRobot) {
-        return 'First robot for sale!';
-    } else if (totalWeightSecondRobot > totalWeightFirstRobot) {
-        return 'Second robot for sale!';
-    } else {
-        return 'Both robots for sale!';
-    }
+
+function getDrinksWithStep(numberOfGuests, step) {
+  let sum = 0;
+
+  for (let i = 1; i <= numberOfGuests; i += step) {
+    sum += i;
+  }
+
+  return sum;
 }
