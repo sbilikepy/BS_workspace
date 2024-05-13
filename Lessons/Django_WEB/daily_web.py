@@ -1801,12 +1801,28 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 # }
 
 
-function getDrinksWithStep(numberOfGuests, step) {
-  let sum = 0;
+# function getDrinksWithStep(numberOfGuests, step) {
+#   let sum = 0;
+#
+#   for (let i = 1; i <= numberOfGuests; i += step) {
+#     sum += i;
+#   }
+#
+#   return sum;
+# }
 
-  for (let i = 1; i <= numberOfGuests; i += step) {
-    sum += i;
+
+/**
+ * @param {Array} array
+ * @param {number} i
+ * @param {number} j
+ *
+ * @returns {void}
+ */
+function swapArray(array, i, j) {
+  if (i >= 0 && i < array.length && j >= 0 && j < array.length) {
+    [array[i], array[j]] = [array[j], array[i]];
   }
 
-  return sum;
+  return array;
 }
