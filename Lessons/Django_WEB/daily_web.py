@@ -1640,9 +1640,7 @@ def remove_duplicates(sorted_numbers: list) -> int:
     return len(sorted_numbers)
 
 
-
 remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
-
 
 # function checkNumber(n) {
 #     let results = [];
@@ -1812,17 +1810,51 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 # }
 
 
-/**
- * @param {Array} array
- * @param {number} i
- * @param {number} j
- *
- * @returns {void}
- */
-function swapArray(array, i, j) {
-  if (i >= 0 && i < array.length && j >= 0 && j < array.length) {
-    [array[i], array[j]] = [array[j], array[i]];
-  }
+# /**
+#  * @param {Array} array
+#  * @param {number} i
+#  * @param {number} j
+#  *
+#  * @returns {void}
+#  */
+# function swapArray(array, i, j) {
+#   if (i >= 0 && i < array.length && j >= 0 && j < array.length) {
+#     [array[i], array[j]] = [array[j], array[i]];
+#   }
+#
+#   return array;
+# }
 
-  return array;
-}
+# python tests
+# from datetime import time
+#
+# activity_time_start_filter = "15:00"
+# activity_time_end_filter = "16:15"
+# time_hour, time_minute = map(int, activity_time_start_filter.split(":"))
+# rt_start = time(hour=time_hour, minute=time_minute)
+#
+# time_hour, time_minute = map(int, activity_time_end_filter.split(":"))
+# rt_end = time(hour=time_hour, minute=time_minute)
+# print(rt_start, "to", rt_end)
+# # print(type(rt_start), type(rt_end))
+# # print(type(Team.objects.first().activity_sessions.all().first().time_start))
+# ###should be <class 'datetime.time'>
+# print(rt_end - rt_start)
+
+
+# /**
+#  * @param {number[]} nums
+#  * @param {number} n
+#  *
+#  * @returns {number[]}
+#  */
+# function shuffleArray(nums, n) {
+#   const result = [];
+#
+#   for (let i = 0; i < n; i++) {
+#     result.push(nums[i]);
+#     result.push(nums[i + n]);
+#   }
+#
+#   return result;
+# }
