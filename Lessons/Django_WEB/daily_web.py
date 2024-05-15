@@ -1640,7 +1640,7 @@ def remove_duplicates(sorted_numbers: list) -> int:
     return len(sorted_numbers)
 
 
-remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
+
 
 # function checkNumber(n) {
 #     let results = [];
@@ -1858,3 +1858,21 @@ remove_duplicates([0, 0, 0, 2, 2, 2])  # 4
 #
 #   return result;
 # }
+
+def find_perimeter(grid: list) -> int:
+    perimeter = 0
+    rows, cols = len(grid), len(grid[0])
+
+    for i in range(rows):
+        for j in range(cols):
+            if grid[i][j] == 1:
+                perimeter += 4
+                if i > 0 and grid[i - 1][j] == 1:
+                    perimeter -= 2
+                if j > 0 and grid[i][j - 1] == 1:
+                    perimeter -= 2
+    return perimeter
+
+
+grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]  #16
+find_perimeter(grid)
