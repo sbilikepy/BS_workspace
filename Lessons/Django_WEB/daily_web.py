@@ -1640,8 +1640,6 @@ def remove_duplicates(sorted_numbers: list) -> int:
     return len(sorted_numbers)
 
 
-
-
 # function checkNumber(n) {
 #     let results = [];
 #     results.push(n > 0);
@@ -1873,6 +1871,29 @@ def find_perimeter(grid: list) -> int:
                     perimeter -= 2
     return perimeter
 
+from datetime import time
+def lft_time_module_testing(activity_time_start_filter: str,
+                            activity_time_end_filter: str,
+                            session_time_start: time,
+                            session_time_end: time) -> bool:
 
-grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]  #16
-find_perimeter(grid)
+    time_hour, time_minute = map(int, activity_time_start_filter.split(":"))
+    user_activity_start = time(hour=time_hour, minute=time_minute)
+
+    time_hour, time_minute = map(int, activity_time_end_filter.split(":"))
+    user_activity_end = time(hour=time_hour, minute=time_minute)
+
+    print(user_activity_start, user_activity_end)
+    print(type(user_activity_start), type(user_activity_end))
+    if user_activity_start > user_activity_end:
+        print("start>end")
+    if user_activity_start < user_activity_end:
+        print("end<start")
+
+
+lft_time_module_testing(
+    activity_time_start_filter="15:00", activity_time_end_filter="16:00",
+    session_time_start=time("14:00".split(":")),
+    session_time_end=time("14:00".split(":"))
+)
+# lft_time_module_testing(activity_time_start_filter="23:00", activity_time_end_filter="01:00")
