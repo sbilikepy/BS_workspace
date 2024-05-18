@@ -1910,43 +1910,56 @@ def lft_time_module_testing(activity_time_start_filter: str,
 #     session_time_end=time(hour=00, minute=00)  # SESSION e
 # )
 
-from datetime import time, timedelta
 
-from datetime import time, timedelta
+from datetime import datetime, timedelta
 
-from datetime import time, timedelta, datetime
+def check_coverage(user_start, user_end, session_start, session_end):
 
-
-from datetime import datetime, time, timedelta
-
-from datetime import datetime, time, timedelta
-
-from datetime import datetime, time, timedelta
-
-def activity_time_start_filter(activity_time_start_filter, activity_time_end_filter, session_time_start, session_time_end):
-    time_hour, time_minute = map(int, activity_time_start_filter.split(":"))
-    user_activity_start = datetime.combine(datetime.min, time(hour=time_hour, minute=time_minute))
-
-    time_hour, time_minute = map(int, activity_time_end_filter.split(":"))
-    user_activity_end = datetime.combine(datetime.min, time(hour=time_hour, minute=time_minute))
-
-    session_start = datetime.combine(datetime.min, session_time_start)
-    session_end = datetime.combine(datetime.min, session_time_end)
+    user_start = datetime.strptime(user_start, "%H:%M")
+    user_end = datetime.strptime(user_end, "%H:%M")
+    session_start = datetime.strptime(session_start, "%H:%M")
+    session_end = datetime.strptime(session_end, "%H:%M")
 
 
-    if user_activity_end < user_activity_start:
-        # Добавим дельту для перехода через полночь
-        user_activity_end += timedelta(days=1)
+    if user_end < user_start:
+        user_end += timedelta(days=1)
 
 
-    if session_start <= user_activity_start and session_end >= user_activity_end:
+    if session_end < session_start:
+        session_end += timedelta(days=1)
+
+    if user_start <= session_start and user_end >= session_end:
         return True
     else:
         return False
 
-# Пример использования
-x = activity_time_start_filter(activity_time_start_filter="22:00",
-                               activity_time_end_filter="23:00",
-                               session_time_start=time(hour=21, minute=00),
-                               session_time_end=time(hour=23, minute=00))
-print(x)
+
+print(check_coverage("14:00", "16:00", "14:00", "16:00"))  # Ожидаемый результат: TRUE
+print(check_coverage("13:00", "16:00", "14:00", "16:00"))  # Ожидаемый результат: TRUE
+print(check_coverage("22:00", "23:00", "22:00", "01:00"))  # Ожидаемый результат: FALSE
+queryset = activity_time_filter_queryset(
+def activity_time_filter_queryset(queryset, activity_time_start_filter,
+                                  activity_time_end_filter):
+    user_start_time = datetime.strptime(activity_time_start_filter,
+                                        '%H:%M').time()
+    user_end_time = datetime.strptime(activity_time_end_filter, '%H:%M').time()
+
+    user_delta = timedelta(
+        hours=user_end_time.hour - user_start_time.hour,
+        minutes=user_end_time.minute - user_start_time.minute
+    )
+
+    if user_end_time < user_start_time:
+        user_delta += timedelta(days=1)
+
+    queryset = queryset.filter(
+        teams__activity_sessions__duration__gte=user_delta
+    ).distinct()
+
+
+    queryset = queryset.filter(
+        teams__activity_sessions__time_start__lte=user_start_time,
+        teams__activity_sessions__time_end__gte=user_end_time
+    ).distinct()
+
+    return queryset
