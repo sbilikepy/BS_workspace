@@ -1871,29 +1871,82 @@ def find_perimeter(grid: list) -> int:
                     perimeter -= 2
     return perimeter
 
+
 from datetime import time
+from datetime import time
+
+
 def lft_time_module_testing(activity_time_start_filter: str,
                             activity_time_end_filter: str,
                             session_time_start: time,
                             session_time_end: time) -> bool:
-
     time_hour, time_minute = map(int, activity_time_start_filter.split(":"))
     user_activity_start = time(hour=time_hour, minute=time_minute)
 
     time_hour, time_minute = map(int, activity_time_end_filter.split(":"))
     user_activity_end = time(hour=time_hour, minute=time_minute)
+    print("user: ", user_activity_start, "-", user_activity_end)
+    print("session: ", session_time_start, "-", session_time_end)
 
-    print(user_activity_start, user_activity_end)
-    print(type(user_activity_start), type(user_activity_end))
-    if user_activity_start > user_activity_end:
-        print("start>end")
+    # common case
     if user_activity_start < user_activity_end:
-        print("end<start")
+        print("common case for user")
+        query = (user_activity_start <= session_time_start and
+                 session_time_end <= user_activity_end)
+
+    # midnight case
+    if user_activity_start > user_activity_end:
+        print("user midnight case")
+        query = (user_activity_start <= session_time_start and
+                 session_time_end <= user_activity_end)
+
+    print(query)
 
 
-lft_time_module_testing(
-    activity_time_start_filter="15:00", activity_time_end_filter="16:00",
-    session_time_start=time("14:00".split(":")),
-    session_time_end=time("14:00".split(":"))
-)
-# lft_time_module_testing(activity_time_start_filter="23:00", activity_time_end_filter="01:00")
+# lft_time_module_testing(
+#     activity_time_start_filter="22:00",  # USER s
+#     activity_time_end_filter="01:00",  # USER e
+#     session_time_start=time(hour=22, minute=00),  # SESSION s
+#     session_time_end=time(hour=00, minute=00)  # SESSION e
+# )
+
+from datetime import time, timedelta
+
+from datetime import time, timedelta
+
+from datetime import time, timedelta, datetime
+
+
+from datetime import datetime, time, timedelta
+
+from datetime import datetime, time, timedelta
+
+from datetime import datetime, time, timedelta
+
+def activity_time_start_filter(activity_time_start_filter, activity_time_end_filter, session_time_start, session_time_end):
+    time_hour, time_minute = map(int, activity_time_start_filter.split(":"))
+    user_activity_start = datetime.combine(datetime.min, time(hour=time_hour, minute=time_minute))
+
+    time_hour, time_minute = map(int, activity_time_end_filter.split(":"))
+    user_activity_end = datetime.combine(datetime.min, time(hour=time_hour, minute=time_minute))
+
+    session_start = datetime.combine(datetime.min, session_time_start)
+    session_end = datetime.combine(datetime.min, session_time_end)
+
+
+    if user_activity_end < user_activity_start:
+        # Добавим дельту для перехода через полночь
+        user_activity_end += timedelta(days=1)
+
+
+    if session_start <= user_activity_start and session_end >= user_activity_end:
+        return True
+    else:
+        return False
+
+# Пример использования
+x = activity_time_start_filter(activity_time_start_filter="22:00",
+                               activity_time_end_filter="23:00",
+                               session_time_start=time(hour=21, minute=00),
+                               session_time_end=time(hour=23, minute=00))
+print(x)
