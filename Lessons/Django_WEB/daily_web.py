@@ -1963,3 +1963,52 @@ def activity_time_filter_queryset(queryset, activity_time_start_filter,
     ).distinct()
 
     return queryset
+
+
+def activity_time_filter_queryset(queryset,
+                                  selected_days_filter,
+                                  activity_time_start_filter,
+                                  activity_time_end_filter):
+    user_start_time = datetime.strptime(activity_time_start_filter,
+                                        '%H:%M').time()
+    user_end_time = datetime.strptime(activity_time_end_filter, '%H:%M').time()
+
+    user_delta = timedelta(
+        hours=user_end_time.hour - user_start_time.hour,
+        minutes=user_end_time.minute - user_start_time.minute
+    )
+
+    if user_end_time < user_start_time:
+        user_delta += timedelta(days=1)
+
+    teams_queryset = Team.objects.filter(guild__in=queryset)
+
+    if len(selected_days_filter) != 7:
+        teams_queryset = teams_queryset.filter(
+            activity_sessions__day__day_of_week__in=selected_days_filter
+        ).distinct()
+
+    teams_queryset = teams_queryset.filter(
+        activity_sessions__duration__lte=user_delta
+    ).distinct()
+
+    approved_teams = []
+    print("***********RESULT***************************")
+    print("User input: ",user_start_time, user_end_time, user_delta)
+    for team in teams_queryset:
+        print("Team name: ", team)
+        for session in team.activity_sessions.all():
+            # print(
+            #     session.day, session.time_start, "to", session.time_end,
+            #     session.duration
+            # )
+
+            if user_start_time <= session.time_start:
+                print(f"{user_start_time} <= {session.time_start}")
+            if user_end_time >= session.time_end:
+                print(f"{user_end_time} >= {session.time_end}")
+    print("**************************************\n")
+
+    queryset = Guild.objects.filter(teams__in=teams_queryset).distinct()
+
+    return queryset
