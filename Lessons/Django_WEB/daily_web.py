@@ -1873,7 +1873,7 @@ def find_perimeter(grid: list) -> int:
 
 
 from datetime import time
-from datetime import time
+
 
 
 def lft_time_module_testing(activity_time_start_filter: str,
@@ -1913,17 +1913,15 @@ def lft_time_module_testing(activity_time_start_filter: str,
 
 from datetime import datetime, timedelta
 
-def check_coverage(user_start, user_end, session_start, session_end):
 
+def check_coverage(user_start, user_end, session_start, session_end):
     user_start = datetime.strptime(user_start, "%H:%M")
     user_end = datetime.strptime(user_end, "%H:%M")
     session_start = datetime.strptime(session_start, "%H:%M")
     session_end = datetime.strptime(session_end, "%H:%M")
 
-
     if user_end < user_start:
         user_end += timedelta(days=1)
-
 
     if session_end < session_start:
         session_end += timedelta(days=1)
@@ -1934,10 +1932,6 @@ def check_coverage(user_start, user_end, session_start, session_end):
         return False
 
 
-print(check_coverage("14:00", "16:00", "14:00", "16:00"))  # Ожидаемый результат: TRUE
-print(check_coverage("13:00", "16:00", "14:00", "16:00"))  # Ожидаемый результат: TRUE
-print(check_coverage("22:00", "23:00", "22:00", "01:00"))  # Ожидаемый результат: FALSE
-queryset = activity_time_filter_queryset(
 def activity_time_filter_queryset(queryset, activity_time_start_filter,
                                   activity_time_end_filter):
     user_start_time = datetime.strptime(activity_time_start_filter,
@@ -1955,7 +1949,6 @@ def activity_time_filter_queryset(queryset, activity_time_start_filter,
     queryset = queryset.filter(
         teams__activity_sessions__duration__gte=user_delta
     ).distinct()
-
 
     queryset = queryset.filter(
         teams__activity_sessions__time_start__lte=user_start_time,
@@ -1994,7 +1987,7 @@ def activity_time_filter_queryset(queryset,
 
     approved_teams = []
     print("***********RESULT***************************")
-    print("User input: ",user_start_time, user_end_time, user_delta)
+    print("User input: ", user_start_time, user_end_time, user_delta)
     for team in teams_queryset:
         print("Team name: ", team)
         for session in team.activity_sessions.all():
@@ -2012,3 +2005,78 @@ def activity_time_filter_queryset(queryset,
     queryset = Guild.objects.filter(teams__in=teams_queryset).distinct()
 
     return queryset
+
+
+from datetime import datetime, timedelta
+
+
+#
+# from datetime import datetime
+
+# user_start = datetime(1900, 1, 1, 23, 55, 0)
+# user_end = datetime(1900, 1, 2, 00, 59, 0)
+# team_start = datetime(1900, 1, 2, 00, 56, 0)
+# team_end = datetime(1900, 1, 2, 00, 57, 0)
+
+from datetime import datetime, timedelta
+
+
+def func_final(user_start, user_end, team_start, team_end):
+    user_start = datetime.strptime(user_start, '%H:%M')  # 1900-01-01 19:00:00
+    user_end = datetime.strptime(user_end, '%H:%M')
+    team_start = datetime.strptime(team_start, '%H:%M')
+    team_end = datetime.strptime(team_end, '%H:%M')
+    #######DELTA CHECK HERE)
+    print("START: ", user_start, "-", user_end, "|",
+          team_start, "-",
+          team_end)
+
+    ###### DELTA CHANGES #################
+    if user_end < user_start:  # prep user
+        user_end += timedelta(days=1)
+        print("delta change user: ", user_start, "-", user_end)
+    if team_end < team_start:  # prep team
+        team_end += timedelta(days=1)
+
+        print("delta change team: ", team_start, "-", team_end)
+
+    if team_start < team_end:
+        if team_start < user_start:
+            if team_end < user_start:
+                team_start += timedelta(days=1)
+                team_end += timedelta(days=1)
+
+    ######PERFECT CASE#################
+    if user_start <= team_start <= team_end <= user_end:
+        print("BEFORE TRUE RETURN: ", user_start, "-", user_end, "|",
+              team_start, "-",
+              team_end)
+        return True
+    print("BEFORE FALSE RETURN")
+    print(user_start, user_end)
+    print(team_start, team_end)
+    return False
+
+
+data = [
+
+    # ("21:00", "03:00", "19:00", "04:00"), #DONE
+    # ("21:00", "03:00", "21:00", "03:00"),
+    # ("21:00", "03:00", "22:00", "02:00"),
+    # ("21:00", "03:00", "22:00", "23:00"),
+    # ("21:00", "03:00", "23:00", "02:00"),
+    # ("21:00", "03:00", "01:00", "02:00"),
+    # ("21:00", "03:00", "19:00", "22:00"),
+    # ("21:00", "03:00", "02:00", "06:00"),
+    # ("21:00", "03:00", "18:00", "00:00"),
+    # ("21:00", "03:00", "00:00", "04:00")
+
+]
+counter = 1
+for item in data:
+    print("***************************************************")
+    user_start, user_end, team_start, team_end = item
+    print(
+        f"{counter} case: {func_final(user_start, user_end, team_start, team_end)}")
+    print("***************************************************")
+    counter += 1
