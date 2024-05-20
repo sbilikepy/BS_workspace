@@ -2045,7 +2045,7 @@ def func_final(user_start, user_end, team_start, team_end):
             if team_end < user_start:
                 team_start += timedelta(days=1)
                 team_end += timedelta(days=1)
-
+    print(type(user_start), type(team_start))
     ######PERFECT CASE#################
     if user_start <= team_start <= team_end <= user_end:
         print("BEFORE TRUE RETURN: ", user_start, "-", user_end, "|",
@@ -2055,12 +2055,13 @@ def func_final(user_start, user_end, team_start, team_end):
     print("BEFORE FALSE RETURN")
     print(user_start, user_end)
     print(team_start, team_end)
+
     return False
 
 
 data = [
 
-    # ("21:00", "03:00", "19:00", "04:00"), #DONE
+    ("21:00", "03:00", "19:00", "04:00"), #DONE
     # ("21:00", "03:00", "21:00", "03:00"),
     # ("21:00", "03:00", "22:00", "02:00"),
     # ("21:00", "03:00", "22:00", "23:00"),
@@ -2080,3 +2081,58 @@ for item in data:
         f"{counter} case: {func_final(user_start, user_end, team_start, team_end)}")
     print("***************************************************")
     counter += 1
+###########I OLD VER TO COMPARE ##########
+def activity_time_filter_queryset(queryset,
+                                  selected_days_filter,
+                                  activity_time_start_filter,
+                                  activity_time_end_filter):
+    # 1900-01-01 19:00:00
+    user_start = datetime.strptime(activity_time_start_filter,
+                                   '%H:%M').replace(tzinfo=None)
+    user_end = datetime.strptime(activity_time_end_filter, '%H:%M').replace(
+        tzinfo=None)
+
+    if user_end < user_start:  # prep user
+        user_end += timedelta(days=1)
+        print("delta change user: ", user_start, "-", user_end)
+
+    user_delta = timedelta(
+        hours=user_end.hour - user_start.hour,
+        minutes=user_end.minute - user_start.minute
+    )
+
+    print(user_delta)
+    queryset = queryset.filter(
+        teams__activity_sessions__day__day_of_week__in=selected_days_filter
+    ).distinct()
+
+    queryset = queryset.filter(
+        teams__activity_sessions__duration__lte=user_delta
+    )
+
+    team_queryset = Team.objects.filter(guild__in=queryset)
+    filtered_team_queryset = Team.objects.none()
+
+    record = len(team_queryset)
+    for team in team_queryset:
+        for session in team.activity_sessions.all():
+
+            if session.time_end < session.time_start:  # prep team
+                session.time_end += timedelta(days=1)
+
+            if session.time_start < session.time_end:
+                print(type(session.time_start), type(user_start))
+                if session.time_start < user_start:
+                    if session.time_end < user_start:
+                        session.time_start += timedelta(days=1)
+                        session.time_end += timedelta(days=1)
+
+            if user_start <= session.time_start <= session.time_end <= user_end:
+                filtered_team_queryset |= Team.objects.filter(id=team.id)
+
+    print(filtered_team_queryset)
+    # for team in filtered_team_queryset:
+    #     for session in team.activity_sessions.all():
+    #         print(session.time_start, session.time_end, session.day)
+    # print(record, "to", len(filtered_team_queryset))
+    return queryset
