@@ -2136,3 +2136,7 @@ def activity_time_filter_queryset(queryset,
     #         print(session.time_start, session.time_end, session.day)
     # print(record, "to", len(filtered_team_queryset))
     return queryset
+
+#copy DB type(session)
+#check if tz aware
+#check with tests
