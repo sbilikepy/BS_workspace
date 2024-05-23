@@ -1,3 +1,4 @@
+import copy
 import math
 import random
 from typing import *
@@ -1324,6 +1325,38 @@ def remove_duplicates(input_list):
 # }
 
 
+def all_inclusive(string: str, lst: list) -> bool:
+    temp = []
+    string = list(string)
+    for __ in string:
+        first_part = string[-1::]
+        second_part = string[:-1:]
+        first_part.extend(second_part)
+        temp_result = ""
+        for _ in first_part:
+            temp_result += _
+        temp.append(temp_result)
+        string = list(temp_result)
+    for combination in temp:
+        if combination not in lst:
+            return False
+    return True
+
+
+string_test = "XjYABhR"
+list_test = [
+    "TzYxlgfnhf",
+    "yqVAuoLjMLy",
+    "BhRXjYA",
+    "YABhRXj",
+    "hRXjYAB",
+    "jYABhRX",
+    "XjYABhR",
+    "ABhRXjY",
+]
+print(all_inclusive(string=string_test, lst=list_test))
+
+
 # class Room:
 #     def __init__(self, description):
 #         self.description = description
@@ -1875,7 +1908,6 @@ def find_perimeter(grid: list) -> int:
 from datetime import time
 
 
-
 def lft_time_module_testing(activity_time_start_filter: str,
                             activity_time_end_filter: str,
                             session_time_start: time,
@@ -2009,7 +2041,6 @@ def activity_time_filter_queryset(queryset,
 
 from datetime import datetime, timedelta
 
-
 #
 # from datetime import datetime
 
@@ -2061,7 +2092,7 @@ def func_final(user_start, user_end, team_start, team_end):
 
 data = [
 
-    ("21:00", "03:00", "19:00", "04:00"), #DONE
+    ("21:00", "03:00", "19:00", "04:00"),  # DONE
     # ("21:00", "03:00", "21:00", "03:00"),
     # ("21:00", "03:00", "22:00", "02:00"),
     # ("21:00", "03:00", "22:00", "23:00"),
@@ -2081,6 +2112,8 @@ for item in data:
         f"{counter} case: {func_final(user_start, user_end, team_start, team_end)}")
     print("***************************************************")
     counter += 1
+
+
 ###########I OLD VER TO COMPARE ##########
 def activity_time_filter_queryset(queryset,
                                   selected_days_filter,
@@ -2137,6 +2170,6 @@ def activity_time_filter_queryset(queryset,
     # print(record, "to", len(filtered_team_queryset))
     return queryset
 
-#copy DB type(session)
-#check if tz aware
-#check with tests
+# copy DB type(session)
+# check if tz aware
+# check with tests
