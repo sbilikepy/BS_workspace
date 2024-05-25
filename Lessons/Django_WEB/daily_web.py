@@ -1325,36 +1325,36 @@ def remove_duplicates(input_list):
 # }
 
 
-def all_inclusive(string: str, lst: list) -> bool:
-    temp = []
-    string = list(string)
-    for __ in string:
-        first_part = string[-1::]
-        second_part = string[:-1:]
-        first_part.extend(second_part)
-        temp_result = ""
-        for _ in first_part:
-            temp_result += _
-        temp.append(temp_result)
-        string = list(temp_result)
-    for combination in temp:
-        if combination not in lst:
-            return False
-    return True
-
-
-string_test = "XjYABhR"
-list_test = [
-    "TzYxlgfnhf",
-    "yqVAuoLjMLy",
-    "BhRXjYA",
-    "YABhRXj",
-    "hRXjYAB",
-    "jYABhRX",
-    "XjYABhR",
-    "ABhRXjY",
-]
-print(all_inclusive(string=string_test, lst=list_test))
+# def all_inclusive(string: str, lst: list) -> bool:
+#     temp = []
+#     string = list(string)
+#     for __ in string:
+#         first_part = string[-1::]
+#         second_part = string[:-1:]
+#         first_part.extend(second_part)
+#         temp_result = ""
+#         for _ in first_part:
+#             temp_result += _
+#         temp.append(temp_result)
+#         string = list(temp_result)
+#     for combination in temp:
+#         if combination not in lst:
+#             return False
+#     return True
+#
+#
+# string_test = "XjYABhR"
+# list_test = [
+#     "TzYxlgfnhf",
+#     "yqVAuoLjMLy",
+#     "BhRXjYA",
+#     "YABhRXj",
+#     "hRXjYAB",
+#     "jYABhRX",
+#     "XjYABhR",
+#     "ABhRXjY",
+# ]
+# print(all_inclusive(string=string_test, lst=list_test))
 
 
 # class Room:
@@ -1469,17 +1469,7 @@ print(all_inclusive(string=string_test, lst=list_test))
 #     return "#" + reversed_color.upper()
 #
 #
-# CLASS_SPEC_VALID_COMBINATIONS = {"Death Knight": {"Blood", "Frost", "Unholy"},
-#     "Druid": {"Balance", "Feral dps", "Feral tank", "Restoration"},  # !
-#     "Hunter": {"Beast Mastery", "Marksmanship", "Survival"},
-#     "Mage": {"Arcane", "Fire", "Frost"},  # !
-#     "Paladin": {"Holy", "Protection", "Retribution"},  # !
-#     "Priest": {"Discipline", "Holy", "Shadow"},  # !  # !
-#     "Rogue": {"Assassination", "Combat", "Subtlety"},
-#     "Shaman": {"Elemental", "Enhancement", "Restoration"},  # !
-#     "Warlock": {"Affliction", "Demonology", "Destruction"},
-#     "Warrior": {"Arms", "Fury", "Protection"},  # !
-# }
+
 #
 # print(CLASS_SPEC_VALID_COMBINATIONS["Druid"])
 # function getPosition(text, word) {
