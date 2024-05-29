@@ -2097,3 +2097,29 @@ def activity_time_filter_queryset(queryset,
 # copy DB type(session)
 # check if tz aware
 # check with tests
+
+
+# Example: Sending an email using smtplib
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+# Email configuration
+SMTP_SERVER = 'your_smtp_server'
+SMTP_PORT = 587
+SMTP_USERNAME = 'your_email_username'
+SMTP_PASSWORD = 'your_email_password'
+
+# Compose email
+message = MIMEMultipart()
+message['From'] = 'sender@example.com'
+message['To'] = 'recipient@example.com'
+message['Subject'] = 'Automated Email'
+message.attach(MIMEText('Hello, this is an automated email.', 'plain'))
+
+# Send email
+with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+    server.starttls()
+    server.login(SMTP_USERNAME, SMTP_PASSWORD)
+    server.send_message(message)
+    print("Email sent successfully!")
