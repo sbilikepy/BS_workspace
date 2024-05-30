@@ -2016,7 +2016,7 @@ def func_final(user_start, user_end, team_start, team_end):
 
 data = [
 
-    ("21:00", "03:00", "19:00", "04:00"),  #IMP TESTING DATA
+    ("21:00", "03:00", "19:00", "04:00"),  # IMP TESTING DATA
     ("21:00", "03:00", "21:00", "03:00"),
     ("21:00", "03:00", "22:00", "02:00"),
     ("21:00", "03:00", "22:00", "23:00"),
@@ -2094,6 +2094,7 @@ def activity_time_filter_queryset(queryset,
     # print(record, "to", len(filtered_team_queryset))
     return queryset
 
+
 # copy DB type(session)
 # check if tz aware
 # check with tests
@@ -2123,3 +2124,29 @@ with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
     server.login(SMTP_USERNAME, SMTP_PASSWORD)
     server.send_message(message)
     print("Email sent successfully!")
+
+
+def palindromic_substring(string: str) -> str:
+    def expand_center_odd(s: int, left: int, right: int) -> str:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left + 1:right]
+
+    def expand_center_even(s: int, left: int, right: int) -> str:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left + 1:right]
+
+    longest_palindrome = ""
+    for i in range(len(string)):
+        odd_palindrome = expand_center_odd(string, i, i)
+        if len(odd_palindrome) > len(longest_palindrome):
+            longest_palindrome = odd_palindrome
+
+        even_palindrome = expand_center_even(string, i, i + 1)
+        if len(even_palindrome) > len(longest_palindrome):
+            longest_palindrome = even_palindrome
+
+    return longest_palindrome
