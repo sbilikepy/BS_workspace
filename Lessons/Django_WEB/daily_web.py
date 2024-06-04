@@ -158,6 +158,39 @@
 #              chr(random.randint(97, 122)).lower(), ])
 #     return result
 #
+
+
+
+
+import os
+
+def rename_files(folder_path):
+    files = os.listdir(folder_path)
+    for filename in files:
+        if os.path.isfile(os.path.join(folder_path, filename)):
+            if "test pref" in filename:
+                new_filename = filename.replace("test pref", "")
+                src = os.path.join(folder_path, filename)
+                dst = os.path.join(folder_path, new_filename)
+                os.rename(src, dst)
+
+folder_path = "D:/export iphone manga/Joshikousei to Seishokusha-san/"
+rename_files(folder_path)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
 # def longest_vowel_chain(string: str) -> int:
 #     if not len(string):
@@ -2275,3 +2308,9 @@ def palindromic_substring(string: str) -> str:
             longest_palindrome = even_palindrome
 
     return longest_palindrome
+
+
+
+
+
+####
