@@ -160,35 +160,21 @@
 #
 
 
-
-
-import os
-
-def rename_files(folder_path):
-    files = os.listdir(folder_path)
-    for filename in files:
-        if os.path.isfile(os.path.join(folder_path, filename)):
-            if "test pref" in filename:
-                new_filename = filename.replace("test pref", "")
-                src = os.path.join(folder_path, filename)
-                dst = os.path.join(folder_path, new_filename)
-                os.rename(src, dst)
-
-folder_path = "D:/export iphone manga/Joshikousei to Seishokusha-san/"
-rename_files(folder_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
+#
+# import os
+#
+# def rename_files(folder_path):
+#     files = os.listdir(folder_path)
+#     for filename in files:
+#         if os.path.isfile(os.path.join(folder_path, filename)):
+#             new_filename = filename.replace("", "-")
+#
+#             src = os.path.join(folder_path, filename)
+#             dst = os.path.join(folder_path, new_filename)
+#             os.rename(src, dst)
+#
+# folder_path = "D:/"
+# rename_files(folder_path)
 
 
 #
@@ -837,6 +823,8 @@ def passengers_with_chronic_conditions():
     conn.close()
 
     return passengers_with_chronic_conditions
+
+
 #
 # def roman_to_int(roman: str) -> int:
 #     result = 0
@@ -2276,12 +2264,13 @@ message['To'] = 'recipient@example.com'
 message['Subject'] = 'Automated Email'
 message.attach(MIMEText('Hello, this is an automated email.', 'plain'))
 
+
 # Send email
-with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-    server.starttls()
-    server.login(SMTP_USERNAME, SMTP_PASSWORD)
-    server.send_message(message)
-    print("Email sent successfully!")
+# with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+#     server.starttls()
+#     server.login(SMTP_USERNAME, SMTP_PASSWORD)
+#     server.send_message(message)
+#     print("Email sent successfully!")
 
 
 def palindromic_substring(string: str) -> str:
@@ -2310,7 +2299,13 @@ def palindromic_substring(string: str) -> str:
     return longest_palindrome
 
 
-
-
-
 ####
+def josephus(items: list, number: int) -> list:
+    dead = []
+    target = 0
+
+    while items:
+        target = (target + number - 1) % len(items)
+        dead.append(items.pop(target))
+
+    return dead
