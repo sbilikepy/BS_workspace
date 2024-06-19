@@ -1899,6 +1899,22 @@ def passengers_with_chronic_conditions():
 #     }
 # }
 
+def count_ones(left: int, right: int) -> int:
+    def count_ones_up_to(n: int) -> int:
+        if n < 0:
+            return 0
+        count = 0
+        power_of_2 = 1
+        while power_of_2 <= n:
+            total_pairs = (n + 1) // (power_of_2 * 2)
+            count += total_pairs * power_of_2
+            remaining = (n + 1) % (power_of_2 * 2)
+            if remaining > power_of_2:
+                count += remaining - power_of_2
+            power_of_2 *= 2
+        return count
+
+    return count_ones_up_to(right) - count_ones_up_to(left - 1)
 
 # function getDrinksWithStep(numberOfGuests, step) {
 #   let sum = 0;
