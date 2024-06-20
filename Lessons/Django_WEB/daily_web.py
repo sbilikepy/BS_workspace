@@ -1899,22 +1899,22 @@ def passengers_with_chronic_conditions():
 #     }
 # }
 
-def count_ones(left: int, right: int) -> int:
-    def count_ones_up_to(n: int) -> int:
-        if n < 0:
-            return 0
-        count = 0
-        power_of_2 = 1
-        while power_of_2 <= n:
-            total_pairs = (n + 1) // (power_of_2 * 2)
-            count += total_pairs * power_of_2
-            remaining = (n + 1) % (power_of_2 * 2)
-            if remaining > power_of_2:
-                count += remaining - power_of_2
-            power_of_2 *= 2
-        return count
-
-    return count_ones_up_to(right) - count_ones_up_to(left - 1)
+# def count_ones(left: int, right: int) -> int:
+#     def count_ones_up_to(n: int) -> int:
+#         if n < 0:
+#             return 0
+#         count = 0
+#         power_of_2 = 1
+#         while power_of_2 <= n:
+#             total_pairs = (n + 1) // (power_of_2 * 2)
+#             count += total_pairs * power_of_2
+#             remaining = (n + 1) % (power_of_2 * 2)
+#             if remaining > power_of_2:
+#                 count += remaining - power_of_2
+#             power_of_2 *= 2
+#         return count
+#
+#     return count_ones_up_to(right) - count_ones_up_to(left - 1)
 
 # function getDrinksWithStep(numberOfGuests, step) {
 #   let sum = 0;
@@ -1925,6 +1925,45 @@ def count_ones(left: int, right: int) -> int:
 #
 #   return sum;
 # }
+def xo_3d(moves: list) -> str:
+    board = [[["" for _ in range(4)] for _ in range(4)] for _ in range(4)]
+
+    def check_winner(player: str) -> bool:
+        def check_lines(lines: list) -> bool:
+            return any(all(cell == player for cell in line) for line in lines)
+
+        def get_lines() -> list:
+            lines = []
+            for i in range(4):
+                for j in range(4):
+                    lines.append([board[i][j][k] for k in range(4)])
+                    lines.append([board[i][k][j] for k in range(4)])
+                    lines.append([board[k][i][j] for k in range(4)])
+            for i in range(4):
+                lines.append([board[i][k][k] for k in range(4)])
+                lines.append([board[i][k][3 - k] for k in range(4)])
+                lines.append([board[k][i][k] for k in range(4)])
+                lines.append([board[k][i][3 - k] for k in range(4)])
+                lines.append([board[k][k][i] for k in range(4)])
+                lines.append([board[k][3 - k][i] for k in range(4)])
+            lines.append([board[k][k][k] for k in range(4)])
+            lines.append([board[k][k][3 - k] for k in range(4)])
+            lines.append([board[k][3 - k][k] for k in range(4)])
+            lines.append([board[3 - k][k][k] for k in range(4)])
+            return lines
+
+        return check_lines(get_lines())
+
+    players = ["O", "X"]
+
+    for index, move in enumerate(moves):
+        x, y, z = move
+        player = players[index % 2]
+        board[x][y][z] = player
+        if check_winner(player):
+            return f"{player} wins after {index + 1} moves"
+
+    return "No winner"
 
 
 # /**
