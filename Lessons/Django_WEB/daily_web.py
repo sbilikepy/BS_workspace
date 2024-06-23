@@ -697,133 +697,133 @@
 #     if lenw % 2 == 0:
 #         return word[int(lenw / 2) - 1] + word[int(lenw / 2)]
 #     return word[int(lenw / 2 - 0.5)]
-def create_database():
-    conn = sqlite3.connect('spaceship.db')
-    cursor = conn.cursor()
-
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS passengers (
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            age INTEGER,
-            gender TEXT,
-            country TEXT,
-            blood_pressure TEXT,
-            cholesterol_level TEXT,
-            chronic_condition TEXT
-        )
-    ''')
-
-    passengers_data = [
-        ('Alice', 30, 'Female', 'USA', 'Normal', 'Normal', 'None'),
-        ('Bob', 45, 'Male', 'UK', 'High', 'High', 'Diabetes'),
-        ('Charlie', 50, 'Male', 'USA', 'Normal', 'High', 'None'),
-        ('Diana', 35, 'Female', 'Canada', 'Normal', 'Normal', 'Asthma'),
-        # Добавьте больше данных по желанию
-    ]
-
-    cursor.executemany('''
-        INSERT INTO passengers (name, age, gender, country, blood_pressure, cholesterol_level, chronic_condition)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', passengers_data)
-
-    conn.commit()
-    conn.close()
-
-
-def average_age():
-    import sqlite3
-
-    conn = sqlite3.connect('spaceship.db')
-    cursor = conn.cursor()
-
-    cursor.execute('SELECT AVG(age) FROM passengers')
-    average_age = cursor.fetchone()[0]
-
-    conn.close()
-
-    return average_age
-
-
-def gender_distribution():
-    import sqlite3
-
-    conn = sqlite3.connect('spaceship.db')
-    cursor = conn.cursor()
-
-    cursor.execute('SELECT COUNT(*) FROM passengers WHERE gender = "Male"')
-    male_count = cursor.fetchone()[0]
-
-    cursor.execute('SELECT COUNT(*) FROM passengers WHERE gender = "Female"')
-    female_count = cursor.fetchone()[0]
-
-    total_passengers = male_count + female_count
-    male_percentage = (male_count / total_passengers) * 100
-    female_percentage = (female_count / total_passengers) * 100
-
-    conn.close()
-
-    return male_percentage, female_percentage
-
-
-def most_common_countries():
-    import sqlite3
-
-    conn = sqlite3.connect('spaceship.db')
-    cursor = conn.cursor()
-
-    cursor.execute('''
-        SELECT country, COUNT(*) AS count
-        FROM passengers
-        GROUP BY country
-        ORDER BY count DESC
-        LIMIT 3
-    ''')
-
-    countries = cursor.fetchall()
-
-    conn.close()
-
-    return countries
-
-
-def risky_passengers():
-    import sqlite3
-
-    conn = sqlite3.connect('spaceship.db')
-    cursor = conn.cursor()
-
-    cursor.execute('''
-        SELECT name, blood_pressure, cholesterol_level
-        FROM passengers
-        WHERE blood_pressure = "High" AND cholesterol_level = "High"
-    ''')
-
-    risky_passengers = cursor.fetchall()
-
-    conn.close()
-
-    return risky_passengers
-
-
-def passengers_with_chronic_conditions():
-    import sqlite3
-
-    conn = sqlite3.connect('spaceship.db')
-    cursor = conn.cursor()
-
-    cursor.execute('''
-        SELECT name, chronic_condition
-        FROM passengers
-        WHERE chronic_condition != "None"
-    ''')
-
-    passengers_with_chronic_conditions = cursor.fetchall()
-
-    conn.close()
-
-    return passengers_with_chronic_conditions
-
+# def create_database():
+#     conn = sqlite3.connect('spaceship.db')
+#     cursor = conn.cursor()
+#
+#     cursor.execute('''
+#         CREATE TABLE IF NOT EXISTS passengers (
+#             id INTEGER PRIMARY KEY,
+#             name TEXT,
+#             age INTEGER,
+#             gender TEXT,
+#             country TEXT,
+#             blood_pressure TEXT,
+#             cholesterol_level TEXT,
+#             chronic_condition TEXT
+#         )
+#     ''')
+#
+#     passengers_data = [
+#         ('Alice', 30, 'Female', 'USA', 'Normal', 'Normal', 'None'),
+#         ('Bob', 45, 'Male', 'UK', 'High', 'High', 'Diabetes'),
+#         ('Charlie', 50, 'Male', 'USA', 'Normal', 'High', 'None'),
+#         ('Diana', 35, 'Female', 'Canada', 'Normal', 'Normal', 'Asthma'),
+#
+#     ]
+#
+#     cursor.executemany('''
+#         INSERT INTO passengers (name, age, gender, country, blood_pressure, cholesterol_level, chronic_condition)
+#         VALUES (?, ?, ?, ?, ?, ?, ?)
+#     ''', passengers_data)
+#
+#     conn.commit()
+#     conn.close()
+#
+#
+# def average_age():
+#     import sqlite3
+#
+#     conn = sqlite3.connect('spaceship.db')
+#     cursor = conn.cursor()
+#
+#     cursor.execute('SELECT AVG(age) FROM passengers')
+#     average_age = cursor.fetchone()[0]
+#
+#     conn.close()
+#
+#     return average_age
+#
+#
+# def gender_distribution():
+#     import sqlite3
+#
+#     conn = sqlite3.connect('spaceship.db')
+#     cursor = conn.cursor()
+#
+#     cursor.execute('SELECT COUNT(*) FROM passengers WHERE gender = "Male"')
+#     male_count = cursor.fetchone()[0]
+#
+#     cursor.execute('SELECT COUNT(*) FROM passengers WHERE gender = "Female"')
+#     female_count = cursor.fetchone()[0]
+#
+#     total_passengers = male_count + female_count
+#     male_percentage = (male_count / total_passengers) * 100
+#     female_percentage = (female_count / total_passengers) * 100
+#
+#     conn.close()
+#
+#     return male_percentage, female_percentage
+#
+#
+# def most_common_countries():
+#     import sqlite3
+#
+#     conn = sqlite3.connect('spaceship.db')
+#     cursor = conn.cursor()
+#
+#     cursor.execute('''
+#         SELECT country, COUNT(*) AS count
+#         FROM passengers
+#         GROUP BY country
+#         ORDER BY count DESC
+#         LIMIT 3
+#     ''')
+#
+#     countries = cursor.fetchall()
+#
+#     conn.close()
+#
+#     return countries
+#
+#
+# def risky_passengers():
+#     import sqlite3
+#
+#     conn = sqlite3.connect('spaceship.db')
+#     cursor = conn.cursor()
+#
+#     cursor.execute('''
+#         SELECT name, blood_pressure, cholesterol_level
+#         FROM passengers
+#         WHERE blood_pressure = "High" AND cholesterol_level = "High"
+#     ''')
+#
+#     risky_passengers = cursor.fetchall()
+#
+#     conn.close()
+#
+#     return risky_passengers
+#
+#
+# def passengers_with_chronic_conditions():
+#     import sqlite3
+#
+#     conn = sqlite3.connect('spaceship.db')
+#     cursor = conn.cursor()
+#
+#     cursor.execute('''
+#         SELECT name, chronic_condition
+#         FROM passengers
+#         WHERE chronic_condition != "None"
+#     ''')
+#
+#     passengers_with_chronic_conditions = cursor.fetchall()
+#
+#     conn.close()
+#
+#     return passengers_with_chronic_conditions
+#
 
 #
 # def roman_to_int(roman: str) -> int:
@@ -2364,3 +2364,30 @@ def josephus(items: list, number: int) -> list:
         dead.append(items.pop(target))
 
     return dead
+
+
+# Consider the sequence U(n, x) = x + 2**2 + 3x**3 + .. + nx**n where x is a real number and n a positive integer.
+#
+# When n goes to infinity and x has a correct value (ie x is in its domain of convergence D), U(n, x) goes to a finite limit m depending on x.
+#
+# Usually given x we try to find m. Here we will try to find x (x real, 0 < x < 1) when m is given (m real, m > 0).
+#
+# Write the function solve(m) which returns x such as U(n, x) goes to m when n goes to infinity.
+#
+# Note: You pass the tests if abs(actual - expected) <= 1e-12
+#
+# Examples:
+# solve(2.0)  # returns 0.5 since U(n, 0.5) goes to 2 when n goes to infinity
+# solve(8.0)  # returns 0.7034648345913732 since U(n, 0.7034648345913732) goes to 8 when n goes to infinity
+
+
+import math
+
+
+def solve(m: float) -> float:
+    x = ((2 * m + 1) - math.sqrt(4 * m + 1)) / (2 * m)
+    return x
+
+
+print(solve(2.0))
+print(solve(8.0))
