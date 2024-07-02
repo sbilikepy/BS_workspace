@@ -49,3 +49,23 @@ function peakIndexInMountainArray(arr) {
 
   return left;
 }
+
+
+function countNegatives(grid) {
+  let count = 0;
+  const rows = grid.length;
+  const cols = grid[0].length;
+  let row = 0;
+  let col = cols - 1;
+
+  while (row < rows && col >= 0) {
+    if (grid[row][col] < 0) {
+      count += rows - row;
+      col--;
+    } else {
+      row++;
+    }
+  }
+
+  return count;
+}
