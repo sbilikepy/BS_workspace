@@ -69,3 +69,154 @@ function countNegatives(grid) {
 
   return count;
 }
+
+
+
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  /**
+   * Add value to the end of the list
+   * @param {number} value
+   * @returns {void}
+   */
+  append(value) {
+    const newNode = new Node(value);
+
+    if (this.isEmpty()) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+  }
+
+  /**
+   * Add value to the beginning of the list
+   * @param {number} value
+   * @returns {void}
+   */
+  prepend(value) {
+    const newNode = new Node(value);
+
+    if (this.isEmpty()) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+  }
+
+  /**
+   * Return list size
+   * @returns {number}
+   */
+  size() {
+    return this.length;
+  }
+
+  /**
+   * Return whether list is empty
+   * @returns {boolean}
+   */
+  isEmpty() {
+    return this.length === 0;
+  }
+
+  /**
+   * Return the last node's value
+   * @returns {number|null}
+   */
+  getLast() {
+    return this.tail ? this.tail.value : null;
+  }
+
+  /**
+   * Return the first node's value
+   * @returns {number|null}
+   */
+  getFirst() {
+    return this.head ? this.head.value : null;
+  }
+
+  /**
+   * Empty the list
+   * @returns {void}
+   */
+  clear() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  /**
+   * Delete node by its value
+   * @param {number} value
+   * @returns {void}
+   */
+  delete(value) {
+    if (this.isEmpty()) {
+      return;
+    }
+
+    // Handle deletion of head
+    if (this.head.value === value) {
+      this.head = this.head.next;
+
+      if (!this.head) {
+        this.tail = null;
+      }
+      this.length--;
+
+      return;
+    }
+
+    // Handle deletion of nodes other than head
+    let currentNode = this.head;
+
+    while (currentNode.next && currentNode.next.value !== value) {
+      currentNode = currentNode.next;
+    }
+
+    if (currentNode.next) {
+      currentNode.next = currentNode.next.next;
+
+      if (!currentNode.next) {
+        this.tail = currentNode;
+      }
+      this.length--;
+    }
+  }
+
+  /**
+   * Serialize the list
+   * @returns {number[]}
+   */
+  serialize() {
+    const values = [];
+    let currentNode = this.head;
+
+    while (currentNode) {
+      values.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+
+    return values;
+  }
+}
