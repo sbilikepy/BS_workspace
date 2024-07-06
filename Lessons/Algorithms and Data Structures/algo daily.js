@@ -253,3 +253,27 @@ function hasCycle(head) {
 
   return false;
 }
+
+
+/**
+ * Definition for singly-linked list.
+ *
+ * function ListNode(val) {
+ *   this.val = val
+ *   this.next = null
+ * }
+ *
+ * @param {ListNode} head
+ * @returns {ListNode}
+ */
+function findMiddleListNode(head) {
+  let slow = head;
+  let fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return slow;
+}
