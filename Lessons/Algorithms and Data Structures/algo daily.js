@@ -277,3 +277,20 @@ function findMiddleListNode(head) {
 
   return slow;
 }
+
+/**
+ * Definition for singly-linked list.
+ *
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ *
+ * @param {ListNode} node
+ * @returns {void} Do not return anything, modify node in-place instead.
+ */
+
+function deleteNode(node) {
+  node.val = node.next.val;
+  node.next = node.next.next;
+}
