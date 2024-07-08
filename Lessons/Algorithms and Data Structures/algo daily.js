@@ -294,3 +294,33 @@ function deleteNode(node) {
   node.val = node.next.val;
   node.next = node.next.next;
 }
+
+
+
+/**
+ * Definition for singly-linked list.
+ *
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ *
+ * @param {ListNode} head
+ *
+ * @returns {ListNode}
+ */
+function reverseList(head) {
+  let prev = null;
+  let curr = head;
+
+  while (curr !== null) {
+    const next = curr.next;
+
+    curr.next = prev;
+
+    prev = curr;
+    curr = next;
+  }
+
+  return prev;
+}
