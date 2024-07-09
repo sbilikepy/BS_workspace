@@ -324,3 +324,51 @@ function reverseList(head) {
 
   return prev;
 }
+
+
+/**
+ * @param val
+ * @constructor
+ */
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
+/**
+ * Merges two sorted linked lists and returns the merged sorted list.
+ *
+ * @param {ListNode} l1 - First sorted linked list.
+ * @param {ListNode} l2 - Second sorted linked list.
+ * @returns {ListNode} - Merged sorted linked list.
+ */
+function mergeTwoLists(l1, l2) {
+  // Create a dummy node to simplify edge cases.
+  const dummy = new ListNode(-1);
+  let current = dummy;
+
+  // Traverse both lists while both are non-empty.
+  let p1 = l1;
+  let p2 = l2;
+
+  while (p1 !== null && p2 !== null) {
+    if (p1.val < p2.val) {
+      current.next = p1;
+      p1 = p1.next;
+    } else {
+      current.next = p2;
+      p2 = p2.next;
+    }
+    current = current.next;
+  }
+
+  // If either list is non-empty, append it to the result.
+  if (p1 !== null) {
+    current.next = p1;
+  } else {
+    current.next = p2;
+  }
+
+  // Return the merged list, skipping the dummy node.
+  return dummy.next;
+}
