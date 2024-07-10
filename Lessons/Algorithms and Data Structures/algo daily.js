@@ -372,3 +372,74 @@ function mergeTwoLists(l1, l2) {
   // Return the merged list, skipping the dummy node.
   return dummy.next;
 }
+
+
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  /**
+   * Add value to the stack
+   * @param {number} value
+   *
+   * @returns {void}
+   */
+  push(value) {
+    this.items.push(value);
+  }
+
+  /**
+   * Return stack size
+   *
+   * @returns {number}
+   */
+  size() {
+    return this.items.length;
+  }
+
+  /**
+   * Return the last added value
+   *
+   * @returns {number|null}
+   */
+  peek() {
+    return this.items.length ? this.items[this.items.length - 1] : null;
+  }
+
+  /**
+   * Return the last added value and remove it from the stack
+   *
+   * @returns {number|null}
+   */
+  pop() {
+    return this.items.length ? this.items.pop() : null;
+  }
+
+  /**
+   * Empty the stack
+   *
+   * @returns {void}
+   */
+  clear() {
+    this.items = [];
+  }
+
+  /**
+   * Serialize the stack
+   *
+   * @returns {number[]}
+   */
+  serialize() {
+    return [...this.items].reverse();
+  }
+
+  /**
+   * Check if the stack is empty
+   *
+   * @returns {boolean}
+   */
+  isEmpty() {
+    return this.items.length === 0;
+  }
+}
