@@ -443,3 +443,19 @@ class Stack {
     return this.items.length === 0;
   }
 }
+
+
+function countQueueTime(customers, n) {
+  if (n === 1) {
+    return customers.reduce((acc, curr) => acc + curr, 0);
+  }
+
+  const machines = Array(n).fill(0);
+
+  for (const time of customers) {
+    machines.sort((a, b) => a - b);
+    machines[0] += time;
+  }
+
+  return Math.max(...machines);
+}
