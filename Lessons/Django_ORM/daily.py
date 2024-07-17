@@ -104,7 +104,7 @@ def jewels_and_stones(jewels: str, stones: str) -> int:
 
 def sum_of_pairs(nums: list, sum_value: int) -> list:
     for num in nums:
-        if (sum_value - num) in nums[nums.index(num) + 1::]:
+        if (sum_value - num) in nums[nums.index(num) + 1 : :]:
             return [num, (sum_value - num)]
     return None
 
@@ -352,8 +352,7 @@ def sum_of_odd_numbers(row_number: int) -> int:
 
     print(start, stop)
 
-    triangle_row = [i for i in
-                    [i for i in range(start, stop + 1) if i % 2 != 0]]
+    triangle_row = [i for i in [i for i in range(start, stop + 1) if i % 2 != 0]]
     print(triangle_row)
     return sum(triangle_row)
 
@@ -426,7 +425,7 @@ def buy_tofu(cost: int, box: str) -> list or str:
 
 
 def rotate_list(nums: list, steps: int) -> list:
-    return nums[-steps::] + nums[: len(nums) - steps:] if steps > 0 else nums
+    return nums[-steps::] + nums[: len(nums) - steps :] if steps > 0 else nums
 
 
 def isomorphic_strings(first_string: str, second_string: str) -> bool:
@@ -493,8 +492,7 @@ def descending_order(num_value: int) -> int:
 
 
 def dir_reduction(plan: list) -> list:
-    opposite_dirs = {"NORTH": "SOUTH", "SOUTH": "NORTH", "EAST": "WEST",
-                     "WEST": "EAST"}
+    opposite_dirs = {"NORTH": "SOUTH", "SOUTH": "NORTH", "EAST": "WEST", "WEST": "EAST"}
     stack = []
 
     for direction in plan:
@@ -634,8 +632,7 @@ def simple_fun(num_list: list) -> int:
 from typing import List, Callable
 
 
-def chained(functions: List[Callable[[float], float]]) -> Callable[
-    [float], float]:
+def chained(functions: List[Callable[[float], float]]) -> Callable[[float], float]:
     def inner(arg: float) -> float:
         result = arg
         for func in functions:
@@ -710,7 +707,7 @@ def pendulum(lst: list) -> list:
 
 
 def reverse_integer(number: int) -> int:
-    int_max = 2 ** 31 - 1
+    int_max = 2**31 - 1
 
     result = 0
     sign = 1 if number >= 0 else -1
@@ -768,7 +765,7 @@ def last(*args):
 
 def group_by_commas(number: int) -> str:
     number_str = str(number)[::-1]
-    groups = [number_str[i: i + 3][::-1] for i in range(0, len(number_str), 3)]
+    groups = [number_str[i : i + 3][::-1] for i in range(0, len(number_str), 3)]
     result = ",".join(groups[::-1])
     return result
 

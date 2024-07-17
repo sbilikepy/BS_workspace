@@ -25,7 +25,7 @@ class Book(models.Model):
     format = models.ForeignKey(
         LiteraryFormat,
         on_delete=models.CASCADE,
-        related_name="by_format"
+        related_name="by_format",
         # on_delete MANDATORY for ForeignKey
         # CASCADE will delete all related rows
         # PROTECT / DO_NOTHING

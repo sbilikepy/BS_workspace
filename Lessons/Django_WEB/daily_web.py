@@ -2015,6 +2015,7 @@
 #   return result;
 # }
 
+
 def find_perimeter(grid: list) -> int:
     perimeter = 0
     rows, cols = len(grid), len(grid[0])
@@ -2033,10 +2034,12 @@ def find_perimeter(grid: list) -> int:
 from datetime import time
 
 
-def lft_time_module_testing(activity_time_start_filter: str,
-                            activity_time_end_filter: str,
-                            session_time_start: time,
-                            session_time_end: time) -> bool:
+def lft_time_module_testing(
+    activity_time_start_filter: str,
+    activity_time_end_filter: str,
+    session_time_start: time,
+    session_time_end: time,
+) -> bool:
     time_hour, time_minute = map(int, activity_time_start_filter.split(":"))
     user_activity_start = time(hour=time_hour, minute=time_minute)
 
@@ -2048,14 +2051,18 @@ def lft_time_module_testing(activity_time_start_filter: str,
     # common case
     if user_activity_start < user_activity_end:
         print("common case for user")
-        query = (user_activity_start <= session_time_start and
-                 session_time_end <= user_activity_end)
+        query = (
+            user_activity_start <= session_time_start
+            and session_time_end <= user_activity_end
+        )
 
     # midnight case
     if user_activity_start > user_activity_end:
         print("user midnight case")
-        query = (user_activity_start <= session_time_start and
-                 session_time_end <= user_activity_end)
+        query = (
+            user_activity_start <= session_time_start
+            and session_time_end <= user_activity_end
+        )
 
     print(query)
 
@@ -2089,15 +2096,15 @@ def check_coverage(user_start, user_end, session_start, session_end):
         return False
 
 
-def activity_time_filter_queryset(queryset, activity_time_start_filter,
-                                  activity_time_end_filter):
-    user_start_time = datetime.strptime(activity_time_start_filter,
-                                        '%H:%M').time()
-    user_end_time = datetime.strptime(activity_time_end_filter, '%H:%M').time()
+def activity_time_filter_queryset(
+    queryset, activity_time_start_filter, activity_time_end_filter
+):
+    user_start_time = datetime.strptime(activity_time_start_filter, "%H:%M").time()
+    user_end_time = datetime.strptime(activity_time_end_filter, "%H:%M").time()
 
     user_delta = timedelta(
         hours=user_end_time.hour - user_start_time.hour,
-        minutes=user_end_time.minute - user_start_time.minute
+        minutes=user_end_time.minute - user_start_time.minute,
     )
 
     if user_end_time < user_start_time:
@@ -2109,23 +2116,21 @@ def activity_time_filter_queryset(queryset, activity_time_start_filter,
 
     queryset = queryset.filter(
         teams__activity_sessions__time_start__lte=user_start_time,
-        teams__activity_sessions__time_end__gte=user_end_time
+        teams__activity_sessions__time_end__gte=user_end_time,
     ).distinct()
 
     return queryset
 
 
-def activity_time_filter_queryset(queryset,
-                                  selected_days_filter,
-                                  activity_time_start_filter,
-                                  activity_time_end_filter):
-    user_start_time = datetime.strptime(activity_time_start_filter,
-                                        '%H:%M').time()
-    user_end_time = datetime.strptime(activity_time_end_filter, '%H:%M').time()
+def activity_time_filter_queryset(
+    queryset, selected_days_filter, activity_time_start_filter, activity_time_end_filter
+):
+    user_start_time = datetime.strptime(activity_time_start_filter, "%H:%M").time()
+    user_end_time = datetime.strptime(activity_time_end_filter, "%H:%M").time()
 
     user_delta = timedelta(
         hours=user_end_time.hour - user_start_time.hour,
-        minutes=user_end_time.minute - user_start_time.minute
+        minutes=user_end_time.minute - user_start_time.minute,
     )
 
     if user_end_time < user_start_time:
@@ -2178,14 +2183,12 @@ from datetime import datetime, timedelta
 
 
 def func_final(user_start, user_end, team_start, team_end):
-    user_start = datetime.strptime(user_start, '%H:%M')  # 1900-01-01 19:00:00
-    user_end = datetime.strptime(user_end, '%H:%M')
-    team_start = datetime.strptime(team_start, '%H:%M')
-    team_end = datetime.strptime(team_end, '%H:%M')
+    user_start = datetime.strptime(user_start, "%H:%M")  # 1900-01-01 19:00:00
+    user_end = datetime.strptime(user_end, "%H:%M")
+    team_start = datetime.strptime(team_start, "%H:%M")
+    team_end = datetime.strptime(team_end, "%H:%M")
     #######DELTA CHECK HERE)
-    print("START: ", user_start, "-", user_end, "|",
-          team_start, "-",
-          team_end)
+    print("START: ", user_start, "-", user_end, "|", team_start, "-", team_end)
 
     ###### DELTA CHANGES #################
     if user_end < user_start:  # prep user
@@ -2204,9 +2207,16 @@ def func_final(user_start, user_end, team_start, team_end):
     print(type(user_start), type(team_start))
     ######PERFECT CASE#################
     if user_start <= team_start <= team_end <= user_end:
-        print("BEFORE TRUE RETURN: ", user_start, "-", user_end, "|",
-              team_start, "-",
-              team_end)
+        print(
+            "BEFORE TRUE RETURN: ",
+            user_start,
+            "-",
+            user_end,
+            "|",
+            team_start,
+            "-",
+            team_end,
+        )
         return True
     print("BEFORE FALSE RETURN")
     print(user_start, user_end)
@@ -2216,7 +2226,6 @@ def func_final(user_start, user_end, team_start, team_end):
 
 
 data = [
-
     ("21:00", "03:00", "19:00", "04:00"),  # IMP TESTING DATA
     ("21:00", "03:00", "21:00", "03:00"),
     ("21:00", "03:00", "22:00", "02:00"),
@@ -2226,29 +2235,26 @@ data = [
     ("21:00", "03:00", "19:00", "22:00"),
     ("21:00", "03:00", "02:00", "06:00"),
     ("21:00", "03:00", "18:00", "00:00"),
-    ("21:00", "03:00", "00:00", "04:00")
-
+    ("21:00", "03:00", "00:00", "04:00"),
 ]
 counter = 1
 for item in data:
     print("***************************************************")
     user_start, user_end, team_start, team_end = item
-    print(
-        f"{counter} case: {func_final(user_start, user_end, team_start, team_end)}")
+    print(f"{counter} case: {func_final(user_start, user_end, team_start, team_end)}")
     print("***************************************************")
     counter += 1
 
 
 ###########I OLD VER TO COMPARE ##########
-def activity_time_filter_queryset(queryset,
-                                  selected_days_filter,
-                                  activity_time_start_filter,
-                                  activity_time_end_filter):
+def activity_time_filter_queryset(
+    queryset, selected_days_filter, activity_time_start_filter, activity_time_end_filter
+):
     # 1900-01-01 19:00:00
-    user_start = datetime.strptime(activity_time_start_filter,
-                                   '%H:%M').replace(tzinfo=None)
-    user_end = datetime.strptime(activity_time_end_filter, '%H:%M').replace(
-        tzinfo=None)
+    user_start = datetime.strptime(activity_time_start_filter, "%H:%M").replace(
+        tzinfo=None
+    )
+    user_end = datetime.strptime(activity_time_end_filter, "%H:%M").replace(tzinfo=None)
 
     if user_end < user_start:  # prep user
         user_end += timedelta(days=1)
@@ -2256,7 +2262,7 @@ def activity_time_filter_queryset(queryset,
 
     user_delta = timedelta(
         hours=user_end.hour - user_start.hour,
-        minutes=user_end.minute - user_start.minute
+        minutes=user_end.minute - user_start.minute,
     )
 
     print(user_delta)
@@ -2264,9 +2270,7 @@ def activity_time_filter_queryset(queryset,
         teams__activity_sessions__day__day_of_week__in=selected_days_filter
     ).distinct()
 
-    queryset = queryset.filter(
-        teams__activity_sessions__duration__lte=user_delta
-    )
+    queryset = queryset.filter(teams__activity_sessions__duration__lte=user_delta)
 
     team_queryset = Team.objects.filter(guild__in=queryset)
     filtered_team_queryset = Team.objects.none()
@@ -2307,17 +2311,17 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # Email configuration
-SMTP_SERVER = 'your_smtp_server'
+SMTP_SERVER = "your_smtp_server"
 SMTP_PORT = 587
-SMTP_USERNAME = 'your_email_username'
-SMTP_PASSWORD = 'your_email_password'
+SMTP_USERNAME = "your_email_username"
+SMTP_PASSWORD = "your_email_password"
 
 # Compose email
 message = MIMEMultipart()
-message['From'] = 'sender@example.com'
-message['To'] = 'recipient@example.com'
-message['Subject'] = 'Automated Email'
-message.attach(MIMEText('Hello, this is an automated email.', 'plain'))
+message["From"] = "sender@example.com"
+message["To"] = "recipient@example.com"
+message["Subject"] = "Automated Email"
+message.attach(MIMEText("Hello, this is an automated email.", "plain"))
 
 
 # Send email
@@ -2333,13 +2337,13 @@ def palindromic_substring(string: str) -> str:
         while left >= 0 and right < len(s) and s[left] == s[right]:
             left -= 1
             right += 1
-        return s[left + 1:right]
+        return s[left + 1 : right]
 
     def expand_center_even(s: int, left: int, right: int) -> str:
         while left >= 0 and right < len(s) and s[left] == s[right]:
             left -= 1
             right += 1
-        return s[left + 1:right]
+        return s[left + 1 : right]
 
     longest_palindrome = ""
     for i in range(len(string)):
@@ -2393,13 +2397,13 @@ print(solve(2.0))
 print(solve(8.0))
 
 
-
 import numpy as np
+
 v = np.arange(7)
 result = np.linalg.norm(v)
 print("Vector norm:")
 print(result)
-m = np.matrix('1, 2; 3, 4')
+m = np.matrix("1, 2; 3, 4")
 result1 = np.linalg.norm(m)
 print("Matrix norm:")
 print(result1)
