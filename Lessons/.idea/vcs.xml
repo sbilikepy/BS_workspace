@@ -2,10 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Django_WEB/Django/Forms/py-taxi-service-authentication" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Django_WEB/Django/Forms_in_details/py-taxi-service-forms" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Django_WEB/Django/search_custom_tags_get_q_fixes_tests/py-taxi-service-user-form-and-validation" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Python-start-Udemy-Mate-" vcs="Git" />
   </component>
 </project>
