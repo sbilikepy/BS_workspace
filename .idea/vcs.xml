@@ -2,75 +2,22 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="" />
+    <mapping directory="$PROJECT_DIR$/ANC_10.07.2024/EmployeeManagementDjangoProject" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Discord-QR-Auth-Client" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/IdealistaScraping" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LFT-django-project-recovered/LFT-recruit-finder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LFT-recruit-finder/LFT-recruit-finder" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/LFT-recruit-finder/LFTdjangoProject" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Forms/py-taxi-service-authentication" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Forms_in_details/py-taxi-service-forms" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/Sessions and Authentication/py-taxi-service-class-based-views" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons/Django_WEB/Django/search_custom_tags_get_q_fixes_tests/py-taxi-service-user-form-and-validation" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Lessons/Python-start-Udemy-Mate-" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Scrapy-Idealista" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/dedomeno" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/django-discord-oauth2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-actor-manager" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-aquapark" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-battleship" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-blog" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-burger-recipe" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-cache-decorator" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-can-access-google-page" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-car-wash-station" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-cat-and-dog-years" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-check-password" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-cinema-visit" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-clean-up-file" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-copy-file" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-count-occurrences" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-create-file-every-second" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-create-file-from-input" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-create-file-from-terminal" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-create-management-system" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-cryptocurrency" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-delivery-drone" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-dictionary" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-distance-class" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-elves-and-dwarves" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-feed-animals" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-flip-coin" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-game-models" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-genres-and-actors" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-get-coin-combination" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-herbivores-and-carnivores" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-is-isogram" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-knights-fighting" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-linter-formatter" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-lockdown-cafe" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-matecoin-trades" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-move-file" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-movie-moviesession-cinemahall" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-mutable-immutable" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-online-course" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-person-class" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-products-out-of-date" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-restore-names" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-shop-trip" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-software-engineers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-solid-book-service-refactoring" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-split-integer" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-task-guideline" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-taxi-service-authentication" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-taxi-service-class-based-views" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/py-taxi-service-forms" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-taxi-service-home-page" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-taxi-service-search-and-tests" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-taxi-service-startproject" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-taxi-service-user-form-and-validation" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-tickets-and-orders" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-vector-class" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/py-work-with-file" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/python-datascraping-fotocasa-idealista" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/roop" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/tftraits-render" vcs="Git" />
   </component>
 </project>

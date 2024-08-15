@@ -132,6 +132,7 @@
 # tete()
 import copy
 
+import numpy
 
 #
 # import sys
@@ -229,4 +230,34 @@ import copy
 # power_of_10 = generator(1000)
 # for i in range(100):
 #     print(power_of_10.__next__())
+#
+# from collections import namedtuple
+#
+# Point = namedtuple("name", "q a")
+# print(issubclass(Point, tuple))
+# point = Point(2,4)
+# print(point[0])
 
+#
+# print(
+#     type(
+#         ...
+#     )
+# )
+#
+# from numpy import array
+# arr = numpy.array([1,2,3])
+# print(arr)
+# print(type(arr))
+
+x = [1,2,3]
+def re(l):
+    return l**2
+
+r = [i for i in map(re, x)]
+print(r)
+d = {}
+x = ...
+d[x] = "as"
+print(hash(x))
+print(d)
